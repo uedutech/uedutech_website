@@ -1,0 +1,1384 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>अध्याय 5 - अभाज्य समय | UEduTech</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, "Noto Sans Devanagari", sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #111827;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .section h2 {
+            color: #2563eb;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .section h3 {
+            color: #111827;
+            margin: 20px 0 10px;
+        }
+
+        .definition {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .example {
+            background: #f0fdf4;
+            border-left: 5px solid #16a34a;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .tip {
+            background: #fff7ed;
+            border-left: 5px solid #f97316;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .number-card {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            padding: 22px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .number-card h3 {
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .formula {
+            background: #fff7ed;
+            border-left: 5px solid #f97316;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 12px 0;
+            font-weight: bold;
+        }
+
+        .question {
+            background: #f9fafb;
+            padding: 17px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .question strong {
+            color: #2563eb;
+        }
+
+        .mcq {
+            margin: 20px 0;
+            padding: 18px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+
+        .mcq p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .mcq ul {
+            list-style: none;
+        }
+
+        .mcq li {
+            padding: 7px 10px;
+            background: #f8fafc;
+            margin: 5px 0;
+            border-radius: 6px;
+        }
+
+        .answer {
+            background: #ecfdf5;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #16a34a;
+        }
+
+        .answer p {
+            margin: 6px 0;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .resource-card {
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+
+        .resource-card h3 {
+            color: #2563eb;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            margin-top: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #111827;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .navigation a {
+            flex: 1;
+            text-align: center;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .number-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="navbar">
+
+        <a href="../../../index.html" class="logo">
+            U<span>EduTech</span>
+        </a>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <nav id="navMenu">
+
+            <a href="../../../index.html">होम</a>
+
+            <a href="../../../subjects.html">विषय</a>
+
+            <a href="../../../tests.html">मॉडल टेस्ट</a>
+
+            <a href="../../../study-material.html">अध्ययन सामग्री</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- Breadcrumb -->
+
+<div class="breadcrumb">
+
+    <a href="../../../index.html">होम</a>
+    →
+    <a href="../../../study-material.html">अध्ययन सामग्री</a>
+    →
+    <a href="../class-6.html">कक्षा 6</a>
+    →
+    <a href="class-6-mathematics.html">गणित</a>
+    →
+    अध्याय 5
+
+</div>
+
+
+<!-- Hero -->
+
+<section class="hero">
+
+    <h1>अध्याय 5: अभाज्य समय</h1>
+
+    <p>
+        कक्षा 6 गणित – गणित प्रकाश
+        <br>
+        अभाज्य संख्याएँ, भाज्य संख्याएँ, गुणनखंड, गुणज और विभाज्यता के नियम सीखें।
+    </p>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- Introduction -->
+
+<section class="section">
+
+    <h2>📘 अध्याय परिचय</h2>
+
+    <p>
+        संख्याओं की दुनिया में कुछ संख्याएँ ऐसी होती हैं जिनके केवल
+        दो गुणनखंड होते हैं। इन्हें <strong>अभाज्य संख्याएँ</strong>
+        कहा जाता है।
+    </p>
+
+    <div class="definition">
+
+        <strong>अभाज्य संख्या:</strong>
+
+        वह प्राकृतिक संख्या जिसके केवल दो गुणनखंड होते हैं —
+        1 और स्वयं वह संख्या — अभाज्य संख्या कहलाती है।
+
+    </div>
+
+    <div class="example">
+
+        <strong>उदाहरण:</strong>
+
+        2, 3, 5, 7, 11, 13, 17, 19, 23, 29 आदि अभाज्य संख्याएँ हैं।
+
+    </div>
+
+</section>
+
+
+<!-- Factors -->
+
+<section class="section">
+
+    <h2>🔍 1. गुणनखंड</h2>
+
+    <p>
+        किसी संख्या को बिना शेषफल के विभाजित करने वाली संख्याएँ
+        उस संख्या के गुणनखंड कहलाती हैं।
+    </p>
+
+    <div class="example">
+
+        <strong>उदाहरण:</strong>
+
+        12 के गुणनखंड:
+
+        <br><br>
+
+        1, 2, 3, 4, 6 और 12
+
+        <br><br>
+
+        क्योंकि ये सभी 12 को पूर्णतः विभाजित करते हैं।
+
+    </div>
+
+</section>
+
+
+<!-- Multiples -->
+
+<section class="section">
+
+    <h2>✖️ 2. गुणज</h2>
+
+    <p>
+        किसी संख्या को 1, 2, 3, 4 आदि से गुणा करने पर प्राप्त
+        संख्याएँ उस संख्या के गुणज कहलाती हैं।
+    </p>
+
+    <div class="example">
+
+        <strong>उदाहरण:</strong>
+
+        6 के गुणज:
+
+        <br><br>
+
+        6, 12, 18, 24, 30, 36...
+
+    </div>
+
+</section>
+
+
+<!-- Prime -->
+
+<section class="section">
+
+    <h2>⭐ 3. अभाज्य संख्याएँ</h2>
+
+    <div class="definition">
+
+        जिस संख्या के ठीक दो गुणनखंड हों — 1 और स्वयं वह संख्या —
+        उसे अभाज्य संख्या कहते हैं।
+
+    </div>
+
+    <div class="number-grid">
+
+        <div class="number-card">
+            <h3>2</h3>
+            <p>1 और 2</p>
+        </div>
+
+        <div class="number-card">
+            <h3>3</h3>
+            <p>1 और 3</p>
+        </div>
+
+        <div class="number-card">
+            <h3>5</h3>
+            <p>1 और 5</p>
+        </div>
+
+        <div class="number-card">
+            <h3>7</h3>
+            <p>1 और 7</p>
+        </div>
+
+        <div class="number-card">
+            <h3>11</h3>
+            <p>1 और 11</p>
+        </div>
+
+        <div class="number-card">
+            <h3>13</h3>
+            <p>1 और 13</p>
+        </div>
+
+    </div>
+
+    <div class="tip">
+
+        <strong>महत्वपूर्ण:</strong>
+
+        2 सबसे छोटी अभाज्य संख्या है और एकमात्र सम अभाज्य संख्या है।
+
+    </div>
+
+</section>
+
+
+<!-- Composite -->
+
+<section class="section">
+
+    <h2>🔢 4. भाज्य संख्याएँ</h2>
+
+    <p>
+        जिन संख्याओं के दो से अधिक गुणनखंड होते हैं, उन्हें
+        <strong>भाज्य संख्याएँ</strong> कहते हैं।
+    </p>
+
+    <div class="example">
+
+        उदाहरण:
+
+        <br><br>
+
+        4 → 1, 2, 4
+
+        <br>
+
+        6 → 1, 2, 3, 6
+
+        <br>
+
+        8 → 1, 2, 4, 8
+
+    </div>
+
+</section>
+
+
+<!-- Number 1 -->
+
+<section class="section">
+
+    <h2>❗ 5. संख्या 1</h2>
+
+    <div class="definition">
+
+        संख्या 1 न तो अभाज्य है और न ही भाज्य।
+
+        <br><br>
+
+        क्योंकि 1 का केवल एक ही गुणनखंड है — 1।
+
+    </div>
+
+</section>
+
+
+<!-- Divisibility -->
+
+<section class="section">
+
+    <h2>➗ 6. विभाज्यता के नियम</h2>
+
+    <div class="formula">
+
+        2 से विभाज्यता:
+        अंतिम अंक 0, 2, 4, 6 या 8 हो।
+
+    </div>
+
+    <div class="formula">
+
+        5 से विभाज्यता:
+        अंतिम अंक 0 या 5 हो।
+
+    </div>
+
+    <div class="formula">
+
+        10 से विभाज्यता:
+        अंतिम अंक 0 हो।
+
+    </div>
+
+    <div class="formula">
+
+        3 से विभाज्यता:
+        अंकों का योग 3 से विभाज्य हो।
+
+    </div>
+
+    <div class="example">
+
+        <strong>उदाहरण:</strong>
+
+        123 के अंकों का योग:
+
+        <br>
+
+        1 + 2 + 3 = 6
+
+        <br><br>
+
+        6, 3 से विभाज्य है।
+
+        इसलिए 123 भी 3 से विभाज्य है।
+
+    </div>
+
+</section>
+
+
+<!-- Prime Factorisation -->
+
+<section class="section">
+
+    <h2>🌳 7. अभाज्य गुणनखंड</h2>
+
+    <p>
+        किसी भाज्य संख्या को अभाज्य संख्याओं के गुणनफल के रूप में
+        लिखना अभाज्य गुणनखंडन कहलाता है।
+    </p>
+
+    <div class="example">
+
+        <strong>उदाहरण:</strong>
+
+        <br><br>
+
+        12 = 2 × 2 × 3
+
+        <br><br>
+
+        18 = 2 × 3 × 3
+
+        <br><br>
+
+        20 = 2 × 2 × 5
+
+    </div>
+
+</section>
+
+
+<!-- Common Factors -->
+
+<section class="section">
+
+    <h2>🔗 8. उभयनिष्ठ गुणनखंड</h2>
+
+    <p>
+        दो या अधिक संख्याओं में पाए जाने वाले समान गुणनखंड
+        उभयनिष्ठ गुणनखंड कहलाते हैं।
+    </p>
+
+    <div class="example">
+
+        <strong>उदाहरण:</strong>
+
+        <br><br>
+
+        12 के गुणनखंड:
+
+        1, 2, 3, 4, 6, 12
+
+        <br><br>
+
+        18 के गुणनखंड:
+
+        1, 2, 3, 6, 9, 18
+
+        <br><br>
+
+        उभयनिष्ठ गुणनखंड:
+
+        <strong>1, 2, 3, 6</strong>
+
+    </div>
+
+</section>
+
+
+<!-- Common Multiples -->
+
+<section class="section">
+
+    <h2>🔄 9. उभयनिष्ठ गुणज</h2>
+
+    <p>
+        दो या अधिक संख्याओं के समान गुणजों को उभयनिष्ठ गुणज कहते हैं।
+    </p>
+
+    <div class="example">
+
+        3 के गुणज:
+
+        3, 6, 9, 12, 15, 18...
+
+        <br><br>
+
+        4 के गुणज:
+
+        4, 8, 12, 16, 20, 24...
+
+        <br><br>
+
+        उभयनिष्ठ गुणज:
+
+        <strong>12, 24...</strong>
+
+    </div>
+
+</section>
+
+
+<!-- Important Questions -->
+
+<section class="section">
+
+    <h2>❓ महत्वपूर्ण प्रश्न – भाग A</h2>
+
+    <div class="question">
+        <strong>प्रश्न 1.</strong>
+        अभाज्य संख्या किसे कहते हैं?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 2.</strong>
+        भाज्य संख्या किसे कहते हैं?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 3.</strong>
+        गुणनखंड किसे कहते हैं?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 4.</strong>
+        गुणज किसे कहते हैं?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 5.</strong>
+        सबसे छोटी अभाज्य संख्या कौन-सी है?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 6.</strong>
+        एकमात्र सम अभाज्य संख्या कौन-सी है?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 7.</strong>
+        संख्या 1 अभाज्य क्यों नहीं है?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 8.</strong>
+        12 के सभी गुणनखंड लिखिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 9.</strong>
+        24 के सभी गुणनखंड लिखिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 10.</strong>
+        5 के पहले दस गुणज लिखिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 11.</strong>
+        7 के पहले दस गुणज लिखिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 12.</strong>
+        1 से 30 तक की सभी अभाज्य संख्याएँ लिखिए।
+    </div>
+
+</section>
+
+
+<!-- Questions B -->
+
+<section class="section">
+
+    <h2>📝 महत्वपूर्ण प्रश्न – भाग B</h2>
+
+    <div class="question">
+        <strong>प्रश्न 13.</strong>
+        36 के सभी गुणनखंड ज्ञात कीजिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 14.</strong>
+        48 के सभी गुणनखंड ज्ञात कीजिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 15.</strong>
+        60 के सभी गुणनखंड ज्ञात कीजिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 16.</strong>
+        2 से 20 के बीच की सभी अभाज्य संख्याएँ लिखिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 17.</strong>
+        20 से 50 के बीच की सभी अभाज्य संख्याएँ लिखिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 18.</strong>
+        4, 6, 8, 9 और 11 में से अभाज्य संख्याएँ चुनिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 19.</strong>
+        2, 3, 5, 7 में से कौन-सी संख्या सम है?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 20.</strong>
+        12 और 18 के उभयनिष्ठ गुणनखंड ज्ञात कीजिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 21.</strong>
+        16 और 24 के उभयनिष्ठ गुणनखंड ज्ञात कीजिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 22.</strong>
+        3 और 4 के पहले पाँच उभयनिष्ठ गुणज लिखिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 23.</strong>
+        6 और 8 के पहले पाँच उभयनिष्ठ गुणज लिखिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 24.</strong>
+        45, 50 और 75 में से 5 से विभाज्य संख्याएँ चुनिए।
+    </div>
+
+</section>
+
+
+<!-- Questions C -->
+
+<section class="section">
+
+    <h2>🧠 अभ्यास प्रश्न – भाग C</h2>
+
+    <div class="question">
+        <strong>प्रश्न 25.</strong>
+        जाँच कीजिए कि 126, 2 से विभाज्य है या नहीं।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 26.</strong>
+        जाँच कीजिए कि 235, 5 से विभाज्य है या नहीं।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 27.</strong>
+        जाँच कीजिए कि 340, 10 से विभाज्य है या नहीं।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 28.</strong>
+        जाँच कीजिए कि 321, 3 से विभाज्य है या नहीं।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 29.</strong>
+        24 का अभाज्य गुणनखंडन कीजिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 30.</strong>
+        36 का अभाज्य गुणनखंडन कीजिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 31.</strong>
+        50 का अभाज्य गुणनखंडन कीजिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 32.</strong>
+        72 का अभाज्य गुणनखंडन कीजिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 33.</strong>
+        क्या 29 अभाज्य संख्या है? कारण दीजिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 34.</strong>
+        क्या 51 अभाज्य संख्या है? कारण दीजिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 35.</strong>
+        1 से 50 तक कितनी अभाज्य संख्याएँ हैं?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 36.</strong>
+        ऐसी तीन संख्याएँ लिखिए जो 2 और 3 दोनों से विभाज्य हों।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 37.</strong>
+        ऐसी तीन संख्याएँ लिखिए जो 5 और 10 दोनों से विभाज्य हों।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 38.</strong>
+        2 से बड़ी कोई भी अभाज्य संख्या सम क्यों नहीं हो सकती?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 39.</strong>
+        1 से 100 तक की अभाज्य संख्याओं में सबसे बड़ी संख्या कौन-सी है?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 40.</strong>
+        18 और 24 के उभयनिष्ठ गुणनखंड ज्ञात कीजिए।
+    </div>
+
+</section>
+
+
+<!-- MCQs -->
+
+<section class="section">
+
+    <h2>🎯 बहुविकल्पीय प्रश्न – 15 MCQs</h2>
+
+
+    <div class="mcq">
+
+        <p>1. सबसे छोटी अभाज्य संख्या कौन-सी है?</p>
+
+        <ul>
+            <li>A) 0</li>
+            <li>B) 1</li>
+            <li>C) 2</li>
+            <li>D) 3</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>2. निम्न में से कौन-सी अभाज्य संख्या है?</p>
+
+        <ul>
+            <li>A) 9</li>
+            <li>B) 15</li>
+            <li>C) 17</li>
+            <li>D) 21</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>3. एक अभाज्य संख्या के कितने गुणनखंड होते हैं?</p>
+
+        <ul>
+            <li>A) 1</li>
+            <li>B) 2</li>
+            <li>C) 3</li>
+            <li>D) 4</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>4. एकमात्र सम अभाज्य संख्या कौन-सी है?</p>
+
+        <ul>
+            <li>A) 1</li>
+            <li>B) 2</li>
+            <li>C) 4</li>
+            <li>D) 6</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>5. निम्न में से कौन-सी भाज्य संख्या है?</p>
+
+        <ul>
+            <li>A) 2</li>
+            <li>B) 3</li>
+            <li>C) 5</li>
+            <li>D) 9</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>6. 12 का गुणनखंड कौन-सा है?</p>
+
+        <ul>
+            <li>A) 5</li>
+            <li>B) 7</li>
+            <li>C) 4</li>
+            <li>D) 11</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>7. 6 का गुणज कौन-सा है?</p>
+
+        <ul>
+            <li>A) 14</li>
+            <li>B) 18</li>
+            <li>C) 25</li>
+            <li>D) 31</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>8. संख्या 1 है:</p>
+
+        <ul>
+            <li>A) अभाज्य</li>
+            <li>B) भाज्य</li>
+            <li>C) न अभाज्य न भाज्य</li>
+            <li>D) सम अभाज्य</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>9. कौन-सी संख्या 5 से विभाज्य है?</p>
+
+        <ul>
+            <li>A) 42</li>
+            <li>B) 53</li>
+            <li>C) 65</li>
+            <li>D) 72</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>10. कौन-सी संख्या 10 से विभाज्य है?</p>
+
+        <ul>
+            <li>A) 25</li>
+            <li>B) 40</li>
+            <li>C) 45</li>
+            <li>D) 55</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>11. 24 का अभाज्य गुणनखंडन है:</p>
+
+        <ul>
+            <li>A) 2 × 2 × 2 × 3</li>
+            <li>B) 2 × 3 × 5</li>
+            <li>C) 4 × 6</li>
+            <li>D) 8 × 4</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>12. 12 और 18 का उभयनिष्ठ गुणनखंड कौन-सा है?</p>
+
+        <ul>
+            <li>A) 5</li>
+            <li>B) 6</li>
+            <li>C) 7</li>
+            <li>D) 11</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>13. 3 और 4 का सबसे छोटा उभयनिष्ठ गुणज कौन-सा है?</p>
+
+        <ul>
+            <li>A) 7</li>
+            <li>B) 8</li>
+            <li>C) 12</li>
+            <li>D) 16</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>14. 123, 3 से विभाज्य है क्योंकि:</p>
+
+        <ul>
+            <li>A) अंतिम अंक 3 है</li>
+            <li>B) अंकों का योग 6 है</li>
+            <li>C) अंतिम अंक 0 है</li>
+            <li>D) यह सम संख्या है</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>15. निम्न में से कौन-सी संख्या अभाज्य नहीं है?</p>
+
+        <ul>
+            <li>A) 11</li>
+            <li>B) 13</li>
+            <li>C) 19</li>
+            <li>D) 21</li>
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- Answer Key -->
+
+<section class="section">
+
+    <h2>✅ MCQ उत्तरमाला</h2>
+
+    <div class="answer">
+
+        <p><strong>1.</strong> C) 2</p>
+
+        <p><strong>2.</strong> C) 17</p>
+
+        <p><strong>3.</strong> B) 2</p>
+
+        <p><strong>4.</strong> B) 2</p>
+
+        <p><strong>5.</strong> D) 9</p>
+
+        <p><strong>6.</strong> C) 4</p>
+
+        <p><strong>7.</strong> B) 18</p>
+
+        <p><strong>8.</strong> C) न अभाज्य न भाज्य</p>
+
+        <p><strong>9.</strong> C) 65</p>
+
+        <p><strong>10.</strong> B) 40</p>
+
+        <p><strong>11.</strong> A) 2 × 2 × 2 × 3</p>
+
+        <p><strong>12.</strong> B) 6</p>
+
+        <p><strong>13.</strong> C) 12</p>
+
+        <p><strong>14.</strong> B) अंकों का योग 6 है</p>
+
+        <p><strong>15.</strong> D) 21</p>
+
+    </div>
+
+</section>
+
+
+<!-- Resources -->
+
+<section class="section">
+
+    <h2>📚 अध्याय संसाधन</h2>
+
+    <div class="resource-grid">
+
+        <div class="resource-card">
+
+            <h3>📖 नोट्स</h3>
+
+            <p>अध्याय के विस्तृत नोट्स।</p>
+
+            <a href="#" class="btn btn-secondary">
+                जल्द उपलब्ध होगा
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <h3>📝 प्रश्न बैंक</h3>
+
+            <p>अतिरिक्त अभ्यास प्रश्न।</p>
+
+            <a href="#" class="btn btn-secondary">
+                जल्द उपलब्ध होगा
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <h3>📄 PDF</h3>
+
+            <p>अध्याय की PDF।</p>
+
+            <a href="#" class="btn btn-secondary">
+                जल्द उपलब्ध होगा
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Test -->
+
+<section class="section" style="text-align:center;">
+
+    <h2>🎯 अपनी तैयारी जाँचें</h2>
+
+    <p>
+        अध्याय 5 की तैयारी पूरी करने के बाद Model Test देकर
+        अपनी तैयारी जाँचें।
+    </p>
+
+    <a href="../../../tests.html" class="btn btn-primary">
+        Model Test दें →
+    </a>
+
+</section>
+
+
+<!-- Navigation -->
+
+<div class="navigation">
+
+    <a href="class-6-maths-chapter-4.html"
+       class="btn btn-secondary">
+
+        ← अध्याय 4
+
+    </a>
+
+
+    <a href="class-6-mathematics.html"
+       class="btn btn-primary">
+
+        सभी अध्याय
+
+    </a>
+
+
+    <a href="class-6-maths-chapter-6.html"
+       class="btn btn-primary">
+
+        अध्याय 6 →
+
+    </a>
+
+</div>
+
+
+</div>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <h3>UEduTech</h3>
+
+    <p>
+        सीखें • अभ्यास करें • सफलता प्राप्त करें
+    </p>
+
+    <p>
+        © 2026 UEduTech. सर्वाधिकार सुरक्षित।
+    </p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+    document.getElementById("navMenu")
+        .classList.toggle("active");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+```

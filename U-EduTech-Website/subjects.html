@@ -1,0 +1,2110 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="U EduTech Subjects - NMMS MAT, Maths, Science और Social Science की topic-wise preparation"
+    >
+
+    <title>Subjects | U EduTech</title>
+
+
+    <style>
+
+        /* =====================================
+           ROOT
+        ====================================== */
+
+        :root {
+
+            --primary: #5b21b6;
+            --primary-light: #7c3aed;
+
+            --accent: #f59e0b;
+
+            --dark: #111827;
+            --text: #334155;
+            --muted: #64748b;
+
+            --light: #f8fafc;
+            --white: #ffffff;
+
+            --border: #e5e7eb;
+
+            --green: #16a34a;
+
+            --shadow:
+                0 15px 45px
+                rgba(15, 23, 42, 0.10);
+
+            --radius: 20px;
+        }
+
+
+        /* =====================================
+           RESET
+        ====================================== */
+
+        * {
+
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            color: var(--dark);
+
+            background: #ffffff;
+
+            line-height: 1.6;
+        }
+
+
+        a {
+
+            text-decoration: none;
+
+            color: inherit;
+        }
+
+
+        .container {
+
+            width: min(1150px, 92%);
+
+            margin: auto;
+        }
+
+
+        /* =====================================
+           HEADER
+        ====================================== */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.96
+                );
+
+            backdrop-filter: blur(12px);
+
+            border-bottom:
+                1px solid
+                var(--border);
+        }
+
+
+        .nav {
+
+            height: 72px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-weight: 900;
+
+            font-size: 1.25rem;
+        }
+
+
+        .logo {
+
+            width: 44px;
+
+            height: 44px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 13px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-light)
+                );
+
+            color: white;
+
+            font-weight: 900;
+
+            font-size: 1.3rem;
+
+            box-shadow:
+                0 8px 20px
+                rgba(
+                    91,
+                    33,
+                    182,
+                    0.22
+                );
+        }
+
+
+        .brand-text small {
+
+            display: block;
+
+            color: var(--muted);
+
+            font-size: 0.62rem;
+
+            font-weight: 600;
+
+            letter-spacing: 0.4px;
+        }
+
+
+        .navlinks {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+            font-size: 0.92rem;
+
+            font-weight: 700;
+        }
+
+
+        .navlinks a:hover {
+
+            color: var(--primary);
+        }
+
+
+        .menu {
+
+            display: none;
+
+            border: 0;
+
+            background: transparent;
+
+            font-size: 1.7rem;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================
+           BUTTON
+        ====================================== */
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 13px 20px;
+
+            border-radius: 13px;
+
+            font-weight: 800;
+
+            border:
+                1px solid
+                transparent;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+
+        .btn-primary {
+
+            background:
+                var(--primary);
+
+            color: white;
+
+            box-shadow:
+                0 8px 20px
+                rgba(
+                    91,
+                    33,
+                    182,
+                    0.22
+                );
+        }
+
+
+        .btn-primary:hover {
+
+            background: #4c1d95;
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        .btn-outline {
+
+            background: white;
+
+            border-color:
+                #d8dce5;
+        }
+
+
+        .btn-outline:hover {
+
+            border-color:
+                var(--primary);
+
+            color:
+                var(--primary);
+        }
+
+
+        /* =====================================
+           PAGE HERO
+        ====================================== */
+
+        .page-hero {
+
+            padding:
+                75px
+                0
+                65px;
+
+            text-align: center;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 0%,
+                    #ede9fe 0,
+                    transparent 38%
+                ),
+
+                linear-gradient(
+                    180deg,
+                    #faf7ff 0%,
+                    #ffffff 100%
+                );
+        }
+
+
+        .badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            background:
+                #ede9fe;
+
+            color:
+                #5b21b6;
+
+            border:
+                1px solid
+                #ddd6fe;
+
+            padding:
+                7px
+                13px;
+
+            border-radius:
+                999px;
+
+            font-weight:
+                800;
+
+            font-size:
+                0.78rem;
+
+            margin-bottom:
+                18px;
+        }
+
+
+        .page-hero h1 {
+
+            font-size:
+                clamp(
+                    2.2rem,
+                    5vw,
+                    3.7rem
+                );
+
+            line-height:
+                1.1;
+
+            letter-spacing:
+                -1.5px;
+
+            margin-bottom:
+                15px;
+        }
+
+
+        .gradient {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    #db2777
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color:
+                transparent;
+        }
+
+
+        .page-hero p {
+
+            max-width:
+                700px;
+
+            margin:
+                auto;
+
+            color:
+                var(--muted);
+
+            font-size:
+                1.05rem;
+        }
+
+
+        /* =====================================
+           SUBJECT SECTION
+        ====================================== */
+
+        .section {
+
+            padding:
+                75px
+                0;
+        }
+
+
+        .section.alt {
+
+            background:
+                #f8fafc;
+        }
+
+
+        .section-heading {
+
+            text-align:
+                center;
+
+            margin-bottom:
+                38px;
+        }
+
+
+        .eyebrow {
+
+            color:
+                var(--primary);
+
+            font-weight:
+                900;
+
+            font-size:
+                0.8rem;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                1px;
+        }
+
+
+        .section-heading h2 {
+
+            font-size:
+                clamp(
+                    1.8rem,
+                    4vw,
+                    2.7rem
+                );
+
+            margin:
+                8px
+                0
+                10px;
+        }
+
+
+        .section-heading p {
+
+            color:
+                var(--muted);
+
+            max-width:
+                650px;
+
+            margin:
+                auto;
+        }
+
+
+        /* =====================================
+           MAIN SUBJECT CARDS
+        ====================================== */
+
+        .subject-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    1fr
+                );
+
+            gap:
+                22px;
+        }
+
+
+        .subject-card {
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            background:
+                white;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                24px;
+
+            padding:
+                28px;
+
+            transition:
+                0.25s ease;
+        }
+
+
+        .subject-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                var(--shadow);
+
+            border-color:
+                #ddd6fe;
+        }
+
+
+        .subject-card::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                130px;
+
+            height:
+                130px;
+
+            right:
+                -45px;
+
+            top:
+                -45px;
+
+            border-radius:
+                50%;
+
+            background:
+                #f3e8ff;
+
+            z-index:
+                0;
+        }
+
+
+        .subject-top {
+
+            position:
+                relative;
+
+            z-index:
+                1;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                17px;
+
+            margin-bottom:
+                18px;
+        }
+
+
+        .subject-icon {
+
+            width:
+                58px;
+
+            height:
+                58px;
+
+            flex:
+                0 0 58px;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            border-radius:
+                17px;
+
+            background:
+                #f3e8ff;
+
+            font-size:
+                1.65rem;
+        }
+
+
+        .subject-card h3 {
+
+            font-size:
+                1.35rem;
+
+            margin-bottom:
+                3px;
+        }
+
+
+        .subject-card .subtitle {
+
+            color:
+                var(--primary);
+
+            font-size:
+                0.78rem;
+
+            font-weight:
+                800;
+        }
+
+
+        .subject-card > p {
+
+            position:
+                relative;
+
+            z-index:
+                1;
+
+            color:
+                var(--muted);
+
+            font-size:
+                0.92rem;
+
+            margin-bottom:
+                20px;
+        }
+
+
+        /* =====================================
+           TOPICS
+        ====================================== */
+
+        .topics {
+
+            position:
+                relative;
+
+            z-index:
+                1;
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                8px;
+
+            margin-bottom:
+                20px;
+        }
+
+
+        .topic {
+
+            padding:
+                6px
+                10px;
+
+            border-radius:
+                8px;
+
+            background:
+                #f8fafc;
+
+            border:
+                1px solid
+                var(--border);
+
+            color:
+                #475569;
+
+            font-size:
+                0.76rem;
+
+            font-weight:
+                700;
+        }
+
+
+        .topic:hover {
+
+            border-color:
+                #c4b5fd;
+
+            color:
+                var(--primary);
+        }
+
+
+        .subject-actions {
+
+            position:
+                relative;
+
+            z-index:
+                1;
+
+            display:
+                flex;
+
+            gap:
+                10px;
+
+            flex-wrap:
+                wrap;
+        }
+
+
+        /* =====================================
+           QUICK PRACTICE
+        ====================================== */
+
+        .quick-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    4,
+                    1fr
+                );
+
+            gap:
+                17px;
+        }
+
+
+        .quick-card {
+
+            background:
+                white;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                18px;
+
+            padding:
+                21px;
+
+            transition:
+                0.2s ease;
+        }
+
+
+        .quick-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .quick-icon {
+
+            font-size:
+                1.5rem;
+
+            margin-bottom:
+                10px;
+        }
+
+
+        .quick-card h3 {
+
+            font-size:
+                1rem;
+
+            margin-bottom:
+                5px;
+        }
+
+
+        .quick-card p {
+
+            color:
+                var(--muted);
+
+            font-size:
+                0.82rem;
+
+            margin-bottom:
+                13px;
+        }
+
+
+        .quick-card a {
+
+            color:
+                var(--primary);
+
+            font-size:
+                0.8rem;
+
+            font-weight:
+                800;
+        }
+
+
+        /* =====================================
+           CTA
+        ====================================== */
+
+        .cta {
+
+            padding:
+                55px
+                0;
+        }
+
+
+        .cta-box {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #4c1d95,
+                    #7c3aed
+                );
+
+            color:
+                white;
+
+            border-radius:
+                28px;
+
+            padding:
+                42px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                25px;
+        }
+
+
+        .cta-box h2 {
+
+            font-size:
+                clamp(
+                    1.5rem,
+                    4vw,
+                    2.2rem
+                );
+        }
+
+
+        .cta-box p {
+
+            opacity:
+                0.88;
+
+            margin-top:
+                7px;
+        }
+
+
+        .cta-box .btn {
+
+            background:
+                white;
+
+            color:
+                #4c1d95;
+
+            flex-shrink:
+                0;
+        }
+
+
+        /* =====================================
+           FOOTER
+        ====================================== */
+
+        footer {
+
+            background:
+                #0f172a;
+
+            color:
+                #cbd5e1;
+
+            padding:
+                45px
+                0
+                25px;
+        }
+
+
+        .footer-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1.4fr
+                1fr
+                1fr;
+
+            gap:
+                35px;
+        }
+
+
+        .footer-brand {
+
+            color:
+                white;
+
+            font-size:
+                1.2rem;
+
+            font-weight:
+                900;
+
+            margin-bottom:
+                10px;
+        }
+
+
+        .footer p {
+
+            font-size:
+                0.87rem;
+
+            color:
+                #94a3b8;
+        }
+
+
+        .footer h4 {
+
+            color:
+                white;
+
+            margin-bottom:
+                10px;
+        }
+
+
+        .footer a {
+
+            display:
+                block;
+
+            font-size:
+                0.87rem;
+
+            margin:
+                6px
+                0;
+        }
+
+
+        .footer a:hover {
+
+            color:
+                white;
+        }
+
+
+        .copyright {
+
+            border-top:
+                1px solid
+                #263244;
+
+            margin-top:
+                30px;
+
+            padding-top:
+                18px;
+
+            font-size:
+                0.78rem;
+
+            color:
+                #64748b;
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+        }
+
+
+        /* =====================================
+           TABLET
+        ====================================== */
+
+        @media (max-width: 900px) {
+
+            .subject-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .quick-grid {
+
+                grid-template-columns:
+                    repeat(
+                        2,
+                        1fr
+                    );
+            }
+
+
+            .navlinks {
+
+                display:
+                    none;
+
+                position:
+                    absolute;
+
+                left:
+                    4%;
+
+                right:
+                    4%;
+
+                top:
+                    68px;
+
+                background:
+                    white;
+
+                border:
+                    1px solid
+                    var(--border);
+
+                border-radius:
+                    16px;
+
+                padding:
+                    15px;
+
+                box-shadow:
+                    var(--shadow);
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    stretch;
+            }
+
+
+            .navlinks.open {
+
+                display:
+                    flex;
+            }
+
+
+            .menu {
+
+                display:
+                    block;
+            }
+        }
+
+
+        /* =====================================
+           MOBILE
+        ====================================== */
+
+        @media (max-width: 600px) {
+
+            .nav {
+
+                height:
+                    64px;
+            }
+
+
+            .page-hero {
+
+                padding:
+                    55px
+                    0
+                    50px;
+            }
+
+
+            .section {
+
+                padding:
+                    55px
+                    0;
+            }
+
+
+            .subject-card {
+
+                padding:
+                    22px;
+            }
+
+
+            .quick-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .subject-actions {
+
+                flex-direction:
+                    column;
+            }
+
+
+            .subject-actions .btn {
+
+                width:
+                    100%;
+            }
+
+
+            .cta-box {
+
+                display:
+                    block;
+
+                padding:
+                    30px
+                    23px;
+            }
+
+
+            .cta-box .btn {
+
+                width:
+                    100%;
+
+                margin-top:
+                    18px;
+            }
+
+
+            .footer-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+
+            .copyright {
+
+                display:
+                    block;
+            }
+
+
+            .copyright span {
+
+                display:
+                    block;
+
+                margin-top:
+                    7px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     HEADER
+====================================== -->
+
+<header>
+
+    <div class="container nav">
+
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+
+            <div class="logo">
+                U
+            </div>
+
+
+            <div class="brand-text">
+
+                U EduTech
+
+                <small>
+                    The Power of “U” in Learning
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <button
+            class="menu"
+            id="menu"
+            aria-label="Open Menu"
+        >
+            ☰
+        </button>
+
+
+        <nav
+            class="navlinks"
+            id="navlinks"
+        >
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="subjects.html">
+                Subjects
+            </a>
+
+            <a href="tests.html">
+                Model Tests
+            </a>
+
+            <a href="study-material.html">
+                Study Material
+            </a>
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+            <a
+                href="tests.html"
+                class="btn btn-primary"
+            >
+                Start Test
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================
+     PAGE HERO
+====================================== -->
+
+<section class="page-hero">
+
+    <div class="container">
+
+
+        <div class="badge">
+            📚 U EduTech Learning
+        </div>
+
+
+        <h1>
+
+            अपने Subject को
+
+            <br>
+
+            <span class="gradient">
+                Smart तरीके से पढ़ें
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            NMMS 2026–27 की तैयारी के लिए
+            MAT, Maths, Science और Social Science
+            को topic-wise सीखें, practice करें और
+            अपने concepts मजबूत करें।
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     MAIN SUBJECTS
+====================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Subjects
+            </div>
+
+            <h2>
+                NMMS के मुख्य विषय
+            </h2>
+
+            <p>
+                अपनी आवश्यकता के अनुसार subject
+                चुनें और topic-wise preparation शुरू करें।
+            </p>
+
+        </div>
+
+
+        <div class="subject-grid">
+
+
+            <!-- MAT REASONING -->
+
+            <div class="subject-card">
+
+
+                <div class="subject-top">
+
+                    <div class="subject-icon">
+                        🧠
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            MAT Reasoning
+                        </h3>
+
+                        <div class="subtitle">
+                            Mental Ability Test
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+
+                    NMMS MAT के लिए reasoning
+                    के महत्वपूर्ण topics और
+                    exam-oriented practice questions।
+
+                </p>
+
+
+                <div class="topics">
+
+                    <span class="topic">
+                        Series
+                    </span>
+
+                    <span class="topic">
+                        Analogy
+                    </span>
+
+                    <span class="topic">
+                        Classification
+                    </span>
+
+                    <span class="topic">
+                        Coding-Decoding
+                    </span>
+
+                    <span class="topic">
+                        Direction
+                    </span>
+
+                    <span class="topic">
+                        Blood Relation
+                    </span>
+
+                    <span class="topic">
+                        Venn Diagram
+                    </span>
+
+                    <span class="topic">
+                        Figure Reasoning
+                    </span>
+
+                </div>
+
+
+                <div class="subject-actions">
+
+                    <a
+                        href="tests.html"
+                        class="btn btn-primary"
+                    >
+                        Practice MAT →
+                    </a>
+
+                    <a
+                        href="#mat-topics"
+                        class="btn btn-outline"
+                    >
+                        View Topics
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- MATHS -->
+
+            <div class="subject-card">
+
+
+                <div class="subject-top">
+
+                    <div class="subject-icon">
+                        📐
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Mathematics
+                        </h3>
+
+                        <div class="subtitle">
+                            Maths • गणित
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+
+                    Class 7–8 level mathematics के
+                    महत्वपूर्ण concepts, MCQs और
+                    exam-oriented practice।
+
+                </p>
+
+
+                <div class="topics">
+
+                    <span class="topic">
+                        Number System
+                    </span>
+
+                    <span class="topic">
+                        Fractions
+                    </span>
+
+                    <span class="topic">
+                        Percentage
+                    </span>
+
+                    <span class="topic">
+                        Ratio
+                    </span>
+
+                    <span class="topic">
+                        Algebra
+                    </span>
+
+                    <span class="topic">
+                        Geometry
+                    </span>
+
+                    <span class="topic">
+                        Mensuration
+                    </span>
+
+                    <span class="topic">
+                        Data Handling
+                    </span>
+
+                </div>
+
+
+                <div class="subject-actions">
+
+                    <a
+                        href="tests.html"
+                        class="btn btn-primary"
+                    >
+                        Practice Maths →
+                    </a>
+
+                    <a
+                        href="#maths-topics"
+                        class="btn btn-outline"
+                    >
+                        View Topics
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCIENCE -->
+
+            <div class="subject-card">
+
+
+                <div class="subject-top">
+
+                    <div class="subject-icon">
+                        🔬
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Science
+                        </h3>
+
+                        <div class="subtitle">
+                            Science • विज्ञान
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+
+                    Class 7–8 Science के महत्वपूर्ण
+                    concepts और NMMS SAT के लिए
+                    selected MCQs की practice।
+
+                </p>
+
+
+                <div class="topics">
+
+                    <span class="topic">
+                        Physics
+                    </span>
+
+                    <span class="topic">
+                        Chemistry
+                    </span>
+
+                    <span class="topic">
+                        Biology
+                    </span>
+
+                    <span class="topic">
+                        Motion
+                    </span>
+
+                    <span class="topic">
+                        Light
+                    </span>
+
+                    <span class="topic">
+                        Electricity
+                    </span>
+
+                    <span class="topic">
+                        Materials
+                    </span>
+
+                    <span class="topic">
+                        Human Body
+                    </span>
+
+                </div>
+
+
+                <div class="subject-actions">
+
+                    <a
+                        href="tests.html"
+                        class="btn btn-primary"
+                    >
+                        Practice Science →
+                    </a>
+
+                    <a
+                        href="#science-topics"
+                        class="btn btn-outline"
+                    >
+                        View Topics
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SOCIAL SCIENCE -->
+
+            <div class="subject-card">
+
+
+                <div class="subject-top">
+
+                    <div class="subject-icon">
+                        🌍
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Social Science
+                        </h3>
+
+                        <div class="subtitle">
+                            SST • सामाजिक विज्ञान
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+
+                    History, Geography, Civics और
+                    Economics के important topics
+                    और exam-focused questions।
+
+                </p>
+
+
+                <div class="topics">
+
+                    <span class="topic">
+                        History
+                    </span>
+
+                    <span class="topic">
+                        Geography
+                    </span>
+
+                    <span class="topic">
+                        Civics
+                    </span>
+
+                    <span class="topic">
+                        Economics
+                    </span>
+
+                    <span class="topic">
+                        Resources
+                    </span>
+
+                    <span class="topic">
+                        Government
+                    </span>
+
+                    <span class="topic">
+                        Indian History
+                    </span>
+
+                    <span class="topic">
+                        Maps
+                    </span>
+
+                </div>
+
+
+                <div class="subject-actions">
+
+                    <a
+                        href="tests.html"
+                        class="btn btn-primary"
+                    >
+                        Practice SST →
+                    </a>
+
+                    <a
+                        href="#sst-topics"
+                        class="btn btn-outline"
+                    >
+                        View Topics
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     QUICK PRACTICE
+====================================== -->
+
+<section class="section alt">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Quick Practice
+            </div>
+
+            <h2>
+                Topic-wise तैयारी
+            </h2>
+
+            <p>
+                छोटे question sets के साथ
+                किसी भी topic की practice शुरू करें।
+            </p>
+
+        </div>
+
+
+        <div class="quick-grid">
+
+
+            <div
+                class="quick-card"
+                id="mat-topics"
+            >
+
+                <div class="quick-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Reasoning Practice
+                </h3>
+
+                <p>
+                    Series, Coding, Analogy और
+                    Classification.
+                </p>
+
+                <a href="tests.html">
+                    Start Practice →
+                </a>
+
+            </div>
+
+
+            <div
+                class="quick-card"
+                id="maths-topics"
+            >
+
+                <div class="quick-icon">
+                    📐
+                </div>
+
+                <h3>
+                    Maths Practice
+                </h3>
+
+                <p>
+                    Number System, Algebra,
+                    Geometry और Mensuration.
+                </p>
+
+                <a href="tests.html">
+                    Start Practice →
+                </a>
+
+            </div>
+
+
+            <div
+                class="quick-card"
+                id="science-topics"
+            >
+
+                <div class="quick-icon">
+                    🔬
+                </div>
+
+                <h3>
+                    Science Practice
+                </h3>
+
+                <p>
+                    Physics, Chemistry और
+                    Biology के MCQs.
+                </p>
+
+                <a href="tests.html">
+                    Start Practice →
+                </a>
+
+            </div>
+
+
+            <div
+                class="quick-card"
+                id="sst-topics"
+            >
+
+                <div class="quick-icon">
+                    🌍
+                </div>
+
+                <h3>
+                    SST Practice
+                </h3>
+
+                <p>
+                    History, Geography, Civics
+                    और Economics.
+                </p>
+
+                <a href="tests.html">
+                    Start Practice →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     CTA
+====================================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+
+        <div class="cta-box">
+
+            <div>
+
+                <h2>
+                    अब Practice शुरू करें 🚀
+                </h2>
+
+                <p>
+                    Free Model Tests attempt करें
+                    और अपनी preparation check करें।
+                </p>
+
+            </div>
+
+
+            <a
+                href="tests.html"
+                class="btn"
+            >
+                Start Free Test →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     FOOTER
+====================================== -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+
+        <div>
+
+            <div class="footer-brand">
+                U EduTech
+            </div>
+
+            <p>
+                The Power of “U” in Learning
+            </p>
+
+            <p style="margin-top:10px">
+                NMMS • Reasoning • Maths • Science
+                • Study Material
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Quick Links
+            </h4>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="subjects.html">
+                Subjects
+            </a>
+
+            <a href="tests.html">
+                Model Tests
+            </a>
+
+            <a href="study-material.html">
+                Study Material
+            </a>
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Connect
+            </h4>
+
+            <a
+                href="https://www.youtube.com/@uedutech99"
+                target="_blank"
+                rel="noopener"
+            >
+                ▶ YouTube
+            </a>
+
+            <a href="mailto:uedutech99@gmail.com">
+                ✉ Contact
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="container copyright">
+
+        <span>
+            © 2026 U EduTech. All rights reserved.
+        </span>
+
+        <span>
+            Built for students ❤️
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================
+     JAVASCRIPT
+====================================== -->
+
+<script>
+
+    const menu =
+        document.getElementById("menu");
+
+    const nav =
+        document.getElementById("navlinks");
+
+
+    menu.addEventListener(
+        "click",
+        function () {
+
+            nav.classList.toggle("open");
+
+        }
+    );
+
+
+    document
+        .querySelectorAll(".navlinks a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    nav.classList.remove("open");
+
+                }
+            );
+
+        });
+
+</script>
+
+
+</body>
+
+</html>
+

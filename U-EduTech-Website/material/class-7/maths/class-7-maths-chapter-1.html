@@ -1,0 +1,1754 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Class 7 Mathematics Chapter 1 – Large Numbers Around Us | UEduTech</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+header{
+    background:linear-gradient(135deg,#123c69,#1e88e5);
+    color:white;
+    padding:18px 5%;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#ffd54f;
+}
+
+nav{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#ffd54f;
+}
+
+.language-box{
+    display:flex;
+    gap:8px;
+}
+
+.lang-btn{
+    border:2px solid white;
+    background:transparent;
+    color:white;
+    padding:7px 14px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.lang-btn.active{
+    background:white;
+    color:#123c69;
+}
+
+.hero{
+    max-width:1200px;
+    margin:30px auto 20px;
+    padding:40px 25px;
+    background:linear-gradient(135deg,#ffffff,#eaf3ff);
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.badge{
+    display:inline-block;
+    background:#e3f2fd;
+    color:#1565c0;
+    padding:7px 16px;
+    border-radius:20px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.hero h1{
+    font-size:38px;
+    color:#123c69;
+    margin-bottom:8px;
+}
+
+.hero p{
+    font-size:18px;
+    color:#4b5563;
+}
+
+.container{
+    max-width:1100px;
+    margin:25px auto;
+    padding:0 18px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:22px;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+}
+
+.card h2{
+    color:#1565c0;
+    margin-bottom:15px;
+    border-left:5px solid #1565c0;
+    padding-left:12px;
+}
+
+.card h3{
+    color:#123c69;
+    margin:18px 0 8px;
+}
+
+.example{
+    background:#fff8e1;
+    border-left:5px solid #ffb300;
+    padding:15px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.formula{
+    background:#e8f5e9;
+    border-left:5px solid #43a047;
+    padding:15px;
+    border-radius:10px;
+    margin:15px 0;
+    font-weight:bold;
+    overflow-x:auto;
+}
+
+.note{
+    background:#fce4ec;
+    border-left:5px solid #e91e63;
+    padding:15px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.question{
+    background:#f8fafc;
+    border:1px solid #e5e7eb;
+    padding:14px 16px;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+.mcq{
+    background:#eef6ff;
+    border:1px solid #cfe3ff;
+    padding:15px;
+    border-radius:10px;
+    margin:12px 0;
+}
+
+.answer{
+    color:#166534;
+    font-weight:bold;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin:15px 0;
+}
+
+th,td{
+    border:1px solid #d1d5db;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#e3f2fd;
+    color:#123c69;
+}
+
+.chapter-nav{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:30px 0;
+}
+
+.chapter-nav a{
+    text-decoration:none;
+    background:#1565c0;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.chapter-nav a:hover{
+    background:#0d47a1;
+}
+
+.quick-list{
+    padding-left:25px;
+}
+
+.quick-list li{
+    margin:7px 0;
+}
+
+footer{
+    background:#123c69;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:40px;
+}
+
+footer strong{
+    color:#ffd54f;
+}
+
+.lang-en{
+    display:none;
+}
+
+body.english .lang-hi{
+    display:none;
+}
+
+body.english .lang-en{
+    display:inline;
+}
+
+.block-en{
+    display:none;
+}
+
+.block-hi{
+    display:block;
+}
+
+body.english .block-hi{
+    display:none;
+}
+
+body.english .block-en{
+    display:block;
+}
+
+@media(max-width:700px){
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .nav{
+        justify-content:center;
+    }
+
+    .logo{
+        width:100%;
+        text-align:center;
+    }
+
+    nav{
+        justify-content:center;
+        gap:12px;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .language-box{
+        width:100%;
+        justify-content:center;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .chapter-nav a{
+        width:100%;
+        text-align:center;
+    }
+
+    table{
+        font-size:14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+    <div class="logo">
+        U<span>EduTech</span>
+    </div>
+
+    <nav>
+
+        <a href="../../../index.html">
+            <span class="lang-hi">होम</span>
+            <span class="lang-en">Home</span>
+        </a>
+
+        <a href="../../../subjects.html">
+            <span class="lang-hi">विषय</span>
+            <span class="lang-en">Subjects</span>
+        </a>
+
+        <a href="../../../tests.html">
+            <span class="lang-hi">मॉडल टेस्ट</span>
+            <span class="lang-en">Model Tests</span>
+        </a>
+
+        <a href="../../../study-material.html">
+            <span class="lang-hi">स्टडी मटेरियल</span>
+            <span class="lang-en">Study Material</span>
+        </a>
+
+    </nav>
+
+    <div class="language-box">
+
+        <button id="hiBtn"
+                class="lang-btn active"
+                onclick="setLanguage('hi')">
+            🇮🇳 हिंदी
+        </button>
+
+        <button id="enBtn"
+                class="lang-btn"
+                onclick="setLanguage('en')">
+            🇬🇧 English
+        </button>
+
+    </div>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="badge">
+        <span class="lang-hi">कक्षा 7 गणित • अध्याय 1</span>
+        <span class="lang-en">Class 7 Mathematics • Chapter 1</span>
+    </div>
+
+    <h1>
+
+        <span class="lang-hi">
+            🔢 हमारे आस-पास बड़ी संख्याएँ
+        </span>
+
+        <span class="lang-en">
+            🔢 Large Numbers Around Us
+        </span>
+
+    </h1>
+
+    <p>
+
+        <span class="lang-hi">
+            बड़ी संख्याओं को पढ़ना, लिखना, समझना और दैनिक जीवन में उपयोग करना
+        </span>
+
+        <span class="lang-en">
+            Reading, writing, understanding and using large numbers in daily life
+        </span>
+
+    </p>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- INTRODUCTION -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">📘 अध्याय परिचय</span>
+<span class="lang-en">📘 Chapter Introduction</span>
+</h2>
+
+<div class="block-hi">
+
+<p>
+हम अपने दैनिक जीवन में बहुत बड़ी संख्याओं का उपयोग करते हैं।
+भारत की जनसंख्या, किसी देश का बजट, किसी शहर में वाहनों की संख्या,
+किसी बड़ी कंपनी की आय, पृथ्वी से सूर्य की दूरी आदि को व्यक्त करने के
+लिए बड़ी संख्याओं की आवश्यकता होती है।
+</p>
+
+<p style="margin-top:10px;">
+इस अध्याय में हम बड़ी संख्याओं को पढ़ना और लिखना,
+स्थान-मूल्य समझना, संख्याओं की तुलना करना, आरोही-अवरोही क्रम,
+अनुमान तथा भारतीय और अंतरराष्ट्रीय संख्या पद्धतियों को समझेंगे।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+We use very large numbers in our daily lives. Population of a country,
+government budgets, number of vehicles in a city, income of a large
+company and distances in space are examples where large numbers are needed.
+</p>
+
+<p style="margin-top:10px;">
+In this chapter, we will learn how to read and write large numbers,
+understand place value, compare numbers, arrange them in ascending and
+descending order, estimate quantities and understand Indian and
+International number systems.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PLACE VALUE -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">🔢 स्थान-मूल्य और अंक-मूल्य</span>
+<span class="lang-en">🔢 Place Value and Face Value</span>
+</h2>
+
+<div class="block-hi">
+
+<h3>अंक-मूल्य</h3>
+
+<p>
+किसी संख्या में किसी अंक का अपना स्वयं का मान उसका अंक-मूल्य कहलाता है।
+</p>
+
+<div class="example">
+<strong>उदाहरण:</strong>
+संख्या 5,47,326 में अंक 7 का अंक-मूल्य = 7
+</div>
+
+<h3>स्थान-मूल्य</h3>
+
+<p>
+किसी अंक का संख्या में उसके स्थान के आधार पर प्राप्त मान
+उसका स्थान-मूल्य कहलाता है।
+</p>
+
+<div class="example">
+संख्या = 5,47,326<br><br>
+
+5 का स्थान-मूल्य = 5,00,000<br>
+4 का स्थान-मूल्य = 40,000<br>
+7 का स्थान-मूल्य = 7,000<br>
+3 का स्थान-मूल्य = 300<br>
+2 का स्थान-मूल्य = 20<br>
+6 का स्थान-मूल्य = 6
+</div>
+
+</div>
+
+
+<div class="block-en">
+
+<h3>Face Value</h3>
+
+<p>
+The face value of a digit is the digit itself.
+</p>
+
+<div class="example">
+<strong>Example:</strong>
+In 5,47,326, the face value of 7 is 7.
+</div>
+
+<h3>Place Value</h3>
+
+<p>
+The place value of a digit depends on its position in the number.
+</p>
+
+<div class="example">
+Number = 5,47,326<br><br>
+
+Place value of 5 = 5,00,000<br>
+Place value of 4 = 40,000<br>
+Place value of 7 = 7,000<br>
+Place value of 3 = 300<br>
+Place value of 2 = 20<br>
+Place value of 6 = 6
+</div>
+
+</div>
+
+</section>
+
+
+<!-- INDIAN SYSTEM -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">🇮🇳 भारतीय संख्या पद्धति</span>
+<span class="lang-en">🇮🇳 Indian Number System</span>
+</h2>
+
+<div class="block-hi">
+
+<p>
+भारतीय संख्या पद्धति में हजार के बाद लाख, करोड़ आदि का प्रयोग किया जाता है।
+</p>
+
+<table>
+
+<tr>
+<th>स्थान</th>
+<th>मान</th>
+<th>English</th>
+</tr>
+
+<tr>
+<td>इकाई</td>
+<td>1</td>
+<td>Ones</td>
+</tr>
+
+<tr>
+<td>दहाई</td>
+<td>10</td>
+<td>Tens</td>
+</tr>
+
+<tr>
+<td>सैकड़ा</td>
+<td>100</td>
+<td>Hundreds</td>
+</tr>
+
+<tr>
+<td>हजार</td>
+<td>1,000</td>
+<td>Thousand</td>
+</tr>
+
+<tr>
+<td>दस हजार</td>
+<td>10,000</td>
+<td>Ten Thousand</td>
+</tr>
+
+<tr>
+<td>लाख</td>
+<td>1,00,000</td>
+<td>Lakh</td>
+</tr>
+
+<tr>
+<td>दस लाख</td>
+<td>10,00,000</td>
+<td>Ten Lakh</td>
+</tr>
+
+<tr>
+<td>करोड़</td>
+<td>1,00,00,000</td>
+<td>Crore</td>
+</tr>
+
+<tr>
+<td>दस करोड़</td>
+<td>10,00,00,000</td>
+<td>Ten Crore</td>
+</tr>
+
+</table>
+
+<div class="example">
+<strong>उदाहरण:</strong><br>
+7,25,43,618 को पढ़ेंगे —
+<strong>सात करोड़ पच्चीस लाख तैंतालीस हजार छह सौ अठारह।</strong>
+</div>
+
+</div>
+
+
+<div class="block-en">
+
+<p>
+The Indian Number System uses thousand, lakh, crore and their multiples.
+</p>
+
+<table>
+
+<tr>
+<th>Place</th>
+<th>Value</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td>Ones</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Tens</td>
+<td>10</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>Hundreds</td>
+<td>100</td>
+<td>100</td>
+</tr>
+
+<tr>
+<td>Thousand</td>
+<td>1,000</td>
+<td>1 Thousand</td>
+</tr>
+
+<tr>
+<td>Ten Thousand</td>
+<td>10,000</td>
+<td>10 Thousand</td>
+</tr>
+
+<tr>
+<td>Lakh</td>
+<td>1,00,000</td>
+<td>1 Lakh</td>
+</tr>
+
+<tr>
+<td>Ten Lakh</td>
+<td>10,00,000</td>
+<td>10 Lakh</td>
+</tr>
+
+<tr>
+<td>Crore</td>
+<td>1,00,00,000</td>
+<td>1 Crore</td>
+</tr>
+
+<tr>
+<td>Ten Crore</td>
+<td>10,00,00,000</td>
+<td>10 Crore</td>
+</tr>
+
+</table>
+
+<div class="example">
+<strong>Example:</strong><br>
+7,25,43,618 is read as
+<strong>Seven crore twenty-five lakh forty-three thousand six hundred eighteen.</strong>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- INTERNATIONAL SYSTEM -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">🌎 अंतरराष्ट्रीय संख्या पद्धति</span>
+<span class="lang-en">🌎 International Number System</span>
+</h2>
+
+<div class="block-hi">
+
+<p>
+अंतरराष्ट्रीय संख्या पद्धति में हजार के बाद Million, Billion,
+Trillion आदि का प्रयोग किया जाता है।
+</p>
+
+<table>
+
+<tr>
+<th>नाम</th>
+<th>मान</th>
+</tr>
+
+<tr>
+<td>Thousand</td>
+<td>1,000</td>
+</tr>
+
+<tr>
+<td>Million</td>
+<td>1,000,000</td>
+</tr>
+
+<tr>
+<td>Billion</td>
+<td>1,000,000,000</td>
+</tr>
+
+<tr>
+<td>Trillion</td>
+<td>1,000,000,000,000</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="block-en">
+
+<p>
+The International Number System uses Thousand, Million,
+Billion, Trillion and so on.
+</p>
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+
+<tr>
+<td>Thousand</td>
+<td>1,000</td>
+</tr>
+
+<tr>
+<td>Million</td>
+<td>1,000,000</td>
+</tr>
+
+<tr>
+<td>Billion</td>
+<td>1,000,000,000</td>
+</tr>
+
+<tr>
+<td>Trillion</td>
+<td>1,000,000,000,000</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- COMPARISON -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">⚖️ बड़ी संख्याओं की तुलना</span>
+<span class="lang-en">⚖️ Comparing Large Numbers</span>
+</h2>
+
+<div class="block-hi">
+
+<p>
+दो संख्याओं की तुलना करने के लिए पहले उनके अंकों की संख्या देखें।
+जिस संख्या में अधिक अंक होते हैं, वह सामान्यतः बड़ी होती है।
+</p>
+
+<div class="example">
+
+<strong>उदाहरण:</strong><br>
+
+45,678 और 4,56,789 में<br><br>
+
+45,678 में 5 अंक हैं।<br>
+4,56,789 में 6 अंक हैं।<br><br>
+
+अतः 4,56,789 > 45,678
+
+</div>
+
+<p>
+यदि दोनों संख्याओं में अंकों की संख्या समान हो,
+तो बाएँ से दाएँ अंकों की तुलना करें।
+</p>
+
+</div>
+
+
+<div class="block-en">
+
+<p>
+To compare two numbers, first compare the number of digits.
+The number having more digits is generally greater.
+</p>
+
+<div class="example">
+
+<strong>Example:</strong><br>
+
+45,678 and 4,56,789<br><br>
+
+45,678 has 5 digits.<br>
+4,56,789 has 6 digits.<br><br>
+
+Therefore, 4,56,789 > 45,678.
+
+</div>
+
+<p>
+If both numbers have the same number of digits,
+compare the digits from left to right.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ASCENDING DESCENDING -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">⬆️ आरोही और अवरोही क्रम</span>
+<span class="lang-en">⬆️ Ascending and Descending Order</span>
+</h2>
+
+<div class="block-hi">
+
+<h3>आरोही क्रम</h3>
+
+<p>
+छोटी संख्या से बड़ी संख्या की ओर लिखना आरोही क्रम कहलाता है।
+</p>
+
+<div class="example">
+2,345 &lt; 5,678 &lt; 12,450 &lt; 25,000
+</div>
+
+<h3>अवरोही क्रम</h3>
+
+<p>
+बड़ी संख्या से छोटी संख्या की ओर लिखना अवरोही क्रम कहलाता है।
+</p>
+
+<div class="example">
+25,000 &gt; 12,450 &gt; 5,678 &gt; 2,345
+</div>
+
+</div>
+
+
+<div class="block-en">
+
+<h3>Ascending Order</h3>
+
+<p>
+Arranging numbers from smallest to largest is called ascending order.
+</p>
+
+<div class="example">
+2,345 &lt; 5,678 &lt; 12,450 &lt; 25,000
+</div>
+
+<h3>Descending Order</h3>
+
+<p>
+Arranging numbers from largest to smallest is called descending order.
+</p>
+
+<div class="example">
+25,000 &gt; 12,450 &gt; 5,678 &gt; 2,345
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ESTIMATION -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">🎯 अनुमान और निकटतम मान</span>
+<span class="lang-en">🎯 Estimation and Approximation</span>
+</h2>
+
+<div class="block-hi">
+
+<p>
+कई बार हमें किसी संख्या का बिल्कुल सही मान जानने की आवश्यकता नहीं होती।
+ऐसी स्थिति में हम उसका निकटतम मान या अनुमान लगाते हैं।
+</p>
+
+<h3>निकटतम दस</h3>
+
+<div class="example">
+347 को निकटतम दस में = 350
+</div>
+
+<h3>निकटतम सैकड़ा</h3>
+
+<div class="example">
+3,462 को निकटतम सैकड़ा में = 3,500
+</div>
+
+<h3>निकटतम हजार</h3>
+
+<div class="example">
+27,430 को निकटतम हजार में = 27,000
+</div>
+
+<div class="note">
+यदि अगले अंक का मान 5 या उससे अधिक है तो पिछले अंक को 1 बढ़ाते हैं।
+यदि अगले अंक का मान 5 से कम है तो पिछला अंक वैसा ही रहता है।
+</div>
+
+</div>
+
+
+<div class="block-en">
+
+<p>
+Sometimes we do not need the exact value of a number.
+We can use an approximate or estimated value.
+</p>
+
+<h3>Nearest Ten</h3>
+
+<div class="example">
+347 rounded to nearest ten = 350
+</div>
+
+<h3>Nearest Hundred</h3>
+
+<div class="example">
+3,462 rounded to nearest hundred = 3,500
+</div>
+
+<h3>Nearest Thousand</h3>
+
+<div class="example">
+27,430 rounded to nearest thousand = 27,000
+</div>
+
+<div class="note">
+If the next digit is 5 or more, increase the previous digit by 1.
+If it is less than 5, keep the previous digit unchanged.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRACTICE -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">📝 अभ्यास प्रश्न – 50 प्रश्न</span>
+<span class="lang-en">📝 Practice Questions – 50 Questions</span>
+</h2>
+
+<div class="block-hi">
+
+<div class="question">1. 45,678 में कितने अंक हैं?</div>
+
+<div class="question">2. 7,25,436 को शब्दों में लिखिए।</div>
+
+<div class="question">3. “पाँच लाख बत्तीस हजार चार सौ दस” को अंकों में लिखिए।</div>
+
+<div class="question">4. 8,45,672 में 8 का स्थान-मूल्य लिखिए।</div>
+
+<div class="question">5. 8,45,672 में 5 का अंक-मूल्य क्या है?</div>
+
+<div class="question">6. 6,78,432 में 7 का स्थान-मूल्य ज्ञात कीजिए।</div>
+
+<div class="question">7. 3,45,678 में 4 का अंक-मूल्य और स्थान-मूल्य लिखिए।</div>
+
+<div class="question">8. 1 लाख में कितने हजार होते हैं?</div>
+
+<div class="question">9. 1 करोड़ में कितने लाख होते हैं?</div>
+
+<div class="question">10. 10 लाख को अंकों में लिखिए।</div>
+
+<div class="question">11. 5 करोड़ को अंकों में लिखिए।</div>
+
+<div class="question">12. 25,43,678 को विस्तारित रूप में लिखिए।</div>
+
+<div class="question">13. 4,00,000 + 30,000 + 5,000 + 600 + 20 + 8 को संक्षिप्त रूप में लिखिए।</div>
+
+<div class="question">14. 67,890 को शब्दों में लिखिए।</div>
+
+<div class="question">15. “सात करोड़ पंद्रह लाख” को अंकों में लिखिए।</div>
+
+<div class="question">16. 45,678 और 54,678 में बड़ी संख्या कौन-सी है?</div>
+
+<div class="question">17. 7,89,000 और 7,98,000 की तुलना कीजिए।</div>
+
+<div class="question">18. 9,99,999 और 10,00,000 में कौन बड़ी है?</div>
+
+<div class="question">19. 4,56,789 और 4,65,789 में बड़ी संख्या ज्ञात कीजिए।</div>
+
+<div class="question">20. 12,34,567 और 12,34,576 की तुलना कीजिए।</div>
+
+<div class="question">21. 2,345, 5,678, 1,234 को आरोही क्रम में लिखिए।</div>
+
+<div class="question">22. 45,000, 12,500, 78,900 को अवरोही क्रम में लिखिए।</div>
+
+<div class="question">23. 5,67,890, 5,76,890, 5,06,890 को आरोही क्रम में लिखिए।</div>
+
+<div class="question">24. 8,00,000, 7,99,999, 8,10,000 को अवरोही क्रम में लिखिए।</div>
+
+<div class="question">25. 3,47,825 को निकटतम हजार में पूर्णांकित कीजिए।</div>
+
+<div class="question">26. 45,678 को निकटतम हजार में पूर्णांकित कीजिए।</div>
+
+<div class="question">27. 8,245 को निकटतम सैकड़ा में पूर्णांकित कीजिए।</div>
+
+<div class="question">28. 3,746 को निकटतम दस में पूर्णांकित कीजिए।</div>
+
+<div class="question">29. 99,499 को निकटतम हजार में पूर्णांकित कीजिए।</div>
+
+<div class="question">30. 75,650 को निकटतम सैकड़ा में पूर्णांकित कीजिए।</div>
+
+<div class="question">31. 1 Million में कितने होते हैं?</div>
+
+<div class="question">32. 1 Billion में कितने होते हैं?</div>
+
+<div class="question">33. 1 Trillion को अंकों में लिखिए।</div>
+
+<div class="question">34. 5 Million को अंकों में लिखिए।</div>
+
+<div class="question">35. 2 Billion को अंकों में लिखिए।</div>
+
+<div class="question">36. 1,000,000 को भारतीय संख्या पद्धति में लिखिए।</div>
+
+<div class="question">37. 10,000,000 को भारतीय संख्या पद्धति में लिखिए।</div>
+
+<div class="question">38. 25,000,000 को भारतीय पद्धति में लिखिए।</div>
+
+<div class="question">39. 7,50,00,000 को अंतरराष्ट्रीय पद्धति में लिखिए।</div>
+
+<div class="question">40. 4,25,00,000 को शब्दों में लिखिए।</div>
+
+<div class="question">41. एक शहर की जनसंख्या 25,45,678 है। इसे शब्दों में लिखिए।</div>
+
+<div class="question">42. किसी विद्यालय में 12,450 पुस्तकें हैं। इसे विस्तारित रूप में लिखिए।</div>
+
+<div class="question">43. एक कंपनी ने ₹45,67,890 कमाए। इस राशि को शब्दों में लिखिए।</div>
+
+<div class="question">44. 4,56,789 में 6 का स्थान-मूल्य ज्ञात कीजिए।</div>
+
+<div class="question">45. 9,87,654 में 8 का स्थान-मूल्य ज्ञात कीजिए।</div>
+
+<div class="question">46. सबसे छोटी 6 अंकों की संख्या लिखिए।</div>
+
+<div class="question">47. सबसे बड़ी 6 अंकों की संख्या लिखिए।</div>
+
+<div class="question">48. सबसे छोटी 7 अंकों की संख्या लिखिए।</div>
+
+<div class="question">49. सबसे बड़ी 7 अंकों की संख्या लिखिए।</div>
+
+<div class="question">50. अपने दैनिक जीवन में बड़ी संख्याओं के पाँच उपयोग लिखिए।</div>
+
+</div>
+
+
+<div class="block-en">
+
+<div class="question">1. How many digits are there in 45,678?</div>
+
+<div class="question">2. Write 7,25,436 in words.</div>
+
+<div class="question">3. Write “five lakh thirty-two thousand four hundred ten” in numerals.</div>
+
+<div class="question">4. Find the place value of 8 in 8,45,672.</div>
+
+<div class="question">5. What is the face value of 5 in 8,45,672?</div>
+
+<div class="question">6. Find the place value of 7 in 6,78,432.</div>
+
+<div class="question">7. Write the face value and place value of 4 in 3,45,678.</div>
+
+<div class="question">8. How many thousands make one lakh?</div>
+
+<div class="question">9. How many lakhs make one crore?</div>
+
+<div class="question">10. Write 10 lakh in numerals.</div>
+
+<div class="question">11. Write 5 crore in numerals.</div>
+
+<div class="question">12. Write 25,43,678 in expanded form.</div>
+
+<div class="question">13. Write 4,00,000 + 30,000 + 5,000 + 600 + 20 + 8 in standard form.</div>
+
+<div class="question">14. Write 67,890 in words.</div>
+
+<div class="question">15. Write “seven crore fifteen lakh” in numerals.</div>
+
+<div class="question">16. Which is greater: 45,678 or 54,678?</div>
+
+<div class="question">17. Compare 7,89,000 and 7,98,000.</div>
+
+<div class="question">18. Which is greater: 9,99,999 or 10,00,000?</div>
+
+<div class="question">19. Find the greater number: 4,56,789 or 4,65,789.</div>
+
+<div class="question">20. Compare 12,34,567 and 12,34,576.</div>
+
+<div class="question">21. Arrange 2,345, 5,678 and 1,234 in ascending order.</div>
+
+<div class="question">22. Arrange 45,000, 12,500 and 78,900 in descending order.</div>
+
+<div class="question">23. Arrange 5,67,890, 5,76,890 and 5,06,890 in ascending order.</div>
+
+<div class="question">24. Arrange 8,00,000, 7,99,999 and 8,10,000 in descending order.</div>
+
+<div class="question">25. Round 3,47,825 to the nearest thousand.</div>
+
+<div class="question">26. Round 45,678 to the nearest thousand.</div>
+
+<div class="question">27. Round 8,245 to the nearest hundred.</div>
+
+<div class="question">28. Round 3,746 to the nearest ten.</div>
+
+<div class="question">29. Round 99,499 to the nearest thousand.</div>
+
+<div class="question">30. Round 75,650 to the nearest hundred.</div>
+
+<div class="question">31. How many are there in 1 Million?</div>
+
+<div class="question">32. How many are there in 1 Billion?</div>
+
+<div class="question">33. Write 1 Trillion in numerals.</div>
+
+<div class="question">34. Write 5 Million in numerals.</div>
+
+<div class="question">35. Write 2 Billion in numerals.</div>
+
+<div class="question">36. Write 1,000,000 using the Indian Number System.</div>
+
+<div class="question">37. Write 10,000,000 using the Indian Number System.</div>
+
+<div class="question">38. Write 25,000,000 using the Indian Number System.</div>
+
+<div class="question">39. Write 7,50,00,000 using the International Number System.</div>
+
+<div class="question">40. Write 4,25,00,000 in words.</div>
+
+<div class="question">41. A city has a population of 25,45,678. Write it in words.</div>
+
+<div class="question">42. A school has 12,450 books. Write the number in expanded form.</div>
+
+<div class="question">43. A company earned ₹45,67,890. Write the amount in words.</div>
+
+<div class="question">44. Find the place value of 6 in 4,56,789.</div>
+
+<div class="question">45. Find the place value of 8 in 9,87,654.</div>
+
+<div class="question">46. Write the smallest 6-digit number.</div>
+
+<div class="question">47. Write the greatest 6-digit number.</div>
+
+<div class="question">48. Write the smallest 7-digit number.</div>
+
+<div class="question">49. Write the greatest 7-digit number.</div>
+
+<div class="question">50. Write five uses of large numbers in daily life.</div>
+
+</div>
+
+</section>
+
+
+<!-- MCQ -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">🎯 बहुविकल्पीय प्रश्न – 20 MCQs</span>
+<span class="lang-en">🎯 Multiple Choice Questions – 20 MCQs</span>
+</h2>
+
+
+<div class="block-hi">
+
+<div class="mcq">
+<strong>1. 1 लाख में कितने हजार होते हैं?</strong><br>
+A) 10 &nbsp;&nbsp; B) 100 &nbsp;&nbsp; C) 1,000 &nbsp;&nbsp; D) 10,000
+</div>
+
+<div class="mcq">
+<strong>2. 1 करोड़ में कितने लाख होते हैं?</strong><br>
+A) 10 &nbsp;&nbsp; B) 50 &nbsp;&nbsp; C) 100 &nbsp;&nbsp; D) 1,000
+</div>
+
+<div class="mcq">
+<strong>3. 5,43,216 में 5 का स्थान-मूल्य क्या है?</strong><br>
+A) 5,000 &nbsp;&nbsp; B) 50,000 &nbsp;&nbsp; C) 5,00,000 &nbsp;&nbsp; D) 5
+</div>
+
+<div class="mcq">
+<strong>4. 7,85,432 में 8 का अंक-मूल्य क्या है?</strong><br>
+A) 8 &nbsp;&nbsp; B) 80 &nbsp;&nbsp; C) 8,000 &nbsp;&nbsp; D) 80,000
+</div>
+
+<div class="mcq">
+<strong>5. इनमें सबसे बड़ी संख्या कौन-सी है?</strong><br>
+A) 45,678 &nbsp;&nbsp;
+B) 54,678 &nbsp;&nbsp;
+C) 4,56,789 &nbsp;&nbsp;
+D) 45,876
+</div>
+
+<div class="mcq">
+<strong>6. 99,999 के बाद कौन-सी संख्या आती है?</strong><br>
+A) 1,00,000 &nbsp;&nbsp;
+B) 99,998 &nbsp;&nbsp;
+C) 1,00,001 &nbsp;&nbsp;
+D) 10,000
+</div>
+
+<div class="mcq">
+<strong>7. 10,00,000 को क्या कहते हैं?</strong><br>
+A) एक लाख &nbsp;&nbsp;
+B) दस लाख &nbsp;&nbsp;
+C) एक करोड़ &nbsp;&nbsp;
+D) दस करोड़
+</div>
+
+<div class="mcq">
+<strong>8. 1,00,00,000 किसके बराबर है?</strong><br>
+A) 1 लाख &nbsp;&nbsp;
+B) 10 लाख &nbsp;&nbsp;
+C) 1 करोड़ &nbsp;&nbsp;
+D) 10 करोड़
+</div>
+
+<div class="mcq">
+<strong>9. 347 को निकटतम दस में पूर्णांकित करने पर क्या मिलेगा?</strong><br>
+A) 340 &nbsp;&nbsp;
+B) 345 &nbsp;&nbsp;
+C) 350 &nbsp;&nbsp;
+D) 300
+</div>
+
+<div class="mcq">
+<strong>10. 3,462 को निकटतम सैकड़ा में पूर्णांकित करने पर क्या मिलेगा?</strong><br>
+A) 3,400 &nbsp;&nbsp;
+B) 3,500 &nbsp;&nbsp;
+C) 3,460 &nbsp;&nbsp;
+D) 3,000
+</div>
+
+<div class="mcq">
+<strong>11. 1 Million बराबर है:</strong><br>
+A) 1 लाख &nbsp;&nbsp;
+B) 10 लाख &nbsp;&nbsp;
+C) 1 करोड़ &nbsp;&nbsp;
+D) 10 करोड़
+</div>
+
+<div class="mcq">
+<strong>12. 1 Billion बराबर है:</strong><br>
+A) 10 करोड़ &nbsp;&nbsp;
+B) 100 करोड़ &nbsp;&nbsp;
+C) 1 करोड़ &nbsp;&nbsp;
+D) 1 लाख
+</div>
+
+<div class="mcq">
+<strong>13. 25,000, 15,000 और 35,000 का आरोही क्रम है:</strong><br>
+A) 35,000, 25,000, 15,000<br>
+B) 15,000, 25,000, 35,000<br>
+C) 25,000, 15,000, 35,000<br>
+D) 15,000, 35,000, 25,000
+</div>
+
+<div class="mcq">
+<strong>14. 7,50,000 में 5 का स्थान-मूल्य क्या है?</strong><br>
+A) 5,000 &nbsp;&nbsp;
+B) 50,000 &nbsp;&nbsp;
+C) 5,00,000 &nbsp;&nbsp;
+D) 5
+</div>
+
+<div class="mcq">
+<strong>15. 4,56,789 में कुल कितने अंक हैं?</strong><br>
+A) 4 &nbsp;&nbsp; B) 5 &nbsp;&nbsp; C) 6 &nbsp;&nbsp; D) 7
+</div>
+
+<div class="mcq">
+<strong>16. 10,000 को शब्दों में क्या कहते हैं?</strong><br>
+A) एक हजार<br>
+B) दस हजार<br>
+C) एक लाख<br>
+D) दस लाख
+</div>
+
+<div class="mcq">
+<strong>17. 5,67,890 और 5,76,890 में बड़ी संख्या कौन-सी है?</strong><br>
+A) 5,67,890 &nbsp;&nbsp;
+B) 5,76,890 &nbsp;&nbsp;
+C) दोनों समान &nbsp;&nbsp;
+D) कोई नहीं
+</div>
+
+<div class="mcq">
+<strong>18. सबसे छोटी 6 अंकों की संख्या कौन-सी है?</strong><br>
+A) 10,000 &nbsp;&nbsp;
+B) 99,999 &nbsp;&nbsp;
+C) 1,00,000 &nbsp;&nbsp;
+D) 1,00,001
+</div>
+
+<div class="mcq">
+<strong>19. सबसे बड़ी 6 अंकों की संख्या कौन-सी है?</strong><br>
+A) 9,99,999 &nbsp;&nbsp;
+B) 10,00,000 &nbsp;&nbsp;
+C) 99,999 &nbsp;&nbsp;
+D) 9,00,000
+</div>
+
+<div class="mcq">
+<strong>20. 1 Trillion में कितने शून्य होते हैं?</strong><br>
+A) 9 &nbsp;&nbsp; B) 10 &nbsp;&nbsp; C) 12 &nbsp;&nbsp; D) 15
+</div>
+
+
+<h3>उत्तर कुंजी</h3>
+
+<p class="answer">
+1-B, 2-C, 3-C, 4-A, 5-C,
+6-A, 7-B, 8-C, 9-C, 10-B,
+11-B, 12-B, 13-B, 14-B, 15-C,
+16-B, 17-B, 18-C, 19-A, 20-C
+</p>
+
+</div>
+
+
+<div class="block-en">
+
+<div class="mcq">
+<strong>1. How many thousands make one lakh?</strong><br>
+A) 10 &nbsp;&nbsp; B) 100 &nbsp;&nbsp; C) 1,000 &nbsp;&nbsp; D) 10,000
+</div>
+
+<div class="mcq">
+<strong>2. How many lakhs make one crore?</strong><br>
+A) 10 &nbsp;&nbsp; B) 50 &nbsp;&nbsp; C) 100 &nbsp;&nbsp; D) 1,000
+</div>
+
+<div class="mcq">
+<strong>3. What is the place value of 5 in 5,43,216?</strong><br>
+A) 5,000 &nbsp;&nbsp; B) 50,000 &nbsp;&nbsp; C) 5,00,000 &nbsp;&nbsp; D) 5
+</div>
+
+<div class="mcq">
+<strong>4. What is the face value of 8 in 7,85,432?</strong><br>
+A) 8 &nbsp;&nbsp; B) 80 &nbsp;&nbsp; C) 8,000 &nbsp;&nbsp; D) 80,000
+</div>
+
+<div class="mcq">
+<strong>5. Which is the greatest number?</strong><br>
+A) 45,678 &nbsp;&nbsp;
+B) 54,678 &nbsp;&nbsp;
+C) 4,56,789 &nbsp;&nbsp;
+D) 45,876
+</div>
+
+<div class="mcq">
+<strong>6. Which number comes after 99,999?</strong><br>
+A) 1,00,000 &nbsp;&nbsp;
+B) 99,998 &nbsp;&nbsp;
+C) 1,00,001 &nbsp;&nbsp;
+D) 10,000
+</div>
+
+<div class="mcq">
+<strong>7. What is 10,00,000 called?</strong><br>
+A) One lakh &nbsp;&nbsp;
+B) Ten lakh &nbsp;&nbsp;
+C) One crore &nbsp;&nbsp;
+D) Ten crore
+</div>
+
+<div class="mcq">
+<strong>8. 1,00,00,000 is equal to:</strong><br>
+A) 1 lakh &nbsp;&nbsp;
+B) 10 lakh &nbsp;&nbsp;
+C) 1 crore &nbsp;&nbsp;
+D) 10 crore
+</div>
+
+<div class="mcq">
+<strong>9. 347 rounded to the nearest ten is:</strong><br>
+A) 340 &nbsp;&nbsp;
+B) 345 &nbsp;&nbsp;
+C) 350 &nbsp;&nbsp;
+D) 300
+</div>
+
+<div class="mcq">
+<strong>10. 3,462 rounded to the nearest hundred is:</strong><br>
+A) 3,400 &nbsp;&nbsp;
+B) 3,500 &nbsp;&nbsp;
+C) 3,460 &nbsp;&nbsp;
+D) 3,000
+</div>
+
+<div class="mcq">
+<strong>11. 1 Million is equal to:</strong><br>
+A) 1 lakh &nbsp;&nbsp;
+B) 10 lakh &nbsp;&nbsp;
+C) 1 crore &nbsp;&nbsp;
+D) 10 crore
+</div>
+
+<div class="mcq">
+<strong>12. 1 Billion is equal to:</strong><br>
+A) 10 crore &nbsp;&nbsp;
+B) 100 crore &nbsp;&nbsp;
+C) 1 crore &nbsp;&nbsp;
+D) 1 lakh
+</div>
+
+<div class="mcq">
+<strong>13. The ascending order of 25,000, 15,000 and 35,000 is:</strong><br>
+A) 35,000, 25,000, 15,000<br>
+B) 15,000, 25,000, 35,000<br>
+C) 25,000, 15,000, 35,000<br>
+D) 15,000, 35,000, 25,000
+</div>
+
+<div class="mcq">
+<strong>14. What is the place value of 5 in 7,50,000?</strong><br>
+A) 5,000 &nbsp;&nbsp;
+B) 50,000 &nbsp;&nbsp;
+C) 5,00,000 &nbsp;&nbsp;
+D) 5
+</div>
+
+<div class="mcq">
+<strong>15. How many digits are there in 4,56,789?</strong><br>
+A) 4 &nbsp;&nbsp; B) 5 &nbsp;&nbsp; C) 6 &nbsp;&nbsp; D) 7
+</div>
+
+<div class="mcq">
+<strong>16. What is 10,000 called?</strong><br>
+A) One thousand<br>
+B) Ten thousand<br>
+C) One lakh<br>
+D) Ten lakh
+</div>
+
+<div class="mcq">
+<strong>17. Which is greater: 5,67,890 or 5,76,890?</strong><br>
+A) 5,67,890 &nbsp;&nbsp;
+B) 5,76,890 &nbsp;&nbsp;
+C) Both equal &nbsp;&nbsp;
+D) None
+</div>
+
+<div class="mcq">
+<strong>18. What is the smallest 6-digit number?</strong><br>
+A) 10,000 &nbsp;&nbsp;
+B) 99,999 &nbsp;&nbsp;
+C) 1,00,000 &nbsp;&nbsp;
+D) 1,00,001
+</div>
+
+<div class="mcq">
+<strong>19. What is the greatest 6-digit number?</strong><br>
+A) 9,99,999 &nbsp;&nbsp;
+B) 10,00,000 &nbsp;&nbsp;
+C) 99,999 &nbsp;&nbsp;
+D) 9,00,000
+</div>
+
+<div class="mcq">
+<strong>20. How many zeros are there in 1 Trillion?</strong><br>
+A) 9 &nbsp;&nbsp; B) 10 &nbsp;&nbsp; C) 12 &nbsp;&nbsp; D) 15
+</div>
+
+<h3>Answer Key</h3>
+
+<p class="answer">
+1-B, 2-C, 3-C, 4-A, 5-C,
+6-A, 7-B, 8-C, 9-C, 10-B,
+11-B, 12-B, 13-B, 14-B, 15-C,
+16-B, 17-B, 18-C, 19-A, 20-C
+</p>
+
+</div>
+
+</section>
+
+
+<!-- QUICK REVISION -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">⚡ त्वरित पुनरावृत्ति</span>
+<span class="lang-en">⚡ Quick Revision</span>
+</h2>
+
+<div class="block-hi">
+
+<ul class="quick-list">
+
+<li>
+भारतीय संख्या पद्धति में लाख और करोड़ का प्रयोग किया जाता है।
+</li>
+
+<li>
+1 लाख = 1,00,000
+</li>
+
+<li>
+1 करोड़ = 1,00,00,000
+</li>
+
+<li>
+1 Million = 10 लाख
+</li>
+
+<li>
+1 Billion = 100 करोड़
+</li>
+
+<li>
+अंक-मूल्य हमेशा अंक का अपना मान होता है।
+</li>
+
+<li>
+स्थान-मूल्य अंक के स्थान पर निर्भर करता है।
+</li>
+
+<li>
+आरोही क्रम में संख्याएँ छोटी से बड़ी होती हैं।
+</li>
+
+<li>
+अवरोही क्रम में संख्याएँ बड़ी से छोटी होती हैं।
+</li>
+
+<li>
+अनुमान हमें बड़ी संख्याओं को सरल तरीके से समझने में सहायता करता है।
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="block-en">
+
+<ul class="quick-list">
+
+<li>
+The Indian Number System uses lakh and crore.
+</li>
+
+<li>
+1 lakh = 1,00,000
+</li>
+
+<li>
+1 crore = 1,00,00,000
+</li>
+
+<li>
+1 Million = 10 lakh
+</li>
+
+<li>
+1 Billion = 100 crore
+</li>
+
+<li>
+Face value is the digit itself.
+</li>
+
+<li>
+Place value depends on the position of the digit.
+</li>
+
+<li>
+Ascending order means smallest to largest.
+</li>
+
+<li>
+Descending order means largest to smallest.
+</li>
+
+<li>
+Estimation helps us work with large numbers easily.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- NAVIGATION -->
+
+<div class="chapter-nav">
+
+<a href="../class-7-mathematics.html">
+
+    ←
+    <span class="lang-hi">सभी अध्याय</span>
+    <span class="lang-en">All Chapters</span>
+
+</a>
+
+
+<a href="class-7-maths-chapter-2.html">
+
+    <span class="lang-hi">अध्याय 2 →</span>
+    <span class="lang-en">Chapter 2 →</span>
+
+</a>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+<p>
+
+<strong>UEduTech</strong> —
+
+<span class="lang-hi">
+कक्षा 7 गणित की डिजिटल अध्ययन सामग्री
+</span>
+
+<span class="lang-en">
+Digital study material for Class 7 Mathematics
+</span>
+
+</p>
+
+<p style="margin-top:8px;">
+© 2026 UEduTech
+</p>
+
+</footer>
+
+
+<script>
+
+function setLanguage(lang){
+
+    if(lang === "en"){
+
+        document.body.classList.add("english");
+
+        document.getElementById("enBtn")
+        .classList.add("active");
+
+        document.getElementById("hiBtn")
+        .classList.remove("active");
+
+        document.documentElement.lang = "en";
+
+    }else{
+
+        document.body.classList.remove("english");
+
+        document.getElementById("hiBtn")
+        .classList.add("active");
+
+        document.getElementById("enBtn")
+        .classList.remove("active");
+
+        document.documentElement.lang = "hi";
+    }
+
+    localStorage.setItem("uedutech-language",lang);
+}
+
+
+window.onload = function(){
+
+    const savedLanguage =
+        localStorage.getItem("uedutech-language") || "hi";
+
+    setLanguage(savedLanguage);
+
+};
+
+</script>
+
+</body>
+</html>
+

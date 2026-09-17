@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Class 7 Maths Chapter 4 – Expressions using Letter-Numbers | UEduTech</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+    background:#f4f7fb;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+header{
+    background:linear-gradient(135deg,#173b72,#2563eb);
+    color:white;
+    padding:18px 6%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#ffd43b;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:8px 13px;
+    border-radius:8px;
+    font-size:14px;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.16);
+}
+
+.language-box{
+    text-align:center;
+    padding:16px 10px;
+    background:white;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.lang-btn{
+    border:1px solid #2563eb;
+    background:white;
+    color:#2563eb;
+    padding:8px 18px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:700;
+    margin:3px;
+}
+
+.lang-btn.active{
+    background:#2563eb;
+    color:white;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+}
+
+.hero{
+    margin:30px auto;
+    padding:45px 25px;
+    text-align:center;
+    background:linear-gradient(135deg,#e8f1ff,#ffffff);
+    border-radius:20px;
+    border:1px solid #dbeafe;
+    box-shadow:0 8px 25px rgba(37,99,235,.08);
+}
+
+.badge{
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    padding:6px 15px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    color:#173b72;
+    font-size:36px;
+    margin-bottom:8px;
+}
+
+.hero p{
+    color:#64748b;
+    font-size:18px;
+}
+
+.card{
+    background:white;
+    margin:22px 0;
+    padding:28px;
+    border-radius:16px;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+    border-left:5px solid #2563eb;
+}
+
+.card h2{
+    color:#173b72;
+    margin-bottom:15px;
+    font-size:25px;
+}
+
+.card h3{
+    color:#2563eb;
+    margin:18px 0 8px;
+}
+
+.example{
+    background:#eff6ff;
+    border:1px solid #bfdbfe;
+    border-radius:12px;
+    padding:15px 18px;
+    margin:15px 0;
+}
+
+.formula{
+    background:#f0fdf4;
+    border-left:4px solid #16a34a;
+    padding:14px 18px;
+    border-radius:8px;
+    margin:12px 0;
+    font-weight:600;
+}
+
+.warning{
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+    padding:14px 18px;
+    border-radius:8px;
+    margin:12px 0;
+}
+
+.question-list{
+    padding-left:25px;
+}
+
+.question-list li{
+    margin:9px 0;
+}
+
+.mcq{
+    background:#fafafa;
+    border:1px solid #e5e7eb;
+    padding:15px;
+    border-radius:10px;
+    margin:12px 0;
+}
+
+.answer{
+    background:#ecfdf5;
+    padding:18px;
+    border-radius:12px;
+    border:1px solid #bbf7d0;
+}
+
+.revision-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.revision-box{
+    padding:18px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:12px;
+}
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin:30px 0;
+}
+
+.navigation a{
+    flex:1;
+    text-align:center;
+    text-decoration:none;
+    padding:13px;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-weight:bold;
+}
+
+.navigation a:hover{
+    background:#173b72;
+}
+
+footer{
+    background:#173b72;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+.lang-en{
+    display:none;
+}
+
+body.english .lang-hi{
+    display:none;
+}
+
+body.english .lang-en{
+    display:inline;
+}
+
+.block-en{
+    display:none;
+}
+
+.block-hi{
+    display:block;
+}
+
+body.english .block-hi{
+    display:none;
+}
+
+body.english .block-en{
+    display:block;
+}
+
+@media(max-width:700px){
+
+    .navbar{
+        flex-direction:column;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+```
+<div class="logo">
+    U<span>Edu</span>Tech
+</div>
+
+<nav>
+    <a href="../../../index.html">Home</a>
+    <a href="../../../subjects.html">Subjects</a>
+    <a href="../../../tests.html">Model Tests</a>
+    <a href="../../../study-material.html">Study Material</a>
+</nav>
+```
+
+</div>
+
+</header>
+
+<div class="language-box">
+
+<button id="hiBtn"
+     class="lang-btn active"
+     onclick="setLanguage('hi')">
+🇮🇳 हिंदी </button>
+
+<button id="enBtn"
+     class="lang-btn"
+     onclick="setLanguage('en')">
+🇬🇧 English </button>
+
+</div>
+
+<main class="container">
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="badge">
+
+<span class="lang-hi">
+कक्षा 7 गणित • अध्याय 4
+</span>
+
+<span class="lang-en">
+Class 7 Mathematics • Chapter 4
+</span>
+
+</div>
+
+<h1>
+
+<span class="lang-hi">
+Expressions using Letter-Numbers
+</span>
+
+<span class="lang-en">
+Expressions using Letter-Numbers
+</span>
+
+</h1>
+
+<p>
+
+<span class="lang-hi">
+अक्षर-संख्याओं वाले व्यंजक
+</span>
+
+<span class="lang-en">
+Introduction to letter-numbers and algebraic expressions
+</span>
+
+</p>
+
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+📘 अध्याय परिचय
+</span>
+
+<span class="lang-en">
+📘 Chapter Introduction
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+अब तक हमने expressions में मुख्यतः निश्चित संख्याओं का प्रयोग किया है।
+लेकिन गणित में कई बार किसी अज्ञात या बदलती हुई संख्या को किसी
+<b>अक्षर</b> से दर्शाया जाता है।
+</p>
+
+<p>
+उदाहरण के लिए यदि किसी संख्या को <b>x</b> से दर्शाया जाए, तो
+उससे जुड़े expressions जैसे <b>x + 5</b>, <b>2x</b>,
+<b>x − 3</b> आदि लिखे जा सकते हैं।
+</p>
+
+<p>
+इस अध्याय में हम letter-numbers, algebraic expressions, terms,
+coefficients, constants और expressions का मान ज्ञात करना सीखेंगे।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+So far, we have mainly used fixed numbers in expressions.
+In mathematics, an unknown or changing number is often represented
+by a <b>letter</b>.
+</p>
+
+<p>
+For example, if a number is represented by <b>x</b>, we can write
+expressions such as <b>x + 5</b>, <b>2x</b> and <b>x − 3</b>.
+</p>
+
+<p>
+In this chapter, we learn about letter-numbers, algebraic expressions,
+terms, coefficients, constants and evaluating expressions.
+</p>
+
+</div>
+
+</section>
+
+<!-- LETTER NUMBERS -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+1️⃣ Letter-Numbers क्या हैं?
+</span>
+
+<span class="lang-en">
+1️⃣ What are Letter-Numbers?
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+किसी संख्या को किसी अक्षर से दर्शाने पर उस अक्षर को
+<b>letter-number</b> के रूप में प्रयोग किया जा सकता है।
+</p>
+
+<div class="example">
+
+यदि किसी संख्या को <b>x</b> से दर्शाया गया है:
+
+<br><br>
+
+x = कोई संख्या
+
+<br>
+
+x + 5 = उस संख्या से 5 अधिक
+
+<br>
+
+x − 5 = उस संख्या से 5 कम
+
+</div>
+
+<p>
+अक्षर का मान परिस्थिति के अनुसार बदल सकता है।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+A letter can be used to represent a number. Such a letter is used
+as a <b>letter-number</b>.
+</p>
+
+<div class="example">
+
+If a number is represented by <b>x</b>:
+
+<br><br>
+
+x = a number
+
+<br>
+
+x + 5 = 5 more than the number
+
+<br>
+
+x − 5 = 5 less than the number
+
+</div>
+
+<p>
+The value represented by the letter may change according to the situation.
+</p>
+
+</div>
+
+</section>
+
+<!-- VARIABLE -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+2️⃣ अक्षर का बदलता हुआ मान
+</span>
+
+<span class="lang-en">
+2️⃣ A Changing Value of a Letter
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+मान लीजिए एक टोकरी में <b>x</b> आम हैं।
+यदि दूसरी टोकरी में उससे 3 आम अधिक हैं, तो दूसरी टोकरी में आमों की
+संख्या होगी:
+</p>
+
+<div class="formula">
+x + 3
+</div>
+
+<p>
+यदि पहली टोकरी में 10 आम हैं, तो:</p>
+
+<div class="example">
+x = 10
+
+<br>
+
+x + 3 = 13
+
+</div>
+
+<p>
+यदि पहली टोकरी में 20 आम हैं, तो:</p>
+
+<div class="example">
+x = 20
+
+<br>
+
+x + 3 = 23
+
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>
+Suppose a basket contains <b>x</b> mangoes.
+If another basket contains 3 more mangoes, the number of mangoes
+in the second basket is:</p>
+
+<div class="formula">
+x + 3
+</div>
+
+<p>
+If x = 10:</p>
+
+<div class="example">
+x + 3 = 13
+</div>
+
+<p>
+If x = 20:</p>
+
+<div class="example">
+x + 3 = 23
+</div>
+
+</div>
+
+</section>
+
+<!-- EXPRESSIONS -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+3️⃣ Algebraic Expressions
+</span>
+
+<span class="lang-en">
+3️⃣ Algebraic Expressions
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+जब numbers और letter-numbers को mathematical operations के साथ
+लिखा जाता है, तो हमें algebraic expressions प्राप्त होते हैं।
+</p>
+
+<div class="example">
+
+<b>x + 7</b>
+
+<br><br>
+
+<b>3x + 5</b>
+
+<br><br>
+
+<b>2a − 4</b>
+
+<br><br>
+
+<b>5p + 2q</b>
+
+</div>
+
+<p>
+इन expressions में letters किसी संख्या को दर्शाते हैं।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+When numbers and letter-numbers are combined using mathematical
+operations, we get algebraic expressions.
+</p>
+
+<div class="example">
+
+<b>x + 7</b>
+
+<br><br>
+
+<b>3x + 5</b>
+
+<br><br>
+
+<b>2a − 4</b>
+
+<br><br>
+
+<b>5p + 2q</b>
+
+</div>
+
+<p>
+The letters in these expressions represent numbers.
+</p>
+
+</div>
+
+</section>
+
+<!-- TERMS -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+4️⃣ Terms क्या हैं?
+</span>
+
+<span class="lang-en">
+4️⃣ What are Terms?
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+किसी algebraic expression के अलग-अलग भागों को <b>terms</b> कहा जाता है।
+Terms सामान्यतः <b>+ या −</b> चिन्हों से अलग होते हैं।
+</p>
+
+<div class="example">
+
+<b>3x + 5</b>
+
+<br><br>
+
+Terms → <b>3x</b> और <b>5</b>
+
+</div>
+
+<div class="example">
+
+<b>5a − 7b + 3</b>
+
+<br><br>
+
+Terms → <b>5a, −7b, 3</b>
+
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>
+The separate parts of an algebraic expression are called
+<b>terms</b>. Terms are usually separated by <b>+ or −</b> signs.
+</p>
+
+<div class="example">
+
+<b>3x + 5</b>
+
+<br><br>
+
+Terms → <b>3x</b> and <b>5</b>
+
+</div>
+
+<div class="example">
+
+<b>5a − 7b + 3</b>
+
+<br><br>
+
+Terms → <b>5a, −7b, 3</b>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- COEFFICIENT -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+5️⃣ Coefficient
+</span>
+
+<span class="lang-en">
+5️⃣ Coefficient
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+किसी variable या letter के साथ गुणा होने वाली संख्या को
+उसका <b>coefficient</b> कहते हैं।
+</p>
+
+<div class="example">
+
+<b>5x</b>
+
+<br><br>
+
+x का coefficient = <b>5</b>
+
+</div>
+
+<div class="example">
+
+<b>12a</b>
+
+<br><br>
+
+a का coefficient = <b>12</b>
+
+</div>
+
+<div class="example">
+
+<b>x</b>
+
+<br><br>
+
+x का coefficient = <b>1</b>
+
+</div>
+
+<div class="warning">
+यदि किसी letter के आगे कोई संख्या नहीं लिखी है,
+तो coefficient 1 माना जाता है।
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>
+The number multiplied with a variable or letter is called its
+<b>coefficient</b>.
+</p>
+
+<div class="example">
+<b>5x</b>
+<br><br>
+Coefficient of x = <b>5</b>
+</div>
+
+<div class="example">
+<b>12a</b>
+<br><br>
+Coefficient of a = <b>12</b>
+</div>
+
+<div class="example">
+<b>x</b>
+<br><br>
+Coefficient of x = <b>1</b>
+</div>
+
+<div class="warning">
+When no number is written before a letter, its coefficient is 1.
+</div>
+
+</div>
+
+</section>
+
+<!-- CONSTANT -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+6️⃣ Constant क्या है?
+</span>
+
+<span class="lang-en">
+6️⃣ What is a Constant?
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+ऐसी संख्या जिसका मान नहीं बदलता, उसे <b>constant</b> कहते हैं।
+</p>
+
+<div class="example">
+
+<b>3x + 7</b>
+
+<br><br>
+
+x → variable / letter-number
+
+<br>
+
+3 → coefficient
+
+<br>
+
+7 → constant
+
+</div>
+
+<div class="example">
+
+<b>5a − 12</b>
+
+<br><br>
+
+5 → coefficient
+
+<br>
+
+a → letter-number
+
+<br>
+
+12 → constant
+
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>
+A number whose value does not change is called a <b>constant</b>.
+</p>
+
+<div class="example">
+
+<b>3x + 7</b>
+
+<br><br>
+
+x → variable / letter-number
+
+<br>
+
+3 → coefficient
+
+<br>
+
+7 → constant
+
+</div>
+
+<div class="example">
+
+<b>5a − 12</b>
+
+<br><br>
+
+5 → coefficient
+
+<br>
+
+a → letter-number
+
+<br>
+
+12 → constant
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LIKE TERMS -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+7️⃣ समान Terms
+</span>
+
+<span class="lang-en">
+7️⃣ Like Terms
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+जिन terms में समान letter-number का समान घातांक हो,
+वे <b>like terms</b> कहलाते हैं।
+</p>
+
+<div class="example">
+
+<b>3x और 7x</b> → Like terms
+
+<br><br>
+
+<b>5a और −2a</b> → Like terms
+
+<br><br>
+
+<b>4x और 4y</b> → Unlike terms
+
+</div>
+
+<p>
+Like terms को जोड़ या घटाया जा सकता है।
+</p>
+
+<div class="formula">
+3x + 7x = 10x
+</div>
+
+<div class="formula">
+8a − 3a = 5a
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>
+Terms with the same letter-number and same power are called
+<b>like terms</b>.
+</p>
+
+<div class="example">
+
+<b>3x and 7x</b> → Like terms
+
+<br><br>
+
+<b>5a and −2a</b> → Like terms
+
+<br><br>
+
+<b>4x and 4y</b> → Unlike terms
+
+</div>
+
+<p>
+Like terms can be added or subtracted.</p>
+
+<div class="formula">
+3x + 7x = 10x
+</div>
+
+<div class="formula">
+8a − 3a = 5a
+</div>
+
+</div>
+
+</section>
+
+<!-- EVALUATION -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+8️⃣ Expression का मान ज्ञात करना
+</span>
+
+<span class="lang-en">
+8️⃣ Evaluating an Expression
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+यदि किसी letter-number का मान दिया गया हो, तो उस मान को expression
+में रखकर expression का value निकाला जा सकता है।
+</p>
+
+<div class="example">
+
+यदि <b>x = 5</b>, तो:
+
+<br><br>
+
+x + 7
+
+<br>
+
+= 5 + 7
+
+<br>
+
+= <b>12</b>
+
+</div>
+
+<div class="example">
+
+यदि <b>a = 4</b>, तो:
+
+<br><br>
+
+3a + 2
+
+<br>
+
+= 3 × 4 + 2
+
+<br>
+
+= 12 + 2
+
+<br>
+
+= <b>14</b>
+
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>
+If the value of a letter-number is given, substitute that value
+into the expression and calculate its value.
+</p>
+
+<div class="example">
+
+If <b>x = 5</b>:
+
+<br><br>
+
+x + 7
+
+<br>
+
+= 5 + 7
+
+<br>
+
+= <b>12</b>
+
+</div>
+
+<div class="example">
+
+If <b>a = 4</b>:
+
+<br><br>
+
+3a + 2
+
+<br>
+
+= 3 × 4 + 2
+
+<br>
+
+= 12 + 2
+
+<br>
+
+= <b>14</b>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WRITING EXPRESSIONS -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+9️⃣ शब्दों से Algebraic Expression बनाना
+</span>
+
+<span class="lang-en">
+9️⃣ Writing Algebraic Expressions from Words
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<div class="example">
+
+किसी संख्या से 5 अधिक
+
+<br>
+
+→ <b>x + 5</b>
+
+</div>
+
+<div class="example">
+
+किसी संख्या से 7 कम
+
+<br>
+
+→ <b>x − 7</b>
+
+</div>
+
+<div class="example">
+
+किसी संख्या का 3 गुना
+
+<br>
+
+→ <b>3x</b>
+
+</div>
+
+<div class="example">
+
+किसी संख्या का आधा
+
+<br>
+
+→ <b>x/2</b>
+
+</div>
+
+<div class="example">
+
+किसी संख्या का 4 गुना और 3 अधिक
+
+<br>
+
+→ <b>4x + 3</b>
+
+</div>
+
+</div>
+
+<div class="block-en">
+
+<div class="example">
+
+5 more than a number
+
+<br>
+
+→ <b>x + 5</b>
+
+</div>
+
+<div class="example">
+
+7 less than a number
+
+<br>
+
+→ <b>x − 7</b>
+
+</div>
+
+<div class="example">
+
+Three times a number
+
+<br>
+
+→ <b>3x</b>
+
+</div>
+
+<div class="example">
+
+Half of a number
+
+<br>
+
+→ <b>x/2</b>
+
+</div>
+
+<div class="example">
+
+Four times a number and 3 more
+
+<br>
+
+→ <b>4x + 3</b>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PATTERNS -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+🔟 Patterns और Letter-Numbers
+</span>
+
+<span class="lang-en">
+🔟 Patterns and Letter-Numbers
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+कई number patterns को algebraic expressions की सहायता से लिखा जा सकता है।
+</p>
+
+<div class="example">
+
+2, 5, 8, 11, 14, ...
+
+<br><br>
+
+हर बार 3 जोड़ा जा रहा है।
+
+<br>
+
+अगला term = <b>17</b>
+
+</div>
+
+<p>
+यदि पहला term किसी letter से दर्शाया जाए, तो pattern के terms को
+expression के रूप में भी लिखा जा सकता है।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+Many number patterns can be represented using algebraic expressions.
+</p>
+
+<div class="example">
+
+2, 5, 8, 11, 14, ...
+
+<br><br>
+
+3 is added each time.
+
+<br>
+
+Next term = <b>17</b>
+
+</div>
+
+<p>
+If a term is represented using a letter, other terms can be expressed
+using algebraic expressions.
+</p>
+
+</div>
+
+</section>
+
+<!-- PRACTICE -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+✍️ अभ्यास प्रश्न – 50 Questions
+</span>
+
+<span class="lang-en">
+✍️ Practice Questions – 50 Questions
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<ol class="question-list">
+
+<li>किसी संख्या को x से दर्शाइए।</li>
+
+<li>x + 5 का अर्थ अपने शब्दों में लिखिए।</li>
+
+<li>x − 7 का अर्थ लिखिए।</li>
+
+<li>3x का अर्थ लिखिए।</li>
+
+<li>x/2 का अर्थ लिखिए।</li>
+
+<li>किसी संख्या से 8 अधिक का expression लिखिए।</li>
+
+<li>किसी संख्या से 9 कम का expression लिखिए।</li>
+
+<li>किसी संख्या का 5 गुना लिखिए।</li>
+
+<li>किसी संख्या का 4 गुना और 3 अधिक लिखिए।</li>
+
+<li>किसी संख्या का 2 गुना और 7 कम लिखिए।</li>
+
+<li>3x + 5 में terms लिखिए।</li>
+
+<li>7a − 4 में terms लिखिए।</li>
+
+<li>5x + 3y − 7 में terms लिखिए।</li>
+
+<li>8p − 2q + 9 में terms लिखिए।</li>
+
+<li>4m + 5n में terms लिखिए।</li>
+
+<li>5x में x का coefficient लिखिए।</li>
+
+<li>12a में a का coefficient लिखिए।</li>
+
+<li>x का coefficient क्या है?</li>
+
+<li>−7y में y का coefficient लिखिए।</li>
+
+<li>9p में p का coefficient लिखिए।</li>
+
+<li>3x + 8 में constant कौन-सा है?</li>
+
+<li>7a − 5 में constant कौन-सा है?</li>
+
+<li>4x + 3y + 9 में constant लिखिए।</li>
+
+<li>10p − 6q + 2 में constant लिखिए।</li>
+
+<li>5m + 7n − 11 में constant लिखिए।</li>
+
+<li>3x और 7x like terms हैं या unlike terms?</li>
+
+<li>5a और −2a like terms हैं या unlike terms?</li>
+
+<li>4x और 4y like terms हैं या unlike terms?</li>
+
+<li>8p और 3p like terms हैं या unlike terms?</li>
+
+<li>6a और 6b like terms हैं या unlike terms?</li>
+
+<li>3x + 7x को सरल कीजिए।</li>
+
+<li>8a − 3a को सरल कीजिए।</li>
+
+<li>5p + 2p + p को सरल कीजिए।</li>
+
+<li>9m − 4m को सरल कीजिए।</li>
+
+<li>7y + 3y − 2y को सरल कीजिए।</li>
+
+<li>यदि x = 5, तो x + 7 का मान ज्ञात कीजिए।</li>
+
+<li>यदि x = 8, तो x − 3 का मान ज्ञात कीजिए।</li>
+
+<li>यदि a = 4, तो 3a का मान ज्ञात कीजिए।</li>
+
+<li>यदि p = 6, तो 2p + 5 का मान ज्ञात कीजिए।</li>
+
+<li>यदि y = 10, तो y/2 + 3 का मान ज्ञात कीजिए।</li>
+
+<li>यदि a = 5, तो 4a + 3 का मान ज्ञात कीजिए।</li>
+
+<li>यदि x = 7, तो 5x − 2 का मान ज्ञात कीजिए।</li>
+
+<li>यदि p = 9, तो 3p + 1 का मान ज्ञात कीजिए।</li>
+
+<li>यदि m = 6, तो 2m − 4 का मान ज्ञात कीजिए।</li>
+
+<li>यदि n = 12, तो n/3 + 2 का मान ज्ञात कीजिए।</li>
+
+<li>Pattern 2, 5, 8, 11, ... में अगला term लिखिए।</li>
+
+<li>Pattern 10, 15, 20, 25, ... में अगला term लिखिए।</li>
+
+<li>एक संख्या का 3 गुना 15 है। वह संख्या क्या है?</li>
+
+<li>एक संख्या में 8 जोड़ने पर 20 प्राप्त होता है। संख्या क्या है?</li>
+
+<li>एक संख्या का 2 गुना 18 है। संख्या ज्ञात कीजिए।</li>
+
+</ol>
+
+</div>
+
+<div class="block-en">
+
+<ol class="question-list">
+
+<li>Represent a number using x.</li>
+<li>Write the meaning of x + 5 in words.</li>
+<li>Write the meaning of x − 7.</li>
+<li>Write the meaning of 3x.</li>
+<li>Write the meaning of x/2.</li>
+<li>Write an expression for 8 more than a number.</li>
+<li>Write an expression for 9 less than a number.</li>
+<li>Write an expression for five times a number.</li>
+<li>Write an expression for four times a number and 3 more.</li>
+<li>Write an expression for twice a number and 7 less.</li>
+<li>Write the terms of 3x + 5.</li>
+<li>Write the terms of 7a − 4.</li>
+<li>Write the terms of 5x + 3y − 7.</li>
+<li>Write the terms of 8p − 2q + 9.</li>
+<li>Write the terms of 4m + 5n.</li>
+<li>Find the coefficient of x in 5x.</li>
+<li>Find the coefficient of a in 12a.</li>
+<li>What is the coefficient of x?</li>
+<li>Find the coefficient of y in −7y.</li>
+<li>Find the coefficient of p in 9p.</li>
+<li>Identify the constant in 3x + 8.</li>
+<li>Identify the constant in 7a − 5.</li>
+<li>Identify the constant in 4x + 3y + 9.</li>
+<li>Identify the constant in 10p − 6q + 2.</li>
+<li>Identify the constant in 5m + 7n − 11.</li>
+<li>Are 3x and 7x like or unlike terms?</li>
+<li>Are 5a and −2a like or unlike terms?</li>
+<li>Are 4x and 4y like or unlike terms?</li>
+<li>Are 8p and 3p like or unlike terms?</li>
+<li>Are 6a and 6b like or unlike terms?</li>
+<li>Simplify 3x + 7x.</li>
+<li>Simplify 8a − 3a.</li>
+<li>Simplify 5p + 2p + p.</li>
+<li>Simplify 9m − 4m.</li>
+<li>Simplify 7y + 3y − 2y.</li>
+<li>If x = 5, find x + 7.</li>
+<li>If x = 8, find x − 3.</li>
+<li>If a = 4, find 3a.</li>
+<li>If p = 6, find 2p + 5.</li>
+<li>If y = 10, find y/2 + 3.</li>
+<li>If a = 5, find 4a + 3.</li>
+<li>If x = 7, find 5x − 2.</li>
+<li>If p = 9, find 3p + 1.</li>
+<li>If m = 6, find 2m − 4.</li>
+<li>If n = 12, find n/3 + 2.</li>
+<li>Find the next term: 2, 5, 8, 11, ...</li>
+<li>Find the next term: 10, 15, 20, 25, ...</li>
+<li>Three times a number is 15. Find the number.</li>
+<li>A number increased by 8 is 20. Find the number.</li>
+<li>Twice a number is 18. Find the number.</li>
+
+</ol>
+
+</div>
+
+</section>
+
+<!-- MCQ -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+🧠 MCQ Practice – 20 Questions
+</span>
+
+<span class="lang-en">
+🧠 MCQ Practice – 20 Questions
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<div class="mcq">
+<b>1. किसी संख्या को x से दर्शाया गया है। x + 5 का अर्थ है:</b><br>
+A) संख्या से 5 कम<br>
+B) संख्या से 5 अधिक<br>
+C) संख्या का 5 गुना<br>
+D) संख्या का आधा
+</div>
+
+<div class="mcq">
+<b>2. 3x का अर्थ है:</b><br>
+A) x + 3<br>
+B) x − 3<br>
+C) x का 3 गुना<br>
+D) x/3
+</div>
+
+<div class="mcq">
+<b>3. 5x + 7 में terms हैं:</b><br>
+A) 5 और 7<br>
+B) x और 7<br>
+C) 5x और 7<br>
+D) 5x और x
+</div>
+
+<div class="mcq">
+<b>4. 8a में a का coefficient है:</b><br>
+A) 8<br>
+B) a<br>
+C) 1<br>
+D) 0
+</div>
+
+<div class="mcq">
+<b>5. x का coefficient है:</b><br>
+A) 0<br>
+B) 1<br>
+C) x<br>
+D) 2
+</div>
+
+<div class="mcq">
+<b>6. 3x + 9 में constant है:</b><br>
+A) 3<br>
+B) x<br>
+C) 9<br>
+D) 3x
+</div>
+
+<div class="mcq">
+<b>7. इनमें like terms कौन-से हैं?</b><br>
+A) 3x, 5x<br>
+B) 3x, 5y<br>
+C) 2a, 2b<br>
+D) x, y
+</div>
+
+<div class="mcq">
+<b>8. 3x + 7x = ?</b><br>
+A) 10<br>
+B) 10x<br>
+C) 21x<br>
+D) x
+</div>
+
+<div class="mcq">
+<b>9. 8a − 3a = ?</b><br>
+A) 5<br>
+B) 5a<br>
+C) 11a<br>
+D) 24a
+</div>
+
+<div class="mcq">
+<b>10. यदि x = 5, तो x + 7 = ?</b><br>
+A) 10<br>
+B) 11<br>
+C) 12<br>
+D) 13
+</div>
+
+<div class="mcq">
+<b>11. यदि a = 4, तो 3a = ?</b><br>
+A) 7<br>
+B) 8<br>
+C) 12<br>
+D) 16
+</div>
+
+<div class="mcq">
+<b>12. यदि p = 6, तो 2p + 5 = ?</b><br>
+A) 11<br>
+B) 17<br>
+C) 12<br>
+D) 15
+</div>
+
+<div class="mcq">
+<b>13. x − 7 का अर्थ है:</b><br>
+A) x से 7 अधिक<br>
+B) x का 7 गुना<br>
+C) x से 7 कम<br>
+D) x का आधा
+</div>
+
+<div class="mcq">
+<b>14. 4x + 3 में coefficient है:</b><br>
+A) 3<br>
+B) 4<br>
+C) x<br>
+D) 7
+</div>
+
+<div class="mcq">
+<b>15. 5a − 2a = ?</b><br>
+A) 3a<br>
+B) 7a<br>
+C) 10a<br>
+D) 3
+</div>
+
+<div class="mcq">
+<b>16. यदि y = 10, तो y/2 = ?</b><br>
+A) 2<br>
+B) 5<br>
+C) 10<br>
+D) 20
+</div>
+
+<div class="mcq">
+<b>17. 5x और 5y हैं:</b><br>
+A) Like terms<br>
+B) Unlike terms<br>
+C) Constants<br>
+D) Coefficients
+</div>
+
+<div class="mcq">
+<b>18. 7p + 3p − 2p = ?</b><br>
+A) 8p<br>
+B) 10p<br>
+C) 12p<br>
+D) 5p
+</div>
+
+<div class="mcq">
+<b>19. Pattern 2, 5, 8, 11 में अगला term है:</b><br>
+A) 12<br>
+B) 13<br>
+C) 14<br>
+D) 15
+</div>
+
+<div class="mcq">
+<b>20. यदि किसी संख्या का 2 गुना 18 है, तो संख्या है:</b><br>
+A) 6<br>
+B) 8<br>
+C) 9<br>
+D) 12
+</div>
+
+</div>
+
+<div class="block-en">
+
+<div class="mcq">
+<b>1. If a number is represented by x, x + 5 means:</b><br>
+A) 5 less than the number<br>
+B) 5 more than the number<br>
+C) 5 times the number<br>
+D) Half the number
+</div>
+
+<div class="mcq">
+<b>2. 3x means:</b><br>
+A) x + 3<br>
+B) x − 3<br>
+C) Three times x<br>
+D) x/3
+</div>
+
+<div class="mcq">
+<b>3. The terms in 5x + 7 are:</b><br>
+A) 5 and 7<br>
+B) x and 7<br>
+C) 5x and 7<br>
+D) 5x and x
+</div>
+
+<div class="mcq">
+<b>4. The coefficient of a in 8a is:</b><br>
+A) 8<br>
+B) a<br>
+C) 1<br>
+D) 0
+</div>
+
+<div class="mcq">
+<b>5. The coefficient of x is:</b><br>
+A) 0<br>
+B) 1<br>
+C) x<br>
+D) 2
+</div>
+
+<div class="mcq">
+<b>6. The constant in 3x + 9 is:</b><br>
+A) 3<br>
+B) x<br>
+C) 9<br>
+D) 3x
+</div>
+
+<div class="mcq">
+<b>7. Which are like terms?</b><br>
+A) 3x, 5x<br>
+B) 3x, 5y<br>
+C) 2a, 2b<br>
+D) x, y
+</div>
+
+<div class="mcq">
+<b>8. 3x + 7x = ?</b><br>
+A) 10<br>
+B) 10x<br>
+C) 21x<br>
+D) x
+</div>
+
+<div class="mcq">
+<b>9. 8a − 3a = ?</b><br>
+A) 5<br>
+B) 5a<br>
+C) 11a<br>
+D) 24a
+</div>
+
+<div class="mcq">
+<b>10. If x = 5, x + 7 = ?</b><br>
+A) 10<br>
+B) 11<br>
+C) 12<br>
+D) 13
+</div>
+
+<div class="mcq">
+<b>11. If a = 4, 3a = ?</b><br>
+A) 7<br>
+B) 8<br>
+C) 12<br>
+D) 16
+</div>
+
+<div class="mcq">
+<b>12. If p = 6, 2p + 5 = ?</b><br>
+A) 11<br>
+B) 17<br>
+C) 12<br>
+D) 15
+</div>
+
+<div class="mcq">
+<b>13. x − 7 means:</b><br>
+A) 7 more than x<br>
+B) 7 times x<br>
+C) 7 less than x<br>
+D) Half of x
+</div>
+
+<div class="mcq">
+<b>14. The coefficient in 4x + 3 is:</b><br>
+A) 3<br>
+B) 4<br>
+C) x<br>
+D) 7
+</div>
+
+<div class="mcq">
+<b>15. 5a − 2a = ?</b><br>
+A) 3a<br>
+B) 7a<br>
+C) 10a<br>
+D) 3
+</div>
+
+<div class="mcq">
+<b>16. If y = 10, y/2 = ?</b><br>
+A) 2<br>
+B) 5<br>
+C) 10<br>
+D) 20
+</div>
+
+<div class="mcq">
+<b>17. 5x and 5y are:</b><br>
+A) Like terms<br>
+B) Unlike terms<br>
+C) Constants<br>
+D) Coefficients
+</div>
+
+<div class="mcq">
+<b>18. 7p + 3p − 2p = ?</b><br>
+A) 8p<br>
+B) 10p<br>
+C) 12p<br>
+D) 5p
+</div>
+
+<div class="mcq">
+<b>19. The next term in 2, 5, 8, 11 is:</b><br>
+A) 12<br>
+B) 13<br>
+C) 14<br>
+D) 15
+</div>
+
+<div class="mcq">
+<b>20. If twice a number is 18, the number is:</b><br>
+A) 6<br>
+B) 8<br>
+C) 9<br>
+D) 12
+</div>
+
+</div>
+
+</section>
+
+<!-- ANSWERS -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+✅ MCQ उत्तरमाला
+</span>
+
+<span class="lang-en">
+✅ MCQ Answer Key
+</span>
+
+</h2>
+
+<div class="answer">
+
+<b>
+1-B,
+2-C,
+3-C,
+4-A,
+5-B,
+6-C,
+7-A,
+8-B,
+9-B,
+10-C,
+11-C,
+12-B,
+13-C,
+14-B,
+15-A,
+16-B,
+17-B,
+18-A,
+19-C,
+20-C
+</b>
+
+</div>
+
+</section>
+
+<!-- QUICK REVISION -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+⚡ Quick Revision
+</span>
+
+<span class="lang-en">
+⚡ Quick Revision
+</span>
+
+</h2>
+
+<div class="revision-grid">
+
+<div class="revision-box">
+
+<b>Letter-Number</b>
+
+<br>
+
+<span class="lang-hi">
+किसी संख्या को दर्शाने वाला अक्षर।
+</span>
+
+<span class="lang-en">
+A letter used to represent a number.
+</span>
+
+</div>
+
+<div class="revision-box">
+
+<b>Term</b>
+
+<br>
+
+<span class="lang-hi">
+Expression का अलग भाग।
+</span>
+
+<span class="lang-en">
+A separate part of an expression.
+</span>
+
+</div>
+
+<div class="revision-box">
+
+<b>Coefficient</b>
+
+<br>
+
+<span class="lang-hi">
+Letter के साथ गुणा होने वाली संख्या।
+</span>
+
+<span class="lang-en">
+The number multiplied with a letter.
+</span>
+
+</div>
+
+<div class="revision-box">
+
+<b>Constant</b>
+
+<br>
+
+<span class="lang-hi">
+जिसका मान स्थिर रहता है।
+</span>
+
+<span class="lang-en">
+A number whose value remains fixed.
+</span>
+
+</div>
+
+<div class="revision-box">
+
+<b>Like Terms</b>
+
+<br>
+3x + 7x = 10x
+
+</div>
+
+<div class="revision-box">
+
+<b>Expression</b>
+
+<br>
+3x + 5
+
+</div>
+
+<div class="revision-box">
+
+<b>Evaluation</b>
+
+<br>
+x = 5 → x + 7 = 12
+
+</div>
+
+<div class="revision-box">
+
+<b>Pattern</b>
+
+<br>
+2, 5, 8, 11, ...
+
+</div>
+
+</div>
+
+</section>
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+<a href="class-7-maths-chapter-3.html">
+← Chapter 3
+</a>
+
+<a href="../class-7-mathematics.html">
+📚 All Chapters
+</a>
+
+<a href="class-7-maths-chapter-5.html">
+Chapter 5 →
+</a>
+
+</div>
+
+</main>
+
+<footer>
+
+<b>UEduTech</b>
+
+<br>
+
+<span class="lang-hi">
+Class 7 Mathematics • Chapter 4 • Expressions using Letter-Numbers
+</span>
+
+<span class="lang-en">
+Class 7 Mathematics • Chapter 4 • Expressions using Letter-Numbers
+</span>
+
+<br><br>
+
+© 2026 UEduTech • Learn • Practice • Succeed
+
+</footer>
+
+<script>
+
+function setLanguage(lang){
+
+    if(lang === "en"){
+
+        document.body.classList.add("english");
+
+        document.getElementById("enBtn").classList.add("active");
+
+        document.getElementById("hiBtn").classList.remove("active");
+
+        document.documentElement.lang = "en";
+
+    }else{
+
+        document.body.classList.remove("english");
+
+        document.getElementById("hiBtn").classList.add("active");
+
+        document.getElementById("enBtn").classList.remove("active");
+
+        document.documentElement.lang = "hi";
+
+    }
+
+    localStorage.setItem("uedutech-language",lang);
+}
+
+
+window.onload = function(){
+
+    const savedLanguage =
+        localStorage.getItem("uedutech-language") || "hi";
+
+    setLanguage(savedLanguage);
+
+};
+
+</script>
+
+</body>
+</html>

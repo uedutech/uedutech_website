@@ -1,0 +1,966 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>अध्याय 7: भिन्न | Class 6 Mathematics | UEduTech</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, "Noto Sans Devanagari", sans-serif;
+    background:#f5f7fb;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    color:white;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#facc15;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:8px 14px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.15);
+}
+
+.hero{
+    background:linear-gradient(135deg,#1d4ed8,#7c3aed);
+    color:white;
+    padding:55px 20px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:19px;
+    max-width:850px;
+    margin:auto;
+    opacity:.95;
+}
+
+.container{
+    max-width:1100px;
+    margin:35px auto;
+    padding:0 18px;
+}
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:18px;
+    margin-bottom:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+    border:1px solid #e5e7eb;
+}
+
+.card h2{
+    color:#2563eb;
+    margin-bottom:15px;
+    font-size:27px;
+}
+
+.card h3{
+    color:#4338ca;
+    margin:18px 0 8px;
+}
+
+.definition{
+    background:#eff6ff;
+    border-left:5px solid #2563eb;
+    padding:18px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.example{
+    background:#f0fdf4;
+    border-left:5px solid #16a34a;
+    padding:18px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.formula{
+    background:#fff7ed;
+    border:2px dashed #f97316;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+}
+
+.question{
+    background:#fafafa;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:17px;
+}
+
+.question strong{
+    color:#1d4ed8;
+}
+
+.mcq{
+    background:#f8fafc;
+    border:1px solid #dbeafe;
+    border-radius:12px;
+    padding:18px;
+    margin:14px 0;
+}
+
+.option{
+    padding:5px 0;
+}
+
+.answer{
+    background:#ecfdf5;
+    border-left:4px solid #10b981;
+    padding:18px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+ul,ol{
+    padding-left:25px;
+}
+
+.resource-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.resource{
+    padding:22px;
+    border-radius:15px;
+    background:#eef2ff;
+    text-align:center;
+}
+
+.resource h3{
+    margin-bottom:8px;
+}
+
+.cta{
+    text-align:center;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    padding:35px 20px;
+    border-radius:20px;
+    margin-bottom:30px;
+}
+
+.cta h2{
+    color:white;
+    margin-bottom:10px;
+}
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:30px 0;
+}
+
+.navigation a{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.navigation a:hover{
+    background:#1d4ed8;
+}
+
+footer{
+    background:#111827;
+    color:#d1d5db;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:40px;
+}
+
+footer strong{
+    color:white;
+}
+
+@media(max-width:750px){
+    .navbar{
+        flex-direction:column;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .grid,
+    .resource-grid{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+    .navigation a{
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+
+        <div class="logo">
+            U<span>EduTech</span>
+        </div>
+
+        <nav>
+            <a href="../../../index.html">Home</a>
+            <a href="../../../subjects.html">Subjects</a>
+            <a href="../../../tests.html">Model Tests</a>
+            <a href="../../../study-material.html">Study Material</a>
+        </nav>
+
+    </div>
+</header>
+
+<section class="hero">
+
+    <h1>अध्याय 7: भिन्न</h1>
+
+    <p>
+        Class 6 Mathematics – Fractions | भिन्नों की समझ, प्रकार,
+        समतुल्य भिन्न, तुलना और गणना
+    </p>
+
+</section>
+
+
+<div class="container">
+
+<!-- INTRODUCTION -->
+
+<div class="card">
+
+<h2>📘 अध्याय का परिचय</h2>
+
+<p>
+भिन्न गणित की एक महत्वपूर्ण संकल्पना है। जब किसी पूर्ण वस्तु या मात्रा को
+समान भागों में बाँटकर उनमें से कुछ भागों को दर्शाया जाता है, तो उसे
+<strong>भिन्न (Fraction)</strong> कहते हैं।
+</p>
+
+<div class="definition">
+
+<strong>भिन्न:</strong>
+किसी पूर्ण वस्तु के समान भागों में से लिए गए भागों को व्यक्त करने वाली
+संख्या को भिन्न कहते हैं।
+<br><br>
+
+उदाहरण:
+<strong>3/5</strong> में 3 अंश और 5 हर है।
+
+</div>
+
+</div>
+
+
+<!-- BASIC TERMS -->
+
+<div class="card">
+
+<h2>🔢 भिन्न के मुख्य भाग</h2>
+
+<div class="formula">
+3 / 7
+<br><br>
+अंश = 3 &nbsp;&nbsp;&nbsp; हर = 7
+</div>
+
+<div class="grid">
+
+<div class="question">
+<strong>अंश (Numerator)</strong>
+<br>
+भिन्न में ऊपर लिखी संख्या अंश कहलाती है। यह लिए गए भागों की संख्या बताती है।
+</div>
+
+<div class="question">
+<strong>हर (Denominator)</strong>
+<br>
+भिन्न में नीचे लिखी संख्या हर कहलाती है। यह कुल समान भागों की संख्या बताती है।
+</div>
+
+</div>
+
+<div class="example">
+
+<strong>उदाहरण:</strong>
+<br>
+यदि एक पिज्जा को 8 समान भागों में बाँटा गया और 3 भाग खा लिए गए,
+तो खाए गए पिज्जा का भाग = <strong>3/8</strong>
+
+</div>
+
+</div>
+
+
+<!-- TYPES -->
+
+<div class="card">
+
+<h2>📚 भिन्न के प्रकार</h2>
+
+<h3>1. उचित भिन्न (Proper Fraction)</h3>
+
+<p>
+जिस भिन्न में अंश, हर से छोटा होता है, उसे उचित भिन्न कहते हैं।
+</p>
+
+<div class="example">
+उदाहरण: 2/5, 3/7, 4/9
+</div>
+
+
+<h3>2. अनुचित भिन्न (Improper Fraction)</h3>
+
+<p>
+जिस भिन्न में अंश, हर के बराबर या उससे बड़ा होता है,
+उसे अनुचित भिन्न कहते हैं।
+</p>
+
+<div class="example">
+उदाहरण: 7/5, 9/4, 8/8
+</div>
+
+
+<h3>3. मिश्र भिन्न (Mixed Fraction)</h3>
+
+<p>
+जिसमें एक पूर्ण संख्या और एक उचित भिन्न होता है,
+उसे मिश्र भिन्न कहते हैं।
+</p>
+
+<div class="example">
+उदाहरण: 2 1/3, 4 2/5
+</div>
+
+
+<h3>4. इकाई भिन्न (Unit Fraction)</h3>
+
+<p>
+जिस भिन्न का अंश 1 हो, उसे इकाई भिन्न कहते हैं।
+</p>
+
+<div class="example">
+उदाहरण: 1/2, 1/5, 1/10
+</div>
+
+</div>
+
+
+<!-- EQUIVALENT -->
+
+<div class="card">
+
+<h2>🔄 समतुल्य भिन्न</h2>
+
+<p>
+ऐसे भिन्न जिनका मान समान होता है, लेकिन उनका अंश और हर अलग-अलग हो सकते हैं,
+उन्हें <strong>समतुल्य भिन्न</strong> कहते हैं।
+</p>
+
+<div class="formula">
+1/2 = 2/4 = 3/6 = 4/8
+</div>
+
+<div class="example">
+
+<strong>नियम:</strong>
+<br>
+अंश और हर दोनों को एक ही संख्या से गुणा या भाग करने पर
+समतुल्य भिन्न प्राप्त होता है।
+
+<br><br>
+
+2/3 × 2/2 = 4/6
+
+</div>
+
+</div>
+
+
+<!-- COMPARISON -->
+
+<div class="card">
+
+<h2>⚖️ भिन्नों की तुलना</h2>
+
+<h3>समान हर वाली भिन्न</h3>
+
+<p>
+यदि दो भिन्नों के हर समान हों, तो जिसका अंश बड़ा होगा,
+वही भिन्न बड़ी होगी।
+</p>
+
+<div class="example">
+3/8 > 2/8
+<br>
+क्योंकि 3 > 2
+</div>
+
+
+<h3>समान अंश वाली भिन्न</h3>
+
+<p>
+यदि दो भिन्नों के अंश समान हों, तो जिसका हर छोटा होगा,
+वही भिन्न बड़ी होगी।
+</p>
+
+<div class="example">
+3/4 > 3/7 ? नहीं!
+<br><br>
+वास्तव में 3/4 = 0.75 और 3/7 ≈ 0.43,
+इसलिए 3/4 बड़ी है।
+</div>
+
+
+<h3>समान हर बनाने की विधि</h3>
+
+<div class="example">
+उदाहरण:
+<br>
+2/3 और 3/4 की तुलना करें।
+<br><br>
+
+2/3 = 8/12
+<br>
+3/4 = 9/12
+<br><br>
+
+इसलिए:
+<strong>3/4 > 2/3</strong>
+</div>
+
+</div>
+
+
+<!-- NUMBER LINE -->
+
+<div class="card">
+
+<h2>📏 संख्या रेखा पर भिन्न</h2>
+
+<p>
+भिन्नों को संख्या रेखा पर भी दर्शाया जा सकता है।
+</p>
+
+<div class="example">
+
+उदाहरण:
+<br><br>
+
+0 —— 1/4 —— 1/2 —— 3/4 —— 1
+
+<br><br>
+
+0 से 1 के बीच की दूरी को 4 समान भागों में बाँटने पर
+हमें 1/4, 2/4 और 3/4 प्राप्त होते हैं।
+
+</div>
+
+</div>
+
+
+<!-- ADDITION -->
+
+<div class="card">
+
+<h2>➕ भिन्नों का जोड़</h2>
+
+<h3>समान हर वाली भिन्न</h3>
+
+<div class="formula">
+2/7 + 3/7 = 5/7
+</div>
+
+<p>
+समान हर वाली भिन्नों को जोड़ते समय केवल अंशों को जोड़ा जाता है
+और हर वही रहता है।
+</p>
+
+<h3>अलग-अलग हर वाली भिन्न</h3>
+
+<div class="example">
+
+1/2 + 1/3
+
+<br><br>
+
+LCM = 6
+
+<br>
+
+1/2 = 3/6
+
+<br>
+1/3 = 2/6
+
+<br><br>
+
+इसलिए:
+
+<strong>3/6 + 2/6 = 5/6</strong>
+
+</div>
+
+</div>
+
+
+<!-- SUBTRACTION -->
+
+<div class="card">
+
+<h2>➖ भिन्नों का घटाव</h2>
+
+<div class="formula">
+5/8 − 2/8 = 3/8
+</div>
+
+<p>
+समान हर वाली भिन्नों में अंशों को घटाया जाता है और हर समान रहता है।
+</p>
+
+<div class="example">
+
+उदाहरण:
+<br><br>
+
+7/10 − 3/10 = 4/10 = 2/5
+
+</div>
+
+</div>
+
+
+<!-- MULTIPLICATION -->
+
+<div class="card">
+
+<h2>✖️ भिन्न का गुणन</h2>
+
+<p>
+दो भिन्नों को गुणा करते समय अंशों का गुणनफल अंश में
+और हरों का गुणनफल हर में लिखा जाता है।
+</p>
+
+<div class="formula">
+2/3 × 4/5 = 8/15
+</div>
+
+</div>
+
+
+<!-- DIVISION -->
+
+<div class="card">
+
+<h2>➗ भिन्न का भाग</h2>
+
+<p>
+भिन्नों के भाग में दूसरी भिन्न के व्युत्क्रम से गुणा किया जा सकता है।
+</p>
+
+<div class="formula">
+2/3 ÷ 4/5
+<br><br>
+= 2/3 × 5/4
+<br><br>
+= 10/12
+<br><br>
+= 5/6
+</div>
+
+</div>
+
+
+<!-- PRACTICE -->
+
+<div class="card">
+
+<h2>📝 अभ्यास प्रश्न – 42 Questions</h2>
+
+<div class="grid">
+
+<div class="question"><strong>1.</strong> भिन्न किसे कहते हैं?</div>
+<div class="question"><strong>2.</strong> 3/7 में अंश और हर बताइए।</div>
+<div class="question"><strong>3.</strong> 5/9 को शब्दों में लिखिए।</div>
+<div class="question"><strong>4.</strong> 2/5 उचित भिन्न है या अनुचित?</div>
+<div class="question"><strong>5.</strong> 9/4 किस प्रकार की भिन्न है?</div>
+<div class="question"><strong>6.</strong> 1/8 किस प्रकार की भिन्न है?</div>
+<div class="question"><strong>7.</strong> 2 3/5 को अनुचित भिन्न में बदलिए।</div>
+<div class="question"><strong>8.</strong> 11/3 को मिश्र भिन्न में बदलिए।</div>
+<div class="question"><strong>9.</strong> 1/2 की दो समतुल्य भिन्न लिखिए।</div>
+<div class="question"><strong>10.</strong> 3/4 की एक समतुल्य भिन्न लिखिए।</div>
+
+<div class="question"><strong>11.</strong> 2/7 और 5/7 में बड़ी भिन्न बताइए।</div>
+<div class="question"><strong>12.</strong> 3/8 और 7/8 की तुलना कीजिए।</div>
+<div class="question"><strong>13.</strong> 1/3 और 1/5 में कौन बड़ी है?</div>
+<div class="question"><strong>14.</strong> 2/3 को हर 12 वाली भिन्न में बदलिए।</div>
+<div class="question"><strong>15.</strong> 3/4 को हर 20 वाली भिन्न में बदलिए।</div>
+<div class="question"><strong>16.</strong> 2/5 + 1/5 हल कीजिए।</div>
+<div class="question"><strong>17.</strong> 3/8 + 2/8 हल कीजिए।</div>
+<div class="question"><strong>18.</strong> 7/9 − 2/9 हल कीजिए।</div>
+<div class="question"><strong>19.</strong> 8/11 − 3/11 हल कीजिए।</div>
+<div class="question"><strong>20.</strong> 1/2 + 1/4 हल कीजिए।</div>
+
+<div class="question"><strong>21.</strong> 1/3 + 1/6 हल कीजिए।</div>
+<div class="question"><strong>22.</strong> 3/4 − 1/2 हल कीजिए।</div>
+<div class="question"><strong>23.</strong> 5/6 − 1/3 हल कीजिए।</div>
+<div class="question"><strong>24.</strong> 2/3 × 3/5 हल कीजिए।</div>
+<div class="question"><strong>25.</strong> 4/7 × 2/3 हल कीजिए।</div>
+<div class="question"><strong>26.</strong> 1/2 ÷ 1/4 हल कीजिए।</div>
+<div class="question"><strong>27.</strong> 2/3 ÷ 1/3 हल कीजिए।</div>
+<div class="question"><strong>28.</strong> 4/5 को संख्या रेखा पर दर्शाइए।</div>
+<div class="question"><strong>29.</strong> 3/10 और 7/10 की तुलना कीजिए।</div>
+<div class="question"><strong>30.</strong> 5/6 को समतुल्य भिन्न में बदलिए।</div>
+
+<div class="question"><strong>31.</strong> 12/15 को सरल कीजिए।</div>
+<div class="question"><strong>32.</strong> 18/24 को सरल कीजिए।</div>
+<div class="question"><strong>33.</strong> 20/30 को सरल कीजिए।</div>
+<div class="question"><strong>34.</strong> 3 1/2 को अनुचित भिन्न में बदलिए।</div>
+<div class="question"><strong>35.</strong> 17/5 को मिश्र भिन्न में बदलिए।</div>
+<div class="question"><strong>36.</strong> 2/3 + 1/6 हल कीजिए।</div>
+<div class="question"><strong>37.</strong> 5/8 − 1/4 हल कीजिए।</div>
+<div class="question"><strong>38.</strong> 2/5 × 5/6 हल कीजिए।</div>
+<div class="question"><strong>39.</strong> 3/4 ÷ 1/2 हल कीजिए।</div>
+<div class="question"><strong>40.</strong> एक केक का 3/8 भाग खाया गया। कितना भाग बचा?</div>
+
+<div class="question"><strong>41.</strong> रीना ने 2/5 लीटर पानी और सीमा ने 1/5 लीटर पानी पिया। कुल कितना पानी पिया?</div>
+<div class="question"><strong>42.</strong> एक कक्षा में 3/4 विद्यार्थी उपस्थित हैं। यदि कुल 40 विद्यार्थी हैं, तो कितने उपस्थित हैं?</div>
+
+</div>
+</div>
+
+
+<!-- MCQ -->
+
+<div class="card">
+
+<h2>🎯 बहुविकल्पीय प्रश्न – 15 MCQs</h2>
+
+<div class="mcq">
+<strong>1. 3/5 में अंश कौन-सा है?</strong>
+<div class="option">A) 3</div>
+<div class="option">B) 5</div>
+<div class="option">C) 8</div>
+<div class="option">D) 2</div>
+</div>
+
+<div class="mcq">
+<strong>2. इनमें से उचित भिन्न कौन-सी है?</strong>
+<div class="option">A) 7/3</div>
+<div class="option">B) 9/5</div>
+<div class="option">C) 2/7</div>
+<div class="option">D) 8/4</div>
+</div>
+
+<div class="mcq">
+<strong>3. 1/2 की समतुल्य भिन्न कौन-सी है?</strong>
+<div class="option">A) 2/3</div>
+<div class="option">B) 2/4</div>
+<div class="option">C) 3/5</div>
+<div class="option">D) 4/5</div>
+</div>
+
+<div class="mcq">
+<strong>4. 7/9 और 4/9 में बड़ी भिन्न कौन-सी है?</strong>
+<div class="option">A) 7/9</div>
+<div class="option">B) 4/9</div>
+<div class="option">C) दोनों बराबर</div>
+<div class="option">D) कोई नहीं</div>
+</div>
+
+<div class="mcq">
+<strong>5. 1/2 + 1/2 = ?</strong>
+<div class="option">A) 1/2</div>
+<div class="option">B) 1</div>
+<div class="option">C) 2</div>
+<div class="option">D) 1/4</div>
+</div>
+
+<div class="mcq">
+<strong>6. 5/8 − 2/8 = ?</strong>
+<div class="option">A) 2/8</div>
+<div class="option">B) 3/8</div>
+<div class="option">C) 4/8</div>
+<div class="option">D) 7/8</div>
+</div>
+
+<div class="mcq">
+<strong>7. 2/3 × 3/4 = ?</strong>
+<div class="option">A) 1/2</div>
+<div class="option">B) 2/7</div>
+<div class="option">C) 5/7</div>
+<div class="option">D) 3/8</div>
+</div>
+
+<div class="mcq">
+<strong>8. 8/4 का सरल रूप क्या है?</strong>
+<div class="option">A) 1</div>
+<div class="option">B) 2</div>
+<div class="option">C) 4</div>
+<div class="option">D) 8</div>
+</div>
+
+<div class="mcq">
+<strong>9. इनमें से इकाई भिन्न कौन-सी है?</strong>
+<div class="option">A) 2/5</div>
+<div class="option">B) 3/4</div>
+<div class="option">C) 1/7</div>
+<div class="option">D) 5/6</div>
+</div>
+
+<div class="mcq">
+<strong>10. 11/4 को मिश्र भिन्न में बदलने पर क्या मिलेगा?</strong>
+<div class="option">A) 2 3/4</div>
+<div class="option">B) 3 1/4</div>
+<div class="option">C) 2 1/4</div>
+<div class="option">D) 4 3/4</div>
+</div>
+
+<div class="mcq">
+<strong>11. 2/3 + 1/3 = ?</strong>
+<div class="option">A) 1/3</div>
+<div class="option">B) 2/3</div>
+<div class="option">C) 1</div>
+<div class="option">D) 3/6</div>
+</div>
+
+<div class="mcq">
+<strong>12. 3/4 और 2/4 में बड़ी भिन्न है:</strong>
+<div class="option">A) 2/4</div>
+<div class="option">B) 3/4</div>
+<div class="option">C) दोनों</div>
+<div class="option">D) कोई नहीं</div>
+</div>
+
+<div class="mcq">
+<strong>13. 6/8 का सरल रूप क्या है?</strong>
+<div class="option">A) 2/3</div>
+<div class="option">B) 3/4</div>
+<div class="option">C) 4/5</div>
+<div class="option">D) 1/2</div>
+</div>
+
+<div class="mcq">
+<strong>14. 1/4 + 1/4 = ?</strong>
+<div class="option">A) 1/2</div>
+<div class="option">B) 1/4</div>
+<div class="option">C) 2</div>
+<div class="option">D) 3/4</div>
+</div>
+
+<div class="mcq">
+<strong>15. 3/5 में हर कौन-सा है?</strong>
+<div class="option">A) 3</div>
+<div class="option">B) 5</div>
+<div class="option">C) 8</div>
+<div class="option">D) 2</div>
+</div>
+
+<div class="answer">
+
+<h3>✅ उत्तरमाला</h3>
+
+<p>
+1-A, 2-C, 3-B, 4-A, 5-B,
+6-B, 7-A, 8-B, 9-C, 10-A,
+11-C, 12-B, 13-B, 14-A, 15-B
+</p>
+
+</div>
+
+</div>
+
+
+<!-- QUICK REVISION -->
+
+<div class="card">
+
+<h2>⚡ Quick Revision</h2>
+
+<ul>
+<li>भिन्न में ऊपर की संख्या = अंश।</li>
+<li>भिन्न में नीचे की संख्या = हर।</li>
+<li>अंश < हर → उचित भिन्न।</li>
+<li>अंश ≥ हर → अनुचित भिन्न।</li>
+<li>अंश 1 हो → इकाई भिन्न।</li>
+<li>समान मान वाली भिन्नें = समतुल्य भिन्न।</li>
+<li>समान हर वाली भिन्नों की तुलना अंश से की जाती है।</li>
+<li>भिन्न जोड़ने के लिए हर समान होना चाहिए।</li>
+<li>भिन्न घटाने के लिए भी हर समान करना आवश्यक हो सकता है।</li>
+<li>गुणा में अंश × अंश और हर × हर किया जाता है।</li>
+</ul>
+
+</div>
+
+
+<!-- RESOURCES -->
+
+<div class="card">
+
+<h2>📚 Learning Resources</h2>
+
+<div class="resource-grid">
+
+<div class="resource">
+<h3>📖 Notes</h3>
+<p>भिन्न के महत्वपूर्ण नियम और उदाहरण दोहराएँ।</p>
+</div>
+
+<div class="resource">
+<h3>📝 Practice</h3>
+<p>42 अभ्यास प्रश्न हल करके अपनी तैयारी जाँचें।</p>
+</div>
+
+<div class="resource">
+<h3>🎯 MCQ Test</h3>
+<p>15 MCQs से अपनी समझ का परीक्षण करें।</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CTA -->
+
+<div class="cta">
+
+<h2>🚀 अपनी तैयारी जारी रखें!</h2>
+
+<p>
+भिन्नों को समझने के बाद अगले अध्याय में हम
+<strong>ज्यामितीय रचनाओं (Constructions)</strong> की ओर बढ़ेंगे।
+</p>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+<a href="class-6-maths-chapter-6.html">
+⬅️ अध्याय 6
+</a>
+
+<a href="../class-6-mathematics.html">
+📚 सभी अध्याय
+</a>
+
+<a href="class-6-maths-chapter-8.html">
+अध्याय 8 ➡️
+</a>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<p>
+<strong>UEduTech</strong> – Smart Learning Platform
+</p>
+
+<p>
+Class 6 Mathematics | Chapter 7: Fractions
+</p>
+
+<p>
+© 2026 UEduTech. All Rights Reserved.
+</p>
+
+</footer>
+
+</body>
+</html>
+

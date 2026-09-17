@@ -1,0 +1,1279 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Class 6 Mathematics Chapter 10 – The Other Side of Zero | UEduTech</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+header{
+    background:linear-gradient(135deg,#123c69,#1e88e5);
+    color:white;
+    padding:22px 5%;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#ffd54f;
+}
+
+nav{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#ffd54f;
+}
+
+.language-box{
+    display:flex;
+    gap:8px;
+}
+
+.lang-btn{
+    border:2px solid white;
+    background:transparent;
+    color:white;
+    padding:7px 14px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.lang-btn.active{
+    background:white;
+    color:#123c69;
+}
+
+.hero{
+    max-width:1200px;
+    margin:35px auto 20px;
+    padding:35px 25px;
+    background:linear-gradient(135deg,#ffffff,#eaf3ff);
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.badge{
+    display:inline-block;
+    background:#e3f2fd;
+    color:#1565c0;
+    padding:7px 15px;
+    border-radius:20px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.hero h1{
+    font-size:38px;
+    color:#123c69;
+    margin-bottom:8px;
+}
+
+.hero p{
+    font-size:18px;
+    color:#4b5563;
+}
+
+.container{
+    max-width:1100px;
+    margin:25px auto;
+    padding:0 18px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:22px;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+}
+
+.card h2{
+    color:#1565c0;
+    margin-bottom:15px;
+    border-left:5px solid #1565c0;
+    padding-left:12px;
+}
+
+.card h3{
+    color:#123c69;
+    margin:18px 0 8px;
+}
+
+.example{
+    background:#fff8e1;
+    border-left:5px solid #ffb300;
+    padding:15px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.formula{
+    background:#e8f5e9;
+    border-left:5px solid #43a047;
+    padding:15px;
+    border-radius:10px;
+    margin:15px 0;
+    font-weight:bold;
+}
+
+.note{
+    background:#fce4ec;
+    border-left:5px solid #e91e63;
+    padding:15px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.question{
+    background:#f8fafc;
+    border:1px solid #e5e7eb;
+    padding:14px 16px;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+.mcq{
+    background:#eef6ff;
+    border:1px solid #cfe3ff;
+    padding:15px;
+    border-radius:10px;
+    margin:12px 0;
+}
+
+.answer{
+    color:#166534;
+    font-weight:bold;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin:15px 0;
+}
+
+th,td{
+    border:1px solid #d1d5db;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#e3f2fd;
+    color:#123c69;
+}
+
+.chapter-nav{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:30px 0;
+}
+
+.chapter-nav a{
+    text-decoration:none;
+    background:#1565c0;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.chapter-nav a:hover{
+    background:#0d47a1;
+}
+
+footer{
+    background:#123c69;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:40px;
+}
+
+footer strong{
+    color:#ffd54f;
+}
+
+.lang-en{
+    display:none;
+}
+
+body.english .lang-hi{
+    display:none;
+}
+
+body.english .lang-en{
+    display:inline;
+}
+
+body.english .block-hi{
+    display:none;
+}
+
+body.english .block-en{
+    display:block;
+}
+
+.block-en{
+    display:none;
+}
+
+ul,ol{
+    padding-left:25px;
+}
+
+li{
+    margin:5px 0;
+}
+
+@media(max-width:700px){
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .nav{
+        justify-content:center;
+    }
+
+    .logo{
+        width:100%;
+        text-align:center;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .chapter-nav a{
+        width:100%;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+
+        <div class="logo">
+            U<span>EduTech</span>
+        </div>
+
+        <nav>
+            <a href="../../../index.html">
+                <span class="lang-hi">होम</span>
+                <span class="lang-en">Home</span>
+            </a>
+
+            <a href="../../../subjects.html">
+                <span class="lang-hi">विषय</span>
+                <span class="lang-en">Subjects</span>
+            </a>
+
+            <a href="../../../tests.html">
+                <span class="lang-hi">मॉडल टेस्ट</span>
+                <span class="lang-en">Model Tests</span>
+            </a>
+
+            <a href="../../../study-material.html">
+                <span class="lang-hi">स्टडी मटेरियल</span>
+                <span class="lang-en">Study Material</span>
+            </a>
+        </nav>
+
+        <div class="language-box">
+            <button id="hiBtn" class="lang-btn active"
+                    onclick="setLanguage('hi')">🇮🇳 हिंदी</button>
+
+            <button id="enBtn" class="lang-btn"
+                    onclick="setLanguage('en')">🇬🇧 English</button>
+        </div>
+
+    </div>
+</header>
+
+
+<section class="hero">
+
+    <div class="badge">
+        <span class="lang-hi">कक्षा 6 गणित • अध्याय 10</span>
+        <span class="lang-en">Class 6 Mathematics • Chapter 10</span>
+    </div>
+
+    <h1>
+        <span class="lang-hi">शून्य के दूसरी ओर</span>
+        <span class="lang-en">The Other Side of Zero</span>
+    </h1>
+
+    <p>
+        <span class="lang-hi">
+            पूर्ण संख्याओं से ऋणात्मक संख्याओं तक की रोचक यात्रा
+        </span>
+
+        <span class="lang-en">
+            An interesting journey from whole numbers to negative numbers
+        </span>
+    </p>
+
+</section>
+
+
+<div class="container">
+
+<!-- INTRODUCTION -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">📘 अध्याय परिचय</span>
+<span class="lang-en">📘 Chapter Introduction</span>
+</h2>
+
+<div class="block-hi">
+<p>
+इस अध्याय में हम शून्य के दूसरी ओर स्थित संख्याओं अर्थात्
+<strong>ऋणात्मक संख्याओं (Negative Numbers)</strong> का अध्ययन करेंगे।
+हम संख्या रेखा पर धनात्मक और ऋणात्मक संख्याओं को समझेंगे तथा
+तापमान, ऊँचाई, गहराई, लाभ-हानि और बैंक खाते जैसे दैनिक जीवन के
+उदाहरणों में इनका उपयोग करेंगे।
+</p>
+
+<p>
+ऋणात्मक संख्याएँ शून्य से छोटी होती हैं। उदाहरण के लिए
+−1, −2, −3, −10 आदि ऋणात्मक संख्याएँ हैं।
+</p>
+</div>
+
+<div class="block-en">
+<p>
+In this chapter, we study numbers on the other side of zero,
+known as <strong>negative numbers</strong>. We will understand
+positive and negative numbers on a number line and use them in
+real-life situations such as temperature, height, depth, profit,
+loss and bank accounts.
+</p>
+
+<p>
+Negative numbers are smaller than zero. For example,
+−1, −2, −3 and −10 are negative numbers.
+</p>
+</div>
+
+</section>
+
+
+<!-- IMPORTANT TERMS -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">🔢 महत्वपूर्ण अवधारणाएँ</span>
+<span class="lang-en">🔢 Important Concepts</span>
+</h2>
+
+<div class="block-hi">
+
+<h3>1. धनात्मक संख्या</h3>
+<p>
+शून्य से बड़ी संख्याएँ धनात्मक संख्याएँ कहलाती हैं।
+जैसे: 1, 2, 3, 10, 25
+</p>
+
+<h3>2. ऋणात्मक संख्या</h3>
+<p>
+शून्य से छोटी संख्याएँ ऋणात्मक संख्याएँ कहलाती हैं।
+जैसे: −1, −2, −5, −10
+</p>
+
+<h3>3. शून्य</h3>
+<p>
+शून्य न तो धनात्मक संख्या है और न ही ऋणात्मक संख्या।
+</p>
+
+<h3>4. पूर्णांक</h3>
+<p>
+ऋणात्मक संख्याएँ, शून्य और धनात्मक संख्याएँ मिलकर
+पूर्णांक बनाते हैं।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<h3>1. Positive Number</h3>
+<p>
+Numbers greater than zero are called positive numbers.
+Examples: 1, 2, 3, 10, 25.
+</p>
+
+<h3>2. Negative Number</h3>
+<p>
+Numbers smaller than zero are called negative numbers.
+Examples: −1, −2, −5, −10.
+</p>
+
+<h3>3. Zero</h3>
+<p>
+Zero is neither positive nor negative.
+</p>
+
+<h3>4. Integers</h3>
+<p>
+Negative numbers, zero and positive numbers together form
+the integers.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- NUMBER LINE -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">📏 संख्या रेखा</span>
+<span class="lang-en">📏 Number Line</span>
+</h2>
+
+<div class="block-hi">
+
+<p>
+संख्या रेखा पर शून्य के दाईं ओर धनात्मक संख्याएँ और
+शून्य के बाईं ओर ऋणात्मक संख्याएँ होती हैं।
+</p>
+
+<div class="formula">
+← −5 ← −4 ← −3 ← −2 ← −1 ← 0 → 1 → 2 → 3 → 4 → 5 →
+</div>
+
+<p>
+संख्या रेखा पर जैसे-जैसे हम दाईं ओर जाते हैं, संख्याएँ बड़ी होती जाती हैं।
+जैसे 3 > 2 > 1 > 0 > −1 > −2.
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+On a number line, positive numbers are placed to the right of
+zero and negative numbers are placed to the left of zero.
+</p>
+
+<div class="formula">
+← −5 ← −4 ← −3 ← −2 ← −1 ← 0 → 1 → 2 → 3 → 4 → 5 →
+</div>
+
+<p>
+As we move to the right on the number line, numbers become larger.
+For example, 3 > 2 > 1 > 0 > −1 > −2.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- REAL LIFE -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">🌍 दैनिक जीवन में ऋणात्मक संख्याएँ</span>
+<span class="lang-en">🌍 Negative Numbers in Daily Life</span>
+</h2>
+
+<table>
+<tr>
+<th>
+<span class="lang-hi">स्थिति</span>
+<span class="lang-en">Situation</span>
+</th>
+
+<th>
+<span class="lang-hi">उदाहरण</span>
+<span class="lang-en">Example</span>
+</th>
+
+<th>
+<span class="lang-hi">अर्थ</span>
+<span class="lang-en">Meaning</span>
+</th>
+</tr>
+
+<tr>
+<td>
+<span class="lang-hi">तापमान</span>
+<span class="lang-en">Temperature</span>
+</td>
+<td>−5°C</td>
+<td>
+<span class="lang-hi">शून्य से 5°C कम</span>
+<span class="lang-en">5°C below zero</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<span class="lang-hi">समुद्र तल से ऊँचाई</span>
+<span class="lang-en">Height from sea level</span>
+</td>
+<td>−20 m</td>
+<td>
+<span class="lang-hi">समुद्र तल से 20 m नीचे</span>
+<span class="lang-en">20 m below sea level</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<span class="lang-hi">बैंक खाता</span>
+<span class="lang-en">Bank account</span>
+</td>
+<td>−₹500</td>
+<td>
+<span class="lang-hi">₹500 की कमी/ऋण</span>
+<span class="lang-en">A deficit/debt of ₹500</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<span class="lang-hi">गहराई</span>
+<span class="lang-en">Depth</span>
+</td>
+<td>−10 m</td>
+<td>
+<span class="lang-hi">10 m नीचे</span>
+<span class="lang-en">10 m below</span>
+</td>
+</tr>
+
+</table>
+
+</section>
+
+
+<!-- COMPARISON -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">⚖️ संख्याओं की तुलना</span>
+<span class="lang-en">⚖️ Comparing Numbers</span>
+</h2>
+
+<div class="block-hi">
+
+<p>
+दो संख्याओं की तुलना करते समय संख्या रेखा का उपयोग कर सकते हैं।
+जो संख्या संख्या रेखा पर दाईं ओर होती है, वह बड़ी होती है।
+</p>
+
+<div class="example">
+<strong>उदाहरण:</strong><br>
+−2 और −5 में −2 बड़ा है क्योंकि −2, −5 के दाईं ओर है।
+<br><br>
+अर्थात् −2 &gt; −5
+</div>
+
+<div class="example">
+<strong>उदाहरण:</strong><br>
+−3 और 2 में 2 बड़ा है।
+<br><br>
+अर्थात् 2 &gt; −3
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>
+We can use a number line to compare two numbers.
+The number located farther to the right is greater.
+</p>
+
+<div class="example">
+<strong>Example:</strong><br>
+Between −2 and −5, −2 is greater because it is to the right of −5.
+<br><br>
+Therefore, −2 &gt; −5.
+</div>
+
+<div class="example">
+<strong>Example:</strong><br>
+Between −3 and 2, 2 is greater.
+<br><br>
+Therefore, 2 &gt; −3.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- OPPOSITE -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">🔄 विपरीत संख्याएँ</span>
+<span class="lang-en">🔄 Opposite Numbers</span>
+</h2>
+
+<div class="block-hi">
+
+<p>
+किसी संख्या के विपरीत संख्या संख्या रेखा पर शून्य से समान दूरी
+पर दूसरी दिशा में स्थित होती है।
+</p>
+
+<div class="formula">
+5 का विपरीत = −5<br>
+−7 का विपरीत = 7<br>
+3 का विपरीत = −3
+</div>
+
+<p>
+शून्य का विपरीत भी शून्य ही है।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+The opposite of a number lies at the same distance from zero
+but in the opposite direction on the number line.
+</p>
+
+<div class="formula">
+Opposite of 5 = −5<br>
+Opposite of −7 = 7<br>
+Opposite of 3 = −3
+</div>
+
+<p>
+The opposite of zero is also zero.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ADDITION -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">➕ पूर्णांकों का जोड़</span>
+<span class="lang-en">➕ Addition of Integers</span>
+</h2>
+
+<div class="block-hi">
+
+<h3>समान चिह्न वाली संख्याएँ</h3>
+
+<p>
+यदि दोनों संख्याओं के चिह्न समान हैं, तो उनके परिमाण जोड़कर
+वही चिह्न लगाया जाता है।
+</p>
+
+<div class="example">
+(+3) + (+5) = +8<br>
+(−3) + (−5) = −8
+</div>
+
+<h3>अलग-अलग चिह्न वाली संख्याएँ</h3>
+
+<p>
+बड़ी संख्या के परिमाण में से छोटी संख्या का परिमाण घटाएँ और
+बड़ी संख्या का चिह्न रखें।
+</p>
+
+<div class="example">
+(+8) + (−3) = +5<br>
+(−8) + (+3) = −5
+</div>
+
+</div>
+
+<div class="block-en">
+
+<h3>Numbers with the Same Sign</h3>
+
+<p>
+If both numbers have the same sign, add their magnitudes and
+keep the same sign.
+</p>
+
+<div class="example">
+(+3) + (+5) = +8<br>
+(−3) + (−5) = −8
+</div>
+
+<h3>Numbers with Different Signs</h3>
+
+<p>
+Subtract the smaller magnitude from the larger magnitude and
+keep the sign of the number with the larger magnitude.
+</p>
+
+<div class="example">
+(+8) + (−3) = +5<br>
+(−8) + (+3) = −5
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SUBTRACTION -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">➖ पूर्णांकों का घटाव</span>
+<span class="lang-en">➖ Subtraction of Integers</span>
+</h2>
+
+<div class="block-hi">
+
+<p>
+घटाव को जोड़ के रूप में भी समझा जा सकता है।
+</p>
+
+<div class="formula">
+a − b = a + (−b)
+</div>
+
+<div class="example">
+7 − 3 = 7 + (−3) = 4
+<br><br>
+5 − (−2) = 5 + 2 = 7
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>
+Subtraction can also be understood as addition of the opposite.
+</p>
+
+<div class="formula">
+a − b = a + (−b)
+</div>
+
+<div class="example">
+7 − 3 = 7 + (−3) = 4
+<br><br>
+5 − (−2) = 5 + 2 = 7
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRACTICE QUESTIONS -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">📝 अभ्यास प्रश्न</span>
+<span class="lang-en">📝 Practice Questions</span>
+</h2>
+
+<div class="block-hi">
+
+<div class="question">1. शून्य से छोटी कोई तीन संख्याएँ लिखिए।</div>
+<div class="question">2. शून्य से बड़ी कोई तीन संख्याएँ लिखिए।</div>
+<div class="question">3. क्या शून्य धनात्मक संख्या है?</div>
+<div class="question">4. क्या शून्य ऋणात्मक संख्या है?</div>
+<div class="question">5. −5 का विपरीत लिखिए।</div>
+<div class="question">6. 8 का विपरीत लिखिए।</div>
+<div class="question">7. −12 का विपरीत लिखिए।</div>
+<div class="question">8. 0 का विपरीत क्या है?</div>
+<div class="question">9. −3 और 2 में बड़ी संख्या कौन-सी है?</div>
+<div class="question">10. −7 और −4 में बड़ी संख्या कौन-सी है?</div>
+<div class="question">11. 5 और −5 में कौन बड़ी है?</div>
+<div class="question">12. −10 और −15 में कौन बड़ी है?</div>
+<div class="question">13. संख्या रेखा पर −4 को दर्शाइए।</div>
+<div class="question">14. संख्या रेखा पर 6 को दर्शाइए।</div>
+<div class="question">15. −2 + 5 हल कीजिए।</div>
+<div class="question">16. 8 + (−3) हल कीजिए।</div>
+<div class="question">17. −6 + (−4) हल कीजिए।</div>
+<div class="question">18. 9 + (−9) हल कीजिए।</div>
+<div class="question">19. −10 + 6 हल कीजिए।</div>
+<div class="question">20. −8 + 12 हल कीजिए।</div>
+<div class="question">21. 15 − 8 हल कीजिए।</div>
+<div class="question">22. 8 − 12 हल कीजिए।</div>
+<div class="question">23. 5 − (−4) हल कीजिए।</div>
+<div class="question">24. −5 − 3 हल कीजिए।</div>
+<div class="question">25. −7 − (−2) हल कीजिए।</div>
+<div class="question">26. −10 + 10 का मान ज्ञात कीजिए।</div>
+<div class="question">27. तापमान −3°C से 5°C बढ़ा। नया तापमान क्या होगा?</div>
+<div class="question">28. तापमान 4°C से 9°C कम हुआ। नया तापमान क्या होगा?</div>
+<div class="question">29. एक गोताखोर समुद्र तल से 8 m नीचे है। इसे संख्या से दर्शाइए।</div>
+<div class="question">30. एक लिफ्ट भूतल से 4 मंजिल नीचे जाती है। इसे संख्या से दर्शाइए।</div>
+<div class="question">31. −1, −5, 3, 0, −2 को आरोही क्रम में लिखिए।</div>
+<div class="question">32. −1, −5, 3, 0, −2 को अवरोही क्रम में लिखिए।</div>
+<div class="question">33. −8 और −3 में कौन संख्या रेखा पर दाईं ओर है?</div>
+<div class="question">34. 0 और −7 में बड़ी संख्या कौन-सी है?</div>
+<div class="question">35. −20 और −12 में छोटी संख्या कौन-सी है?</div>
+<div class="question">36. (+15) + (−7) हल कीजिए।</div>
+<div class="question">37. (−15) + (+7) हल कीजिए।</div>
+<div class="question">38. (−20) + (−5) हल कीजिए।</div>
+<div class="question">39. 20 − (−5) हल कीजिए।</div>
+<div class="question">40. −20 − (−5) हल कीजिए।</div>
+<div class="question">41. −25 + 10 हल कीजिए।</div>
+<div class="question">42. 25 + (−10) हल कीजिए।</div>
+<div class="question">43. −30 − 10 हल कीजिए।</div>
+<div class="question">44. 30 − 40 हल कीजिए।</div>
+<div class="question">45. पूर्णांकों का हमारे दैनिक जीवन में कोई पाँच उपयोग लिखिए।</div>
+
+</div>
+
+
+<div class="block-en">
+
+<div class="question">1. Write any three numbers less than zero.</div>
+<div class="question">2. Write any three numbers greater than zero.</div>
+<div class="question">3. Is zero a positive number?</div>
+<div class="question">4. Is zero a negative number?</div>
+<div class="question">5. Write the opposite of −5.</div>
+<div class="question">6. Write the opposite of 8.</div>
+<div class="question">7. Write the opposite of −12.</div>
+<div class="question">8. What is the opposite of 0?</div>
+<div class="question">9. Which is greater: −3 or 2?</div>
+<div class="question">10. Which is greater: −7 or −4?</div>
+<div class="question">11. Which is greater: 5 or −5?</div>
+<div class="question">12. Which is greater: −10 or −15?</div>
+<div class="question">13. Represent −4 on a number line.</div>
+<div class="question">14. Represent 6 on a number line.</div>
+<div class="question">15. Find −2 + 5.</div>
+<div class="question">16. Find 8 + (−3).</div>
+<div class="question">17. Find −6 + (−4).</div>
+<div class="question">18. Find 9 + (−9).</div>
+<div class="question">19. Find −10 + 6.</div>
+<div class="question">20. Find −8 + 12.</div>
+<div class="question">21. Find 15 − 8.</div>
+<div class="question">22. Find 8 − 12.</div>
+<div class="question">23. Find 5 − (−4).</div>
+<div class="question">24. Find −5 − 3.</div>
+<div class="question">25. Find −7 − (−2).</div>
+<div class="question">26. Find −10 + 10.</div>
+<div class="question">27. Temperature rises from −3°C by 5°C. Find the new temperature.</div>
+<div class="question">28. Temperature falls from 4°C by 9°C. Find the new temperature.</div>
+<div class="question">29. A diver is 8 m below sea level. Represent it using an integer.</div>
+<div class="question">30. A lift goes 4 floors below ground level. Represent it using an integer.</div>
+<div class="question">31. Arrange −1, −5, 3, 0, −2 in ascending order.</div>
+<div class="question">32. Arrange −1, −5, 3, 0, −2 in descending order.</div>
+<div class="question">33. Which is farther right on the number line: −8 or −3?</div>
+<div class="question">34. Which is greater: 0 or −7?</div>
+<div class="question">35. Which is smaller: −20 or −12?</div>
+<div class="question">36. Find (+15) + (−7).</div>
+<div class="question">37. Find (−15) + (+7).</div>
+<div class="question">38. Find (−20) + (−5).</div>
+<div class="question">39. Find 20 − (−5).</div>
+<div class="question">40. Find −20 − (−5).</div>
+<div class="question">41. Find −25 + 10.</div>
+<div class="question">42. Find 25 + (−10).</div>
+<div class="question">43. Find −30 − 10.</div>
+<div class="question">44. Find 30 − 40.</div>
+<div class="question">45. Write any five uses of integers in daily life.</div>
+
+</div>
+
+</section>
+
+
+<!-- MCQ -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">🎯 बहुविकल्पीय प्रश्न (MCQs)</span>
+<span class="lang-en">🎯 Multiple Choice Questions (MCQs)</span>
+</h2>
+
+<div class="block-hi">
+
+<div class="mcq">
+<strong>1. −5 किस प्रकार की संख्या है?</strong><br>
+A) धनात्मक &nbsp; B) ऋणात्मक &nbsp; C) शून्य &nbsp; D) भिन्न
+</div>
+
+<div class="mcq">
+<strong>2. −7 का विपरीत क्या है?</strong><br>
+A) −7 &nbsp; B) 0 &nbsp; C) 7 &nbsp; D) 1
+</div>
+
+<div class="mcq">
+<strong>3. इनमें सबसे बड़ी संख्या कौन-सी है?</strong><br>
+A) −5 &nbsp; B) −2 &nbsp; C) −8 &nbsp; D) −10
+</div>
+
+<div class="mcq">
+<strong>4. इनमें सबसे छोटी संख्या कौन-सी है?</strong><br>
+A) −3 &nbsp; B) 0 &nbsp; C) 5 &nbsp; D) −9
+</div>
+
+<div class="mcq">
+<strong>5. −4 + 7 = ?</strong><br>
+A) −11 &nbsp; B) −3 &nbsp; C) 3 &nbsp; D) 11
+</div>
+
+<div class="mcq">
+<strong>6. −5 + (−3) = ?</strong><br>
+A) 8 &nbsp; B) −8 &nbsp; C) 2 &nbsp; D) −2
+</div>
+
+<div class="mcq">
+<strong>7. 8 + (−8) = ?</strong><br>
+A) 16 &nbsp; B) −16 &nbsp; C) 0 &nbsp; D) 8
+</div>
+
+<div class="mcq">
+<strong>8. 5 − (−2) = ?</strong><br>
+A) 3 &nbsp; B) 7 &nbsp; C) −7 &nbsp; D) −3
+</div>
+
+<div class="mcq">
+<strong>9. −3 − 4 = ?</strong><br>
+A) 7 &nbsp; B) 1 &nbsp; C) −1 &nbsp; D) −7
+</div>
+
+<div class="mcq">
+<strong>10. संख्या रेखा पर −6 कहाँ होगा?</strong><br>
+A) 0 के दाईं ओर &nbsp;
+B) 0 के बाईं ओर &nbsp;
+C) 0 पर &nbsp;
+D) कहीं नहीं
+</div>
+
+<div class="mcq">
+<strong>11. 0 से 5 इकाई बाईं ओर कौन-सी संख्या होगी?</strong><br>
+A) 5 &nbsp; B) −5 &nbsp; C) 0 &nbsp; D) 10
+</div>
+
+<div class="mcq">
+<strong>12. −10 और −4 में बड़ी संख्या है:</strong><br>
+A) −10 &nbsp; B) −4 &nbsp; C) दोनों बराबर &nbsp; D) 0
+</div>
+
+<div class="mcq">
+<strong>13. तापमान −2°C का अर्थ है:</strong><br>
+A) 2°C शून्य से ऊपर<br>
+B) 2°C शून्य से नीचे<br>
+C) 0°C<br>
+D) 2°C
+</div>
+
+<div class="mcq">
+<strong>14. 12 − 15 = ?</strong><br>
+A) 3 &nbsp; B) −3 &nbsp; C) 27 &nbsp; D) −27
+</div>
+
+<div class="mcq">
+<strong>15. −10 − (−4) = ?</strong><br>
+A) −14 &nbsp; B) −6 &nbsp; C) 6 &nbsp; D) 14
+</div>
+
+<h3>उत्तर कुंजी</h3>
+
+<p class="answer">
+1-B, 2-C, 3-B, 4-D, 5-C,
+6-B, 7-C, 8-B, 9-D, 10-B,
+11-B, 12-B, 13-B, 14-B, 15-B
+</p>
+
+</div>
+
+
+<div class="block-en">
+
+<div class="mcq">
+<strong>1. What type of number is −5?</strong><br>
+A) Positive &nbsp; B) Negative &nbsp; C) Zero &nbsp; D) Fraction
+</div>
+
+<div class="mcq">
+<strong>2. What is the opposite of −7?</strong><br>
+A) −7 &nbsp; B) 0 &nbsp; C) 7 &nbsp; D) 1
+</div>
+
+<div class="mcq">
+<strong>3. Which is the greatest?</strong><br>
+A) −5 &nbsp; B) −2 &nbsp; C) −8 &nbsp; D) −10
+</div>
+
+<div class="mcq">
+<strong>4. Which is the smallest?</strong><br>
+A) −3 &nbsp; B) 0 &nbsp; C) 5 &nbsp; D) −9
+</div>
+
+<div class="mcq">
+<strong>5. −4 + 7 = ?</strong><br>
+A) −11 &nbsp; B) −3 &nbsp; C) 3 &nbsp; D) 11
+</div>
+
+<div class="mcq">
+<strong>6. −5 + (−3) = ?</strong><br>
+A) 8 &nbsp; B) −8 &nbsp; C) 2 &nbsp; D) −2
+</div>
+
+<div class="mcq">
+<strong>7. 8 + (−8) = ?</strong><br>
+A) 16 &nbsp; B) −16 &nbsp; C) 0 &nbsp; D) 8
+</div>
+
+<div class="mcq">
+<strong>8. 5 − (−2) = ?</strong><br>
+A) 3 &nbsp; B) 7 &nbsp; C) −7 &nbsp; D) −3
+</div>
+
+<div class="mcq">
+<strong>9. −3 − 4 = ?</strong><br>
+A) 7 &nbsp; B) 1 &nbsp; C) −1 &nbsp; D) −7
+</div>
+
+<div class="mcq">
+<strong>10. Where is −6 located on a number line?</strong><br>
+A) Right of 0 &nbsp;
+B) Left of 0 &nbsp;
+C) At 0 &nbsp;
+D) Nowhere
+</div>
+
+<div class="mcq">
+<strong>11. Which number is 5 units left of 0?</strong><br>
+A) 5 &nbsp; B) −5 &nbsp; C) 0 &nbsp; D) 10
+</div>
+
+<div class="mcq">
+<strong>12. Which is greater: −10 or −4?</strong><br>
+A) −10 &nbsp; B) −4 &nbsp; C) Both equal &nbsp; D) 0
+</div>
+
+<div class="mcq">
+<strong>13. What does −2°C mean?</strong><br>
+A) 2°C above zero<br>
+B) 2°C below zero<br>
+C) 0°C<br>
+D) 2°C
+</div>
+
+<div class="mcq">
+<strong>14. 12 − 15 = ?</strong><br>
+A) 3 &nbsp; B) −3 &nbsp; C) 27 &nbsp; D) −27
+</div>
+
+<div class="mcq">
+<strong>15. −10 − (−4) = ?</strong><br>
+A) −14 &nbsp; B) −6 &nbsp; C) 6 &nbsp; D) 14
+</div>
+
+<h3>Answer Key</h3>
+
+<p class="answer">
+1-B, 2-C, 3-B, 4-D, 5-C,
+6-B, 7-C, 8-B, 9-D, 10-B,
+11-B, 12-B, 13-B, 14-B, 15-B
+</p>
+
+</div>
+
+</section>
+
+
+<!-- QUICK REVISION -->
+
+<section class="card">
+
+<h2>
+<span class="lang-hi">⚡ त्वरित पुनरावृत्ति</span>
+<span class="lang-en">⚡ Quick Revision</span>
+</h2>
+
+<div class="block-hi">
+
+<ul>
+<li>शून्य से बड़ी संख्याएँ धनात्मक होती हैं।</li>
+<li>शून्य से छोटी संख्याएँ ऋणात्मक होती हैं।</li>
+<li>शून्य न धनात्मक है, न ऋणात्मक।</li>
+<li>ऋणात्मक संख्याएँ संख्या रेखा पर शून्य के बाईं ओर होती हैं।</li>
+<li>धनात्मक संख्याएँ शून्य के दाईं ओर होती हैं।</li>
+<li>दाईं ओर स्थित संख्या बड़ी होती है।</li>
+<li>किसी संख्या का विपरीत उसके चिह्न को बदलकर प्राप्त होता है।</li>
+<li>0 का विपरीत 0 है।</li>
+<li>ऋणात्मक संख्याओं का उपयोग तापमान, गहराई, ऊँचाई और ऋण आदि में होता है।</li>
+<li>पूर्णांक में ऋणात्मक संख्याएँ, शून्य और धनात्मक संख्याएँ शामिल होती हैं।</li>
+</ul>
+
+</div>
+
+<div class="block-en">
+
+<ul>
+<li>Numbers greater than zero are positive.</li>
+<li>Numbers less than zero are negative.</li>
+<li>Zero is neither positive nor negative.</li>
+<li>Negative numbers are placed to the left of zero.</li>
+<li>Positive numbers are placed to the right of zero.</li>
+<li>The number farther right is greater.</li>
+<li>The opposite of a number is obtained by changing its sign.</li>
+<li>The opposite of 0 is 0.</li>
+<li>Negative numbers are used for temperature, depth, height and debt.</li>
+<li>Integers include negative numbers, zero and positive numbers.</li>
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- NAVIGATION -->
+
+<div class="chapter-nav">
+
+<a href="class-6-maths-chapter-9.html">
+    ←
+    <span class="lang-hi"> अध्याय 9</span>
+    <span class="lang-en"> Chapter 9</span>
+</a>
+
+<a href="../class-6-mathematics.html">
+    <span class="lang-hi">📚 सभी अध्याय</span>
+    <span class="lang-en">📚 All Chapters</span>
+</a>
+
+<a href="../../../study-material.html">
+    <span class="lang-hi">स्टडी मटेरियल →</span>
+    <span class="lang-en">Study Material →</span>
+</a>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<p>
+<strong>UEduTech</strong> —
+<span class="lang-hi">कक्षा 6 गणित के लिए डिजिटल अध्ययन सामग्री</span>
+<span class="lang-en">Digital learning material for Class 6 Mathematics</span>
+</p>
+
+<p>
+© 2026 UEduTech
+</p>
+
+</footer>
+
+
+<script>
+
+function setLanguage(lang){
+
+    if(lang === "en"){
+
+        document.body.classList.add("english");
+
+        document.getElementById("enBtn")
+            .classList.add("active");
+
+        document.getElementById("hiBtn")
+            .classList.remove("active");
+
+        document.documentElement.lang = "en";
+
+    }else{
+
+        document.body.classList.remove("english");
+
+        document.getElementById("hiBtn")
+            .classList.add("active");
+
+        document.getElementById("enBtn")
+            .classList.remove("active");
+
+        document.documentElement.lang = "hi";
+    }
+
+    localStorage.setItem("uedutech-language",lang);
+}
+
+
+window.onload = function(){
+
+    const savedLanguage =
+        localStorage.getItem("uedutech-language") || "hi";
+
+    setLanguage(savedLanguage);
+
+};
+
+</script>
+
+</body>
+</html>
+

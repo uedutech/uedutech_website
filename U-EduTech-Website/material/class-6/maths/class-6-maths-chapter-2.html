@@ -1,0 +1,1040 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chapter 2 - Lines and Angles | UEduTech</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #111827;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .section h2 {
+            color: #2563eb;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .section h3 {
+            color: #111827;
+            margin: 20px 0 10px;
+        }
+
+        .definition {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .example {
+            background: #f0fdf4;
+            border-left: 5px solid #16a34a;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .angle-box {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .angle-card {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .angle-card .symbol {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .angle-card h3 {
+            color: #2563eb;
+            margin: 5px 0;
+        }
+
+        .formula {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        .question {
+            background: #f9fafb;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 12px 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .mcq {
+            margin: 18px 0;
+        }
+
+        .mcq p {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .mcq ul {
+            list-style: none;
+        }
+
+        .mcq li {
+            padding: 7px 10px;
+            background: #f8fafc;
+            margin: 5px 0;
+            border-radius: 6px;
+        }
+
+        .answer {
+            background: #ecfdf5;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #16a34a;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .resource-card {
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+
+        .resource-card h3 {
+            color: #2563eb;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            margin-top: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #111827;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .navigation a {
+            flex: 1;
+            text-align: center;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .angle-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .angle-box {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+
+        <a href="../index.html" class="logo">
+            U<span>EduTech</span>
+        </a>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <nav id="navMenu">
+            <a href="../index.html">Home</a>
+            <a href="../subjects.html">Subjects</a>
+            <a href="../tests.html">Model Tests</a>
+            <a href="../study-material.html">Study Material</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+
+    <a href="../index.html">Home</a>
+    →
+    <a href="../study-material.html">Study Material</a>
+    →
+    <a href="class-6.html">Class 6</a>
+    →
+    <a href="class-6-mathematics.html">Mathematics</a>
+    →
+    Chapter 2
+
+</div>
+
+
+<!-- Hero -->
+<section class="hero">
+
+    <h1>Chapter 2: Lines and Angles</h1>
+
+    <p>
+        Class 6 Mathematics – Ganita Prakash
+        <br>
+        Learn about Lines, Line Segments, Rays and different types of Angles.
+    </p>
+
+</section>
+
+
+<div class="container">
+
+
+    <!-- Chapter Introduction -->
+    <section class="section">
+
+        <h2>📘 Chapter Introduction</h2>
+
+        <p>
+            In this chapter, we learn about basic geometrical ideas such as
+            lines, line segments, rays and angles. These concepts are used
+            in many areas of mathematics and everyday life.
+        </p>
+
+        <div class="definition">
+
+            <strong>Geometry:</strong>
+
+            Geometry is the branch of mathematics that deals with
+            shapes, sizes, positions and properties of objects.
+
+        </div>
+
+    </section>
+
+
+    <!-- Lines -->
+    <section class="section">
+
+        <h2>📏 1. Lines</h2>
+
+        <p>
+            A line is a straight path that extends endlessly in both
+            directions.
+        </p>
+
+        <div class="definition">
+
+            <strong>Line:</strong>
+
+            A line has no fixed starting point or ending point.
+
+            <br><br>
+
+            Example:
+
+            <br>
+
+            ←──────────────→
+
+        </div>
+
+
+        <h3>Line Segment</h3>
+
+        <p>
+            A line segment is a part of a line having two fixed endpoints.
+        </p>
+
+        <div class="example">
+
+            <strong>Example:</strong>
+
+            <br><br>
+
+            A────────────B
+
+            <br><br>
+
+            Here A and B are the endpoints.
+
+        </div>
+
+
+        <h3>Ray</h3>
+
+        <p>
+            A ray has one fixed endpoint and extends endlessly in one
+            direction.
+        </p>
+
+        <div class="example">
+
+            <strong>Example:</strong>
+
+            <br><br>
+
+            A──────────────→
+
+            <br><br>
+
+            A is the endpoint.
+
+        </div>
+
+    </section>
+
+
+    <!-- Difference -->
+    <section class="section">
+
+        <h2>🔍 Line, Line Segment and Ray</h2>
+
+        <div class="resource-grid">
+
+            <div class="resource-card">
+
+                <h3>Line</h3>
+
+                <p>
+                    Extends endlessly in both directions.
+                </p>
+
+                <p>←──────→</p>
+
+            </div>
+
+
+            <div class="resource-card">
+
+                <h3>Line Segment</h3>
+
+                <p>
+                    Has two fixed endpoints.
+                </p>
+
+                <p>A────B</p>
+
+            </div>
+
+
+            <div class="resource-card">
+
+                <h3>Ray</h3>
+
+                <p>
+                    Has one endpoint and extends in one direction.
+                </p>
+
+                <p>A────→</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Angles -->
+    <section class="section">
+
+        <h2>📐 2. Angles</h2>
+
+        <p>
+            An angle is formed when two rays have a common endpoint.
+        </p>
+
+        <div class="definition">
+
+            <strong>Vertex:</strong>
+
+            The common endpoint of the two rays forming an angle is called
+            the vertex.
+
+        </div>
+
+        <div class="example">
+
+            <strong>Example:</strong>
+
+            <br><br>
+
+            An angle can be represented as ∠ABC.
+
+            <br><br>
+
+            Here B is the vertex.
+
+        </div>
+
+    </section>
+
+
+    <!-- Types of Angles -->
+    <section class="section">
+
+        <h2>📐 3. Types of Angles</h2>
+
+        <div class="angle-box">
+
+            <div class="angle-card">
+
+                <div class="symbol">∠</div>
+
+                <h3>Acute Angle</h3>
+
+                <p>
+                    Greater than 0° and less than 90°.
+                </p>
+
+                <strong>Example: 45°</strong>
+
+            </div>
+
+
+            <div class="angle-card">
+
+                <div class="symbol">∟</div>
+
+                <h3>Right Angle</h3>
+
+                <p>
+                    Exactly 90°.
+                </p>
+
+                <strong>Example: 90°</strong>
+
+            </div>
+
+
+            <div class="angle-card">
+
+                <div class="symbol">◢</div>
+
+                <h3>Obtuse Angle</h3>
+
+                <p>
+                    Greater than 90° and less than 180°.
+                </p>
+
+                <strong>Example: 120°</strong>
+
+            </div>
+
+
+            <div class="angle-card">
+
+                <div class="symbol">↔</div>
+
+                <h3>Straight Angle</h3>
+
+                <p>
+                    Exactly 180°.
+                </p>
+
+                <strong>Example: 180°</strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="angle-box">
+
+            <div class="angle-card">
+
+                <div class="symbol">⟳</div>
+
+                <h3>Reflex Angle</h3>
+
+                <p>
+                    Greater than 180° and less than 360°.
+                </p>
+
+                <strong>Example: 270°</strong>
+
+            </div>
+
+
+            <div class="angle-card">
+
+                <div class="symbol">○</div>
+
+                <h3>Complete Angle</h3>
+
+                <p>
+                    Exactly 360°.
+                </p>
+
+                <strong>Example: 360°</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Important Facts -->
+    <section class="section">
+
+        <h2>⭐ Important Facts</h2>
+
+        <div class="formula">
+
+            ✔ Acute Angle: 0° &lt; Angle &lt; 90°
+
+        </div>
+
+        <div class="formula">
+
+            ✔ Right Angle = 90°
+
+        </div>
+
+        <div class="formula">
+
+            ✔ Obtuse Angle: 90° &lt; Angle &lt; 180°
+
+        </div>
+
+        <div class="formula">
+
+            ✔ Straight Angle = 180°
+
+        </div>
+
+        <div class="formula">
+
+            ✔ Reflex Angle: 180° &lt; Angle &lt; 360°
+
+        </div>
+
+        <div class="formula">
+
+            ✔ Complete Angle = 360°
+
+        </div>
+
+    </section>
+
+
+    <!-- Real Life -->
+    <section class="section">
+
+        <h2>🌍 Angles in Real Life</h2>
+
+        <p>
+            We can see different types of angles around us.
+        </p>
+
+        <div class="example">
+
+            <strong>Examples:</strong>
+
+            <br><br>
+
+            🕐 Clock hands form different angles.
+
+            <br>
+
+            🚪 An open door forms an angle.
+
+            <br>
+
+            📖 The corners of a book show right angles.
+
+            <br>
+
+            ✂️ Scissors form an angle when opened.
+
+        </div>
+
+    </section>
+
+
+    <!-- Important Questions -->
+    <section class="section">
+
+        <h2>❓ Important Questions</h2>
+
+        <div class="question">
+            <strong>Q1.</strong>
+            What is a line?
+        </div>
+
+        <div class="question">
+            <strong>Q2.</strong>
+            What is a line segment?
+        </div>
+
+        <div class="question">
+            <strong>Q3.</strong>
+            What is a ray?
+        </div>
+
+        <div class="question">
+            <strong>Q4.</strong>
+            What is an angle?
+        </div>
+
+        <div class="question">
+            <strong>Q5.</strong>
+            What is the vertex of an angle?
+        </div>
+
+        <div class="question">
+            <strong>Q6.</strong>
+            What is the measure of a right angle?
+        </div>
+
+        <div class="question">
+            <strong>Q7.</strong>
+            Give one example of an acute angle.
+        </div>
+
+        <div class="question">
+            <strong>Q8.</strong>
+            What is a straight angle?
+        </div>
+
+    </section>
+
+
+    <!-- MCQ -->
+    <section class="section">
+
+        <h2>📝 MCQ Practice</h2>
+
+
+        <div class="mcq">
+
+            <p>
+                1. A line extends:
+            </p>
+
+            <ul>
+                <li>A) In one direction</li>
+                <li>B) In two directions</li>
+                <li>C) Nowhere</li>
+                <li>D) Only upward</li>
+            </ul>
+
+        </div>
+
+
+        <div class="mcq">
+
+            <p>
+                2. A line segment has:
+            </p>
+
+            <ul>
+                <li>A) No endpoint</li>
+                <li>B) One endpoint</li>
+                <li>C) Two endpoints</li>
+                <li>D) Three endpoints</li>
+            </ul>
+
+        </div>
+
+
+        <div class="mcq">
+
+            <p>
+                3. A right angle measures:
+            </p>
+
+            <ul>
+                <li>A) 45°</li>
+                <li>B) 90°</li>
+                <li>C) 180°</li>
+                <li>D) 360°</li>
+            </ul>
+
+        </div>
+
+
+        <div class="mcq">
+
+            <p>
+                4. An angle greater than 90° but less than 180° is:
+            </p>
+
+            <ul>
+                <li>A) Acute angle</li>
+                <li>B) Right angle</li>
+                <li>C) Obtuse angle</li>
+                <li>D) Complete angle</li>
+            </ul>
+
+        </div>
+
+
+        <div class="mcq">
+
+            <p>
+                5. An angle of 180° is called:
+            </p>
+
+            <ul>
+                <li>A) Acute angle</li>
+                <li>B) Right angle</li>
+                <li>C) Straight angle</li>
+                <li>D) Reflex angle</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- Answer Key -->
+    <section class="section">
+
+        <h2>✅ Answer Key</h2>
+
+        <div class="answer">
+
+            <p><strong>1.</strong> B) In two directions</p>
+
+            <p><strong>2.</strong> C) Two endpoints</p>
+
+            <p><strong>3.</strong> B) 90°</p>
+
+            <p><strong>4.</strong> C) Obtuse angle</p>
+
+            <p><strong>5.</strong> C) Straight angle</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Resources -->
+    <section class="section">
+
+        <h2>📚 Chapter Resources</h2>
+
+        <div class="resource-grid">
+
+            <div class="resource-card">
+
+                <h3>📖 Notes</h3>
+
+                <p>
+                    Complete chapter notes.
+                </p>
+
+                <a href="#" class="btn btn-secondary">
+                    Coming Soon
+                </a>
+
+            </div>
+
+
+            <div class="resource-card">
+
+                <h3>📝 Questions</h3>
+
+                <p>
+                    Practice questions and exercises.
+                </p>
+
+                <a href="#" class="btn btn-secondary">
+                    Coming Soon
+                </a>
+
+            </div>
+
+
+            <div class="resource-card">
+
+                <h3>📄 PDF</h3>
+
+                <p>
+                    Downloadable chapter PDF.
+                </p>
+
+                <a href="#" class="btn btn-secondary">
+                    Coming Soon
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Model Test CTA -->
+    <section class="section" style="text-align:center;">
+
+        <h2>🎯 Test Your Knowledge</h2>
+
+        <p>
+            Chapter 2 की तैयारी पूरी करने के बाद Model Test देकर
+            अपना knowledge check करें।
+        </p>
+
+        <a href="../tests.html" class="btn btn-primary">
+            Take Model Test →
+        </a>
+
+    </section>
+
+
+    <!-- Chapter Navigation -->
+    <div class="navigation">
+
+        <a href="class-6-maths-chapter-1.html"
+           class="btn btn-secondary">
+
+            ← Chapter 1
+
+        </a>
+
+
+        <a href="class-6-mathematics.html"
+           class="btn btn-primary">
+
+            All Chapters
+
+        </a>
+
+
+        <a href="class-6-maths-chapter-3.html"
+           class="btn btn-primary">
+
+            Chapter 3 →
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- Footer -->
+<footer>
+
+    <h3>UEduTech</h3>
+
+    <p>
+        Learn • Practice • Succeed
+    </p>
+
+    <p>
+        © 2026 UEduTech. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+    document.getElementById("navMenu")
+        .classList.toggle("active");
+
+}
+
+</script>
+
+</body>
+</html>
+```

@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Class 7 Maths Chapter 2 – Arithmetic Expressions | UEduTech</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, "Noto Sans Devanagari", sans-serif;
+    background:#f4f7fb;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+header{
+    background:linear-gradient(135deg,#173b72,#2563eb);
+    color:white;
+    padding:18px 6%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#ffd43b;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:8px 13px;
+    border-radius:8px;
+    font-size:14px;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.16);
+}
+
+.language-box{
+    text-align:center;
+    padding:16px 10px;
+    background:white;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.lang-btn{
+    border:1px solid #2563eb;
+    background:white;
+    color:#2563eb;
+    padding:8px 18px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:700;
+    margin:3px;
+}
+
+.lang-btn.active{
+    background:#2563eb;
+    color:white;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+}
+
+.hero{
+    margin:30px auto;
+    padding:45px 25px;
+    text-align:center;
+    background:linear-gradient(135deg,#e8f1ff,#ffffff);
+    border-radius:20px;
+    border:1px solid #dbeafe;
+    box-shadow:0 8px 25px rgba(37,99,235,.08);
+}
+
+.badge{
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    padding:6px 15px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    color:#173b72;
+    font-size:36px;
+    margin-bottom:8px;
+}
+
+.hero p{
+    color:#64748b;
+    font-size:18px;
+}
+
+.card{
+    background:white;
+    margin:22px 0;
+    padding:28px;
+    border-radius:16px;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+    border-left:5px solid #2563eb;
+}
+
+.card h2{
+    color:#173b72;
+    margin-bottom:15px;
+    font-size:25px;
+}
+
+.card h3{
+    color:#2563eb;
+    margin:18px 0 8px;
+}
+
+.example{
+    background:#eff6ff;
+    border:1px solid #bfdbfe;
+    border-radius:12px;
+    padding:15px 18px;
+    margin:15px 0;
+}
+
+.formula{
+    background:#f0fdf4;
+    border-left:4px solid #16a34a;
+    padding:14px 18px;
+    border-radius:8px;
+    margin:12px 0;
+    font-weight:600;
+}
+
+.warning{
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+    padding:14px 18px;
+    border-radius:8px;
+    margin:12px 0;
+}
+
+.question-list{
+    padding-left:25px;
+}
+
+.question-list li{
+    margin:9px 0;
+}
+
+.mcq{
+    background:#fafafa;
+    border:1px solid #e5e7eb;
+    padding:15px;
+    border-radius:10px;
+    margin:12px 0;
+}
+
+.answer{
+    background:#ecfdf5;
+    padding:18px;
+    border-radius:12px;
+    border:1px solid #bbf7d0;
+}
+
+.revision-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.revision-box{
+    padding:18px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:12px;
+}
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin:30px 0;
+}
+
+.navigation a{
+    flex:1;
+    text-align:center;
+    text-decoration:none;
+    padding:13px;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-weight:bold;
+}
+
+.navigation a:hover{
+    background:#173b72;
+}
+
+footer{
+    background:#173b72;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+.lang-en{
+    display:none;
+}
+
+body.english .lang-hi{
+    display:none;
+}
+
+body.english .lang-en{
+    display:inline;
+}
+
+.block-en{
+    display:none;
+}
+
+.block-hi{
+    display:block;
+}
+
+body.english .block-hi{
+    display:none;
+}
+
+body.english .block-en{
+    display:block;
+}
+
+@media(max-width:700px){
+    .navbar{
+        flex-direction:column;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+
+```
+    <div class="logo">
+        U<span>Edu</span>Tech
+    </div>
+
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../../subjects.html">Subjects</a>
+        <a href="../../../tests.html">Model Tests</a>
+        <a href="../../../study-material.html">Study Material</a>
+    </nav>
+
+</div>
+```
+
+</header>
+
+<div class="language-box">
+    <button id="hiBtn" class="lang-btn active"
+            onclick="setLanguage('hi')">
+        🇮🇳 हिंदी
+    </button>
+
+```
+<button id="enBtn" class="lang-btn"
+        onclick="setLanguage('en')">
+    🇬🇧 English
+</button>
+```
+
+</div>
+
+<main class="container">
+
+<section class="hero">
+
+```
+<div class="badge">
+    <span class="lang-hi">कक्षा 7 गणित • अध्याय 2</span>
+    <span class="lang-en">Class 7 Mathematics • Chapter 2</span>
+</div>
+
+<h1>
+    <span class="lang-hi">Arithmetic Expressions</span>
+    <span class="lang-en">Arithmetic Expressions</span>
+</h1>
+
+<p>
+    <span class="lang-hi">
+        अंकगणितीय व्यंजक
+    </span>
+
+    <span class="lang-en">
+        Understanding, reading and evaluating arithmetic expressions
+    </span>
+</p>
+```
+
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="card">
+
+<h2>
+    <span class="lang-hi">📘 अध्याय परिचय</span>
+    <span class="lang-en">📘 Chapter Introduction</span>
+</h2>
+
+<div class="block-hi">
+    <p>
+        Arithmetic Expression अर्थात् <b>अंकगणितीय व्यंजक</b> संख्याओं और
+        गणितीय संक्रियाओं से बना एक गणितीय वाक्यांश है।
+    </p>
+
+```
+<p>
+    उदाहरण के लिए:
+    <b>13 + 2</b>, <b>20 − 4</b>, <b>12 × 5</b> और
+    <b>18 ÷ 3</b> अंकगणितीय व्यंजक हैं।
+</p>
+
+<p>
+    इस अध्याय में हम expressions को पढ़ना, उनका मान ज्ञात करना,
+    दो expressions की तुलना करना, brackets का प्रयोग करना तथा
+    expressions को terms में समझना सीखेंगे।
+</p>
+```
+
+</div>
+
+<div class="block-en">
+    <p>
+        An <b>arithmetic expression</b> is a mathematical phrase made using
+        numbers and mathematical operations.
+    </p>
+
+```
+<p>
+    Examples are:
+    <b>13 + 2</b>, <b>20 − 4</b>, <b>12 × 5</b> and
+    <b>18 ÷ 3</b>.
+</p>
+
+<p>
+    In this chapter, we learn how to read and evaluate expressions,
+    compare expressions, use brackets, and identify terms.
+</p>
+```
+
+</div>
+
+</section>
+
+<!-- SIMPLE EXPRESSIONS -->
+
+<section class="card">
+
+<h2>
+    <span class="lang-hi">1️⃣ सरल अंकगणितीय व्यंजक</span>
+    <span class="lang-en">1️⃣ Simple Expressions</span>
+</h2>
+
+<div class="block-hi">
+
+<p>
+    एक सरल expression में संख्याएँ और एक या अधिक basic operations हो सकते हैं।
+</p>
+
+<div class="example">
+    <b>13 + 2 = 15</b><br>
+    13 और 2 को जोड़ने पर 15 प्राप्त होता है।
+</div>
+
+<p>
+    किसी expression का जो परिणाम प्राप्त होता है उसे उस expression का
+    <b>मान (Value)</b> कहते हैं।
+</p>
+
+<div class="example">
+    <b>12 × 5 = 60</b><br>
+    इसलिए 12 × 5 का मान = <b>60</b>
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>
+    A simple expression may contain numbers and basic mathematical operations.
+</p>
+
+<div class="example">
+    <b>13 + 2 = 15</b><br>
+    The value of 13 + 2 is 15.
+</div>
+
+<p>
+    The result obtained after evaluating an expression is called its
+    <b>value</b>.
+</p>
+
+<div class="example">
+    <b>12 × 5 = 60</b><br>
+    Therefore, the value of 12 × 5 is <b>60</b>.
+</div>
+
+</div>
+
+</section>
+
+<!-- READING EXPRESSIONS -->
+
+<section class="card">
+
+<h2>
+    <span class="lang-hi">2️⃣ Expressions को पढ़ना</span>
+    <span class="lang-en">2️⃣ Reading Expressions</span>
+</h2>
+
+<div class="block-hi">
+
+<p>कुछ expressions को अलग-अलग तरीकों से पढ़ा जा सकता है:</p>
+
+<div class="example">
+    <b>5 × 25</b><br>
+    5 times 25 / 25 का 5 गुना / 5 और 25 का गुणनफल
+</div>
+
+<div class="example">
+    <b>18 ÷ 3</b><br>
+    18 divided by 3 / 18 को 3 से भाग
+</div>
+
+<div class="example">
+    <b>15 + 7</b><br>
+    15 plus 7 / 15 और 7 का योग
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>Expressions can be read in different ways.</p>
+
+<div class="example">
+    <b>5 × 25</b><br>
+    Five times twenty-five / Product of 5 and 25
+</div>
+
+<div class="example">
+    <b>18 ÷ 3</b><br>
+    Eighteen divided by three
+</div>
+
+<div class="example">
+    <b>15 + 7</b><br>
+    Fifteen plus seven / Sum of 15 and 7
+</div>
+
+</div>
+
+</section>
+
+<!-- COMPARING -->
+
+<section class="card">
+
+<h2>
+    <span class="lang-hi">3️⃣ Expressions की तुलना</span>
+    <span class="lang-en">3️⃣ Comparing Expressions</span>
+</h2>
+
+<div class="block-hi">
+
+<p>
+    दो expressions की तुलना करते समय हम
+    <b>&gt;, &lt;, =</b> का प्रयोग कर सकते हैं।
+</p>
+
+<div class="example">
+    245 + 289 &nbsp; <b>&gt;</b> &nbsp; 246 + 285
+</div>
+
+<div class="example">
+    273 − 145 &nbsp; <b>=</b> &nbsp; 272 − 144
+</div>
+
+<div class="example">
+    124 + 245 &nbsp; <b>&lt;</b> &nbsp; 129 + 245
+</div>
+
+<div class="warning">
+    <b>ध्यान दें:</b> कई बार पूरे expression का calculation किए बिना भी
+    तुलना की जा सकती है।
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>
+    We can compare two expressions using
+    <b>&gt;, &lt;, =</b>.
+</p>
+
+<div class="example">
+    245 + 289 &nbsp; <b>&gt;</b> &nbsp; 246 + 285
+</div>
+
+<div class="example">
+    273 − 145 &nbsp; <b>=</b> &nbsp; 272 − 144
+</div>
+
+<div class="example">
+    124 + 245 &nbsp; <b>&lt;</b> &nbsp; 129 + 245
+</div>
+
+<div class="warning">
+    Sometimes two expressions can be compared without calculating their
+    complete values.
+</div>
+
+</div>
+
+</section>
+
+<!-- COMPLEX EXPRESSIONS -->
+
+<section class="card">
+
+<h2>
+    <span class="lang-hi">4️⃣ Complex Expressions</span>
+    <span class="lang-en">4️⃣ Complex Expressions</span>
+</h2>
+
+<div class="block-hi">
+
+<p>
+    जब किसी expression में एक से अधिक mathematical operations होते हैं,
+    तो उसे complex expression कहा जा सकता है।
+</p>
+
+<div class="example">
+    <b>8 + 4 × 3</b>
+</div>
+
+<p>
+    ऐसे expressions को हल करते समय operations के सही क्रम का पालन करना
+    आवश्यक है।
+</p>
+
+<div class="formula">
+    Brackets → Multiplication / Division → Addition / Subtraction
+</div>
+
+<p>
+    उदाहरण:
+</p>
+
+<div class="example">
+    8 + 4 × 3<br>
+    = 8 + 12<br>
+    = <b>20</b>
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>
+    An expression containing more than one mathematical operation is
+    a complex expression.
+</p>
+
+<div class="example">
+    <b>8 + 4 × 3</b>
+</div>
+
+<p>
+    Such expressions must be evaluated following the agreed order
+    of operations.
+</p>
+
+<div class="formula">
+    Brackets → Multiplication / Division → Addition / Subtraction
+</div>
+
+<div class="example">
+    8 + 4 × 3<br>
+    = 8 + 12<br>
+    = <b>20</b>
+</div>
+
+</div>
+
+</section>
+
+<!-- BRACKETS -->
+
+<section class="card">
+
+<h2>
+    <span class="lang-hi">5️⃣ Brackets का प्रयोग</span>
+    <span class="lang-en">5️⃣ Use of Brackets</span>
+</h2>
+
+<div class="block-hi">
+
+<p>
+    Brackets expression में operations के क्रम को स्पष्ट करते हैं।
+</p>
+
+<div class="example">
+    <b>(8 + 4) × 3</b><br>
+    = 12 × 3<br>
+    = <b>36</b>
+</div>
+
+<div class="example">
+    <b>8 + (4 × 3)</b><br>
+    = 8 + 12<br>
+    = <b>20</b>
+</div>
+
+<p>
+    दोनों expressions में numbers समान हैं, लेकिन brackets के कारण
+    उनके values अलग हैं।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+    Brackets make the order of operations clear.
+</p>
+
+<div class="example">
+    <b>(8 + 4) × 3</b><br>
+    = 12 × 3<br>
+    = <b>36</b>
+</div>
+
+<div class="example">
+    <b>8 + (4 × 3)</b><br>
+    = 8 + 12<br>
+    = <b>20</b>
+</div>
+
+<p>
+    The numbers are the same, but the brackets change the value
+    of the expression.
+</p>
+
+</div>
+
+</section>
+
+<!-- TERMS -->
+
+<section class="card">
+
+<h2>
+    <span class="lang-hi">6️⃣ Expression के Terms</span>
+    <span class="lang-en">6️⃣ Terms in an Expression</span>
+</h2>
+
+<div class="block-hi">
+
+<p>
+    किसी expression को जोड़ या घटाव के आधार पर अलग-अलग parts में
+    बाँटा जा सकता है। इन parts को <b>Terms</b> कहते हैं।
+</p>
+
+<div class="example">
+    <b>15 + 8 − 4</b>
+    <br><br>
+    Terms हैं: <b>15, 8, −4</b>
+</div>
+
+<div class="example">
+    <b>7 × 5 + 12 − 3</b>
+    <br><br>
+    Terms हैं: <b>7 × 5, 12, −3</b>
+</div>
+
+<p>
+    Terms को जोड़ने का क्रम बदलने पर भी addition का value नहीं बदलता।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+    The parts of an expression separated by addition or subtraction
+    are called <b>terms</b>.
+</p>
+
+<div class="example">
+    <b>15 + 8 − 4</b>
+    <br><br>
+    Terms are: <b>15, 8, −4</b>
+</div>
+
+<div class="example">
+    <b>7 × 5 + 12 − 3</b>
+    <br><br>
+    Terms are: <b>7 × 5, 12, −3</b>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROPERTIES -->
+
+<section class="card">
+
+<h2>
+    <span class="lang-hi">7️⃣ Terms को Swap और Group करना</span>
+    <span class="lang-en">7️⃣ Swapping and Grouping Terms</span>
+</h2>
+
+<div class="block-hi">
+
+<h3>Commutative Property</h3>
+
+<div class="formula">
+    a + b = b + a
+</div>
+
+<div class="example">
+    15 + 8 = 8 + 15 = 23
+</div>
+
+<h3>Associative Property</h3>
+
+<div class="formula">
+    (a + b) + c = a + (b + c)
+</div>
+
+<div class="example">
+    (10 + 20) + 30 = 10 + (20 + 30)
+</div>
+
+<p>
+    इन properties की सहायता से calculations को आसान बनाया जा सकता है।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<h3>Commutative Property</h3>
+
+<div class="formula">
+    a + b = b + a
+</div>
+
+<div class="example">
+    15 + 8 = 8 + 15 = 23
+</div>
+
+<h3>Associative Property</h3>
+
+<div class="formula">
+    (a + b) + c = a + (b + c)
+</div>
+
+<div class="example">
+    (10 + 20) + 30 = 10 + (20 + 30)
+</div>
+
+<p>
+    These properties can make calculations easier.
+</p>
+
+</div>
+
+</section>
+
+<!-- DISTRIBUTIVE -->
+
+<section class="card">
+
+<h2>
+    <span class="lang-hi">8️⃣ Distributive Property</span>
+    <span class="lang-en">8️⃣ Distributive Property</span>
+</h2>
+
+<div class="block-hi">
+
+<div class="formula">
+    a × (b + c) = a × b + a × c
+</div>
+
+<div class="example">
+    7 × (10 + 3)
+    <br>
+    = 7 × 10 + 7 × 3
+    <br>
+    = 70 + 21
+    <br>
+    = <b>91</b>
+</div>
+
+<p>
+    इस property का उपयोग mental calculation को आसान बनाने के लिए भी
+    किया जा सकता है।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<div class="formula">
+    a × (b + c) = a × b + a × c
+</div>
+
+<div class="example">
+    7 × (10 + 3)
+    <br>
+    = 7 × 10 + 7 × 3
+    <br>
+    = 70 + 21
+    <br>
+    = <b>91</b>
+</div>
+
+<p>
+    The distributive property can also be used to make mental
+    calculations easier.
+</p>
+
+</div>
+
+</section>
+
+<!-- PRACTICE -->
+
+<section class="card">
+
+<h2>
+    <span class="lang-hi">✍️ अभ्यास प्रश्न – 50 Questions</span>
+    <span class="lang-en">✍️ Practice Questions – 50 Questions</span>
+</h2>
+
+<div class="block-hi">
+
+<ol class="question-list">
+
+<li>13 + 2 का मान ज्ञात कीजिए।</li>
+<li>25 − 9 का मान ज्ञात कीजिए।</li>
+<li>12 × 5 का मान ज्ञात कीजिए।</li>
+<li>72 ÷ 8 का मान ज्ञात कीजिए।</li>
+<li>18 + 27 का मान ज्ञात कीजिए।</li>
+<li>50 − 23 का मान ज्ञात कीजिए।</li>
+<li>9 × 7 का मान ज्ञात कीजिए।</li>
+<li>81 ÷ 9 का मान ज्ञात कीजिए।</li>
+<li>35 + 15 − 10 हल कीजिए।</li>
+<li>60 − 25 + 8 हल कीजिए।</li>
+
+<li>5 × 6 + 4 का मान ज्ञात कीजिए।</li>
+<li>40 ÷ 5 + 7 का मान ज्ञात कीजिए।</li>
+<li>8 + 6 × 2 हल कीजिए।</li>
+<li>(8 + 6) × 2 हल कीजिए।</li>
+<li>30 − (8 + 2) हल कीजिए।</li>
+<li>45 ÷ (5 + 4) हल कीजिए।</li>
+<li>15 + 20 × 2 का मान ज्ञात कीजिए।</li>
+<li>(15 + 20) × 2 का मान ज्ञात कीजिए।</li>
+<li>100 − 5 × 8 हल कीजिए।</li>
+<li>(100 − 5) × 8 हल कीजिए।</li>
+
+<li>245 + 289 और 246 + 285 की तुलना कीजिए।</li>
+<li>273 − 145 और 272 − 144 की तुलना कीजिए।</li>
+<li>124 + 245 और 129 + 245 की तुलना कीजिए।</li>
+<li>213 − 77 और 214 − 76 की तुलना कीजिए।</li>
+<li>56 + 34 और 60 + 30 की तुलना कीजिए।</li>
+
+<li>15 + 8 − 4 के terms लिखिए।</li>
+<li>20 − 5 + 7 के terms लिखिए।</li>
+<li>12 × 3 + 8 के terms लिखिए।</li>
+<li>7 × 5 + 12 − 3 के terms लिखिए।</li>
+<li>25 + 10 − 8 + 4 के terms लिखिए।</li>
+
+<li>15 + 8 को उलटकर लिखिए।</li>
+<li>20 + 35 + 10 को अलग-अलग क्रम में लिखिए।</li>
+<li>10 + 20 + 30 का मान ज्ञात कीजिए।</li>
+<li>(10 + 20) + 30 का मान ज्ञात कीजिए।</li>
+<li>10 + (20 + 30) का मान ज्ञात कीजिए।</li>
+
+<li>7 × (10 + 3) को distributive property से हल कीजिए।</li>
+<li>5 × (20 + 4) को distributive property से हल कीजिए।</li>
+<li>9 × (10 + 2) को distributive property से हल कीजिए।</li>
+<li>6 × (30 + 5) को distributive property से हल कीजिए।</li>
+<li>8 × (20 + 7) को distributive property से हल कीजिए।</li>
+
+<li>97 × 5 को आसान तरीके से हल कीजिए।</li>
+<li>25 × 12 को distributive property से हल कीजिए।</li>
+<li>11 × 15 को distributive property से हल कीजिए।</li>
+<li>12 × 25 को अलग-अलग तरीकों से हल कीजिए।</li>
+<li>99 + 48 + 1 को आसान क्रम में हल कीजिए।</li>
+
+<li>एक expression लिखिए जिसका मान 20 हो।</li>
+<li>तीन अलग-अलग expressions लिखिए जिनका मान 15 हो।</li>
+<li>ऐसा expression लिखिए जिसका मान 100 हो और उसमें multiplication हो।</li>
+<li>ऐसा expression लिखिए जिसका मान 50 हो और उसमें brackets हों।</li>
+<li>चार 4 का प्रयोग करके 20 प्राप्त करने वाला expression बनाइए।</li>
+
+</ol>
+
+</div>
+
+<div class="block-en">
+
+<ol class="question-list">
+
+<li>Find the value of 13 + 2.</li>
+<li>Find the value of 25 − 9.</li>
+<li>Find the value of 12 × 5.</li>
+<li>Find the value of 72 ÷ 8.</li>
+<li>Find the value of 18 + 27.</li>
+<li>Find the value of 50 − 23.</li>
+<li>Find the value of 9 × 7.</li>
+<li>Find the value of 81 ÷ 9.</li>
+<li>Evaluate 35 + 15 − 10.</li>
+<li>Evaluate 60 − 25 + 8.</li>
+
+<li>Evaluate 5 × 6 + 4.</li>
+<li>Evaluate 40 ÷ 5 + 7.</li>
+<li>Evaluate 8 + 6 × 2.</li>
+<li>Evaluate (8 + 6) × 2.</li>
+<li>Evaluate 30 − (8 + 2).</li>
+<li>Evaluate 45 ÷ (5 + 4).</li>
+<li>Find the value of 15 + 20 × 2.</li>
+<li>Find the value of (15 + 20) × 2.</li>
+<li>Evaluate 100 − 5 × 8.</li>
+<li>Evaluate (100 − 5) × 8.</li>
+
+<li>Compare 245 + 289 and 246 + 285.</li>
+<li>Compare 273 − 145 and 272 − 144.</li>
+<li>Compare 124 + 245 and 129 + 245.</li>
+<li>Compare 213 − 77 and 214 − 76.</li>
+<li>Compare 56 + 34 and 60 + 30.</li>
+
+<li>Write the terms of 15 + 8 − 4.</li>
+<li>Write the terms of 20 − 5 + 7.</li>
+<li>Write the terms of 12 × 3 + 8.</li>
+<li>Write the terms of 7 × 5 + 12 − 3.</li>
+<li>Write the terms of 25 + 10 − 8 + 4.</li>
+
+<li>Write 15 + 8 in reverse order.</li>
+<li>Write 20 + 35 + 10 in a different order.</li>
+<li>Find the value of 10 + 20 + 30.</li>
+<li>Find the value of (10 + 20) + 30.</li>
+<li>Find the value of 10 + (20 + 30).</li>
+
+<li>Use the distributive property to evaluate 7 × (10 + 3).</li>
+<li>Use the distributive property to evaluate 5 × (20 + 4).</li>
+<li>Use the distributive property to evaluate 9 × (10 + 2).</li>
+<li>Use the distributive property to evaluate 6 × (30 + 5).</li>
+<li>Use the distributive property to evaluate 8 × (20 + 7).</li>
+
+<li>Evaluate 97 × 5 using an easy method.</li>
+<li>Evaluate 25 × 12 using the distributive property.</li>
+<li>Evaluate 11 × 15 using the distributive property.</li>
+<li>Evaluate 12 × 25 in different ways.</li>
+<li>Evaluate 99 + 48 + 1 using a convenient order.</li>
+
+<li>Write an expression whose value is 20.</li>
+<li>Write three different expressions whose value is 15.</li>
+<li>Write an expression with multiplication whose value is 100.</li>
+<li>Write an expression with brackets whose value is 50.</li>
+<li>Use four 4s to make an expression with value 20.</li>
+
+</ol>
+
+</div>
+
+</section>
+
+<!-- MCQ -->
+
+<section class="card">
+
+<h2>
+    <span class="lang-hi">🧠 MCQ Practice – 20 Questions</span>
+    <span class="lang-en">🧠 MCQ Practice – 20 Questions</span>
+</h2>
+
+<div class="block-hi">
+
+<div class="mcq">
+<b>1. 13 + 2 का मान क्या है?</b><br>
+A) 11 &nbsp; B) 15 &nbsp; C) 16 &nbsp; D) 26
+</div>
+
+<div class="mcq">
+<b>2. 12 × 5 का मान है:</b><br>
+A) 17 &nbsp; B) 50 &nbsp; C) 60 &nbsp; D) 70
+</div>
+
+<div class="mcq">
+<b>3. 18 ÷ 3 का मान है:</b><br>
+A) 5 &nbsp; B) 6 &nbsp; C) 7 &nbsp; D) 9
+</div>
+
+<div class="mcq">
+<b>4. (8 + 4) × 3 का मान है:</b><br>
+A) 20 &nbsp; B) 24 &nbsp; C) 36 &nbsp; D) 40
+</div>
+
+<div class="mcq">
+<b>5. 8 + 4 × 3 का मान है:</b><br>
+A) 20 &nbsp; B) 36 &nbsp; C) 24 &nbsp; D) 12
+</div>
+
+<div class="mcq">
+<b>6. 15 + 8 − 4 में कितने terms हैं?</b><br>
+A) 2 &nbsp; B) 3 &nbsp; C) 4 &nbsp; D) 5
+</div>
+
+<div class="mcq">
+<b>7. a + b = b + a किस property को दर्शाता है?</b><br>
+A) Distributive &nbsp; B) Commutative &nbsp; C) Associative &nbsp; D) Identity
+</div>
+
+<div class="mcq">
+<b>8. a × (b + c) = ?</b><br>
+A) ab + ac &nbsp; B) ab − ac &nbsp; C) a+b+c &nbsp; D) abc
+</div>
+
+<div class="mcq">
+<b>9. 25 × 4 का मान है:</b><br>
+A) 50 &nbsp; B) 75 &nbsp; C) 100 &nbsp; D) 125
+</div>
+
+<div class="mcq">
+<b>10. 100 − 5 × 8 का मान है:</b><br>
+A) 760 &nbsp; B) 60 &nbsp; C) 40 &nbsp; D) 95
+</div>
+
+<div class="mcq">
+<b>11. 7 × (10 + 3) का मान है:</b><br>
+A) 73 &nbsp; B) 91 &nbsp; C) 70 &nbsp; D) 100
+</div>
+
+<div class="mcq">
+<b>12. 20 + 30 + 10 में terms कितने हैं?</b><br>
+A) 2 &nbsp; B) 3 &nbsp; C) 4 &nbsp; D) 5
+</div>
+
+<div class="mcq">
+<b>13. 40 ÷ 5 + 7 का मान है:</b><br>
+A) 15 &nbsp; B) 12 &nbsp; C) 8 &nbsp; D) 10
+</div>
+
+<div class="mcq">
+<b>14. 30 − (8 + 2) का मान है:</b><br>
+A) 10 &nbsp; B) 20 &nbsp; C) 22 &nbsp; D) 24
+</div>
+
+<div class="mcq">
+<b>15. 15 + 8 और 8 + 15 में संबंध है:</b><br>
+A) &gt; &nbsp; B) &lt; &nbsp; C) = &nbsp; D) कोई नहीं
+</div>
+
+<div class="mcq">
+<b>16. 5 × (20 + 4) का मान है:</b><br>
+A) 100 &nbsp; B) 120 &nbsp; C) 125 &nbsp; D) 140
+</div>
+
+<div class="mcq">
+<b>17. 81 ÷ 9 का मान है:</b><br>
+A) 7 &nbsp; B) 8 &nbsp; C) 9 &nbsp; D) 10
+</div>
+
+<div class="mcq">
+<b>18. 50 − 23 का मान है:</b><br>
+A) 27 &nbsp; B) 28 &nbsp; C) 29 &nbsp; D) 30
+</div>
+
+<div class="mcq">
+<b>19. 6 × (30 + 5) का मान है:</b><br>
+A) 180 &nbsp; B) 200 &nbsp; C) 210 &nbsp; D) 215
+</div>
+
+<div class="mcq">
+<b>20. Brackets का मुख्य उपयोग क्या है?</b><br>
+A) संख्या बढ़ाना<br>
+B) Operation का क्रम स्पष्ट करना<br>
+C) संख्या घटाना<br>
+D) केवल जोड़ करना
+</div>
+
+</div>
+
+<div class="block-en">
+
+<div class="mcq">
+<b>1. What is the value of 13 + 2?</b><br>
+A) 11 &nbsp; B) 15 &nbsp; C) 16 &nbsp; D) 26
+</div>
+
+<div class="mcq">
+<b>2. The value of 12 × 5 is:</b><br>
+A) 17 &nbsp; B) 50 &nbsp; C) 60 &nbsp; D) 70
+</div>
+
+<div class="mcq">
+<b>3. The value of 18 ÷ 3 is:</b><br>
+A) 5 &nbsp; B) 6 &nbsp; C) 7 &nbsp; D) 9
+</div>
+
+<div class="mcq">
+<b>4. The value of (8 + 4) × 3 is:</b><br>
+A) 20 &nbsp; B) 24 &nbsp; C) 36 &nbsp; D) 40
+</div>
+
+<div class="mcq">
+<b>5. The value of 8 + 4 × 3 is:</b><br>
+A) 20 &nbsp; B) 36 &nbsp; C) 24 &nbsp; D) 12
+</div>
+
+<div class="mcq">
+<b>6. How many terms are in 15 + 8 − 4?</b><br>
+A) 2 &nbsp; B) 3 &nbsp; C) 4 &nbsp; D) 5
+</div>
+
+<div class="mcq">
+<b>7. a + b = b + a represents:</b><br>
+A) Distributive &nbsp; B) Commutative &nbsp; C) Associative &nbsp; D) Identity
+</div>
+
+<div class="mcq">
+<b>8. a × (b + c) = ?</b><br>
+A) ab + ac &nbsp; B) ab − ac &nbsp; C) a+b+c &nbsp; D) abc
+</div>
+
+<div class="mcq">
+<b>9. The value of 25 × 4 is:</b><br>
+A) 50 &nbsp; B) 75 &nbsp; C) 100 &nbsp; D) 125
+</div>
+
+<div class="mcq">
+<b>10. The value of 100 − 5 × 8 is:</b><br>
+A) 760 &nbsp; B) 60 &nbsp; C) 40 &nbsp; D) 95
+</div>
+
+<div class="mcq">
+<b>11. The value of 7 × (10 + 3) is:</b><br>
+A) 73 &nbsp; B) 91 &nbsp; C) 70 &nbsp; D) 100
+</div>
+
+<div class="mcq">
+<b>12. How many terms are in 20 + 30 + 10?</b><br>
+A) 2 &nbsp; B) 3 &nbsp; C) 4 &nbsp; D) 5
+</div>
+
+<div class="mcq">
+<b>13. The value of 40 ÷ 5 + 7 is:</b><br>
+A) 15 &nbsp; B) 12 &nbsp; C) 8 &nbsp; D) 10
+</div>
+
+<div class="mcq">
+<b>14. The value of 30 − (8 + 2) is:</b><br>
+A) 10 &nbsp; B) 20 &nbsp; C) 22 &nbsp; D) 24
+</div>
+
+<div class="mcq">
+<b>15. The relation between 15 + 8 and 8 + 15 is:</b><br>
+A) &gt; &nbsp; B) &lt; &nbsp; C) = &nbsp; D) None
+</div>
+
+<div class="mcq">
+<b>16. The value of 5 × (20 + 4) is:</b><br>
+A) 100 &nbsp; B) 120 &nbsp; C) 125 &nbsp; D) 140
+</div>
+
+<div class="mcq">
+<b>17. The value of 81 ÷ 9 is:</b><br>
+A) 7 &nbsp; B) 8 &nbsp; C) 9 &nbsp; D) 10
+</div>
+
+<div class="mcq">
+<b>18. The value of 50 − 23 is:</b><br>
+A) 27 &nbsp; B) 28 &nbsp; C) 29 &nbsp; D) 30
+</div>
+
+<div class="mcq">
+<b>19. The value of 6 × (30 + 5) is:</b><br>
+A) 180 &nbsp; B) 200 &nbsp; C) 210 &nbsp; D) 215
+</div>
+
+<div class="mcq">
+<b>20. What is the main purpose of brackets?</b><br>
+A) Increase numbers<br>
+B) Clarify the order of operations<br>
+C) Decrease numbers<br>
+D) Only perform addition
+</div>
+
+</div>
+
+</section>
+
+<!-- ANSWERS -->
+
+<section class="card">
+
+<h2>
+    <span class="lang-hi">✅ MCQ उत्तरमाला</span>
+    <span class="lang-en">✅ MCQ Answer Key</span>
+</h2>
+
+<div class="answer">
+
+<div class="block-hi">
+<b>
+1-B, 2-C, 3-B, 4-C, 5-A,
+6-B, 7-B, 8-A, 9-C, 10-B,
+11-B, 12-B, 13-A, 14-B, 15-C,
+16-B, 17-C, 18-A, 19-C, 20-B
+</b>
+</div>
+
+<div class="block-en">
+<b>
+1-B, 2-C, 3-B, 4-C, 5-A,
+6-B, 7-B, 8-A, 9-C, 10-B,
+11-B, 12-B, 13-A, 14-B, 15-C,
+16-B, 17-C, 18-A, 19-C, 20-B
+</b>
+</div>
+
+</div>
+
+</section>
+
+<!-- QUICK REVISION -->
+
+<section class="card">
+
+<h2>
+    <span class="lang-hi">⚡ Quick Revision</span>
+    <span class="lang-en">⚡ Quick Revision</span>
+</h2>
+
+<div class="revision-grid">
+
+<div class="revision-box">
+<b>Expression</b>
+<br>
+<span class="lang-hi">संख्याओं और operations से बना mathematical phrase.</span>
+<span class="lang-en">A mathematical phrase made using numbers and operations.</span>
+</div>
+
+<div class="revision-box">
+<b>Value</b>
+<br>
+<span class="lang-hi">Expression का प्राप्त परिणाम।</span>
+<span class="lang-en">The result obtained after evaluating an expression.</span>
+</div>
+
+<div class="revision-box">
+<b>Terms</b>
+<br>
+<span class="lang-hi">Expression के अलग-अलग parts.</span>
+<span class="lang-en">The separate parts of an expression.</span>
+</div>
+
+<div class="revision-box">
+<b>Brackets</b>
+<br>
+<span class="lang-hi">Operations का क्रम स्पष्ट करते हैं।</span>
+<span class="lang-en">They clarify the order of operations.</span>
+</div>
+
+<div class="revision-box">
+<b>Commutative</b>
+<br>
+a + b = b + a
+</div>
+
+<div class="revision-box">
+<b>Distributive</b>
+<br>
+a × (b + c) = ab + ac
+</div>
+
+</div>
+
+</section>
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+<a href="class-7-maths-chapter-1.html">
+    ← Chapter 1
+</a>
+
+<a href="../class-7-mathematics.html">
+    📚 All Chapters
+</a>
+
+<a href="class-7-maths-chapter-3.html">
+    Chapter 3 →
+</a>
+
+</div>
+
+</main>
+
+<footer>
+
+```
+<b>UEduTech</b>
+<br>
+
+<span class="lang-hi">
+    Class 7 Mathematics • Chapter 2 • Arithmetic Expressions
+</span>
+
+<span class="lang-en">
+    Class 7 Mathematics • Chapter 2 • Arithmetic Expressions
+</span>
+
+<br><br>
+
+© 2026 UEduTech • Learn • Practice • Succeed
+```
+
+</footer>
+
+<script>
+
+function setLanguage(lang){
+
+    if(lang === "en"){
+
+        document.body.classList.add("english");
+
+        document.getElementById("enBtn").classList.add("active");
+        document.getElementById("hiBtn").classList.remove("active");
+
+        document.documentElement.lang = "en";
+
+    }else{
+
+        document.body.classList.remove("english");
+
+        document.getElementById("hiBtn").classList.add("active");
+        document.getElementById("enBtn").classList.remove("active");
+
+        document.documentElement.lang = "hi";
+    }
+
+    localStorage.setItem("uedutech-language",lang);
+}
+
+
+window.onload = function(){
+
+    const savedLanguage =
+        localStorage.getItem("uedutech-language") || "hi";
+
+    setLanguage(savedLanguage);
+
+};
+
+</script>
+
+</body>
+</html>

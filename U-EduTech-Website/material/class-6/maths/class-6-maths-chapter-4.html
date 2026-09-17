@@ -1,0 +1,1440 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>अध्याय 4 - आँकड़ों का प्रबंधन एवं प्रस्तुतीकरण | UEduTech</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, "Noto Sans Devanagari", sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #111827;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .section h2 {
+            color: #2563eb;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .section h3 {
+            color: #111827;
+            margin: 20px 0 10px;
+        }
+
+        .definition {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .example {
+            background: #f0fdf4;
+            border-left: 5px solid #16a34a;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .tip {
+            background: #fff7ed;
+            border-left: 5px solid #f97316;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .data-card {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            padding: 22px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .data-card h3 {
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #2563eb;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .question {
+            background: #f9fafb;
+            padding: 17px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .question strong {
+            color: #2563eb;
+        }
+
+        .mcq {
+            margin: 20px 0;
+            padding: 18px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+
+        .mcq p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .mcq ul {
+            list-style: none;
+        }
+
+        .mcq li {
+            padding: 7px 10px;
+            background: #f8fafc;
+            margin: 5px 0;
+            border-radius: 6px;
+        }
+
+        .answer {
+            background: #ecfdf5;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #16a34a;
+        }
+
+        .answer p {
+            margin: 6px 0;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .resource-card {
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+
+        .resource-card h3 {
+            color: #2563eb;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            margin-top: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #111827;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .navigation a {
+            flex: 1;
+            text-align: center;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+
+            .section {
+                padding: 20px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="navbar">
+
+        <a href="../../../index.html" class="logo">
+            U<span>EduTech</span>
+        </a>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <nav id="navMenu">
+
+            <a href="../../../index.html">होम</a>
+
+            <a href="../../../subjects.html">विषय</a>
+
+            <a href="../../../tests.html">मॉडल टेस्ट</a>
+
+            <a href="../../../study-material.html">अध्ययन सामग्री</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- Breadcrumb -->
+
+<div class="breadcrumb">
+
+    <a href="../../../index.html">होम</a>
+    →
+    <a href="../../../study-material.html">अध्ययन सामग्री</a>
+    →
+    <a href="../class-6.html">कक्षा 6</a>
+    →
+    <a href="class-6-mathematics.html">गणित</a>
+    →
+    अध्याय 4
+
+</div>
+
+
+<!-- Hero -->
+
+<section class="hero">
+
+    <h1>अध्याय 4: आँकड़ों का प्रबंधन एवं प्रस्तुतीकरण</h1>
+
+    <p>
+        कक्षा 6 गणित – गणित प्रकाश
+        <br>
+        आँकड़ों को एकत्र करना, व्यवस्थित करना, तालिका बनाना और प्रस्तुत करना सीखें।
+    </p>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- Introduction -->
+
+<section class="section">
+
+    <h2>📘 अध्याय परिचय</h2>
+
+    <p>
+        हमारे दैनिक जीवन में बहुत सारी जानकारी संख्याओं के रूप में
+        उपलब्ध होती है। ऐसी जानकारी को <strong>आँकड़े</strong> कहा जाता है।
+    </p>
+
+    <div class="definition">
+
+        <strong>आँकड़े (Data):</strong>
+
+        किसी विषय से संबंधित एकत्र की गई संख्यात्मक या अन्य जानकारी
+        को आँकड़े कहा जाता है।
+
+    </div>
+
+    <div class="example">
+
+        <strong>उदाहरण:</strong>
+
+        एक कक्षा में 10 विद्यार्थियों के प्राप्तांक हैं:
+
+        <br><br>
+
+        12, 15, 18, 14, 20, 16, 15, 19, 17, 14
+
+        <br><br>
+
+        ये संख्याएँ विद्यार्थियों के प्राप्तांकों से संबंधित आँकड़े हैं।
+
+    </div>
+
+</section>
+
+
+<!-- Collection -->
+
+<section class="section">
+
+    <h2>📋 1. आँकड़ों का संग्रह</h2>
+
+    <p>
+        किसी प्रश्न का उत्तर प्राप्त करने के लिए जानकारी एकत्र करना
+        आँकड़ों का संग्रह कहलाता है।
+    </p>
+
+    <div class="example">
+
+        <strong>उदाहरण:</strong>
+
+        यदि हमें यह जानना है कि विद्यार्थियों को कौन-सा फल सबसे अधिक
+        पसंद है, तो हम प्रत्येक विद्यार्थी से उसकी पसंद पूछ सकते हैं।
+
+    </div>
+
+    <h3>आँकड़े एकत्र करने के तरीके</h3>
+
+    <div class="data-grid">
+
+        <div class="data-card">
+            <h3>🗣️ प्रश्न पूछना</h3>
+            <p>लोगों से प्रश्न पूछकर जानकारी प्राप्त करना।</p>
+        </div>
+
+        <div class="data-card">
+            <h3>👀 अवलोकन</h3>
+            <p>किसी वस्तु या घटना को देखकर जानकारी प्राप्त करना।</p>
+        </div>
+
+        <div class="data-card">
+            <h3>📝 सर्वेक्षण</h3>
+            <p>कई लोगों से जानकारी एकत्र करना।</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Organization -->
+
+<section class="section">
+
+    <h2>📊 2. आँकड़ों को व्यवस्थित करना</h2>
+
+    <p>
+        बिखरे हुए आँकड़ों को क्रमबद्ध या तालिका के रूप में लिखने से
+        उन्हें समझना आसान हो जाता है।
+    </p>
+
+    <div class="example">
+
+        <strong>उदाहरण:</strong>
+
+        यदि पाँच विद्यार्थियों के पसंदीदा रंग हैं:
+
+        <br><br>
+
+        लाल, नीला, लाल, हरा, नीला
+
+        <br><br>
+
+        तो इन्हें तालिका में व्यवस्थित किया जा सकता है।
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+                <th>रंग</th>
+                <th>विद्यार्थियों की संख्या</th>
+            </tr>
+
+            <tr>
+                <td>लाल</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td>नीला</td>
+                <td>2</td>
+            </tr>
+
+            <tr>
+                <td>हरा</td>
+                <td>1</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- Tally Marks -->
+
+<section class="section">
+
+    <h2>✍️ 3. टैली चिह्न</h2>
+
+    <p>
+        आँकड़ों की संख्या को आसानी से गिनने के लिए टैली चिह्नों का
+        उपयोग किया जाता है।
+    </p>
+
+    <div class="definition">
+
+        पहले चार वस्तुओं के लिए चार सीधी रेखाएँ बनाई जाती हैं।
+
+        <br><br>
+
+        पाँचवीं वस्तु पर पहले चार रेखाओं को काटती हुई एक तिरछी रेखा
+        बनाई जाती है।
+
+    </div>
+
+    <div class="example">
+
+        <strong>उदाहरण:</strong>
+
+        <br><br>
+
+        1 → |
+
+        <br>
+
+        2 → ||
+
+        <br>
+
+        3 → |||
+
+        <br>
+
+        4 → ||||
+
+        <br>
+
+        5 → ||||̸
+
+    </div>
+
+</section>
+
+
+<!-- Frequency -->
+
+<section class="section">
+
+    <h2>🔢 4. बारंबारता</h2>
+
+    <p>
+        किसी आँकड़े में कोई मान कितनी बार आता है, उसे उस मान की
+        <strong>बारंबारता</strong> कहते हैं।
+    </p>
+
+    <div class="example">
+
+        यदि आँकड़े हैं:
+
+        <br><br>
+
+        2, 3, 2, 5, 2, 4, 3
+
+        <br><br>
+
+        तो 2 की बारंबारता = 3
+
+        <br>
+
+        3 की बारंबारता = 2
+
+    </div>
+
+</section>
+
+
+<!-- Tables -->
+
+<section class="section">
+
+    <h2>📑 5. सारणी बनाना</h2>
+
+    <p>
+        आँकड़ों को पंक्तियों और स्तंभों में व्यवस्थित करने के लिए
+        सारणी का प्रयोग किया जाता है।
+    </p>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+                <th>फल</th>
+                <th>विद्यार्थियों की संख्या</th>
+            </tr>
+
+            <tr>
+                <td>आम</td>
+                <td>8</td>
+            </tr>
+
+            <tr>
+                <td>सेब</td>
+                <td>5</td>
+            </tr>
+
+            <tr>
+                <td>केला</td>
+                <td>7</td>
+            </tr>
+
+            <tr>
+                <td>संतरा</td>
+                <td>4</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- Pictograph -->
+
+<section class="section">
+
+    <h2>🖼️ 6. चित्रलेख</h2>
+
+    <p>
+        जब आँकड़ों को चित्रों या प्रतीकों की सहायता से प्रदर्शित किया
+        जाता है, तो उसे <strong>चित्रलेख</strong> कहते हैं।
+    </p>
+
+    <div class="example">
+
+        <strong>उदाहरण:</strong>
+
+        <br><br>
+
+        यदि ⭐ = 2 विद्यार्थी
+
+        <br><br>
+
+        आम → ⭐⭐⭐⭐
+
+        <br>
+
+        सेब → ⭐⭐⭐
+
+        <br>
+
+        केला → ⭐⭐⭐⭐⭐
+
+        <br><br>
+
+        तो केले पसंद करने वाले विद्यार्थी = 5 × 2 = 10
+
+    </div>
+
+</section>
+
+
+<!-- Bar Graph -->
+
+<section class="section">
+
+    <h2>📊 7. दंड आलेख</h2>
+
+    <p>
+        आँकड़ों को आयताकार पट्टियों या दंडों के माध्यम से प्रदर्शित
+        करने को दंड आलेख कहते हैं।
+    </p>
+
+    <div class="definition">
+
+        दंड आलेख में:
+
+        <br><br>
+
+        ✔ क्षैतिज और ऊर्ध्वाधर अक्ष होते हैं।
+
+        <br>
+
+        ✔ प्रत्येक दंड किसी आँकड़े की मात्रा बताता है।
+
+        <br>
+
+        ✔ दंड की ऊँचाई या लंबाई मात्रा के अनुसार होती है।
+
+    </div>
+
+    <div class="example">
+
+        <strong>उदाहरण:</strong>
+
+        <br><br>
+
+        यदि किसी कक्षा में चार खेल पसंद करने वाले विद्यार्थियों की
+        संख्या है:
+
+        <br><br>
+
+        क्रिकेट = 20
+
+        <br>
+
+        फुटबॉल = 15
+
+        <br>
+
+        हॉकी = 10
+
+        <br>
+
+        कबड्डी = 12
+
+        <br><br>
+
+        इन आँकड़ों को दंड आलेख द्वारा प्रदर्शित किया जा सकता है।
+
+    </div>
+
+</section>
+
+
+<!-- Data Interpretation -->
+
+<section class="section">
+
+    <h2>🔎 8. आँकड़ों से जानकारी प्राप्त करना</h2>
+
+    <p>
+        तालिका, चित्रलेख या दंड आलेख को देखकर हम विभिन्न प्रश्नों
+        के उत्तर प्राप्त कर सकते हैं।
+    </p>
+
+    <div class="tip">
+
+        <strong>ध्यान दें:</strong>
+
+        किसी आलेख को पढ़ते समय सबसे पहले उसका शीर्षक, अक्षों के नाम
+        और पैमाना ध्यान से देखें।
+
+    </div>
+
+</section>
+
+
+<!-- Important Questions -->
+
+<section class="section">
+
+    <h2>❓ महत्वपूर्ण प्रश्न – भाग A</h2>
+
+    <div class="question">
+        <strong>प्रश्न 1.</strong>
+        आँकड़े किसे कहते हैं?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 2.</strong>
+        आँकड़ों का संग्रह क्या है?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 3.</strong>
+        आँकड़ों को व्यवस्थित करना क्यों आवश्यक है?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 4.</strong>
+        टैली चिह्न क्या होते हैं?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 5.</strong>
+        टैली चिह्नों में पाँच को किस प्रकार दर्शाते हैं?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 6.</strong>
+        बारंबारता किसे कहते हैं?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 7.</strong>
+        सारणी क्या होती है?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 8.</strong>
+        चित्रलेख किसे कहते हैं?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 9.</strong>
+        दंड आलेख क्या है?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 10.</strong>
+        दंड आलेख में अक्षों का क्या महत्व है?
+    </div>
+
+</section>
+
+
+<!-- Important Questions B -->
+
+<section class="section">
+
+    <h2>📝 महत्वपूर्ण प्रश्न – भाग B</h2>
+
+    <div class="question">
+        <strong>प्रश्न 11.</strong>
+        निम्न आँकड़ों में 5 की बारंबारता ज्ञात कीजिए:
+        5, 3, 5, 2, 5, 7, 4, 5
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 12.</strong>
+        निम्न आँकड़ों में 3 की बारंबारता ज्ञात कीजिए:
+        3, 4, 3, 5, 6, 3, 7, 3
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 13.</strong>
+        1 से 10 तक की संख्याओं में सम संख्याएँ लिखिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 14.</strong>
+        निम्न आँकड़ों को आरोही क्रम में लिखिए:
+        8, 3, 6, 2, 9, 1, 5
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 15.</strong>
+        निम्न आँकड़ों को अवरोही क्रम में लिखिए:
+        4, 9, 2, 7, 5, 8
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 16.</strong>
+        किसी कक्षा में 12 विद्यार्थियों में से 7 को क्रिकेट पसंद है।
+        शेष विद्यार्थियों की संख्या कितनी है?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 17.</strong>
+        यदि ⭐ = 5 विद्यार्थी हैं, तो ⭐⭐⭐ कितने विद्यार्थियों को
+        दर्शाएंगे?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 18.</strong>
+        यदि एक चित्र 4 वस्तुओं को दर्शाता है, तो 6 चित्र कितनी
+        वस्तुओं को दर्शाएंगे?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 19.</strong>
+        आँकड़ों को तालिका में प्रदर्शित करने का एक लाभ लिखिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 20.</strong>
+        दंड आलेख में सबसे ऊँचा दंड क्या दर्शाता है?
+    </div>
+
+</section>
+
+
+<!-- Practice Questions -->
+
+<section class="section">
+
+    <h2>🧠 अभ्यास प्रश्न – भाग C</h2>
+
+    <div class="question">
+        <strong>प्रश्न 21.</strong>
+        निम्न आँकड़ों में सबसे अधिक बार आने वाली संख्या ज्ञात कीजिए:
+        2, 4, 3, 2, 5, 2, 6, 4, 2
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 22.</strong>
+        10 विद्यार्थियों के जूतों के आकार हैं:
+        5, 6, 5, 7, 6, 5, 8, 6, 7, 5
+        प्रत्येक आकार की बारंबारता ज्ञात कीजिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 23.</strong>
+        किसी कक्षा में सोमवार से शुक्रवार तक उपस्थित विद्यार्थियों
+        की संख्या 35, 38, 40, 36 और 39 है। सबसे अधिक उपस्थिति किस दिन
+        रही?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 24.</strong>
+        यदि एक चित्रलेख में 🍎 = 3 विद्यार्थी हैं और सेब के सामने
+        5 चित्र हैं, तो सेब पसंद करने वाले विद्यार्थियों की संख्या
+        ज्ञात कीजिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 25.</strong>
+        20, 15, 25, 30 और 10 में सबसे छोटी संख्या कौन-सी है?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 26.</strong>
+        12, 18, 15, 20, 18, 12, 18 में 18 की बारंबारता ज्ञात कीजिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 27.</strong>
+        निम्न आँकड़ों में कुल कितने मान हैं?
+        5, 8, 2, 9, 4, 6, 7, 3
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 28.</strong>
+        2, 4, 6, 8, 10 में कुल कितनी संख्याएँ हैं?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 29.</strong>
+        किसी चित्रलेख में 1 चित्र = 10 विद्यार्थी हैं।
+        8 चित्र कितने विद्यार्थियों को दर्शाएंगे?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 30.</strong>
+        किसी दंड आलेख में क्रिकेट = 25 और फुटबॉल = 15 विद्यार्थी हैं।
+        क्रिकेट और फुटबॉल के बीच कितने विद्यार्थियों का अंतर है?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 31.</strong>
+        निम्न आँकड़ों का आरोही क्रम लिखिए:
+        15, 8, 12, 20, 5, 18
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 32.</strong>
+        निम्न आँकड़ों का अवरोही क्रम लिखिए:
+        7, 15, 3, 12, 20, 9
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 33.</strong>
+        एक सर्वेक्षण में 40 विद्यार्थियों से उनके पसंदीदा खेल के बारे
+        में पूछा गया। इस जानकारी को प्रस्तुत करने के दो तरीके लिखिए।
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 34.</strong>
+        टैली चिह्नों का प्रयोग करने का क्या लाभ है?
+    </div>
+
+    <div class="question">
+        <strong>प्रश्न 35.</strong>
+        आँकड़ों को चित्र या आलेख के रूप में प्रस्तुत करने से हमें
+        क्या लाभ होता है?
+    </div>
+
+</section>
+
+
+<!-- MCQ -->
+
+<section class="section">
+
+    <h2>🎯 बहुविकल्पीय प्रश्न – 15 MCQs</h2>
+
+
+    <div class="mcq">
+
+        <p>1. जानकारी के संग्रह को क्या कहा जाता है?</p>
+
+        <ul>
+            <li>A) आकृति</li>
+            <li>B) आँकड़े</li>
+            <li>C) कोण</li>
+            <li>D) रेखा</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>2. टैली चिह्नों का प्रयोग किसके लिए किया जाता है?</p>
+
+        <ul>
+            <li>A) जोड़ने के लिए</li>
+            <li>B) गिनती रखने के लिए</li>
+            <li>C) घटाने के लिए</li>
+            <li>D) गुणा करने के लिए</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>3. पाँच वस्तुओं के लिए कितने टैली चिह्नों का समूह बनाया जाता है?</p>
+
+        <ul>
+            <li>A) 3</li>
+            <li>B) 4</li>
+            <li>C) 5</li>
+            <li>D) 6</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>4. किसी संख्या के बार-बार आने की संख्या को क्या कहते हैं?</p>
+
+        <ul>
+            <li>A) योग</li>
+            <li>B) बारंबारता</li>
+            <li>C) अंतर</li>
+            <li>D) गुणनफल</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>5. चित्रों द्वारा आँकड़ों को प्रदर्शित करने को क्या कहते हैं?</p>
+
+        <ul>
+            <li>A) चित्रलेख</li>
+            <li>B) रेखाखंड</li>
+            <li>C) कोण</li>
+            <li>D) संख्या रेखा</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>6. दंड आलेख में आँकड़ों को किसके द्वारा दिखाया जाता है?</p>
+
+        <ul>
+            <li>A) वृत्त</li>
+            <li>B) दंड</li>
+            <li>C) त्रिभुज</li>
+            <li>D) बिंदु</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>7. निम्न में से कौन-सा आँकड़ा है?</p>
+
+        <ul>
+            <li>A) 12, 15, 18</li>
+            <li>B) केवल 5</li>
+            <li>C) केवल 10</li>
+            <li>D) कोई नहीं</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>8. यदि ⭐ = 2 विद्यार्थी हैं, तो ⭐⭐⭐⭐ कितने विद्यार्थी होंगे?</p>
+
+        <ul>
+            <li>A) 4</li>
+            <li>B) 6</li>
+            <li>C) 8</li>
+            <li>D) 10</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>9. निम्न में से कौन-सा आँकड़ों को व्यवस्थित करने का तरीका है?</p>
+
+        <ul>
+            <li>A) तालिका</li>
+            <li>B) चित्र</li>
+            <li>C) आलेख</li>
+            <li>D) उपरोक्त सभी</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>10. आँकड़ों को क्रम में लिखने से क्या लाभ होता है?</p>
+
+        <ul>
+            <li>A) समझना आसान होता है</li>
+            <li>B) संख्या बदल जाती है</li>
+            <li>C) आँकड़े समाप्त हो जाते हैं</li>
+            <li>D) कोई लाभ नहीं</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>11. 2, 2, 3, 4, 2 में 2 की बारंबारता कितनी है?</p>
+
+        <ul>
+            <li>A) 1</li>
+            <li>B) 2</li>
+            <li>C) 3</li>
+            <li>D) 4</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>12. यदि 1 चित्र = 5 विद्यार्थी हैं, तो 4 चित्र कितने विद्यार्थी दर्शाएंगे?</p>
+
+        <ul>
+            <li>A) 10</li>
+            <li>B) 15</li>
+            <li>C) 20</li>
+            <li>D) 25</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>13. आँकड़ों को एकत्र करने के लिए किसका उपयोग किया जा सकता है?</p>
+
+        <ul>
+            <li>A) सर्वेक्षण</li>
+            <li>B) प्रश्न</li>
+            <li>C) अवलोकन</li>
+            <li>D) उपरोक्त सभी</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>14. दंड आलेख में सबसे लंबा दंड क्या दर्शाता है?</p>
+
+        <ul>
+            <li>A) सबसे छोटी मात्रा</li>
+            <li>B) सबसे बड़ी मात्रा</li>
+            <li>C) शून्य</li>
+            <li>D) कोई निश्चित जानकारी नहीं</li>
+        </ul>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <p>15. निम्न में से कौन-सा आँकड़ों का प्रस्तुतीकरण है?</p>
+
+        <ul>
+            <li>A) तालिका</li>
+            <li>B) चित्रलेख</li>
+            <li>C) दंड आलेख</li>
+            <li>D) उपरोक्त सभी</li>
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- Answer Key -->
+
+<section class="section">
+
+    <h2>✅ MCQ उत्तरमाला</h2>
+
+    <div class="answer">
+
+        <p><strong>1.</strong> B) आँकड़े</p>
+
+        <p><strong>2.</strong> B) गिनती रखने के लिए</p>
+
+        <p><strong>3.</strong> C) 5</p>
+
+        <p><strong>4.</strong> B) बारंबारता</p>
+
+        <p><strong>5.</strong> A) चित्रलेख</p>
+
+        <p><strong>6.</strong> B) दंड</p>
+
+        <p><strong>7.</strong> A) 12, 15, 18</p>
+
+        <p><strong>8.</strong> C) 8</p>
+
+        <p><strong>9.</strong> D) उपरोक्त सभी</p>
+
+        <p><strong>10.</strong> A) समझना आसान होता है</p>
+
+        <p><strong>11.</strong> C) 3</p>
+
+        <p><strong>12.</strong> C) 20</p>
+
+        <p><strong>13.</strong> D) उपरोक्त सभी</p>
+
+        <p><strong>14.</strong> B) सबसे बड़ी मात्रा</p>
+
+        <p><strong>15.</strong> D) उपरोक्त सभी</p>
+
+    </div>
+
+</section>
+
+
+<!-- Resources -->
+
+<section class="section">
+
+    <h2>📚 अध्याय संसाधन</h2>
+
+    <div class="resource-grid">
+
+        <div class="resource-card">
+
+            <h3>📖 नोट्स</h3>
+
+            <p>अध्याय के विस्तृत नोट्स।</p>
+
+            <a href="#" class="btn btn-secondary">
+                जल्द उपलब्ध होगा
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <h3>📝 प्रश्न बैंक</h3>
+
+            <p>अतिरिक्त अभ्यास प्रश्न।</p>
+
+            <a href="#" class="btn btn-secondary">
+                जल्द उपलब्ध होगा
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <h3>📄 PDF</h3>
+
+            <p>अध्याय की PDF।</p>
+
+            <a href="#" class="btn btn-secondary">
+                जल्द उपलब्ध होगा
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Test -->
+
+<section class="section" style="text-align:center;">
+
+    <h2>🎯 अपनी तैयारी जाँचें</h2>
+
+    <p>
+        अध्याय 4 की तैयारी पूरी करने के बाद Model Test देकर
+        अपनी तैयारी जाँचें।
+    </p>
+
+    <a href="../../../tests.html" class="btn btn-primary">
+        Model Test दें →
+    </a>
+
+</section>
+
+
+<!-- Navigation -->
+
+<div class="navigation">
+
+    <a href="class-6-maths-chapter-3.html"
+       class="btn btn-secondary">
+
+        ← अध्याय 3
+
+    </a>
+
+
+    <a href="class-6-mathematics.html"
+       class="btn btn-primary">
+
+        सभी अध्याय
+
+    </a>
+
+
+    <a href="class-6-maths-chapter-5.html"
+       class="btn btn-primary">
+
+        अध्याय 5 →
+
+    </a>
+
+</div>
+
+
+</div>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <h3>UEduTech</h3>
+
+    <p>
+        सीखें • अभ्यास करें • सफलता प्राप्त करें
+    </p>
+
+    <p>
+        © 2026 UEduTech. सर्वाधिकार सुरक्षित।
+    </p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+    document.getElementById("navMenu")
+        .classList.toggle("active");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+

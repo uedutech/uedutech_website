@@ -1,0 +1,1225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chapter 3 - Number Play | UEduTech</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #111827;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .section h2 {
+            color: #2563eb;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .section h3 {
+            color: #111827;
+            margin: 20px 0 10px;
+        }
+
+        .definition {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .example {
+            background: #f0fdf4;
+            border-left: 5px solid #16a34a;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .number-card {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            padding: 22px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .number-card h3 {
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .formula {
+            background: #fff7ed;
+            border-left: 5px solid #f97316;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 12px 0;
+            font-weight: bold;
+        }
+
+        .question {
+            background: #f9fafb;
+            padding: 17px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .question strong {
+            color: #2563eb;
+        }
+
+        .mcq {
+            margin: 20px 0;
+            padding: 18px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+
+        .mcq p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .mcq ul {
+            list-style: none;
+        }
+
+        .mcq li {
+            padding: 7px 10px;
+            background: #f8fafc;
+            margin: 5px 0;
+            border-radius: 6px;
+        }
+
+        .answer {
+            background: #ecfdf5;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #16a34a;
+        }
+
+        .answer p {
+            margin: 6px 0;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .resource-card {
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+
+        .resource-card h3 {
+            color: #2563eb;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            margin-top: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #111827;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .navigation a {
+            flex: 1;
+            text-align: center;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .number-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+
+        <a href="../../../index.html" class="logo">
+            U<span>EduTech</span>
+        </a>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <nav id="navMenu">
+            <a href="../../../index.html">Home</a>
+            <a href="../../../subjects.html">Subjects</a>
+            <a href="../../../tests.html">Model Tests</a>
+            <a href="../../../study-material.html">Study Material</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+
+    <a href="../../../index.html">Home</a>
+    →
+    <a href="../../../study-material.html">Study Material</a>
+    →
+    <a href="../class-6.html">Class 6</a>
+    →
+    <a href="class-6-mathematics.html">Mathematics</a>
+    →
+    Chapter 3
+
+</div>
+
+
+<!-- Hero -->
+<section class="hero">
+
+    <h1>Chapter 3: Number Play</h1>
+
+    <p>
+        Class 6 Mathematics – Ganita Prakash
+        <br>
+        Explore numbers, divisibility, factors, multiples and number patterns.
+    </p>
+
+</section>
+
+
+<div class="container">
+
+
+    <!-- Introduction -->
+    <section class="section">
+
+        <h2>📘 Chapter Introduction</h2>
+
+        <p>
+            Numbers are an important part of mathematics. In this chapter,
+            we explore different properties of numbers and learn how numbers
+            can be arranged, compared and used to solve interesting problems.
+        </p>
+
+        <div class="definition">
+
+            <strong>Number:</strong>
+
+            A number is a mathematical object used for counting, measuring,
+            ordering and describing quantities.
+
+        </div>
+
+    </section>
+
+
+    <!-- Number Types -->
+    <section class="section">
+
+        <h2>🔢 1. Different Types of Numbers</h2>
+
+        <div class="number-grid">
+
+            <div class="number-card">
+
+                <h3>Natural Numbers</h3>
+
+                <p>
+                    1, 2, 3, 4, 5, ...
+                </p>
+
+            </div>
+
+            <div class="number-card">
+
+                <h3>Whole Numbers</h3>
+
+                <p>
+                    0, 1, 2, 3, 4, ...
+                </p>
+
+            </div>
+
+            <div class="number-card">
+
+                <h3>Even Numbers</h3>
+
+                <p>
+                    2, 4, 6, 8, 10, ...
+                </p>
+
+            </div>
+
+            <div class="number-card">
+
+                <h3>Odd Numbers</h3>
+
+                <p>
+                    1, 3, 5, 7, 9, ...
+                </p>
+
+            </div>
+
+            <div class="number-card">
+
+                <h3>Prime Numbers</h3>
+
+                <p>
+                    2, 3, 5, 7, 11, ...
+                </p>
+
+            </div>
+
+            <div class="number-card">
+
+                <h3>Composite Numbers</h3>
+
+                <p>
+                    4, 6, 8, 9, 10, ...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Even Odd -->
+    <section class="section">
+
+        <h2>➗ 2. Even and Odd Numbers</h2>
+
+        <div class="definition">
+
+            <strong>Even Number:</strong>
+
+            A number that is exactly divisible by 2 is called an even number.
+
+            <br><br>
+
+            Examples: 2, 4, 6, 8, 10, 12
+
+        </div>
+
+        <div class="definition">
+
+            <strong>Odd Number:</strong>
+
+            A number that is not exactly divisible by 2 is called an odd number.
+
+            <br><br>
+
+            Examples: 1, 3, 5, 7, 9, 11
+
+        </div>
+
+        <div class="example">
+
+            <strong>Example:</strong>
+
+            24 is even because 24 ÷ 2 = 12.
+
+            <br>
+
+            25 is odd because it cannot be divided exactly by 2.
+
+        </div>
+
+    </section>
+
+
+    <!-- Factors -->
+    <section class="section">
+
+        <h2>🔍 3. Factors</h2>
+
+        <p>
+            A factor of a number is a number that divides it exactly
+            without leaving a remainder.
+        </p>
+
+        <div class="example">
+
+            <strong>Example:</strong>
+
+            Factors of 12 are:
+
+            <br><br>
+
+            1, 2, 3, 4, 6 and 12.
+
+            <br><br>
+
+            Because each of these numbers divides 12 exactly.
+
+        </div>
+
+    </section>
+
+
+    <!-- Multiples -->
+    <section class="section">
+
+        <h2>✖️ 4. Multiples</h2>
+
+        <p>
+            The multiples of a number are obtained by multiplying it
+            by 1, 2, 3, 4 and so on.
+        </p>
+
+        <div class="example">
+
+            <strong>Example:</strong>
+
+            Multiples of 5:
+
+            <br><br>
+
+            5, 10, 15, 20, 25, 30, ...
+
+        </div>
+
+        <div class="formula">
+
+            Every number is a multiple of 1.
+
+        </div>
+
+    </section>
+
+
+    <!-- Prime Numbers -->
+    <section class="section">
+
+        <h2>⭐ 5. Prime Numbers</h2>
+
+        <div class="definition">
+
+            A prime number has exactly two factors:
+
+            <br><br>
+
+            <strong>1 and the number itself.</strong>
+
+        </div>
+
+        <div class="example">
+
+            Examples of prime numbers:
+
+            <br><br>
+
+            2, 3, 5, 7, 11, 13, 17, 19, 23, 29
+
+        </div>
+
+        <p>
+            The number 2 is the smallest prime number and the only
+            even prime number.
+        </p>
+
+    </section>
+
+
+    <!-- Composite -->
+    <section class="section">
+
+        <h2>🔢 6. Composite Numbers</h2>
+
+        <p>
+            A composite number has more than two factors.
+        </p>
+
+        <div class="example">
+
+            Examples:
+
+            <br><br>
+
+            4 → 1, 2, 4
+
+            <br>
+
+            6 → 1, 2, 3, 6
+
+            <br>
+
+            8 → 1, 2, 4, 8
+
+        </div>
+
+    </section>
+
+
+    <!-- Divisibility -->
+    <section class="section">
+
+        <h2>➗ 7. Divisibility</h2>
+
+        <p>
+            Divisibility helps us check whether a number can be divided
+            exactly by another number.
+        </p>
+
+        <div class="formula">
+            A number ending in 0, 2, 4, 6 or 8 is divisible by 2.
+        </div>
+
+        <div class="formula">
+            A number ending in 0 or 5 is divisible by 5.
+        </div>
+
+        <div class="formula">
+            A number is divisible by 10 if its last digit is 0.
+        </div>
+
+    </section>
+
+
+    <!-- Number Patterns -->
+    <section class="section">
+
+        <h2>🔁 8. Number Patterns</h2>
+
+        <p>
+            Numbers can form interesting patterns.
+        </p>
+
+        <div class="example">
+
+            <strong>Pattern 1:</strong>
+
+            <br>
+
+            2, 4, 6, 8, 10, 12...
+
+            <br><br>
+
+            Rule: Add 2 each time.
+
+        </div>
+
+        <div class="example">
+
+            <strong>Pattern 2:</strong>
+
+            <br>
+
+            5, 10, 15, 20, 25...
+
+            <br><br>
+
+            Rule: Add 5 each time.
+
+        </div>
+
+        <div class="example">
+
+            <strong>Pattern 3:</strong>
+
+            <br>
+
+            3, 6, 12, 24, 48...
+
+            <br><br>
+
+            Rule: Multiply by 2 each time.
+
+        </div>
+
+    </section>
+
+
+    <!-- Important Questions -->
+    <section class="section">
+
+        <h2>❓ Important Questions – Part A</h2>
+
+        <div class="question">
+            <strong>Q1.</strong> What are natural numbers?
+        </div>
+
+        <div class="question">
+            <strong>Q2.</strong> What are whole numbers?
+        </div>
+
+        <div class="question">
+            <strong>Q3.</strong> What is an even number?
+        </div>
+
+        <div class="question">
+            <strong>Q4.</strong> What is an odd number?
+        </div>
+
+        <div class="question">
+            <strong>Q5.</strong> Write five even numbers.
+        </div>
+
+        <div class="question">
+            <strong>Q6.</strong> Write five odd numbers.
+        </div>
+
+        <div class="question">
+            <strong>Q7.</strong> What is a factor?
+        </div>
+
+        <div class="question">
+            <strong>Q8.</strong> Find all factors of 18.
+        </div>
+
+        <div class="question">
+            <strong>Q9.</strong> Find all factors of 24.
+        </div>
+
+        <div class="question">
+            <strong>Q10.</strong> Write the first ten multiples of 3.
+        </div>
+
+        <div class="question">
+            <strong>Q11.</strong> Write the first ten multiples of 7.
+        </div>
+
+        <div class="question">
+            <strong>Q12.</strong> What is a prime number?
+        </div>
+
+        <div class="question">
+            <strong>Q13.</strong> Write all prime numbers between 1 and 30.
+        </div>
+
+    </section>
+
+
+    <!-- Important Questions Part B -->
+    <section class="section">
+
+        <h2>📝 Important Questions – Part B</h2>
+
+        <div class="question">
+            <strong>Q14.</strong> What is a composite number?
+        </div>
+
+        <div class="question">
+            <strong>Q15.</strong> Is 1 a prime number? Give reason.
+        </div>
+
+        <div class="question">
+            <strong>Q16.</strong> Why is 2 called a special prime number?
+        </div>
+
+        <div class="question">
+            <strong>Q17.</strong> Find the factors of 36.
+        </div>
+
+        <div class="question">
+            <strong>Q18.</strong> Find the factors of 48.
+        </div>
+
+        <div class="question">
+            <strong>Q19.</strong> Write the first ten multiples of 9.
+        </div>
+
+        <div class="question">
+            <strong>Q20.</strong> Find the common factors of 12 and 18.
+        </div>
+
+        <div class="question">
+            <strong>Q21.</strong> Find the common factors of 16 and 24.
+        </div>
+
+        <div class="question">
+            <strong>Q22.</strong> Complete the pattern:
+            4, 8, 12, 16, __, __, __
+        </div>
+
+        <div class="question">
+            <strong>Q23.</strong> Complete the pattern:
+            7, 14, 21, 28, __, __
+        </div>
+
+        <div class="question">
+            <strong>Q24.</strong> Complete the pattern:
+            2, 6, 18, 54, __, __
+        </div>
+
+        <div class="question">
+            <strong>Q25.</strong> Is 45 divisible by 5? Explain.
+        </div>
+
+    </section>
+
+
+    <!-- Higher Practice -->
+    <section class="section">
+
+        <h2>🧠 Practice Questions – Part C</h2>
+
+        <div class="question">
+            <strong>Q26.</strong>
+            Find the smallest factor of every natural number.
+        </div>
+
+        <div class="question">
+            <strong>Q27.</strong>
+            Find the greatest factor of 25.
+        </div>
+
+        <div class="question">
+            <strong>Q28.</strong>
+            Write three numbers that are both multiples of 2 and 3.
+        </div>
+
+        <div class="question">
+            <strong>Q29.</strong>
+            Write three numbers that are multiples of 5 and 10.
+        </div>
+
+        <div class="question">
+            <strong>Q30.</strong>
+            Find the missing numbers:
+            10, 20, 30, __, __, 60
+        </div>
+
+        <div class="question">
+            <strong>Q31.</strong>
+            Find the missing numbers:
+            81, 72, 63, __, __
+        </div>
+
+        <div class="question">
+            <strong>Q32.</strong>
+            Which numbers from 10 to 30 are prime numbers?
+        </div>
+
+        <div class="question">
+            <strong>Q33.</strong>
+            Which numbers from 1 to 20 are both even and composite?
+        </div>
+
+        <div class="question">
+            <strong>Q34.</strong>
+            Find two numbers whose common factor is 6.
+        </div>
+
+        <div class="question">
+            <strong>Q35.</strong>
+            Write all factors of 60.
+        </div>
+
+    </section>
+
+
+    <!-- MCQ -->
+    <section class="section">
+
+        <h2>🎯 MCQ Practice – 15 Questions</h2>
+
+
+        <div class="mcq">
+            <p>1. Which is an even number?</p>
+            <ul>
+                <li>A) 13</li>
+                <li>B) 17</li>
+                <li>C) 24</li>
+                <li>D) 31</li>
+            </ul>
+        </div>
+
+
+        <div class="mcq">
+            <p>2. Which is an odd number?</p>
+            <ul>
+                <li>A) 12</li>
+                <li>B) 18</li>
+                <li>C) 25</li>
+                <li>D) 30</li>
+            </ul>
+        </div>
+
+
+        <div class="mcq">
+            <p>3. Which is a prime number?</p>
+            <ul>
+                <li>A) 9</li>
+                <li>B) 15</li>
+                <li>C) 17</li>
+                <li>D) 21</li>
+            </ul>
+        </div>
+
+
+        <div class="mcq">
+            <p>4. The smallest prime number is:</p>
+            <ul>
+                <li>A) 0</li>
+                <li>B) 1</li>
+                <li>C) 2</li>
+                <li>D) 3</li>
+            </ul>
+        </div>
+
+
+        <div class="mcq">
+            <p>5. Which number is divisible by 5?</p>
+            <ul>
+                <li>A) 23</li>
+                <li>B) 34</li>
+                <li>C) 45</li>
+                <li>D) 62</li>
+            </ul>
+        </div>
+
+
+        <div class="mcq">
+            <p>6. Which number is divisible by 10?</p>
+            <ul>
+                <li>A) 25</li>
+                <li>B) 30</li>
+                <li>C) 35</li>
+                <li>D) 45</li>
+            </ul>
+        </div>
+
+
+        <div class="mcq">
+            <p>7. Which is a factor of 24?</p>
+            <ul>
+                <li>A) 5</li>
+                <li>B) 7</li>
+                <li>C) 8</li>
+                <li>D) 10</li>
+            </ul>
+        </div>
+
+
+        <div class="mcq">
+            <p>8. Which is a multiple of 6?</p>
+            <ul>
+                <li>A) 25</li>
+                <li>B) 30</li>
+                <li>C) 31</li>
+                <li>D) 35</li>
+            </ul>
+        </div>
+
+
+        <div class="mcq">
+            <p>9. How many factors does a prime number have?</p>
+            <ul>
+                <li>A) 1</li>
+                <li>B) 2</li>
+                <li>C) 3</li>
+                <li>D) 4</li>
+            </ul>
+        </div>
+
+
+        <div class="mcq">
+            <p>10. Which number is composite?</p>
+            <ul>
+                <li>A) 2</li>
+                <li>B) 3</li>
+                <li>C) 5</li>
+                <li>D) 9</li>
+            </ul>
+        </div>
+
+
+        <div class="mcq">
+            <p>11. The factors of 10 are:</p>
+            <ul>
+                <li>A) 1, 2, 5, 10</li>
+                <li>B) 1, 3, 10</li>
+                <li>C) 2, 4, 10</li>
+                <li>D) 1, 5</li>
+            </ul>
+        </div>
+
+
+        <div class="mcq">
+            <p>12. Which is the only even prime number?</p>
+            <ul>
+                <li>A) 1</li>
+                <li>B) 2</li>
+                <li>C) 4</li>
+                <li>D) 6</li>
+            </ul>
+        </div>
+
+
+        <div class="mcq">
+            <p>13. What comes next?</p>
+
+            <p>5, 10, 15, 20, ___</p>
+
+            <ul>
+                <li>A) 21</li>
+                <li>B) 24</li>
+                <li>C) 25</li>
+                <li>D) 30</li>
+            </ul>
+        </div>
+
+
+        <div class="mcq">
+            <p>14. Which number is divisible by 2?</p>
+            <ul>
+                <li>A) 17</li>
+                <li>B) 29</li>
+                <li>C) 42</li>
+                <li>D) 55</li>
+            </ul>
+        </div>
+
+
+        <div class="mcq">
+            <p>15. Which number is NOT prime?</p>
+            <ul>
+                <li>A) 11</li>
+                <li>B) 13</li>
+                <li>C) 19</li>
+                <li>D) 21</li>
+            </ul>
+        </div>
+
+    </section>
+
+
+    <!-- Answer Key -->
+    <section class="section">
+
+        <h2>✅ MCQ Answer Key</h2>
+
+        <div class="answer">
+
+            <p><strong>1.</strong> C) 24</p>
+            <p><strong>2.</strong> C) 25</p>
+            <p><strong>3.</strong> C) 17</p>
+            <p><strong>4.</strong> C) 2</p>
+            <p><strong>5.</strong> C) 45</p>
+            <p><strong>6.</strong> B) 30</p>
+            <p><strong>7.</strong> C) 8</p>
+            <p><strong>8.</strong> B) 30</p>
+            <p><strong>9.</strong> B) 2</p>
+            <p><strong>10.</strong> D) 9</p>
+            <p><strong>11.</strong> A) 1, 2, 5, 10</p>
+            <p><strong>12.</strong> B) 2</p>
+            <p><strong>13.</strong> C) 25</p>
+            <p><strong>14.</strong> C) 42</p>
+            <p><strong>15.</strong> D) 21</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Resources -->
+    <section class="section">
+
+        <h2>📚 Chapter Resources</h2>
+
+        <div class="resource-grid">
+
+            <div class="resource-card">
+
+                <h3>📖 Notes</h3>
+
+                <p>Complete chapter notes.</p>
+
+                <a href="#" class="btn btn-secondary">
+                    Coming Soon
+                </a>
+
+            </div>
+
+
+            <div class="resource-card">
+
+                <h3>📝 Question Bank</h3>
+
+                <p>Extra practice questions.</p>
+
+                <a href="#" class="btn btn-secondary">
+                    Coming Soon
+                </a>
+
+            </div>
+
+
+            <div class="resource-card">
+
+                <h3>📄 PDF</h3>
+
+                <p>Downloadable chapter PDF.</p>
+
+                <a href="#" class="btn btn-secondary">
+                    Coming Soon
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Test CTA -->
+    <section class="section" style="text-align:center;">
+
+        <h2>🎯 Test Your Knowledge</h2>
+
+        <p>
+            Chapter 3 की तैयारी पूरी करने के बाद Model Test देकर
+            अपनी तैयारी check करें।
+        </p>
+
+        <a href="../../../tests.html" class="btn btn-primary">
+            Take Model Test →
+        </a>
+
+    </section>
+
+
+    <!-- Navigation -->
+    <div class="navigation">
+
+        <a href="class-6-maths-chapter-2.html"
+           class="btn btn-secondary">
+
+            ← Chapter 2
+
+        </a>
+
+
+        <a href="class-6-mathematics.html"
+           class="btn btn-primary">
+
+            All Chapters
+
+        </a>
+
+
+        <a href="class-6-maths-chapter-4.html"
+           class="btn btn-primary">
+
+            Chapter 4 →
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- Footer -->
+<footer>
+
+    <h3>UEduTech</h3>
+
+    <p>Learn • Practice • Succeed</p>
+
+    <p>© 2026 UEduTech. All Rights Reserved.</p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+    document.getElementById("navMenu")
+        .classList.toggle("active");
+
+}
+
+</script>
+
+</body>
+</html>
+

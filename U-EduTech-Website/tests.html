@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NMMS Model Tests | U EduTech</title>
+
+    <meta name="description"
+        content="U EduTech पर NMMS MAT, SAT Science, Maths और Full Mock Tests की Free Online Practice करें।">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #071a33;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 14px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: white;
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #ffd43b;
+        }
+
+        .tagline {
+            font-size: 10px;
+            color: #b8c7dc;
+            display: block;
+            margin-top: -5px;
+            letter-spacing: .3px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 9px 13px;
+            border-radius: 7px;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #123b69;
+            color: #ffd43b;
+        }
+
+        .start-btn {
+            background: #ffd43b !important;
+            color: #071a33 !important;
+            font-weight: 700;
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 27px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            background:
+                linear-gradient(135deg, #071a33, #0d3764);
+            color: white;
+            padding: 65px 20px 70px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 212, 59, .15);
+            border: 1px solid rgba(255, 212, 59, .45);
+            color: #ffd43b;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ffd43b;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #dbe7f5;
+            font-size: 17px;
+        }
+
+        /* ================= PAGE CONTAINER ================= */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            color: #071a33;
+            margin-bottom: 7px;
+        }
+
+        .section-title p {
+            color: #667085;
+            font-size: 15px;
+        }
+
+        /* ================= CATEGORY ================= */
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 55px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px 18px;
+            text-align: center;
+            border: 1px solid #e4e9f1;
+            box-shadow: 0 5px 18px rgba(20, 40, 70, .06);
+            text-decoration: none;
+            color: #172033;
+            transition: .3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(20, 40, 70, .12);
+            border-color: #ffd43b;
+        }
+
+        .category-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 14px;
+            background: #edf4ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 13px;
+            font-size: 28px;
+        }
+
+        .category-card h3 {
+            font-size: 17px;
+            color: #071a33;
+            margin-bottom: 5px;
+        }
+
+        .category-card p {
+            font-size: 12px;
+            color: #7a8495;
+        }
+
+        /* ================= TEST CARDS ================= */
+
+        .test-section {
+            margin-bottom: 55px;
+            scroll-margin-top: 90px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .section-heading h2 {
+            color: #071a33;
+            font-size: 25px;
+        }
+
+        .section-heading p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .test-card {
+            background: white;
+            border: 1px solid #e3e8ef;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(20, 40, 70, .06);
+            transition: .3s;
+        }
+
+        .test-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 13px 30px rgba(20, 40, 70, .12);
+        }
+
+        .test-top {
+            padding: 20px;
+            background: linear-gradient(135deg, #071a33, #123b69);
+            color: white;
+            position: relative;
+        }
+
+        .test-number {
+            font-size: 12px;
+            color: #ffd43b;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .test-top h3 {
+            margin-top: 6px;
+            font-size: 19px;
+        }
+
+        .test-top p {
+            color: #cdd9e8;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .test-body {
+            padding: 18px 20px 20px;
+        }
+
+        .test-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 17px;
+        }
+
+        .info {
+            background: #f1f4f8;
+            border-radius: 6px;
+            padding: 5px 9px;
+            font-size: 11px;
+            color: #495568;
+            font-weight: 600;
+        }
+
+        .info.highlight {
+            background: #fff5c7;
+            color: #7a5b00;
+        }
+
+        .test-description {
+            color: #697386;
+            font-size: 13px;
+            margin-bottom: 18px;
+            min-height: 42px;
+        }
+
+        .start-test {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #ffd43b;
+            color: #071a33;
+            text-decoration: none;
+            padding: 11px 15px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .start-test:hover {
+            background: #f3c400;
+            transform: translateY(-1px);
+        }
+
+        .coming-soon {
+            background: #eef1f5;
+            color: #667085;
+            cursor: not-allowed;
+        }
+
+        .coming-soon:hover {
+            background: #eef1f5;
+            transform: none;
+        }
+
+        /* ================= FULL MOCK ================= */
+
+        .full-mock {
+            background: linear-gradient(135deg, #071a33, #0d3764);
+            border-radius: 18px;
+            padding: 32px;
+            color: white;
+            margin-bottom: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .full-mock-content {
+            max-width: 700px;
+        }
+
+        .full-mock small {
+            color: #ffd43b;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .full-mock h2 {
+            font-size: 27px;
+            margin: 5px 0 8px;
+        }
+
+        .full-mock p {
+            color: #d5e0ee;
+            font-size: 14px;
+        }
+
+        .mock-btn {
+            white-space: nowrap;
+            background: #ffd43b;
+            color: #071a33;
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-weight: 800;
+        }
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .feature {
+            background: white;
+            border: 1px solid #e5e9ef;
+            border-radius: 12px;
+            padding: 20px 15px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .feature h3 {
+            font-size: 15px;
+            color: #071a33;
+            margin-bottom: 4px;
+        }
+
+        .feature p {
+            font-size: 11px;
+            color: #788397;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            background: #fff8d9;
+            border: 1px solid #f4df82;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cta h2 {
+            color: #071a33;
+            margin-bottom: 7px;
+        }
+
+        .cta p {
+            color: #6c6870;
+            font-size: 14px;
+            margin-bottom: 17px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #071a33;
+            color: white;
+            text-decoration: none;
+            padding: 11px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #071a33;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px 25px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        footer h3 {
+            color: #ffd43b;
+            margin-bottom: 10px;
+        }
+
+        footer p,
+        footer a {
+            color: #b9c6d7;
+            font-size: 13px;
+        }
+
+        footer a {
+            display: block;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        footer a:hover {
+            color: #ffd43b;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #173250;
+            padding: 15px;
+            color: #8ea0b7;
+            font-size: 12px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .category-grid,
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .test-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            nav {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #071a33;
+                display: none;
+                flex-direction: column;
+                padding: 12px 20px 18px;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero {
+                padding: 45px 18px 50px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 38px 15px;
+            }
+
+            .section-title h2 {
+                font-size: 25px;
+            }
+
+            .category-grid,
+            .test-grid,
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                display: block;
+            }
+
+            .section-heading h2 {
+                font-size: 21px;
+            }
+
+            .full-mock {
+                display: block;
+                padding: 25px 20px;
+            }
+
+            .full-mock h2 {
+                font-size: 23px;
+            }
+
+            .mock-btn {
+                display: inline-block;
+                margin-top: 18px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="nav-container">
+
+            <div>
+                <a href="index.html" class="logo">
+                    U<span>EduTech</span>
+                </a>
+
+                <span class="tagline">
+                    The Power of "U" in Learning
+                </span>
+            </div>
+
+            <button class="menu-btn" onclick="toggleMenu()">
+                ☰
+            </button>
+
+            <nav id="mainNav">
+
+                <a href="index.html">Home</a>
+
+                <a href="subjects.html">
+                    Subjects
+                </a>
+
+                <a href="tests.html" class="active">
+                    Model Tests
+                </a>
+
+                <a href="study-material.html">
+                    Study Material
+                </a>
+
+                <a href="courses.html">
+                    Courses
+                </a>
+
+                <a href="tests/mat-test-01.html" class="start-btn">
+                    Start Test
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                🎯 NMMS 2026–27 Preparation
+            </div>
+
+            <h1>
+                NMMS <span>Model Tests</span>
+            </h1>
+
+            <p>
+                MAT, SAT Science और Maths के महत्वपूर्ण प्रश्नों
+                के साथ अपनी तैयारी को Test करें और अपनी तैयारी
+                का Self Assessment करें।
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+
+        <!-- CATEGORY -->
+
+        <section>
+
+            <div class="section-title">
+
+                <h2>
+                    Test Category
+                </h2>
+
+                <p>
+                    अपनी तैयारी के अनुसार Test चुनें
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <a href="#mat" class="category-card">
+
+                    <div class="category-icon">
+                        🧠
+                    </div>
+
+                    <h3>
+                        MAT Reasoning
+                    </h3>
+
+                    <p>
+                        Mental Ability Test
+                    </p>
+
+                </a>
+
+
+                <a href="#science" class="category-card">
+
+                    <div class="category-icon">
+                        🔬
+                    </div>
+
+                    <h3>
+                        SAT Science
+                    </h3>
+
+                    <p>
+                        विज्ञान आधारित प्रश्न
+                    </p>
+
+                </a>
+
+
+                <a href="#maths" class="category-card">
+
+                    <div class="category-icon">
+                        📐
+                    </div>
+
+                    <h3>
+                        NMMS Maths
+                    </h3>
+
+                    <p>
+                        गणित की महत्वपूर्ण Practice
+                    </p>
+
+                </a>
+
+
+                <a href="#full-mock" class="category-card">
+
+                    <div class="category-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Full Mock Test
+                    </h3>
+
+                    <p>
+                        Complete NMMS Practice
+                    </p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MAT ================= -->
+
+        <section class="test-section" id="mat">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        🧠 MAT – Mental Ability Test
+                    </h2>
+
+                    <p>
+                        Reasoning और Mental Ability की Practice
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="test-grid">
+
+
+                <!-- MAT TEST 01 -->
+
+                <div class="test-card">
+
+                    <div class="test-top">
+
+                        <div class="test-number">
+                            MAT TEST – 01
+                        </div>
+
+                        <h3>
+                            NMMS MAT Model Test 01
+                        </h3>
+
+                        <p>
+                            Mental Ability & Reasoning
+                        </p>
+
+                    </div>
+
+
+                    <div class="test-body">
+
+                        <div class="test-info">
+
+                            <span class="info highlight">
+                                90 Questions
+                            </span>
+
+                            <span class="info">
+                                90 Minutes
+                            </span>
+
+                            <span class="info">
+                                Bilingual
+                            </span>
+
+                        </div>
+
+
+                        <p class="test-description">
+                            NMMS परीक्षा के लिए महत्वपूर्ण
+                            Mental Ability और Reasoning प्रश्नों
+                            का अभ्यास करें।
+                        </p>
+
+
+                        <a href="tests/mat-test-01.html" class="start-test">
+                            Start Test →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MAT TEST 02 -->
+
+                <div class="test-card">
+
+                    <div class="test-top">
+
+                        <div class="test-number">
+                            MAT TEST – 02
+                        </div>
+
+                        <h3>
+                            NMMS MAT Practice Test 02
+                        </h3>
+
+                        <p>
+                            Reasoning Practice
+                        </p>
+
+                    </div>
+
+
+                    <div class="test-body">
+
+                        <div class="test-info">
+
+                            <span class="info highlight">
+                                90 Questions
+                            </span>
+
+                            <span class="info">
+                                90 Minutes
+                            </span>
+
+                            <span class="info">
+                                Bilingual
+                            </span>
+
+                        </div>
+
+
+                        <p class="test-description">
+                            अलग-अलग प्रकार के Reasoning
+                            प्रश्नों की Practice के लिए।
+                        </p>
+
+
+                        <a href="#" class="start-test coming-soon" onclick="return false;">
+                            Coming Soon
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MAT TEST 03 -->
+
+                <div class="test-card">
+
+                    <div class="test-top">
+
+                        <div class="test-number">
+                            MAT TEST – 03
+                        </div>
+
+                        <h3>
+                            NMMS MAT Practice Test 03
+                        </h3>
+
+                        <p>
+                            Mental Ability Practice
+                        </p>
+
+                    </div>
+
+
+                    <div class="test-body">
+
+                        <div class="test-info">
+
+                            <span class="info highlight">
+                                90 Questions
+                            </span>
+
+                            <span class="info">
+                                90 Minutes
+                            </span>
+
+                            <span class="info">
+                                Bilingual
+                            </span>
+
+                        </div>
+
+
+                        <p class="test-description">
+                            NMMS level के महत्वपूर्ण
+                            Mental Ability Questions।
+                        </p>
+
+
+                        <a href="#" class="start-test coming-soon" onclick="return false;">
+                            Coming Soon
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= SAT ================= -->
+
+        <section class="test-section" id="mat">
+
+            <!-- Section Heading -->
+            <div class="section-heading">
+                <div>
+                    <h2>🧠 Sat – Subject Ability Test</h2>
+                    <p>
+                        NMMS Sat की complete preparation के लिए
+                        Full Length Model Tests
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="test-grid">
+
+                <!-- TEST 01 -->
+                <div class="test-card">
+
+                    <div class="test-top">
+
+                        <div class="test-number">
+                            SAT TEST – 01
+                        </div>
+
+                        <h3>
+                            NMMS SAT Model Test 01
+                        </h3>
+
+                        <p>
+                            subject Ability & Reasoning
+                        </p>
+
+                    </div>
+
+                    <div class="test-body">
+
+                        <div class="test-info">
+                            <span class="info highlight">90 Questions</span>
+                            <span class="info">90 Minutes</span>
+                            <span class="info">Bilingual</span>
+                        </div>
+
+                        <p class="test-description">
+                            NMMS परीक्षा के लिए महत्वपूर्ण
+                            Mental Ability और Reasoning प्रश्नों
+                            का अभ्यास करें।
+                        </p>
+
+                        <a href="nmms/test-1.html" class="start-test">
+                            Start Test →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TEST 02 -->
+                <div class="test-card">
+
+                    <div class="test-top">
+
+                        <div class="test-number">
+                            SAT TEST – 02
+                        </div>
+
+                        <h3>
+                            NMMS MAT Model Test 02
+                        </h3>
+
+                        <p>
+                            Subject Ability & Reasoning
+                        </p>
+
+                    </div>
+
+                    <div class="test-body">
+
+                        <div class="test-info">
+                            <span class="info highlight">90 Questions</span>
+                            <span class="info">90 Minutes</span>
+                            <span class="info">Bilingual</span>
+                        </div>
+
+                        <p class="test-description">
+                            NMMS परीक्षा के लिए महत्वपूर्ण
+                            Mental Ability और Reasoning प्रश्नों
+                            का अभ्यास करें।
+                        </p>
+
+                        <a href="nmms/test-2.html" class="start-test">
+                            Start Test →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TEST 03 -->
+                <div class="test-card">
+
+                    <div class="test-top">
+
+                        <div class="test-number">
+                            SAT TEST – 03
+                        </div>
+
+                        <h3>
+                            NMMS SAT Model Test 03
+                        </h3>
+
+                        <p>
+                            Subject Ability & Reasoning
+                        </p>
+
+                    </div>
+
+                    <div class="test-body">
+
+                        <div class="test-info">
+                            <span class="info highlight">90 Questions</span>
+                            <span class="info">90 Minutes</span>
+                            <span class="info">Bilingual</span>
+                        </div>
+
+                        <p class="test-description">
+                            NMMS परीक्षा के लिए महत्वपूर्ण
+                            Mental Ability और Reasoning प्रश्नों
+                            का अभ्यास करें।
+                        </p>
+
+                        <a href="nmms/test-3.html" class="start-test">
+                            Start Test →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TEST 04 -->
+                <div class="test-card">
+
+                    <div class="test-top">
+
+                        <div class="test-number">
+                            SAT TEST – 04
+                        </div>
+
+                        <h3>
+                            NMMS SAT Model Test 04
+                        </h3>
+
+                        <p>
+                            Subject Ability & Reasoning
+                        </p>
+
+                    </div>
+
+                    <div class="test-body">
+
+                        <div class="test-info">
+                            <span class="info highlight">90 Questions</span>
+                            <span class="info">90 Minutes</span>
+                            <span class="info">Bilingual</span>
+                        </div>
+
+                        <p class="test-description">
+                            NMMS परीक्षा के लिए महत्वपूर्ण
+                            Mental Ability और Reasoning प्रश्नों
+                            का अभ्यास करें।
+                        </p>
+
+                        <a href="nmms/test-4.html" class="start-test">
+                            Start Test →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TEST 05 -->
+                <div class="test-card">
+
+                    <div class="test-top">
+
+                        <div class="test-number">
+                            SAT TEST – 05
+                        </div>
+
+                        <h3>
+                            NMMS SAT Model Test 05
+                        </h3>
+
+                        <p>
+                            Subject Ability & Reasoning
+                        </p>
+
+                    </div>
+
+                    <div class="test-body">
+
+                        <div class="test-info">
+                            <span class="info highlight">90 Questions</span>
+                            <span class="info">90 Minutes</span>
+                            <span class="info">Bilingual</span>
+                        </div>
+
+                        <p class="test-description">
+                            NMMS परीक्षा के लिए महत्वपूर्ण
+                            Mental Ability और Reasoning प्रश्नों
+                            का अभ्यास करें।
+                        </p>
+
+                        <a href="nmms/test-5.html" class="start-test">
+                            Start Test →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= SCIENCE ================= -->
+
+        <section class="test-section" id="science">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        🔬 SAT – Science
+                    </h2>
+
+                    <p>
+                        Class 7–8 Science आधारित NMMS Practice
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="test-grid">
+
+
+                <!-- SCIENCE TEST 01 -->
+
+                <div class="test-card">
+
+                    <div class="test-top">
+
+                        <div class="test-number">
+                            SAT SCIENCE – 01
+                        </div>
+
+                        <h3>
+                            NMMS Science Test 01
+                        </h3>
+
+                        <p>
+                            Science Model Test
+                        </p>
+
+                    </div>
+
+
+                    <div class="test-body">
+
+                        <div class="test-info">
+
+                            <span class="info highlight">
+                                Important Questions
+                            </span>
+
+                            <span class="info">
+                                Bilingual
+                            </span>
+
+                            <span class="info">
+                                Science
+                            </span>
+
+                        </div>
+
+
+                        <p class="test-description">
+                            NMMS परीक्षा के लिए Science के
+                            महत्वपूर्ण प्रश्नों की Practice करें।
+                        </p>
+
+
+                        <a href="tests/sat-science-01.html" class="start-test">
+                            Start Test →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SCIENCE TEST 02 -->
+
+                <div class="test-card">
+
+                    <div class="test-top">
+
+                        <div class="test-number">
+                            SAT SCIENCE – 02
+                        </div>
+
+                        <h3>
+                            NMMS Science Test 02
+                        </h3>
+
+                        <p>
+                            Important Science Questions
+                        </p>
+
+                    </div>
+
+
+                    <div class="test-body">
+
+                        <div class="test-info">
+
+                            <span class="info highlight">
+                                Important
+                            </span>
+
+                            <span class="info">
+                                Bilingual
+                            </span>
+
+                            <span class="info">
+                                Class 7–8
+                            </span>
+
+                        </div>
+
+
+                        <p class="test-description">
+                            Science के selected और
+                            exam-focused questions।
+                        </p>
+
+
+                        <a href="#" class="start-test coming-soon" onclick="return false;">
+                            Coming Soon
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SCIENCE TEST 03 -->
+
+                <div class="test-card">
+
+                    <div class="test-top">
+
+                        <div class="test-number">
+                            SAT SCIENCE – 03
+                        </div>
+
+                        <h3>
+                            NMMS Science Test 03
+                        </h3>
+
+                        <p>
+                            Science Practice Test
+                        </p>
+
+                    </div>
+
+
+                    <div class="test-body">
+
+                        <div class="test-info">
+
+                            <span class="info highlight">
+                                Important
+                            </span>
+
+                            <span class="info">
+                                Bilingual
+                            </span>
+
+                            <span class="info">
+                                Practice
+                            </span>
+
+                        </div>
+
+
+                        <p class="test-description">
+                            NMMS preparation के लिए
+                            additional Science practice।
+                        </p>
+
+
+                        <a href="#" class="start-test coming-soon" onclick="return false;">
+                            Coming Soon
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MATHS ================= -->
+
+        <section class="test-section" id="maths">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        📐 NMMS Maths
+                    </h2>
+
+                    <p>
+                        Important Mathematics Questions
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="test-grid">
+
+
+                <!-- MATHS TEST 01 -->
+
+                <div class="test-card">
+
+                    <div class="test-top">
+
+                        <div class="test-number">
+                            MATHS TEST – 01
+                        </div>
+
+                        <h3>
+                            NMMS Maths Test 01
+                        </h3>
+
+                        <p>
+                            Mathematics Practice
+                        </p>
+
+                    </div>
+
+
+                    <div class="test-body">
+
+                        <div class="test-info">
+
+                            <span class="info highlight">
+                                20 Questions
+                            </span>
+
+                            <span class="info">
+                                Bilingual
+                            </span>
+
+                            <span class="info">
+                                Maths
+                            </span>
+
+                        </div>
+
+
+                        <p class="test-description">
+                            NMMS Maths के महत्वपूर्ण
+                            प्रश्नों की Practice करें।
+                        </p>
+
+
+                        <a href="tests/maths-test-01.html" class="start-test">
+                            Start Test →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MATHS TEST 02 -->
+
+                <div class="test-card">
+
+                    <div class="test-top">
+
+                        <div class="test-number">
+                            MATHS TEST – 02
+                        </div>
+
+                        <h3>
+                            NMMS Maths Practice 02
+                        </h3>
+
+                        <p>
+                            Important Maths Questions
+                        </p>
+
+                    </div>
+
+
+                    <div class="test-body">
+
+                        <div class="test-info">
+
+                            <span class="info highlight">
+                                Practice
+                            </span>
+
+                            <span class="info">
+                                Bilingual
+                            </span>
+
+                            <span class="info">
+                                Maths
+                            </span>
+
+                        </div>
+
+
+                        <p class="test-description">
+                            NMMS के लिए selected Maths
+                            questions का अभ्यास।
+                        </p>
+
+
+                        <a href="#" class="start-test coming-soon" onclick="return false;">
+                            Coming Soon
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MATHS TEST 03 -->
+
+                <div class="test-card">
+
+                    <div class="test-top">
+
+                        <div class="test-number">
+                            MATHS TEST – 03
+                        </div>
+
+                        <h3>
+                            NMMS Maths Practice 03
+                        </h3>
+
+                        <p>
+                            Exam Focused Questions
+                        </p>
+
+                    </div>
+
+
+                    <div class="test-body">
+
+                        <div class="test-info">
+
+                            <span class="info highlight">
+                                Practice
+                            </span>
+
+                            <span class="info">
+                                Bilingual
+                            </span>
+
+                            <span class="info">
+                                Maths
+                            </span>
+
+                        </div>
+
+
+                        <p class="test-description">
+                            Important Mathematics
+                            questions की additional practice।
+                        </p>
+
+
+                        <a href="#" class="start-test coming-soon" onclick="return false;">
+                            Coming Soon
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FULL MOCK ================= -->
+
+        <!-- 🎯 NMMS Full Mock Test Section -->
+        <section class="nmms-mock-section">
+
+            <div class="section-heading">
+                <span class="heading-icon">🎯</span>
+                <div>
+                    <h2>Complete Preparation</h2>
+                    <h3>NMMS Full Mock Test</h3>
+                    <p>
+                        MAT + SAT की complete preparation के लिए Full Length Mock Tests।
+                        वास्तविक परीक्षा जैसा अभ्यास करने के लिए उपयोग करें।
+                    </p>
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <!-- ================= FEATURES ================= -->
+
+        <section>
+
+            <div class="section-title">
+
+                <h2>
+                    Test देने के फायदे
+                </h2>
+
+                <p>
+                    केवल पढ़ना नहीं, Practice और Self Assessment भी
+                </p>
+
+            </div>
+
+
+            <div class="features">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ⏱️
+                    </div>
+
+                    <h3>
+                        Time Practice
+                    </h3>
+
+                    <p>
+                        समय के अंदर प्रश्न हल करने की Practice।
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Self Assessment
+                    </h3>
+
+                    <p>
+                        अपनी तैयारी का स्तर समझें।
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Exam Focused
+                    </h3>
+
+                    <p>
+                        महत्वपूर्ण और exam-oriented questions।
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        📱
+                    </div>
+
+                    <h3>
+                        Mobile Friendly
+                    </h3>
+
+                    <p>
+                        मोबाइल और कंप्यूटर दोनों पर Practice।
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="cta">
+
+            <h2>
+                📚 तैयारी जारी रखें
+            </h2>
+
+            <p>
+                Subjects में जाकर Science, Maths और Reasoning
+                के topics भी पढ़ें।
+            </p>
+
+            <a href="subjects.html" class="cta-btn">
+                Explore Subjects →
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+
+            <div>
+
+                <h3>
+                    U EduTech
+                </h3>
+
+                <p>
+                    The Power of "U" in Learning
+                </p>
+
+                <p style="margin-top:8px;">
+                    NMMS, Maths, Science और Reasoning
+                    की बेहतर तैयारी के लिए Educational Platform.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="subjects.html">
+                    Subjects
+                </a>
+
+                <a href="tests.html">
+                    Model Tests
+                </a>
+
+                <a href="courses.html">
+                    Courses
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Connect
+                </h3>
+
+                <a href="https://www.youtube.com/@uedutech99" target="_blank">
+                    ▶ YouTube
+                </a>
+
+                <a href="mailto:uedutech99@gmail.com">
+                    ✉ Email
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 U EduTech | All Rights Reserved
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function toggleMenu() {
+
+            const nav = document.getElementById("mainNav");
+
+            nav.classList.toggle("show");
+
+        }
+
+
+        // Mobile menu link click के बाद menu बंद करना
+
+        document.querySelectorAll("#mainNav a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                document
+                    .getElementById("mainNav")
+                    .classList.remove("show");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

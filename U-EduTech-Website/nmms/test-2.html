@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Online Exam - 90 Questions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; overflow-x: hidden; }
+        
+        /* Start Screen */
+        .start-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; z-index: 2000; }
+        .start-content { background: white; padding: 40px; border-radius: 20px; max-width: 600px; width: 90%; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .start-content h1 { color: #667eea; font-size: 32px; margin-bottom: 20px; }
+        .instructions { text-align: left; margin: 30px 0; padding: 25px; background: #f7fafc; border-radius: 10px; }
+        .instructions h3 { color: #2d3748; margin-bottom: 15px; font-size: 20px; }
+        .instructions ul { margin-left: 20px; line-height: 2; }
+        .instructions li { margin: 10px 0; color: #4a5568; font-size: 15px; }
+        .exam-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 25px 0; }
+        .detail-box { background: #667eea; color: white; padding: 20px; border-radius: 10px; }
+        .detail-box .number { font-size: 28px; font-weight: bold; }
+        .detail-box .label { font-size: 13px; margin-top: 5px; opacity: 0.9; }
+        .start-btn { background: #48bb78; color: white; border: none; padding: 18px 50px; font-size: 20px; font-weight: bold; border-radius: 10px; cursor: pointer; transition: all 0.3s; margin-top: 20px; }
+        .start-btn:hover { background: #38a169; transform: scale(1.05); }
+        
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .header h2 { font-size: 20px; }
+        .header p { font-size: 12px; margin-top: 5px; opacity: 0.9; }
+        .timer { font-size: 20px; font-weight: bold; background: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 8px; }
+        .timer.warning { background: #ff6b6b; animation: pulse 1s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        
+        /* Container */
+        .container { display: flex; min-height: calc(100vh - 70px); }
+        .main-content { flex: 1; padding: 20px; overflow-y: auto; }
+        
+        /* Section Buttons */
+        .section-buttons { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+        .section-btn { padding: 12px 20px; border: 2px solid #667eea; background: white; color: #667eea; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.3s; }
+        .section-btn:hover, .section-btn.active { background: #667eea; color: white; }
+        
+        .section-info { background: white; padding: 15px 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .section-info h3 { color: #667eea; margin-bottom: 5px; font-size: 18px; }
+        
+        /* Question Box */
+        .question-box { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .question { font-size: 17px; font-weight: 600; margin-bottom: 25px; line-height: 1.6; color: #2d3748; }
+        .options { display: flex; flex-direction: column; gap: 12px; }
+        .option { background: #f7fafc; border: 2px solid #e2e8f0; padding: 14px 18px; border-radius: 8px; cursor: pointer; transition: all 0.3s; font-size: 15px; min-height: 50px; display: flex; align-items: center; }
+        .option:hover { background: #edf2f7; border-color: #667eea; transform: translateX(3px); }
+        .option.selected { background: #667eea; color: white; border-color: #667eea; }
+        
+        /* Navigation */
+        .navigation { display: flex; justify-content: space-between; margin-top: 25px; gap: 10px; flex-wrap: wrap; }
+        .nav-group { display: flex; gap: 8px; flex-wrap: wrap; }
+        .btn { padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 15px; font-weight: 600; transition: all 0.3s; white-space: nowrap; min-height: 44px; }
+        .btn-primary { background: #667eea; color: white; }
+        .btn-primary:hover { background: #5568d3; }
+        .btn-secondary { background: #e2e8f0; color: #2d3748; }
+        .btn-secondary:hover { background: #cbd5e0; }
+        .btn-warning { background: #f6ad55; color: white; }
+        .btn-warning:hover { background: #ed8936; }
+        .btn-success { background: #48bb78; color: white; }
+        .btn-success:hover { background: #38a169; }
+        
+        /* Sidebar */
+        .sidebar { width: 320px; background: white; padding: 20px; overflow-y: auto; box-shadow: -2px 0 10px rgba(0,0,0,0.1); }
+        .toggle-sidebar-btn { display: none; position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; border-radius: 50%; background: #667eea; color: white; border: none; font-size: 24px; cursor: pointer; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4); z-index: 999; transition: all 0.3s; }
+        .toggle-sidebar-btn:hover { transform: scale(1.1); }
+        
+        /* Legend */
+        .legend { margin-bottom: 20px; padding: 15px; background: #f7fafc; border-radius: 8px; }
+        .legend h3 { margin-bottom: 15px; font-size: 16px; }
+        .legend-item { display: flex; align-items: center; margin: 10px 0; font-size: 13px; }
+        .legend-box { width: 28px; height: 28px; border-radius: 6px; margin-right: 10px; border: 2px solid #e2e8f0; flex-shrink: 0; }
+        
+        /* Stats */
+        .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 20px 0; }
+        .stat-item { background: #f7fafc; padding: 15px; border-radius: 8px; text-align: center; }
+        .stat-number { font-size: 28px; font-weight: bold; color: #667eea; }
+        .stat-label { font-size: 13px; color: #718096; margin-top: 5px; }
+        
+        /* Palette */
+        .palette-section { margin-bottom: 25px; }
+        .palette-section h4 { color: #2d3748; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; font-size: 15px; cursor: pointer; transition: color 0.3s; }
+        .palette-section h4:hover { color: #667eea; }
+        .question-palette { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+        .palette-item { width: 100%; aspect-ratio: 1; border: 2px solid #e2e8f0; background: white; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 13px; transition: all 0.3s; min-height: 44px; }
+        .palette-item:hover { transform: scale(1.05); }
+        .palette-item.current { border-color: #667eea; border-width: 3px; }
+        .palette-item.answered { background: #48bb78; color: white; }
+        .palette-item.marked { background: #f6ad55; color: white; }
+        .palette-item.answered.marked { background: #9f7aea; color: white; }
+        
+        .submit-section { margin-top: 20px; padding: 20px; background: #f7fafc; border-radius: 8px; text-align: center; }
+        
+        /* Modal */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
+        .modal-content { background: white; padding: 30px; border-radius: 15px; max-width: 500px; width: 100%; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.3); max-height: 90vh; overflow-y: auto; }
+        .modal-content h2 { color: #667eea; margin-bottom: 20px; font-size: 24px; }
+        .modal-content p { margin: 15px 0; font-size: 16px; line-height: 1.6; }
+        .modal-buttons { display: flex; gap: 10px; justify-content: center; margin-top: 25px; flex-wrap: wrap; }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .start-content { padding: 30px 20px; }
+            .start-content h1 { font-size: 24px; }
+            .exam-details { grid-template-columns: 1fr; gap: 10px; }
+            .detail-box { padding: 15px; }
+            .detail-box .number { font-size: 24px; }
+            .instructions { padding: 20px; }
+            .instructions h3 { font-size: 18px; }
+            .instructions li { font-size: 14px; }
+            .start-btn { padding: 15px 40px; font-size: 18px; width: 100%; }
+            
+            .header { padding: 12px 15px; }
+            .header h2 { font-size: 16px; }
+            .header p { font-size: 10px; }
+            .timer { font-size: 16px; padding: 6px 12px; }
+            .container { flex-direction: column; }
+            .main-content { padding: 15px; }
+            .section-buttons { gap: 8px; }
+            .section-btn { padding: 10px 15px; font-size: 13px; flex: 1; min-width: 100px; }
+            .sidebar { position: fixed; top: 0; right: -100%; width: 100%; max-width: 350px; height: 100vh; z-index: 998; transition: right 0.3s ease; overflow-y: auto; }
+            .sidebar.active { right: 0; }
+            .toggle-sidebar-btn { display: flex; align-items: center; justify-content: center; }
+            .question-box { padding: 20px; }
+            .question { font-size: 16px; margin-bottom: 20px; }
+            .option { padding: 12px 15px; font-size: 14px; min-height: 48px; }
+            .navigation { flex-direction: column; gap: 10px; }
+            .nav-group { width: 100%; justify-content: space-between; }
+            .btn { flex: 1; padding: 12px 15px; font-size: 14px; }
+            .stats { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .stat-number { font-size: 24px; }
+            .question-palette { grid-template-columns: repeat(5, 1fr); gap: 6px; }
+            .palette-item { font-size: 12px; min-height: 40px; }
+            .modal-content { padding: 25px; margin: 10px; }
+            .modal-content h2 { font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Start Screen -->
+    <div class="start-screen" id="startScreen">
+        <div class="start-content">
+            <h1>📝 Online Examination System</h1>
+            
+            <div class="exam-details">
+                <div class="detail-box">
+                    <div class="number">90</div>
+                    <div class="label">Questions</div>
+                </div>
+                <div class="detail-box">
+                    <div class="number">90</div>
+                    <div class="label">Marks</div>
+                </div>
+                <div class="detail-box">
+                    <div class="number">90</div>
+                    <div class="label">Minutes</div>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h3>📋 परीक्षा निर्देश / Exam Instructions:</h3>
+                <ul>
+                    <li>✅ परीक्षा में कुल <strong>90 प्रश्न</strong> हैं, प्रत्येक <strong>1 अंक</strong> का है।</li>
+                    <li>⏱️ परीक्षा की अवधि <strong>90 मिनट</strong> है।</li>
+                    <li>🔖 आप प्रश्नों को <strong>Mark for Review</strong> कर सकते हैं।</li>
+                    <li>📊 Question Palette से किसी भी प्रश्न पर जा सकते हैं।</li>
+                    <li>⚠️ समय समाप्त होने पर परीक्षा स्वतः Submit हो जाएगी।</li>
+                    <li>🚫 परीक्षा शुरू होने के बाद <strong>रिफ्रेश ना करें</strong>।</li>
+                    <li>📱 Mobile और PC दोनों में काम करता है।</li>
+                </ul>
+            </div>
+            
+            <button class="start-btn" onclick="startExam()">🚀 Start Exam</button>
+        </div>
+    </div>
+
+    <!-- Main Exam Screen -->
+    <div class="header" style="display: none;" id="examHeader">
+        <div>
+            <h2>📝 Online Examination System</h2>
+            <p>Total: 90 Questions | 90 Marks | 90 Minutes</p>
+        </div>
+        <div class="timer" id="timer">90:00</div>
+    </div>
+
+    <button class="toggle-sidebar-btn" onclick="toggleSidebar()" id="toggleBtn" style="display: none;">📋</button>
+
+    <div class="container" id="examContainer" style="display: none;">
+        <div class="main-content">
+            <!-- Section Jump Buttons -->
+            <div class="section-buttons">
+                <button class="section-btn active" onclick="jumpToSection(0)">🔬 Science (1-35)</button>
+                <button class="section-btn" onclick="jumpToSection(35)">🌍 Social Science (36-70)</button>
+                <button class="section-btn" onclick="jumpToSection(70)">🔢 Maths (71-90)</button>
+            </div>
+            
+            <div class="section-info" id="sectionInfo">
+                <h3>Section: Science</h3>
+                <p>Questions 1-35</p>
+            </div>
+
+            <div class="question-box">
+                <div class="question" id="questionText"></div>
+                <div class="options" id="optionsContainer"></div>
+                
+                <div class="navigation">
+                    <div class="nav-group">
+                        <button class="btn btn-secondary" onclick="previousQuestion()">⬅️ Previous</button>
+                        <button class="btn btn-warning" onclick="markForReview()">🔖 Mark</button>
+                    </div>
+                    <div class="nav-group">
+                        <button class="btn btn-secondary" onclick="clearResponse()">❌ Clear</button>
+                        <button class="btn btn-primary" onclick="saveAndNext()">Save & Next ➡️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar" id="sidebar">
+            <div class="legend">
+                <h3>Legend</h3>
+                <div class="legend-item"><div class="legend-box" style="background: #48bb78;"></div>Answered</div>
+                <div class="legend-item"><div class="legend-box" style="background: #f6ad55;"></div>Marked for Review</div>
+                <div class="legend-item"><div class="legend-box" style="background: #9f7aea;"></div>Answered & Marked</div>
+                <div class="legend-item"><div class="legend-box" style="background: white;"></div>Not Visited</div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item"><div class="stat-number" id="answeredCount">0</div><div class="stat-label">Answered</div></div>
+                <div class="stat-item"><div class="stat-number" id="markedCount">0</div><div class="stat-label">Marked</div></div>
+            </div>
+
+            <div class="palette-section">
+                <h4 onclick="jumpToSection(0)">🔬 Science (1-35)</h4>
+                <div class="question-palette" id="palette1"></div>
+            </div>
+
+            <div class="palette-section">
+                <h4 onclick="jumpToSection(35)">🌍 Social Science (36-70)</h4>
+                <div class="question-palette" id="palette2"></div>
+            </div>
+
+            <div class="palette-section">
+                <h4 onclick="jumpToSection(70)">🔢 Maths (71-90)</h4>
+                <div class="question-palette" id="palette3"></div>
+            </div>
+
+            <div class="submit-section">
+                <button class="btn btn-success" onclick="submitExam()" style="width: 100%; padding: 15px;">✅ Submit Exam</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Modal -->
+    <div class="modal" id="submitModal">
+        <div class="modal-content">
+            <h2>⚠️ Submit Exam?</h2>
+            <p>क्या आप परीक्षा जमा करना चाहते हैं?</p>
+            <div id="submitStats"></div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                <button class="btn btn-success" onclick="confirmSubmit()">Confirm Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div class="modal" id="resultModal">
+        <div class="modal-content">
+            <h2>🎉 Exam Completed!</h2>
+            <div id="resultContent"></div>
+            <button class="btn btn-primary" onclick="location.reload()" style="margin-top: 20px;">Start New Exam</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {q: "Q1. मानव शरीर का सबसे बड़ा अंग कौन सा है? / What is the largest organ in the human body?", opts: ["Heart / हृदय","Skin / त्वचा","Liver / यकृत","Brain / मस्तिष्क"], ans: 1},
+            {q: "Q2. पृथ्वी पर जीवन के लिए मुख्य गैस कौन सी है? / Which gas is essential for life on Earth?", opts: ["Oxygen / ऑक्सीजन","Nitrogen / नाइट्रोजन","Carbon dioxide / कार्बन डाइऑक्साइड","Hydrogen / हाइड्रोजन"], ans: 0},
+            {q: "Q3. प्रकाश वर्ष किसकी इकाई है? / Light year is a unit of what?", opts: ["Time / समय","Distance / दूरी","Speed / गति","Energy / ऊर्जा"], ans: 1},
+            {q: "Q4. DNA का पूरा नाम क्या है? / What is the full form of DNA?", opts: ["Deoxyribonucleic Acid","Dinucleic Acid","Double Nitrogen Acid","Deoxynuclear Acid"], ans: 0},
+            {q: "Q5. पौधे में जल का वाष्पन किस प्रक्रिया से होता है? / The evaporation of water in plants occurs by which process?", opts: ["Photosynthesis / प्रकाश संश्लेषण","Respiration / श्वसन","Transpiration / वाष्पोत्सर्जन","Osmosis / परासरण"], ans: 2},
+            {q: "Q6. लाल रक्त कणिकाओं का जीवन काल कितना होता है? / What is the lifespan of red blood cells?", opts: ["60 days","90 days","120 days","150 days"], ans: 2},
+            {q: "Q7. दूध में पाया जाने वाला प्रमुख शर्करा कौन सा है? / Which sugar is mainly present in milk?", opts: ["Sucrose / सुक्रोज","Glucose / ग्लूकोज","Lactose / लैक्टोज","Fructose / फ्रक्टोज"], ans: 2},
+            {q: "Q8. किस ग्रह को ‘लाल ग्रह’ कहा जाता है? / Which planet is called the ‘Red Planet’?", opts: ["Mars / मंगल","Venus / शुक्र","Jupiter / बृहस्पति","Saturn / शनि"], ans: 0},
+            {q: "Q9. बल्ब में किस गैस का उपयोग होता है? / Which gas is used in an electric bulb?", opts: ["Oxygen / ऑक्सीजन","Nitrogen / नाइट्रोजन","Argon / आर्गन","Carbon dioxide / कार्बन डाइऑक्साइड"], ans: 2},
+            {q: "Q10. विद्युत धारा की इकाई क्या है? / What is the unit of electric current?", opts: ["Volt / वोल्ट","Watt / वाट","Ohm / ओम","Ampere / एम्पीयर"], ans: 3},
+
+            {q: "Q11. ओजोन परत पृथ्वी को किससे बचाती है? / Ozone layer protects Earth from?", opts: ["Infrared rays / अवरक्त किरणें","Ultraviolet rays / पराबैंगनी किरणें","Radio waves / रेडियो तरंगें","Visible light / दृश्य प्रकाश"], ans: 1},
+            {q: "Q12. हृदय की धड़कन किस यंत्र से सुनी जाती है? / Which instrument is used to hear heartbeat?", opts: ["Microscope / सूक्ष्मदर्शी","Telescope / दूरबीन","Stethoscope / स्टेथोस्कोप","Endoscope / एंडोस्कोप"], ans: 2},
+            {q: "Q13. पेनीसिलिन की खोज किसने की? / Who discovered Penicillin?", opts: ["Alexander Fleming","Louis Pasteur","Edward Jenner","Robert Koch"], ans: 0},
+            {q: "Q14. द्रव्यमान और आयतन का अनुपात क्या कहलाता है? / Ratio of mass to volume is called?", opts: ["Density / घनत्व","Pressure / दाब","Force / बल","Energy / ऊर्जा"], ans: 0},
+            {q: "Q15. श्वसन में कौन सी गैस अंदर ली जाती है? / Which gas is inhaled during respiration?", opts: ["Oxygen / ऑक्सीजन","Nitrogen / नाइट्रोजन","Carbon dioxide / कार्बन डाइऑक्साइड","Helium / हीलियम"], ans: 0},
+            {q: "Q16. हमारे सौरमंडल का सबसे बड़ा ग्रह कौन है? / What is the largest planet in our solar system?", opts: ["Earth / पृथ्वी","Saturn / शनि","Jupiter / बृहस्पति","Neptune / वरुण"], ans: 2},
+            {q: "Q17. बिजली का आविष्कार किसने किया? / Who discovered electricity?", opts: ["Newton","Edison","Benjamin Franklin","Faraday"], ans: 2},
+            {q: "Q18. ध्वनि की गति अधिक कहाँ होती है? / Where is the speed of sound highest?", opts: ["Air / वायु","Water / जल","Steel / इस्पात","Vacuum / निर्वात"], ans: 2},
+            {q: "Q19. मानव शरीर में कितनी हड्डियाँ होती हैं? / How many bones are in human body?", opts: ["206","210","196","250"], ans: 0},
+            {q: "Q20. विटामिन D की कमी से कौन सा रोग होता है? / Deficiency of Vitamin D causes which disease?", opts: ["Scurvy / स्कर्वी","Rickets / रिकेट्स","Beri-Beri / बेरी-बेरी","Night blindness / रतौंधी"], ans: 1},
+
+            {q: "Q21. सूर्य किस गैस से बना है? / The Sun is mainly made up of which gas?", opts: ["Oxygen / ऑक्सीजन","Nitrogen / नाइट्रोजन","Hydrogen / हाइड्रोजन","Carbon dioxide / कार्बन डाइऑक्साइड"], ans: 2},
+            {q: "Q22. सबसे हल्की धातु कौन सी है? / Which is the lightest metal?", opts: ["Gold / सोना","Lithium / लिथियम","Silver / चांदी","Mercury / पारा"], ans: 1},
+            {q: "Q23. हरा पौधा किस गैस को वातावरण में छोड़ता है? / Green plants release which gas?", opts: ["Carbon dioxide / कार्बन डाइऑक्साइड","Oxygen / ऑक्सीजन","Nitrogen / नाइट्रोजन","Hydrogen / हाइड्रोजन"], ans: 1},
+            {q: "Q24. किस विटामिन को ‘सनशाइन विटामिन’ कहा जाता है? / Which vitamin is called ‘Sunshine Vitamin’?", opts: ["Vitamin A","Vitamin B","Vitamin C","Vitamin D"], ans: 3},
+            {q: "Q25. पृथ्वी पर सबसे अधिक मात्रा में कौन सी गैस है? / Which gas is most abundant in Earth’s atmosphere?", opts: ["Oxygen / ऑक्सीजन","Nitrogen / नाइट्रोजन","Carbon dioxide / कार्बन डाइऑक्साइड","Argon / आर्गन"], ans: 1},
+            {q: "Q26. बल्ब का फिलामेंट किस धातु का बना होता है? / The filament of bulb is made of which metal?", opts: ["Copper / तांबा","Aluminium / एल्युमिनियम","Tungsten / टंगस्टन","Iron / लोहा"], ans: 2},
+            {q: "Q27. सबसे तेज गति से घूमने वाला ग्रह कौन सा है? / Which planet rotates fastest?", opts: ["Earth / पृथ्वी","Mars / मंगल","Jupiter / बृहस्पति","Mercury / बुध"], ans: 2},
+            {q: "Q28. बिजली का अच्छा चालक कौन है? / Which is a good conductor of electricity?", opts: ["Plastic / प्लास्टिक","Wood / लकड़ी","Copper / तांबा","Rubber / रबर"], ans: 2},
+            {q: "Q29. हमारे दांत किस पदार्थ से बने होते हैं? / Human teeth are made up of which substance?", opts: ["Dentin / डेंटिन","Enamel / एनामेल","Calcium / कैल्शियम","Fluoride / फ्लोराइड"], ans: 1},
+            {q: "Q30. चंद्रमा पर सबसे पहले कौन गया था? / Who was the first man to land on the Moon?", opts: ["Yuri Gagarin","Neil Armstrong","Buzz Aldrin","Rakesh Sharma"], ans: 1},
+
+            {q: "Q31. बल की इकाई क्या है? / What is the unit of Force?", opts: ["Joule / जूल","Newton / न्यूटन","Watt / वाट","Pascal / पास्कल"], ans: 1},
+            {q: "Q32. द्रव को गैस में बदलने की प्रक्रिया क्या कहलाती है? / The process of changing liquid into gas is called?", opts: ["Condensation / संघनन","Sublimation / उर्ध्वपातन","Evaporation / वाष्पीकरण","Fusion / संलयन"], ans: 2},
+            {q: "Q33. परमाणु के नाभिक में कौन-कौन से कण पाए जाते हैं? / Which particles are found in the nucleus of an atom?", opts: ["Electron / इलेक्ट्रॉन","Proton & Neutron / प्रोटॉन और न्यूट्रॉन","Only Proton / केवल प्रोटॉन","Only Neutron / केवल न्यूट्रॉन"], ans: 1},
+            {q: "Q34. हृदय में कितने कक्ष होते हैं? / How many chambers are there in human heart?", opts: ["2","3","4","5"], ans: 2},
+            {q: "Q35. ग्रीनहाउस प्रभाव किस गैस से सबसे अधिक होता है? / Which gas causes maximum greenhouse effect?", opts: ["Oxygen / ऑक्सीजन","Carbon dioxide / कार्बन डाइऑक्साइड","Hydrogen / हाइड्रोजन","Nitrogen / नाइट्रोजन"], ans: 1},
+            {q: "Q36. भारतीय राष्ट्रीय कांग्रेस की स्थापना कब हुई? / When was Indian National Congress founded?", opts: ["1857","1885","1905","1920"], ans: 1},
+            {q: "Q37. स्वतंत्र भारत के पहले प्रधानमंत्री कौन थे? / Who was the first Prime Minister of India?", opts: ["Sardar Patel","Jawaharlal Nehru","Rajendra Prasad","Indira Gandhi"], ans: 1},
+            {q: "Q38. हरियाणा किस वर्ष भारत का अलग राज्य बना? / In which year did Haryana become a separate state?", opts: ["1960","1966","1972","1980"], ans: 1},
+            {q: "Q39. भारतीय संविधान सभा के अध्यक्ष कौन थे? / Who was the President of Constituent Assembly?", opts: ["Rajendra Prasad","B. R. Ambedkar","Jawaharlal Nehru","Sardar Patel"], ans: 0},
+            {q: "Q40. ‘गाँधी-इरविन समझौता’ किस वर्ष हुआ? / Gandhi-Irwin Pact was signed in which year?", opts: ["1922","1931","1942","1947"], ans: 1},
+
+            {q: "Q41. अजंता गुफाएँ किस राज्य में स्थित हैं? / Ajanta caves are located in which state?", opts: ["Gujarat","Maharashtra","Madhya Pradesh","Karnataka"], ans: 1},
+            {q: "Q42. किसे ‘भारतीय संविधान का शिल्पकार’ कहा जाता है? / Who is called the Architect of Indian Constitution?", opts: ["Jawaharlal Nehru","Mahatma Gandhi","B. R. Ambedkar","Rajendra Prasad"], ans: 2},
+            {q: "Q43. भारत में ‘चिपको आंदोलन’ किससे संबंधित था? / Chipko Movement was related to?", opts: ["Pollution","Forest Conservation","River Cleaning","Agriculture"], ans: 1},
+            {q: "Q44. पंचायती राज प्रणाली पहली बार किस राज्य में लागू हुई? / In which state was Panchayati Raj first implemented?", opts: ["Rajasthan","Uttar Pradesh","Bihar","Tamil Nadu"], ans: 0},
+            {q: "Q45. दिल्ली सल्तनत का पहला शासक कौन था? / Who was the first ruler of Delhi Sultanate?", opts: ["Qutub-ud-din Aibak","Iltutmish","Balban","Alauddin Khilji"], ans: 0},
+            {q: "Q46. सिंधु घाटी सभ्यता का प्रमुख नगर कौन सा था? / Which was a major city of Indus Valley Civilization?", opts: ["Pataliputra","Harappa","Delhi","Taxila"], ans: 1},
+            {q: "Q47. भारत का राष्ट्रीय पशु कौन है? / What is the National Animal of India?", opts: ["Lion","Tiger","Elephant","Leopard"], ans: 1},
+            {q: "Q48. भारत छोड़ो आंदोलन कब शुरू हुआ? / When did Quit India Movement start?", opts: ["1920","1930","1942","1947"], ans: 2},
+            {q: "Q49. मोहनजोदड़ो किस नदी के किनारे बसा था? / Mohenjo-Daro was situated on the bank of which river?", opts: ["Indus / सिंधु","Ganga / गंगा","Yamuna / यमुना","Narmada / नर्मदा"], ans: 0},
+            {q: "Q50. भारत का पहला उपग्रह कौन सा था? / What was India’s first satellite?", opts: ["INSAT-1A","Aryabhata","Rohini","Bhaskara"], ans: 1},
+
+            {q: "Q51. संविधान की प्रस्तावना में भारत को किस रूप में घोषित किया गया है? / In the Preamble, India is declared as?", opts: ["Socialist, Secular, Democratic Republic","Secular, Federal, Monarchy","Socialist, Federal, Monarchy","None"], ans: 0},
+            {q: "Q52. पृथ्वी की सतह का कितने प्रतिशत भाग जल से ढका है? / What percent of Earth’s surface is covered by water?", opts: ["51%","61%","71%","81%"], ans: 2},
+            {q: "Q53. भारत का सबसे बड़ा राज्य क्षेत्रफल के अनुसार कौन सा है? / Which is the largest state of India by area?", opts: ["Madhya Pradesh","Uttar Pradesh","Rajasthan","Maharashtra"], ans: 2},
+            {q: "Q54. भारत का सबसे छोटा राज्य क्षेत्रफल के अनुसार कौन सा है? / Which is the smallest state of India by area?", opts: ["Goa","Sikkim","Tripura","Nagaland"], ans: 0},
+            {q: "Q55. ‘मेघालय’ का अर्थ क्या है? / What does Meghalaya mean?", opts: ["Land of Snakes","Abode of Clouds","Land of Hills","Land of Rivers"], ans: 1},
+            {q: "Q56. किस स्वतंत्रता सेनानी को ‘नेताजी’ कहा जाता है? / Who is known as Netaji?", opts: ["Lala Lajpat Rai","Bhagat Singh","Subhas Chandra Bose","Chandrashekhar Azad"], ans: 2},
+            {q: "Q57. भारतीय संसद का उच्च सदन कौन सा है? / Which is the Upper House of Indian Parliament?", opts: ["Lok Sabha","Rajya Sabha","Vidhan Sabha","Panchayat"], ans: 1},
+            {q: "Q58. भारत का राष्ट्रीय ध्वज कब अपनाया गया है? / When was the National Flag adopted?", opts: ["22 July 1947","15 Aug 1947","26 Jan 1950","26 Nov 1949"], ans: 0},
+            {q: "Q59. ‘रामचरितमानस’ किसने लिखा? / Who wrote Ramcharitmanas?", opts: ["Kalidas","Tulsidas","Valmiki","Surdas"], ans: 1},
+            {q: "Q60. भारत का सबसे बड़ा मंदिर कौन सा है? / Which is the largest temple in India?", opts: ["Konark Temple","Akshardham Temple","Meenakshi Temple","Brihadeshwara Temple"], ans: 1},
+
+            {q: "Q61. ‘सत्यमेव जयते’ किस उपनिषद से लिया गया है? / ‘Satyamev Jayate’ is taken from which Upanishad?", opts: ["Chandogya","Mundaka","Katha","Brihadaranyaka"], ans: 1},
+            {q: "Q62. पृथ्वी का सबसे ऊँचा पर्वत शिखर कौन सा है? / Which is the highest mountain peak in the world?", opts: ["Kanchenjunga","Mount Everest","K2","Nanda Devi"], ans: 1},
+            {q: "Q63. भारतीय संविधान में कितने अनुच्छेद मूल रूप से थे? / Originally how many Articles were in Indian Constitution?", opts: ["295","365","395","425"], ans: 2},
+            {q: "Q64. दिल्ली में कुतुब मीनार किसने बनवाई थी? / Who built Qutub Minar in Delhi?", opts: ["Qutub-ud-din Aibak","Iltutmish","Alauddin Khilji","Akbar"], ans: 0},
+            {q: "Q65. पृथ्वी का सबसे बड़ा महासागर कौन सा है? / Which is the largest ocean on Earth?", opts: ["Indian Ocean","Atlantic Ocean","Pacific Ocean","Arctic Ocean"], ans: 2},
+            {q: "Q66. भारत के किस राज्य को ‘चाय का बागान’ कहा जाता है? / Which state of India is called ‘Land of Tea Gardens’?", opts: ["Assam","Kerala","Tamil Nadu","West Bengal"], ans: 0},
+            {q: "Q67. विश्व का सबसे बड़ा लोकतांत्रिक देश कौन सा है? / Which is the largest democratic country in the world?", opts: ["USA","China","India","Russia"], ans: 2},
+            {q: "Q68. अमरावती किस राज्य की राजधानी है? / Amaravati is the capital of which state?", opts: ["Karnataka","Andhra Pradesh","Telangana","Kerala"], ans: 1},
+            {q: "Q69. अजमेर में ख्वाजा मोइनुद्दीन चिश्ती की दरगाह किसके लिए प्रसिद्ध है? / Ajmer Dargah is famous for whom?", opts: ["Saint / संत","King / राजा","Freedom fighter / स्वतंत्रता सेनानी","Poet / कवि"], ans: 0},
+            {q: "Q70. किस मुगल सम्राट ने ताजमहल बनवाया? / Which Mughal Emperor built the Taj Mahal?", opts: ["Akbar","Jahangir","Shah Jahan","Aurangzeb"], ans: 2},
+
+            {q: "Q71. 15 और 25 का LCM क्या है? / What is the LCM of 15 and 25?", opts: ["50","100","75","25"], ans: 2},
+            {q: "Q72. यदि त्रिभुज का क्षेत्रफल 36 है और आधार 12 है, तो ऊँचाई क्या होगी? / If the area of a triangle is 36 and base is 12, what is height?", opts: ["3","6","9","12"], ans: 1},
+            {q: "Q73. 0.75 को भिन्न में बदलें। / Convert 0.75 into fraction.", opts: ["3/2","3/4","2/3","4/5"], ans: 1},
+            {q: "Q74. 7² + 5² का मान कितना है? / Find value of 7² + 5².", opts: ["49","74","84","74"], ans: 1},
+            {q: "Q75. 1 किमी = ? मीटर / 1 km = ? meters", opts: ["10","100","1000","10000"], ans: 2},
+            {q: "Q76. किसी आयत की लंबाई 15 और चौड़ाई 8 है, क्षेत्रफल कितना होगा? / Area of rectangle length 15 and width 8 is?", opts: ["100","120","150","180"], ans: 1},
+            {q: "Q77. यदि 5 पेन की कीमत ₹50 है, तो 1 पेन की कीमत क्या होगी? / If cost of 5 pens is ₹50, cost of 1 pen is?", opts: ["₹5","₹10","₹15","₹20"], ans: 1},
+            {q: "Q78. 9 और 12 का HCF क्या है? / What is the HCF of 9 and 12?", opts: ["2","3","4","6"], ans: 1},
+            {q: "Q79. एक समकोण में कितने डिग्री होते हैं? / How many degrees are in a right angle?", opts: ["45°","60°","90°","180°"], ans: 2},
+            {q: "Q80. 2x + 5 = 15, x का मान क्या है? / Solve 2x + 5 = 15.", opts: ["3","4","5","6"], ans: 2},
+
+            {q: "Q81. 20% of 250 = ?", opts: ["25","40","50","75"], ans: 2},
+            {q: "Q82. 13 × 7 = ?", opts: ["81","89","91","97"], ans: 2},
+            {q: "Q83. यदि एक वर्ग की भुजा 14 है, तो उसका परिमाप कितना होगा? / Perimeter of square side 14 is?", opts: ["42","48","56","64"], ans: 2},
+            {q: "Q84. एक आयत की परिमाप 60 है और लंबाई 20 है, चौड़ाई क्या होगी? / Perimeter of rectangle is 60 and length is 20, find width.", opts: ["5","10","15","20"], ans: 1},
+            {q: "Q85. किसी वृत्त की त्रिज्या 7 सेमी है, परिधि क्या होगी? (π = 22/7) / Circle radius 7 cm, find circumference.", opts: ["22 cm","33 cm","44 cm","66 cm"], ans: 2},
+            {q: "Q86. 3³ का मान क्या है? / What is the value of 3³?", opts: ["6","9","27","81"], ans: 2},
+            {q: "Q87. एक घंटे में कितने सेकंड होते हैं? / How many seconds are there in one hour?", opts: ["600","1800","3600","7200"], ans: 2},
+            {q: "Q88. यदि x = 5, तो x² – 2x + 1 = ?", opts: ["10","16","21","25"], ans: 1},
+            {q: "Q89. किसी त्रिभुज के कोणों का योगफल कितना होता है? / Sum of angles of a triangle is?", opts: ["90°","120°","180°","360°"], ans: 2},
+            {q: "Q90. 8, 12 और 16 का HCF क्या है? / HCF of 8, 12, and 16 is?", opts: ["2","4","6","8"], ans: 1}
+        ];
+
+        let currentQuestion = 0;
+        let answers = Array(90).fill(null);
+        let marked = Array(90).fill(false);
+        let timeLeft = 90 * 60;
+        let timerInterval;
+        let warningShown = false;
+        let examStarted = false;
+
+        // Start Exam Function
+        function startExam() {
+            document.getElementById('startScreen').style.display = 'none';
+            document.getElementById('examHeader').style.display = 'flex';
+            document.getElementById('examContainer').style.display = 'flex';
+            document.getElementById('toggleBtn').style.display = 'flex';
+            examStarted = true;
+            init();
+        }
+
+        function init() {
+            createPalette();
+            loadQuestion(0);
+            startTimer();
+        }
+
+        function createPalette() {
+            for (let i = 0; i < 35; i++) createPaletteItem(i, 'palette1');
+            for (let i = 35; i < 70; i++) createPaletteItem(i, 'palette2');
+            for (let i = 70; i < 90; i++) createPaletteItem(i, 'palette3');
+        }
+
+        function createPaletteItem(index, paletteId) {
+            const item = document.createElement('div');
+            item.className = 'palette-item';
+            item.textContent = index + 1;
+            item.id = 'q' + index;
+            item.onclick = () => {
+                loadQuestion(index);
+                if (window.innerWidth <= 768) toggleSidebar();
+            };
+            document.getElementById(paletteId).appendChild(item);
+        }
+
+        function loadQuestion(index) {
+            currentQuestion = index;
+            const q = questions[index];
+            document.getElementById('questionText').textContent = q.q;
+            
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+            
+            q.opts.forEach((opt, i) => {
+                const optDiv = document.createElement('div');
+                optDiv.className = 'option';
+                if (answers[index] === i) optDiv.classList.add('selected');
+                optDiv.textContent = opt;
+                optDiv.onclick = () => selectOption(i);
+                optionsContainer.appendChild(optDiv);
+            });
+
+            updateSectionInfo();
+            updatePalette();
+            updateSectionButtons();
+        }
+
+        function updateSectionInfo() {
+            const sections = [
+                {name: 'Science', range: '1-35', start: 0, end: 34},
+                {name: 'Social Science', range: '36-70', start: 35, end: 69},
+                {name: 'Maths', range: '71-90', start: 70, end: 89}
+            ];
+            
+            const section = sections.find(s => currentQuestion >= s.start && currentQuestion <= s.end);
+            document.getElementById('sectionInfo').innerHTML = `
+                <h3>Section: ${section.name}</h3>
+                <p>Questions ${section.range}</p>
+            `;
+        }
+
+        function updateSectionButtons() {
+            const buttons = document.querySelectorAll('.section-btn');
+            buttons.forEach((btn, i) => {
+                btn.classList.remove('active');
+                if ((i === 0 && currentQuestion < 35) || 
+                    (i === 1 && currentQuestion >= 35 && currentQuestion < 70) || 
+                    (i === 2 && currentQuestion >= 70)) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        function jumpToSection(startIndex) {
+            loadQuestion(startIndex);
+            if (window.innerWidth <= 768) toggleSidebar();
+        }
+
+        function selectOption(index) {
+            answers[currentQuestion] = index;
+            updatePalette();
+            loadQuestion(currentQuestion);
+        }
+
+        function updatePalette() {
+            for (let i = 0; i < 90; i++) {
+                const item = document.getElementById('q' + i);
+                item.className = 'palette-item';
+                
+                if (i === currentQuestion) item.classList.add('current');
+                if (answers[i] !== null) item.classList.add('answered');
+                if (marked[i]) item.classList.add('marked');
+            }
+            
+            const answeredCount = answers.filter(a => a !== null).length;
+            const markedCount = marked.filter(m => m).length;
+            document.getElementById('answeredCount').textContent = answeredCount;
+            document.getElementById('markedCount').textContent = markedCount;
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) loadQuestion(currentQuestion - 1);
+        }
+
+        function saveAndNext() {
+            if (currentQuestion < 89) loadQuestion(currentQuestion + 1);
+        }
+
+        function markForReview() {
+            marked[currentQuestion] = !marked[currentQuestion];
+            updatePalette();
+        }
+
+        function clearResponse() {
+            answers[currentQuestion] = null;
+            updatePalette();
+            loadQuestion(currentQuestion);
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                const mins = Math.floor(timeLeft / 60);
+                const secs = timeLeft % 60;
+                const timerEl = document.getElementById('timer');
+                timerEl.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+                
+                if (timeLeft === 300 && !warningShown) {
+                    timerEl.classList.add('warning');
+                    alert('⚠️ केवल 5 मिनट शेष हैं! / Only 5 minutes left!');
+                    warningShown = true;
+                }
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    confirmSubmit();
+                }
+            }, 1000);
+        }
+
+        function submitExam() {
+            const answeredCount = answers.filter(a => a !== null).length;
+            const unansweredCount = 90 - answeredCount;
+            const markedCount = marked.filter(m => m).length;
+            
+            document.getElementById('submitStats').innerHTML = `
+                <div class="stats">
+                    <div class="stat-item"><div class="stat-number">${answeredCount}</div><div class="stat-label">Answered</div></div>
+                    <div class="stat-item"><div class="stat-number">${unansweredCount}</div><div class="stat-label">Not Answered</div></div>
+                    <div class="stat-item"><div class="stat-number">${markedCount}</div><div class="stat-label">Marked</div></div>
+                    <div class="stat-item"><div class="stat-number">${90 - unansweredCount}</div><div class="stat-label">Visited</div></div>
+                </div>
+            `;
+            document.getElementById('submitModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('submitModal').style.display = 'none';
+        }
+
+        function confirmSubmit() {
+            clearInterval(timerInterval);
+            closeModal();
+            
+            let score = 0;
+            for (let i = 0; i < 90; i++) {
+                if (answers[i] === questions[i].ans) score++;
+            }
+            
+            const percentage = ((score / 90) * 100).toFixed(2);
+            const answeredCount = answers.filter(a => a !== null).length;
+            const correctCount = score;
+            const wrongCount = answeredCount - score;
+            const unansweredCount = 90 - answeredCount;
+            
+            let grade = '';
+            if (percentage >= 90) grade = 'A+';
+            else if (percentage >= 80) grade = 'A';
+            else if (percentage >= 70) grade = 'B+';
+            else if (percentage >= 60) grade = 'B';
+            else if (percentage >= 50) grade = 'C';
+            else if (percentage >= 40) grade = 'D';
+            else grade = 'F';
+            
+            document.getElementById('resultContent').innerHTML = `
+                <div style="font-size: 48px; margin: 20px 0;">${grade}</div>
+                <h3 style="font-size: 28px; color: #667eea; margin: 15px 0;">Score: ${score} / 90</h3>
+                <h4 style="font-size: 20px; color: #48bb78; margin: 10px 0;">Percentage: ${percentage}%</h4>
+                <div class="stats" style="margin: 25px 0;">
+                    <div class="stat-item" style="background: #48bb78; color: white;">
+                        <div class="stat-number" style="color: white;">${correctCount}</div>
+                        <div class="stat-label" style="color: white;">Correct</div>
+                    </div>
+                    <div class="stat-item" style="background: #f56565; color: white;">
+                        <div class="stat-number" style="color: white;">${wrongCount}</div>
+                        <div class="stat-label" style="color: white;">Wrong</div>
+                    </div>
+                    <div class="stat-item" style="background: #a0aec0; color: white;">
+                        <div class="stat-number" style="color: white;">${unansweredCount}</div>
+                        <div class="stat-label" style="color: white;">Unanswered</div>
+                    </div>
+                    <div class="stat-item" style="background: #667eea; color: white;">
+                        <div class="stat-number" style="color: white;">${answeredCount}</div>
+                        <div class="stat-label" style="color: white;">Attempted</div>
+                    </div>
+                </div>
+                <p style="margin: 20px 0; font-size: 16px; line-height: 1.8;">
+                    ${percentage >= 40 ? '🎉 बधाई हो! आप पास हो गए हैं! / Congratulations! You Passed!' : '😔 आप फेल हो गए हैं। फिर से कोशिश करें! / You Failed. Try Again!'}
+                </p>
+            `;
+            document.getElementById('resultModal').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>

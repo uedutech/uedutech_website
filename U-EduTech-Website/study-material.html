@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Study Material | UEduTech</title>
+
+    <meta name="description"
+        content="UEduTech Free Study Material - PDF Notes, Previous Year Papers, Chapter-wise Notes and Important Questions for students.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 70px;
+            padding: 0 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: #2563eb;
+        }
+
+        .logo span {
+            color: #111827;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #4b5563;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .nav-links a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: #eff6ff;
+            color: #2563eb;
+            font-size: 25px;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .hero-buttons {
+            margin-top: 28px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            background: white;
+            color: #2563eb;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .hero-btn.secondary {
+            background: rgba(255,255,255,0.12);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        /* ================= MAIN ================= */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 55px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        /* ================= MATERIAL CARDS ================= */
+
+        .material-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .material-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 25px;
+            transition: 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .material-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            border-color: #bfdbfe;
+        }
+
+        .material-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 12px;
+            background: #eff6ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
+
+        .material-card h3 {
+            font-size: 20px;
+            margin-bottom: 9px;
+            color: #111827;
+        }
+
+        .material-card p {
+            color: #6b7280;
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .material-link {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 9px 15px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .material-link:hover {
+            background: #1d4ed8;
+        }
+
+        .material-link.disabled {
+            background: #e5e7eb;
+            color: #6b7280;
+            cursor: default;
+        }
+
+        /* ================= CLASS SECTION ================= */
+
+        .class-section {
+            margin-top: 65px;
+        }
+
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .class-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .class-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.07);
+        }
+
+        .class-number {
+            width: 55px;
+            height: 55px;
+            margin: auto auto 13px;
+            border-radius: 50%;
+            background: #eff6ff;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .class-card h3 {
+            margin-bottom: 7px;
+            font-size: 18px;
+        }
+
+        .class-card p {
+            color: #6b7280;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .class-btn {
+            display: inline-block;
+            border: 1px solid #2563eb;
+            color: #2563eb;
+            padding: 8px 13px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .class-btn:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* ================= FEATURE STRIP ================= */
+
+        .feature-section {
+            margin-top: 65px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .feature h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            margin-top: 65px;
+            background: #111827;
+            color: white;
+            border-radius: 16px;
+            padding: 45px 25px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #d1d5db;
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            margin-top: 22px;
+            background: #2563eb;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+
+        .cta-btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #111827;
+            color: #d1d5db;
+            margin-top: 60px;
+            border-top: 1px solid #374151;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 20px 25px;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .footer-about p {
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 450px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #d1d5db;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #374151;
+            padding: 18px 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .material-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .class-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                min-height: 64px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: white;
+                border-bottom: 1px solid #e5e7eb;
+                padding: 12px 20px;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                width: 100%;
+            }
+
+            .hero {
+                padding: 55px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .material-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .class-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .section-title h2 {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 400px) {
+
+            .class-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                U<span>EduTech</span>
+            </a>
+
+            <button class="menu-btn" onclick="toggleMenu()" aria-label="Open Menu">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="subjects.html">Subjects</a>
+                </li>
+
+                <li>
+                    <a href="tests.html">Model Tests</a>
+                </li>
+
+                <li>
+                    <a href="study-material.html" class="active">
+                        Study Material
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Free Study Material</h1>
+
+            <p>
+                Access free PDF notes, previous year papers,
+                chapter-wise study material and important questions
+                to make your preparation easier.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#materials" class="hero-btn">
+                    Explore Materials
+                </a>
+
+                <a href="tests.html" class="hero-btn secondary">
+                    Take Model Tests
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+
+        <!-- MATERIAL CATEGORIES -->
+
+        <section id="materials">
+
+            <div class="section-title">
+
+                <h2>Study Material Categories</h2>
+
+                <p>
+                    Choose the type of material you want to study or download.
+                </p>
+
+            </div>
+
+
+            <div class="material-grid">
+
+
+                <!-- CARD 1 -->
+
+                <div class="material-card">
+
+                    <div class="material-icon">
+                        📄
+                    </div>
+
+                    <h3>Free PDF Notes</h3>
+
+                    <p>
+                        Simple and useful chapter-wise PDF notes
+                        for quick revision and exam preparation.
+                    </p>
+
+                    <a href="#" class="material-link disabled">
+                        Coming Soon
+                    </a>
+
+                </div>
+
+
+                <!-- CARD 2 -->
+
+                <div class="material-card">
+
+                    <div class="material-icon">
+                        📚
+                    </div>
+
+                    <h3>Chapter-wise Notes</h3>
+
+                    <p>
+                        Study every chapter separately with
+                        organized notes and important concepts.
+                    </p>
+
+                    <a href="#" class="material-link disabled">
+                        Coming Soon
+                    </a>
+
+                </div>
+
+
+                <!-- CARD 3 -->
+
+                <div class="material-card">
+
+                    <div class="material-icon">
+                        📝
+                    </div>
+
+                    <h3>Previous Year Papers</h3>
+
+                    <p>
+                        Practice previous year question papers
+                        to understand exam patterns and questions.
+                    </p>
+
+                    <a href="#" class="material-link disabled">
+                        Coming Soon
+                    </a>
+
+                </div>
+
+
+                <!-- CARD 4 -->
+
+                <div class="material-card">
+
+                    <div class="material-icon">
+                        ⭐
+                    </div>
+
+                    <h3>Important Questions</h3>
+
+                    <p>
+                        Important and frequently asked questions
+                        for focused exam preparation.
+                    </p>
+
+                    <a href="#" class="material-link disabled">
+                        Coming Soon
+                    </a>
+
+                </div>
+
+
+                <!-- CARD 5 -->
+
+                <div class="material-card">
+
+                    <div class="material-icon">
+                        ⬇️
+                    </div>
+
+                    <h3>Downloads</h3>
+
+                    <p>
+                        Download useful worksheets, practice sets,
+                        question papers and other learning resources.
+                    </p>
+
+                    <a href="#" class="material-link disabled">
+                        Coming Soon
+                    </a>
+
+                </div>
+
+
+                <!-- CARD 6 -->
+
+                <div class="material-card">
+
+                    <div class="material-icon">
+                        🧠
+                    </div>
+
+                    <h3>Quick Revision</h3>
+
+                    <p>
+                        Short revision material, formulas,
+                        definitions and exam-ready study resources.
+                    </p>
+
+                    <a href="#" class="material-link disabled">
+                        Coming Soon
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CLASS MATERIAL ================= -->
+
+        <section class="class-section">
+
+            <div class="section-title">
+
+                <h2>Study Material by Class</h2>
+
+                <p>
+                    Select your class to find relevant study resources.
+                </p>
+
+            </div>
+
+
+            <div class="class-grid">
+
+
+                <div class="class-card">
+
+                    <div class="class-number">
+                        6
+                    </div>
+
+                    <h3>Class 6</h3>
+
+                    <p>
+                        Notes • Questions • Papers
+                    </p>
+
+                    <a href="material/class-6/class-6.html" class="class-btn">
+                        View Material
+                    </a>
+
+                </div>
+
+
+                <div class="class-card">
+
+                    <div class="class-number">
+                        7
+                    </div>
+
+                    <h3>Class 7</h3>
+
+                    <p>
+                        Notes • Questions • Papers
+                    </p>
+
+                    <a href="material/class-7/class-7-mathematics.html" class="class-btn">
+                        View Material
+                    </a>
+
+                </div>
+
+
+                <div class="class-card">
+
+                    <div class="class-number">
+                        8
+                    </div>
+
+                    <h3>Class 8</h3>
+
+                    <p>
+                        Notes • Questions • Papers
+                    </p>
+
+                    <a href="#" class="class-btn">
+                        View Material
+                    </a>
+
+                </div>
+
+
+                <div class="class-card">
+
+                    <div class="class-number">
+                        9
+                    </div>
+
+                    <h3>Class 9</h3>
+
+                    <p>
+                        Notes • Questions • Papers
+                    </p>
+
+                    <a href="#" class="class-btn">
+                        View Material
+                    </a>
+
+                </div>
+
+
+                <div class="class-card">
+
+                    <div class="class-number">
+                        10
+                    </div>
+
+                    <h3>Class 10</h3>
+
+                    <p>
+                        Notes • Questions • Papers
+                    </p>
+
+                    <a href="#" class="class-btn">
+                        View Material
+                    </a>
+
+                </div>
+
+
+                <div class="class-card">
+
+                    <div class="class-number">
+                        11
+                    </div>
+
+                    <h3>Class 11</h3>
+
+                    <p>
+                        Notes • Questions • Papers
+                    </p>
+
+                    <a href="#" class="class-btn">
+                        View Material
+                    </a>
+
+                </div>
+
+
+                <div class="class-card">
+
+                    <div class="class-number">
+                        12
+                    </div>
+
+                    <h3>Class 12</h3>
+
+                    <p>
+                        Notes • Questions • Papers
+                    </p>
+
+                    <a href="#" class="class-btn">
+                        View Material
+                    </a>
+
+                </div>
+
+
+                <div class="class-card">
+
+                    <div class="class-number">
+                        🎓
+                    </div>
+
+                    <h3>Competitive</h3>
+
+                    <p>
+                        Exams • Practice • Preparation
+                    </p>
+
+                    <a href="#" class="class-btn">
+                        View Material
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURES ================= -->
+
+        <section class="feature-section">
+
+            <div class="section-title">
+
+                <h2>Why Use UEduTech Material?</h2>
+
+                <p>
+                    Learning resources designed for simple and effective preparation.
+                </p>
+
+            </div>
+
+
+            <div class="features">
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🆓
+                    </div>
+
+                    <h3>Free Resources</h3>
+
+                    <p>
+                        Access useful educational resources
+                        without unnecessary complexity.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        📱
+                    </div>
+
+                    <h3>Mobile Friendly</h3>
+
+                    <p>
+                        Read and access study material
+                        comfortably on mobile, tablet or computer.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🎯
+                    </div>
+
+                    <h3>Exam Focused</h3>
+
+                    <p>
+                        Organized notes, questions and papers
+                        help you focus on important preparation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="cta">
+
+            <h2>Ready to Test Your Preparation?</h2>
+
+            <p>
+                After studying the material, practice with
+                UEduTech model tests and check your preparation.
+            </p>
+
+            <a href="tests.html" class="cta-btn">
+                Go to Model Tests →
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+
+            <div class="footer-about">
+
+                <div class="footer-logo">
+                    UEduTech
+                </div>
+
+                <p>
+                    UEduTech is an educational platform designed
+                    to provide useful study material, notes,
+                    practice tests and learning resources for students.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="subjects.html">
+                    Subjects
+                </a>
+
+                <a href="tests.html">
+                    Model Tests
+                </a>
+
+                <a href="study-material.html">
+                    Study Material
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Study Resources</h3>
+
+                <a href="#materials">
+                    PDF Notes
+                </a>
+
+                <a href="#materials">
+                    Previous Papers
+                </a>
+
+                <a href="#materials">
+                    Important Questions
+                </a>
+
+                <a href="#materials">
+                    Downloads
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 UEduTech. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function toggleMenu() {
+
+            const navLinks = document.getElementById("navLinks");
+
+            navLinks.classList.toggle("show");
+
+        }
+
+
+        // Close mobile menu after clicking a link
+
+        document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                document.getElementById("navLinks").classList.remove("show");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

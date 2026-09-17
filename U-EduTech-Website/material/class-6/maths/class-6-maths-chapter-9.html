@@ -1,0 +1,1762 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 9: Symmetry | Class 6 Mathematics | UEduTech</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+    background:#f5f7fb;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    color:white;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#facc15;
+}
+
+nav{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:8px 13px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.15);
+}
+
+.language-box{
+    text-align:center;
+    padding:12px;
+    background:#111827;
+}
+
+.lang-btn{
+    border:none;
+    padding:9px 18px;
+    margin:3px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+    background:white;
+    color:#374151;
+}
+
+.lang-btn.active{
+    background:#facc15;
+    color:#111827;
+}
+
+.hero{
+    background:linear-gradient(135deg,#1d4ed8,#7c3aed);
+    color:white;
+    padding:55px 20px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:19px;
+    max-width:900px;
+    margin:auto;
+}
+
+.container{
+    max-width:1100px;
+    margin:35px auto;
+    padding:0 18px;
+}
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:18px;
+    margin-bottom:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+    border:1px solid #e5e7eb;
+}
+
+.card h2{
+    color:#2563eb;
+    margin-bottom:15px;
+    font-size:27px;
+}
+
+.card h3{
+    color:#4338ca;
+    margin:18px 0 8px;
+}
+
+.definition{
+    background:#eff6ff;
+    border-left:5px solid #2563eb;
+    padding:18px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.example{
+    background:#f0fdf4;
+    border-left:5px solid #16a34a;
+    padding:18px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.formula{
+    background:#fff7ed;
+    border:2px dashed #f97316;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+}
+
+.question{
+    background:#fafafa;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:17px;
+}
+
+.question strong{
+    color:#1d4ed8;
+}
+
+.mcq{
+    background:#f8fafc;
+    border:1px solid #dbeafe;
+    border-radius:12px;
+    padding:18px;
+    margin:14px 0;
+}
+
+.option{
+    padding:4px 0;
+}
+
+.answer{
+    background:#ecfdf5;
+    border-left:4px solid #10b981;
+    padding:18px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+.symmetry-box{
+    background:#fefce8;
+    border:2px solid #facc15;
+    padding:20px;
+    border-radius:15px;
+    margin:18px 0;
+}
+
+.step{
+    background:#f8fafc;
+    border-left:4px solid #6366f1;
+    padding:15px;
+    margin:10px 0;
+    border-radius:8px;
+}
+
+.example-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:18px 0;
+}
+
+.example-table th,
+.example-table td{
+    border:1px solid #dbeafe;
+    padding:12px;
+    text-align:center;
+}
+
+.example-table th{
+    background:#eff6ff;
+    color:#1d4ed8;
+}
+
+.resource-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.resource{
+    padding:22px;
+    border-radius:15px;
+    background:#eef2ff;
+    text-align:center;
+}
+
+.cta{
+    text-align:center;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    padding:35px 20px;
+    border-radius:20px;
+    margin-bottom:30px;
+}
+
+.cta h2{
+    color:white;
+    margin-bottom:10px;
+}
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:30px 0;
+}
+
+.navigation a{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.navigation a:hover{
+    background:#1d4ed8;
+}
+
+footer{
+    background:#111827;
+    color:#d1d5db;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer strong{
+    color:white;
+}
+
+.lang-en{
+    display:none;
+}
+
+body.english .lang-hi{
+    display:none;
+}
+
+body.english .lang-en{
+    display:inline;
+}
+
+body.english .block-hi{
+    display:none;
+}
+
+body.english .block-en{
+    display:block;
+}
+
+@media(max-width:750px){
+
+    .navbar{
+        flex-direction:column;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .grid,
+    .resource-grid{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+    .navigation a{
+        text-align:center;
+    }
+
+    .example-table{
+        font-size:14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+U<span>EduTech</span>
+</div>
+
+<nav>
+<a href="../../../index.html">Home</a>
+<a href="../../../subjects.html">Subjects</a>
+<a href="../../../tests.html">Model Tests</a>
+<a href="../../../study-material.html">Study Material</a>
+</nav>
+
+</div>
+
+<div class="language-box">
+
+<button id="hiBtn" class="lang-btn active" onclick="setLanguage('hi')">
+🇮🇳 हिंदी
+</button>
+
+<button id="enBtn" class="lang-btn" onclick="setLanguage('en')">
+🇬🇧 English
+</button>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>
+
+<span class="lang-hi">अध्याय 9: सममिति</span>
+<span class="lang-en">Chapter 9: Symmetry</span>
+
+</h1>
+
+<p>
+
+<span class="lang-hi">
+Class 6 Mathematics – सममिति, सममित आकृतियाँ और सममिति रेखा
+</span>
+
+<span class="lang-en">
+Class 6 Mathematics – Symmetry, Symmetric Figures and Lines of Symmetry
+</span>
+
+</p>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- INTRODUCTION -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">📘 अध्याय का परिचय</span>
+<span class="lang-en">📘 Chapter Introduction</span>
+
+</h2>
+
+<p class="block-hi">
+
+हम अपने आसपास अनेक ऐसी वस्तुएँ और आकृतियाँ देखते हैं जिनके दोनों
+भाग एक जैसे दिखाई देते हैं। जैसे तितली, पत्ता, कुछ फूल और कुछ
+ज्यामितीय आकृतियाँ। ऐसी समानता को समझने के लिए हम सममिति का
+अध्ययन करते हैं।
+
+</p>
+
+<p class="block-en">
+
+We see many objects and figures around us whose two parts look alike.
+For example, butterflies, leaves, some flowers and many geometrical figures.
+Symmetry helps us understand this kind of balanced similarity.
+
+</p>
+
+<div class="definition">
+
+<strong>
+
+<span class="lang-hi">सममिति:</span>
+<span class="lang-en">Symmetry:</span>
+
+</strong>
+
+<span class="lang-hi">
+जब किसी आकृति के दो भाग किसी रेखा के दोनों ओर एक-दूसरे की दर्पण छवि
+जैसे दिखाई देते हैं, तो आकृति में सममिति होती है।
+</span>
+
+<span class="lang-en">
+A figure has symmetry when its two parts appear as mirror images
+of each other on either side of a line.
+</span>
+
+</div>
+
+</div>
+
+
+<!-- SYMMETRY LINE -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">📏 सममिति रेखा</span>
+<span class="lang-en">📏 Line of Symmetry</span>
+
+</h2>
+
+<p class="block-hi">
+
+वह रेखा जो किसी आकृति को दो समान दर्पण प्रतिबिंब वाले भागों में बाँटती है,
+सममिति रेखा कहलाती है।
+
+</p>
+
+<p class="block-en">
+
+A line that divides a figure into two matching mirror-image halves
+is called a line of symmetry.
+
+</p>
+
+<div class="symmetry-box">
+
+<h3>
+
+<span class="lang-hi">उदाहरण</span>
+<span class="lang-en">Example</span>
+
+</h3>
+
+<p class="block-hi">
+
+एक सामान्य तितली के बीच से खींची गई ऊर्ध्वाधर रेखा उसकी
+सममिति रेखा हो सकती है।
+
+</p>
+
+<p class="block-en">
+
+A vertical line drawn through the middle of a typical butterfly
+can be a line of symmetry.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- FOLDING -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">📄 मोड़कर सममिति पहचानना</span>
+<span class="lang-en">📄 Identifying Symmetry by Folding</span>
+
+</h2>
+
+<div class="symmetry-box">
+
+<div class="step">
+<strong>Step 1:</strong>
+<span class="lang-hi">
+एक आकृति को कागज पर बनाएँ।
+</span>
+<span class="lang-en">
+Draw a figure on a sheet of paper.
+</span>
+</div>
+
+<div class="step">
+<strong>Step 2:</strong>
+<span class="lang-hi">
+कागज को संभावित सममिति रेखा के अनुसार मोड़ें।
+</span>
+<span class="lang-en">
+Fold the paper along a possible line of symmetry.
+</span>
+</div>
+
+<div class="step">
+<strong>Step 3:</strong>
+<span class="lang-hi">
+यदि दोनों भाग पूरी तरह मिल जाते हैं, तो वह रेखा सममिति रेखा है।
+</span>
+<span class="lang-en">
+If both parts match exactly, the line is a line of symmetry.
+</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- EXAMPLES -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">🔷 विभिन्न आकृतियों में सममिति</span>
+<span class="lang-en">🔷 Symmetry in Different Shapes</span>
+
+</h2>
+
+<table class="example-table">
+
+<tr>
+<th>
+<span class="lang-hi">आकृति</span>
+<span class="lang-en">Figure</span>
+</th>
+
+<th>
+<span class="lang-hi">सममिति रेखाओं की संख्या</span>
+<span class="lang-en">Number of Lines of Symmetry</span>
+</th>
+</tr>
+
+<tr>
+<td>Square</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>Rectangle</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>Equilateral Triangle</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Circle</td>
+<td>अनंत / Infinitely many</td>
+</tr>
+
+<tr>
+<td>Scalene Triangle</td>
+<td>0</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- SQUARE -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">⬜ वर्ग में सममिति</span>
+<span class="lang-en">⬜ Symmetry in a Square</span>
+
+</h2>
+
+<p class="block-hi">
+
+एक वर्ग में 4 सममिति रेखाएँ होती हैं। दो रेखाएँ विपरीत भुजाओं के
+मध्य से गुजरती हैं और दो विकर्ण होते हैं।
+
+</p>
+
+<p class="block-en">
+
+A square has 4 lines of symmetry. Two pass through the midpoints
+of opposite sides and two are its diagonals.
+
+</p>
+
+<div class="formula">
+Square → 4 Lines of Symmetry
+</div>
+
+</div>
+
+
+<!-- RECTANGLE -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">▭ आयत में सममिति</span>
+<span class="lang-en">▭ Symmetry in a Rectangle</span>
+
+</h2>
+
+<p class="block-hi">
+
+एक सामान्य आयत में 2 सममिति रेखाएँ होती हैं।
+इसके विकर्ण सममिति रेखाएँ नहीं होते।
+
+</p>
+
+<p class="block-en">
+
+A general rectangle has 2 lines of symmetry.
+Its diagonals are not lines of symmetry.
+
+</p>
+
+<div class="formula">
+Rectangle → 2 Lines of Symmetry
+</div>
+
+</div>
+
+
+<!-- TRIANGLE -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">🔺 त्रिभुज में सममिति</span>
+<span class="lang-en">🔺 Symmetry in Triangles</span>
+
+</h2>
+
+<div class="grid">
+
+<div class="question">
+
+<strong>
+<span class="lang-hi">समबाहु त्रिभुज</span>
+<span class="lang-en">Equilateral Triangle</span>
+</strong>
+
+<p>
+<span class="lang-hi">3 सममिति रेखाएँ</span>
+<span class="lang-en">3 lines of symmetry</span>
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>
+<span class="lang-hi">समद्विबाहु त्रिभुज</span>
+<span class="lang-en">Isosceles Triangle</span>
+</strong>
+
+<p>
+<span class="lang-hi">1 सममिति रेखा</span>
+<span class="lang-en">1 line of symmetry</span>
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>
+<span class="lang-hi">विषमबाहु त्रिभुज</span>
+<span class="lang-en">Scalene Triangle</span>
+</strong>
+
+<p>
+<span class="lang-hi">कोई सममिति रेखा नहीं</span>
+<span class="lang-en">No line of symmetry</span>
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CIRCLE -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">⭕ वृत्त में सममिति</span>
+<span class="lang-en">⭕ Symmetry in a Circle</span>
+
+</h2>
+
+<p class="block-hi">
+
+वृत्त में केंद्र से गुजरने वाली प्रत्येक रेखा सममिति रेखा होती है।
+इसलिए वृत्त में अनंत सममिति रेखाएँ होती हैं।
+
+</p>
+
+<p class="block-en">
+
+Every line passing through the centre of a circle is a line of symmetry.
+Therefore, a circle has infinitely many lines of symmetry.
+
+</p>
+
+<div class="formula">
+Circle → Infinitely Many Lines of Symmetry
+</div>
+
+</div>
+
+
+<!-- SYMMETRY IN LETTERS -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">🔤 अक्षरों में सममिति</span>
+<span class="lang-en">🔤 Symmetry in Letters</span>
+
+</h2>
+
+<p class="block-hi">
+
+कुछ अंग्रेजी अक्षरों में ऊर्ध्वाधर या क्षैतिज सममिति देखी जा सकती है।
+उदाहरण के लिए A, H, I, M, O, T, U, V, W, X, Y में कुछ प्रकार की
+सममिति पाई जाती है।
+
+</p>
+
+<p class="block-en">
+
+Some English letters have vertical or horizontal symmetry.
+For example, A, H, I, M, O, T, U, V, W, X and Y have
+different types of symmetry.
+
+</p>
+
+<div class="example">
+
+<strong>Examples:</strong>
+
+<br><br>
+
+A → Vertical symmetry
+<br>
+H → Vertical and horizontal symmetry
+<br>
+O → Multiple lines of symmetry
+<br>
+X → Vertical and horizontal symmetry
+
+</div>
+
+</div>
+
+
+<!-- MIRROR -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">🪞 दर्पण सममिति</span>
+<span class="lang-en">🪞 Mirror Symmetry</span>
+
+</h2>
+
+<p class="block-hi">
+
+जब किसी आकृति का एक भाग दर्पण में दिखाई देने वाले दूसरे भाग जैसा होता है,
+तो इसे दर्पण सममिति कहा जाता है।
+
+</p>
+
+<p class="block-en">
+
+When one part of a figure is the mirror image of the other part,
+it is called mirror symmetry.
+
+</p>
+
+</div>
+
+
+<!-- ROTATIONAL INTRO -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">🔄 घूर्णन और सममिति</span>
+<span class="lang-en">🔄 Rotation and Symmetry</span>
+
+</h2>
+
+<p class="block-hi">
+
+कुछ आकृतियाँ घुमाने पर भी वैसी ही दिखाई देती हैं। ऐसी आकृतियों में
+घूर्णन सममिति देखी जा सकती है।
+
+</p>
+
+<p class="block-en">
+
+Some figures look unchanged when rotated. Such figures can have
+rotational symmetry.
+
+</p>
+
+<div class="example">
+
+<p class="block-hi">
+उदाहरण: वर्ग को 90°, 180°, 270° या 360° घुमाने पर उसका आकार समान दिखाई देता है।
+</p>
+
+<p class="block-en">
+Example: A square looks unchanged after rotations of 90°, 180°, 270° or 360°.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- PRACTICE -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">📝 अभ्यास प्रश्न – 45 Questions</span>
+<span class="lang-en">📝 Practice Questions – 45 Questions</span>
+
+</h2>
+
+<div class="grid">
+
+<div class="question">
+<strong>1.</strong>
+<span class="lang-hi">सममिति किसे कहते हैं?</span>
+<span class="lang-en">What is symmetry?</span>
+</div>
+
+<div class="question">
+<strong>2.</strong>
+<span class="lang-hi">सममिति रेखा किसे कहते हैं?</span>
+<span class="lang-en">What is a line of symmetry?</span>
+</div>
+
+<div class="question">
+<strong>3.</strong>
+<span class="lang-hi">किसी आकृति में सममिति कैसे पहचान सकते हैं?</span>
+<span class="lang-en">How can we identify symmetry in a figure?</span>
+</div>
+
+<div class="question">
+<strong>4.</strong>
+<span class="lang-hi">सममिति जाँचने की एक विधि बताइए।</span>
+<span class="lang-en">Name one method of checking symmetry.</span>
+</div>
+
+<div class="question">
+<strong>5.</strong>
+<span class="lang-hi">कागज मोड़कर सममिति कैसे जाँचते हैं?</span>
+<span class="lang-en">How can folding paper help check symmetry?</span>
+</div>
+
+<div class="question">
+<strong>6.</strong>
+<span class="lang-hi">वर्ग में कितनी सममिति रेखाएँ होती हैं?</span>
+<span class="lang-en">How many lines of symmetry does a square have?</span>
+</div>
+
+<div class="question">
+<strong>7.</strong>
+<span class="lang-hi">आयत में कितनी सममिति रेखाएँ होती हैं?</span>
+<span class="lang-en">How many lines of symmetry does a rectangle have?</span>
+</div>
+
+<div class="question">
+<strong>8.</strong>
+<span class="lang-hi">समबाहु त्रिभुज में कितनी सममिति रेखाएँ होती हैं?</span>
+<span class="lang-en">How many lines of symmetry does an equilateral triangle have?</span>
+</div>
+
+<div class="question">
+<strong>9.</strong>
+<span class="lang-hi">समद्विबाहु त्रिभुज में कितनी सममिति रेखाएँ होती हैं?</span>
+<span class="lang-en">How many lines of symmetry does an isosceles triangle have?</span>
+</div>
+
+<div class="question">
+<strong>10.</strong>
+<span class="lang-hi">विषमबाहु त्रिभुज में कितनी सममिति रेखाएँ होती हैं?</span>
+<span class="lang-en">How many lines of symmetry does a scalene triangle have?</span>
+</div>
+
+<div class="question">
+<strong>11.</strong>
+<span class="lang-hi">वृत्त में कितनी सममिति रेखाएँ होती हैं?</span>
+<span class="lang-en">How many lines of symmetry does a circle have?</span>
+</div>
+
+<div class="question">
+<strong>12.</strong>
+<span class="lang-hi">क्या वर्ग के विकर्ण सममिति रेखाएँ हैं?</span>
+<span class="lang-en">Are the diagonals of a square lines of symmetry?</span>
+</div>
+
+<div class="question">
+<strong>13.</strong>
+<span class="lang-hi">क्या आयत के विकर्ण सममिति रेखाएँ हैं?</span>
+<span class="lang-en">Are the diagonals of a rectangle lines of symmetry?</span>
+</div>
+
+<div class="question">
+<strong>14.</strong>
+<span class="lang-hi">दर्पण सममिति क्या है?</span>
+<span class="lang-en">What is mirror symmetry?</span>
+</div>
+
+<div class="question">
+<strong>15.</strong>
+<span class="lang-hi">तितली में सममिति कैसे दिखाई देती है?</span>
+<span class="lang-en">How is symmetry seen in a butterfly?</span>
+</div>
+
+<div class="question">
+<strong>16.</strong>
+<span class="lang-hi">पत्ते में सममिति रेखा कहाँ हो सकती है?</span>
+<span class="lang-en">Where can a line of symmetry occur in a leaf?</span>
+</div>
+
+<div class="question">
+<strong>17.</strong>
+<span class="lang-hi">A अक्षर में किस प्रकार की सममिति देखी जा सकती है?</span>
+<span class="lang-en">What type of symmetry can be seen in the letter A?</span>
+</div>
+
+<div class="question">
+<strong>18.</strong>
+<span class="lang-hi">H अक्षर में कितनी प्रमुख सममिति रेखाएँ हैं?</span>
+<span class="lang-en">How many main lines of symmetry does H have?</span>
+</div>
+
+<div class="question">
+<strong>19.</strong>
+<span class="lang-hi">X अक्षर में सममिति कैसे दिखाई देती है?</span>
+<span class="lang-en">How is symmetry seen in the letter X?</span>
+</div>
+
+<div class="question">
+<strong>20.</strong>
+<span class="lang-hi">O अक्षर में सममिति क्यों होती है?</span>
+<span class="lang-en">Why does the letter O have symmetry?</span>
+</div>
+
+<div class="question">
+<strong>21.</strong>
+<span class="lang-hi">एक वर्ग की सममिति रेखाएँ खींचिए।</span>
+<span class="lang-en">Draw the lines of symmetry of a square.</span>
+</div>
+
+<div class="question">
+<strong>22.</strong>
+<span class="lang-hi">एक आयत की सममिति रेखाएँ खींचिए।</span>
+<span class="lang-en">Draw the lines of symmetry of a rectangle.</span>
+</div>
+
+<div class="question">
+<strong>23.</strong>
+<span class="lang-hi">समबाहु त्रिभुज की सममिति रेखाएँ बनाइए।</span>
+<span class="lang-en">Draw the lines of symmetry of an equilateral triangle.</span>
+</div>
+
+<div class="question">
+<strong>24.</strong>
+<span class="lang-hi">समद्विबाहु त्रिभुज की सममिति रेखा बनाइए।</span>
+<span class="lang-en">Draw the line of symmetry of an isosceles triangle.</span>
+</div>
+
+<div class="question">
+<strong>25.</strong>
+<span class="lang-hi">वृत्त में सममिति रेखा का एक उदाहरण दीजिए।</span>
+<span class="lang-en">Give one example of a line of symmetry in a circle.</span>
+</div>
+
+<div class="question">
+<strong>26.</strong>
+<span class="lang-hi">क्या प्रत्येक वर्ग में 4 सममिति रेखाएँ होती हैं?</span>
+<span class="lang-en">Does every square have 4 lines of symmetry?</span>
+</div>
+
+<div class="question">
+<strong>27.</strong>
+<span class="lang-hi">क्या प्रत्येक आयत में 2 सममिति रेखाएँ होती हैं?</span>
+<span class="lang-en">Does every rectangle have 2 lines of symmetry?</span>
+</div>
+
+<div class="question">
+<strong>28.</strong>
+<span class="lang-hi">सममिति और दर्पण छवि में क्या संबंध है?</span>
+<span class="lang-en">What is the relation between symmetry and mirror image?</span>
+</div>
+
+<div class="question">
+<strong>29.</strong>
+<span class="lang-hi">एक ऐसी वस्तु का नाम बताइए जिसमें सममिति होती है।</span>
+<span class="lang-en">Name an object that has symmetry.</span>
+</div>
+
+<div class="question">
+<strong>30.</strong>
+<span class="lang-hi">एक ऐसी आकृति का नाम बताइए जिसमें कोई सममिति रेखा नहीं है।</span>
+<span class="lang-en">Name a figure that has no line of symmetry.</span>
+</div>
+
+<div class="question">
+<strong>31.</strong>
+<span class="lang-hi">सममिति रेखा आकृति को कितने भागों में बाँटती है?</span>
+<span class="lang-en">Into how many parts does a line of symmetry divide a figure?</span>
+</div>
+
+<div class="question">
+<strong>32.</strong>
+<span class="lang-hi">क्या दोनों भाग दर्पण प्रतिबिंब जैसे होने चाहिए?</span>
+<span class="lang-en">Should the two parts be mirror images?</span>
+</div>
+
+<div class="question">
+<strong>33.</strong>
+<span class="lang-hi">घूर्णन सममिति क्या है?</span>
+<span class="lang-en">What is rotational symmetry?</span>
+</div>
+
+<div class="question">
+<strong>34.</strong>
+<span class="lang-hi">वर्ग में घूर्णन सममिति के कोण कौन-कौन से हैं?</span>
+<span class="lang-en">At which angles does a square have rotational symmetry?</span>
+</div>
+
+<div class="question">
+<strong>35.</strong>
+<span class="lang-hi">क्या वृत्त में घूर्णन सममिति होती है?</span>
+<span class="lang-en">Does a circle have rotational symmetry?</span>
+</div>
+
+<div class="question">
+<strong>36.</strong>
+<span class="lang-hi">सममिति का उपयोग दैनिक जीवन में कहाँ होता है?</span>
+<span class="lang-en">Where is symmetry used in daily life?</span>
+</div>
+
+<div class="question">
+<strong>37.</strong>
+<span class="lang-hi">भवनों की डिजाइन में सममिति का उपयोग क्यों किया जाता है?</span>
+<span class="lang-en">Why is symmetry used in building designs?</span>
+</div>
+
+<div class="question">
+<strong>38.</strong>
+<span class="lang-hi">कपड़ों के डिजाइन में सममिति का एक उदाहरण दीजिए।</span>
+<span class="lang-en">Give an example of symmetry in clothing design.</span>
+</div>
+
+<div class="question">
+<strong>39.</strong>
+<span class="lang-hi">कला में सममिति का क्या महत्व है?</span>
+<span class="lang-en">What is the importance of symmetry in art?</span>
+</div>
+
+<div class="question">
+<strong>40.</strong>
+<span class="lang-hi">प्रकृति में सममिति के दो उदाहरण दीजिए।</span>
+<span class="lang-en">Give two examples of symmetry in nature.</span>
+</div>
+
+<div class="question">
+<strong>41.</strong>
+<span class="lang-hi">एक आकृति में 0 सममिति रेखाएँ होने का क्या अर्थ है?</span>
+<span class="lang-en">What does it mean if a figure has 0 lines of symmetry?</span>
+</div>
+
+<div class="question">
+<strong>42.</strong>
+<span class="lang-hi">एक आकृति में 4 सममिति रेखाएँ होने का क्या अर्थ है?</span>
+<span class="lang-en">What does it mean if a figure has 4 lines of symmetry?</span>
+</div>
+
+<div class="question">
+<strong>43.</strong>
+<span class="lang-hi">वर्ग और आयत की सममिति में अंतर बताइए।</span>
+<span class="lang-en">State the difference between symmetry of a square and rectangle.</span>
+</div>
+
+<div class="question">
+<strong>44.</strong>
+<span class="lang-hi">समबाहु और विषमबाहु त्रिभुज की सममिति की तुलना कीजिए।</span>
+<span class="lang-en">Compare the symmetry of equilateral and scalene triangles.</span>
+</div>
+
+<div class="question">
+<strong>45.</strong>
+<span class="lang-hi">अपने आसपास की 5 सममित वस्तुओं की सूची बनाइए।</span>
+<span class="lang-en">List five symmetric objects around you.</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MCQs -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">🎯 बहुविकल्पीय प्रश्न – 15 MCQs</span>
+<span class="lang-en">🎯 Multiple Choice Questions – 15 MCQs</span>
+
+</h2>
+
+
+<div class="mcq">
+
+<strong>
+1.
+<span class="lang-hi">वर्ग में कितनी सममिति रेखाएँ होती हैं?</span>
+<span class="lang-en">How many lines of symmetry does a square have?</span>
+</strong>
+
+<div class="option">A) 1</div>
+<div class="option">B) 2</div>
+<div class="option">C) 4</div>
+<div class="option">D) 8</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>
+2.
+<span class="lang-hi">आयत में कितनी सममिति रेखाएँ होती हैं?</span>
+<span class="lang-en">How many lines of symmetry does a rectangle have?</span>
+</strong>
+
+<div class="option">A) 1</div>
+<div class="option">B) 2</div>
+<div class="option">C) 3</div>
+<div class="option">D) 4</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>
+3.
+<span class="lang-hi">समबाहु त्रिभुज में कितनी सममिति रेखाएँ होती हैं?</span>
+<span class="lang-en">How many lines of symmetry does an equilateral triangle have?</span>
+</strong>
+
+<div class="option">A) 1</div>
+<div class="option">B) 2</div>
+<div class="option">C) 3</div>
+<div class="option">D) 4</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>
+4.
+<span class="lang-hi">विषमबाहु त्रिभुज में कितनी सममिति रेखाएँ होती हैं?</span>
+<span class="lang-en">How many lines of symmetry does a scalene triangle have?</span>
+</strong>
+
+<div class="option">A) 0</div>
+<div class="option">B) 1</div>
+<div class="option">C) 2</div>
+<div class="option">D) 3</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>
+5.
+<span class="lang-hi">वृत्त में सममिति रेखाओं की संख्या है:</span>
+<span class="lang-en">The number of lines of symmetry in a circle is:</span>
+</strong>
+
+<div class="option">A) 1</div>
+<div class="option">B) 2</div>
+<div class="option">C) 4</div>
+<div class="option">D) Infinitely many</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>
+6.
+<span class="lang-hi">सममिति रेखा आकृति को कितने समान दर्पण भागों में बाँटती है?</span>
+<span class="lang-en">A line of symmetry divides a figure into how many matching mirror parts?</span>
+</strong>
+
+<div class="option">A) 1</div>
+<div class="option">B) 2</div>
+<div class="option">C) 3</div>
+<div class="option">D) 4</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>
+7.
+<span class="lang-hi">इनमें से किसमें 3 सममिति रेखाएँ होती हैं?</span>
+<span class="lang-en">Which of these has 3 lines of symmetry?</span>
+</strong>
+
+<div class="option">
+A) <span class="lang-hi">वर्ग</span><span class="lang-en">Square</span>
+</div>
+
+<div class="option">
+B) <span class="lang-hi">समबाहु त्रिभुज</span><span class="lang-en">Equilateral triangle</span>
+</div>
+
+<div class="option">
+C) <span class="lang-hi">आयत</span><span class="lang-en">Rectangle</span>
+</div>
+
+<div class="option">
+D) <span class="lang-hi">विषमबाहु त्रिभुज</span><span class="lang-en">Scalene triangle</span>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>
+8.
+<span class="lang-hi">समद्विबाहु त्रिभुज में सामान्यतः कितनी सममिति रेखा होती है?</span>
+<span class="lang-en">How many lines of symmetry does an isosceles triangle generally have?</span>
+</strong>
+
+<div class="option">A) 0</div>
+<div class="option">B) 1</div>
+<div class="option">C) 2</div>
+<div class="option">D) 3</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>
+9.
+<span class="lang-hi">दर्पण सममिति किससे संबंधित है?</span>
+<span class="lang-en">Mirror symmetry is related to:</span>
+</strong>
+
+<div class="option">
+A) <span class="lang-hi">दर्पण छवि</span><span class="lang-en">Mirror image</span>
+</div>
+
+<div class="option">
+B) <span class="lang-hi">केवल लंबाई</span><span class="lang-en">Only length</span>
+</div>
+
+<div class="option">
+C) <span class="lang-hi">केवल कोण</span><span class="lang-en">Only angle</span>
+</div>
+
+<div class="option">
+D) <span class="lang-hi">केवल क्षेत्रफल</span><span class="lang-en">Only area</span>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>
+10.
+<span class="lang-hi">कौन-सा अक्षर ऊर्ध्वाधर सममिति दिखाता है?</span>
+<span class="lang-en">Which letter shows vertical symmetry?</span>
+</strong>
+
+<div class="option">A) A</div>
+<div class="option">B) F</div>
+<div class="option">C) G</div>
+<div class="option">D) J</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>
+11.
+<span class="lang-hi">वर्ग को 90° घुमाने पर:</span>
+<span class="lang-en">When a square is rotated by 90°:</span>
+</strong>
+
+<div class="option">
+A) <span class="lang-hi">आकृति बदल जाती है</span><span class="lang-en">The figure changes</span>
+</div>
+
+<div class="option">
+B) <span class="lang-hi">आकृति समान दिखाई देती है</span><span class="lang-en">The figure looks unchanged</span>
+</div>
+
+<div class="option">
+C) <span class="lang-hi">वर्ग त्रिभुज बन जाता है</span><span class="lang-en">It becomes a triangle</span>
+</div>
+
+<div class="option">
+D) <span class="lang-hi">वर्ग वृत्त बन जाता है</span><span class="lang-en">It becomes a circle</span>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>
+12.
+<span class="lang-hi">वर्ग की सममिति रेखाओं में कौन शामिल है?</span>
+<span class="lang-en">Which is a line of symmetry of a square?</span>
+</strong>
+
+<div class="option">
+A) <span class="lang-hi">एक विकर्ण</span><span class="lang-en">A diagonal</span>
+</div>
+
+<div class="option">
+B) <span class="lang-hi">कोई भी बाहरी रेखा</span><span class="lang-en">Any external line</span>
+</div>
+
+<div class="option">
+C) <span class="lang-hi">कोई वक्र रेखा</span><span class="lang-en">A curved line</span>
+</div>
+
+<div class="option">
+D) <span class="lang-hi">इनमें से कोई नहीं</span><span class="lang-en">None</span>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>
+13.
+<span class="lang-hi">यदि किसी आकृति में 0 सममिति रेखाएँ हैं, तो:</span>
+<span class="lang-en">If a figure has 0 lines of symmetry:</span>
+</strong>
+
+<div class="option">
+A) <span class="lang-hi">वह सममित नहीं है</span><span class="lang-en">It has no line symmetry</span>
+</div>
+
+<div class="option">
+B) <span class="lang-hi">उसमें 4 रेखाएँ हैं</span><span class="lang-en">It has 4 lines</span>
+</div>
+
+<div class="option">
+C) <span class="lang-hi">वह वृत्त है</span><span class="lang-en">It is a circle</span>
+</div>
+
+<div class="option">
+D) <span class="lang-hi">वह वर्ग है</span><span class="lang-en">It is a square</span>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>
+14.
+<span class="lang-hi">सममिति का उदाहरण प्रकृति में किसमें देखा जा सकता है?</span>
+<span class="lang-en">Which is an example of symmetry in nature?</span>
+</strong>
+
+<div class="option">
+A) <span class="lang-hi">तितली</span><span class="lang-en">Butterfly</span>
+</div>
+
+<div class="option">
+B) <span class="lang-hi">पत्थर का अनियमित टुकड़ा</span><span class="lang-en">Irregular piece of stone</span>
+</div>
+
+<div class="option">
+C) <span class="lang-hi">टूटा हुआ कागज</span><span class="lang-en">Torn paper</span>
+</div>
+
+<div class="option">
+D) <span class="lang-hi">कोई नहीं</span><span class="lang-en">None</span>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>
+15.
+<span class="lang-hi">सममिति रेखा का दूसरा सामान्य नाम क्या है?</span>
+<span class="lang-en">What is another common idea associated with a line of symmetry?</span>
+</strong>
+
+<div class="option">
+A) <span class="lang-hi">दर्पण रेखा</span><span class="lang-en">Mirror line</span>
+</div>
+
+<div class="option">
+B) <span class="lang-hi">व्यास</span><span class="lang-en">Diameter</span>
+</div>
+
+<div class="option">
+C) <span class="lang-hi">त्रिज्या</span><span class="lang-en">Radius</span>
+</div>
+
+<div class="option">
+D) <span class="lang-hi">चाप</span><span class="lang-en">Arc</span>
+</div>
+
+</div>
+
+
+<div class="answer">
+
+<h3>
+
+<span class="lang-hi">✅ उत्तरमाला</span>
+<span class="lang-en">✅ Answer Key</span>
+
+</h3>
+
+<p>
+1-C, 2-B, 3-C, 4-A, 5-D,
+6-B, 7-B, 8-B, 9-A, 10-A,
+11-B, 12-A, 13-A, 14-A, 15-A
+</p>
+
+</div>
+
+</div>
+
+
+<!-- QUICK REVISION -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">⚡ त्वरित पुनरावृत्ति</span>
+<span class="lang-en">⚡ Quick Revision</span>
+
+</h2>
+
+<ul class="block-hi">
+
+<li>सममिति का अर्थ है संतुलित समानता।</li>
+<li>सममिति रेखा आकृति को दो समान दर्पण भागों में बाँटती है।</li>
+<li>वर्ग में 4 सममिति रेखाएँ होती हैं।</li>
+<li>आयत में 2 सममिति रेखाएँ होती हैं।</li>
+<li>समबाहु त्रिभुज में 3 सममिति रेखाएँ होती हैं।</li>
+<li>समद्विबाहु त्रिभुज में 1 सममिति रेखा होती है।</li>
+<li>विषमबाहु त्रिभुज में कोई सममिति रेखा नहीं होती।</li>
+<li>वृत्त में अनंत सममिति रेखाएँ होती हैं।</li>
+<li>तितली और पत्ते में प्राकृतिक सममिति देखी जा सकती है।</li>
+<li>सममिति का उपयोग कला, वास्तुकला और डिजाइन में होता है।</li>
+
+</ul>
+
+
+<ul class="block-en">
+
+<li>Symmetry means balanced similarity.</li>
+<li>A line of symmetry divides a figure into two matching mirror parts.</li>
+<li>A square has 4 lines of symmetry.</li>
+<li>A rectangle has 2 lines of symmetry.</li>
+<li>An equilateral triangle has 3 lines of symmetry.</li>
+<li>An isosceles triangle has 1 line of symmetry.</li>
+<li>A scalene triangle has no line of symmetry.</li>
+<li>A circle has infinitely many lines of symmetry.</li>
+<li>Natural symmetry can be seen in butterflies and leaves.</li>
+<li>Symmetry is used in art, architecture and design.</li>
+
+</ul>
+
+</div>
+
+
+<!-- RESOURCES -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">📚 Learning Resources</span>
+<span class="lang-en">📚 Learning Resources</span>
+
+</h2>
+
+<div class="resource-grid">
+
+<div class="resource">
+
+<h3>
+<span class="lang-hi">📖 Notes</span>
+<span class="lang-en">📖 Notes</span>
+</h3>
+
+<p>
+<span class="lang-hi">सममिति के महत्वपूर्ण नियम दोहराएँ।</span>
+<span class="lang-en">Revise the important rules of symmetry.</span>
+</p>
+
+</div>
+
+
+<div class="resource">
+
+<h3>
+<span class="lang-hi">✏️ Practice</span>
+<span class="lang-en">✏️ Practice</span>
+</h3>
+
+<p>
+<span class="lang-hi">45 अभ्यास प्रश्न हल करें।</span>
+<span class="lang-en">Solve all 45 practice questions.</span>
+</p>
+
+</div>
+
+
+<div class="resource">
+
+<h3>
+<span class="lang-hi">🎯 MCQ Test</span>
+<span class="lang-en">🎯 MCQ Test</span>
+</h3>
+
+<p>
+<span class="lang-hi">15 MCQs से अपनी तैयारी जाँचें।</span>
+<span class="lang-en">Test your preparation with 15 MCQs.</span>
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CTA -->
+
+<div class="cta">
+
+<h2>
+
+<span class="lang-hi">🚀 अपनी तैयारी जारी रखें!</span>
+<span class="lang-en">🚀 Keep Learning!</span>
+
+</h2>
+
+<p>
+
+<span class="lang-hi">
+अब अगले अध्याय में हम संख्या रेखा के दूसरी ओर यानी शून्य के दूसरी तरफ
+की संख्याओं को समझेंगे।
+</span>
+
+<span class="lang-en">
+In the next chapter, we will explore numbers on the other side of zero
+on the number line.
+</span>
+
+</p>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+<a href="class-6-maths-chapter-8.html">
+
+<span class="lang-hi">⬅️ अध्याय 8</span>
+<span class="lang-en">⬅️ Chapter 8</span>
+
+</a>
+
+
+<a href="../class-6-mathematics.html">
+
+<span class="lang-hi">📚 सभी अध्याय</span>
+<span class="lang-en">📚 All Chapters</span>
+
+</a>
+
+
+<a href="class-6-maths-chapter-10.html">
+
+<span class="lang-hi">अध्याय 10 ➡️</span>
+<span class="lang-en">Chapter 10 ➡️</span>
+
+</a>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<p>
+<strong>UEduTech</strong> – Smart Learning Platform
+</p>
+
+<p>
+
+<span class="lang-hi">
+कक्षा 6 गणित | अध्याय 9: सममिति
+</span>
+
+<span class="lang-en">
+Class 6 Mathematics | Chapter 9: Symmetry
+</span>
+
+</p>
+
+<p>© 2026 UEduTech. All Rights Reserved.</p>
+
+</footer>
+
+
+<script>
+
+function setLanguage(lang){
+
+    if(lang === "en"){
+
+        document.body.classList.add("english");
+
+        document.getElementById("enBtn").classList.add("active");
+        document.getElementById("hiBtn").classList.remove("active");
+
+        document.documentElement.lang = "en";
+
+    }else{
+
+        document.body.classList.remove("english");
+
+        document.getElementById("hiBtn").classList.add("active");
+        document.getElementById("enBtn").classList.remove("active");
+
+        document.documentElement.lang = "hi";
+
+    }
+
+    localStorage.setItem("uedutech-language",lang);
+}
+
+
+window.onload = function(){
+
+    const savedLanguage =
+        localStorage.getItem("uedutech-language") || "hi";
+
+    setLanguage(savedLanguage);
+
+};
+
+</script>
+
+</body>
+</html>
+```

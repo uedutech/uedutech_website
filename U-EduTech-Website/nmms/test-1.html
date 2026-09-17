@@ -1,0 +1,709 @@
+```html
+<!DOCTYPE html> 
+<html lang="hi"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    <title>Online Exam - 90 Questions</title> 
+    <style> 
+        * { margin: 0; padding: 0; box-sizing: border-box; } 
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; overflow-x: hidden; } 
+         
+        /* Start Screen */ 
+        .start-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; z-index: 2000; } 
+        .start-content { background: white; padding: 40px; border-radius: 20px; max-width: 600px; width: 90%; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3); } 
+        .start-content h1 { color: #667eea; font-size: 32px; margin-bottom: 20px; } 
+        .instructions { text-align: left; margin: 30px 0; padding: 25px; background: #f7fafc; border-radius: 10px; } 
+        .instructions h3 { color: #2d3748; margin-bottom: 15px; font-size: 20px; } 
+        .instructions ul { margin-left: 20px; line-height: 2; } 
+        .instructions li { margin: 10px 0; color: #4a5568; font-size: 15px; } 
+        .exam-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 25px 0; } 
+        .detail-box { background: #667eea; color: white; padding: 20px; border-radius: 10px; } 
+        .detail-box .number { font-size: 28px; font-weight: bold; } 
+        .detail-box .label { font-size: 13px; margin-top: 5px; opacity: 0.9; } 
+        .start-btn { background: #48bb78; color: white; border: none; padding: 18px 50px; font-size: 20px; font-weight: bold; border-radius: 10px; cursor: pointer; transition: all 0.3s; margin-top: 20px; } 
+        .start-btn:hover { background: #38a169; transform: scale(1.05); } 
+         
+        /* Header */ 
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; } 
+        .header h2 { font-size: 20px; } 
+        .header p { font-size: 12px; margin-top: 5px; opacity: 0.9; } 
+        .timer { font-size: 20px; font-weight: bold; background: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 8px; } 
+        .timer.warning { background: #ff6b6b; animation: pulse 1s infinite; } 
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } } 
+         
+        /* Container */ 
+        .container { display: flex; min-height: calc(100vh - 70px); } 
+        .main-content { flex: 1; padding: 20px; overflow-y: auto; } 
+         
+        /* Section Buttons */ 
+        .section-buttons { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; } 
+        .section-btn { padding: 12px 20px; border: 2px solid #667eea; background: white; color: #667eea; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.3s; } 
+        .section-btn:hover, .section-btn.active { background: #667eea; color: white; } 
+         
+        .section-info { background: white; padding: 15px 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); } 
+        .section-info h3 { color: #667eea; margin-bottom: 5px; font-size: 18px; } 
+         
+        /* Question Box */ 
+        .question-box { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); } 
+        .question { font-size: 17px; font-weight: 600; margin-bottom: 25px; line-height: 1.6; color: #2d3748; } 
+        .options { display: flex; flex-direction: column; gap: 12px; } 
+        .option { background: #f7fafc; border: 2px solid #e2e8f0; padding: 14px 18px; border-radius: 8px; cursor: pointer; transition: all 0.3s; font-size: 15px; min-height: 50px; display: flex; align-items: center; } 
+        .option:hover { background: #edf2f7; border-color: #667eea; transform: translateX(3px); } 
+        .option.selected { background: #667eea; color: white; border-color: #667eea; } 
+         
+        /* Navigation */ 
+        .navigation { display: flex; justify-content: space-between; margin-top: 25px; gap: 10px; flex-wrap: wrap; } 
+        .nav-group { display: flex; gap: 8px; flex-wrap: wrap; } 
+        .btn { padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 15px; font-weight: 600; transition: all 0.3s; white-space: nowrap; min-height: 44px; } 
+        .btn-primary { background: #667eea; color: white; } 
+        .btn-primary:hover { background: #5568d3; } 
+        .btn-secondary { background: #e2e8f0; color: #2d3748; } 
+        .btn-secondary:hover { background: #cbd5e0; } 
+        .btn-warning { background: #f6ad55; color: white; } 
+        .btn-warning:hover { background: #ed8936; } 
+        .btn-success { background: #48bb78; color: white; } 
+        .btn-success:hover { background: #38a169; } 
+         
+        /* Sidebar */ 
+        .sidebar { width: 320px; background: white; padding: 20px; overflow-y: auto; box-shadow: -2px 0 10px rgba(0,0,0,0.1); } 
+        .toggle-sidebar-btn { display: none; position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; border-radius: 50%; background: #667eea; color: white; border: none; font-size: 24px; cursor: pointer; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4); z-index: 999; transition: all 0.3s; } 
+        .toggle-sidebar-btn:hover { transform: scale(1.1); } 
+         
+        /* Legend */ 
+        .legend { margin-bottom: 20px; padding: 15px; background: #f7fafc; border-radius: 8px; } 
+        .legend h3 { margin-bottom: 15px; font-size: 16px; } 
+        .legend-item { display: flex; align-items: center; margin: 10px 0; font-size: 13px; } 
+        .legend-box { width: 28px; height: 28px; border-radius: 6px; margin-right: 10px; border: 2px solid #e2e8f0; flex-shrink: 0; } 
+         
+        /* Stats */ 
+        .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 20px 0; } 
+        .stat-item { background: #f7fafc; padding: 15px; border-radius: 8px; text-align: center; } 
+        .stat-number { font-size: 28px; font-weight: bold; color: #667eea; } 
+        .stat-label { font-size: 13px; color: #718096; margin-top: 5px; } 
+         
+        /* Palette */ 
+        .palette-section { margin-bottom: 25px; } 
+        .palette-section h4 { color: #2d3748; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; font-size: 15px; cursor: pointer; transition: color 0.3s; } 
+        .palette-section h4:hover { color: #667eea; } 
+        .question-palette { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; } 
+        .palette-item { width: 100%; aspect-ratio: 1; border: 2px solid #e2e8f0; background: white; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 13px; transition: all 0.3s; min-height: 44px; } 
+        .palette-item:hover { transform: scale(1.05); } 
+        .palette-item.current { border-color: #667eea; border-width: 3px; } 
+        .palette-item.answered { background: #48bb78; color: white; } 
+        .palette-item.marked { background: #f6ad55; color: white; } 
+        .palette-item.answered.marked { background: #9f7aea; color: white; } 
+         
+        .submit-section { margin-top: 20px; padding: 20px; background: #f7fafc; border-radius: 8px; text-align: center; } 
+         
+        /* Modal */ 
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; align-items: center; justify-content: center; padding: 20px; } 
+        .modal-content { background: white; padding: 30px; border-radius: 15px; max-width: 500px; width: 100%; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.3); max-height: 90vh; overflow-y: auto; } 
+        .modal-content h2 { color: #667eea; margin-bottom: 20px; font-size: 24px; } 
+        .modal-content p { margin: 15px 0; font-size: 16px; line-height: 1.6; } 
+        .modal-buttons { display: flex; gap: 10px; justify-content: center; margin-top: 25px; flex-wrap: wrap; } 
+         
+        /* Mobile Responsive */ 
+        @media (max-width: 768px) { 
+            .start-content { padding: 30px 20px; } 
+            .start-content h1 { font-size: 24px; } 
+            .exam-details { grid-template-columns: 1fr; gap: 10px; } 
+            .detail-box { padding: 15px; } 
+            .detail-box .number { font-size: 24px; } 
+            .instructions { padding: 20px; } 
+            .instructions h3 { font-size: 18px; } 
+            .instructions li { font-size: 14px; } 
+            .start-btn { padding: 15px 40px; font-size: 18px; width: 100%; } 
+             
+            .header { padding: 12px 15px; } 
+            .header h2 { font-size: 16px; } 
+            .header p { font-size: 10px; } 
+            .timer { font-size: 16px; padding: 6px 12px; } 
+            .container { flex-direction: column; } 
+            .main-content { padding: 15px; } 
+            .section-buttons { gap: 8px; } 
+            .section-btn { padding: 10px 15px; font-size: 13px; flex: 1; min-width: 100px; } 
+            .sidebar { position: fixed; top: 0; right: -100%; width: 100%; max-width: 350px; height: 100vh; z-index: 998; transition: right 0.3s ease; overflow-y: auto; } 
+            .sidebar.active { right: 0; } 
+            .toggle-sidebar-btn { display: flex; align-items: center; justify-content: center; } 
+            .question-box { padding: 20px; } 
+            .question { font-size: 16px; margin-bottom: 20px; } 
+            .option { padding: 12px 15px; font-size: 14px; min-height: 48px; } 
+            .navigation { flex-direction: column; gap: 10px; } 
+            .nav-group { width: 100%; justify-content: space-between; } 
+            .btn { flex: 1; padding: 12px 15px; font-size: 14px; } 
+            .stats { grid-template-columns: repeat(2, 1fr); gap: 8px; } 
+            .stat-number { font-size: 24px; } 
+            .question-palette { grid-template-columns: repeat(5, 1fr); gap: 6px; } 
+            .palette-item { font-size: 12px; min-height: 40px; } 
+            .modal-content { padding: 25px; margin: 10px; } 
+            .modal-content h2 { font-size: 20px; } 
+        } 
+    </style> 
+</head> 
+<body> 
+    <!-- Start Screen --> 
+    <div class="start-screen" id="startScreen"> 
+        <div class="start-content"> 
+            <h1>📝 Online Examination System</h1> 
+             
+            <div class="exam-details"> 
+                <div class="detail-box"> 
+                    <div class="number">90</div> 
+                    <div class="label">Questions</div> 
+                </div> 
+                <div class="detail-box"> 
+                    <div class="number">90</div> 
+                    <div class="label">Marks</div> 
+                </div> 
+                <div class="detail-box"> 
+                    <div class="number">90</div> 
+                    <div class="label">Minutes</div> 
+                </div> 
+            </div> 
+             
+            <div class="instructions"> 
+                <h3>📋 परीक्षा निर्देश / Exam Instructions:</h3> 
+                <ul> 
+                    <li>✅ परीक्षा में कुल <strong>90 प्रश्न</strong> हैं, प्रत्येक <strong>1 अंक</strong> का है।</li> 
+                    <li>⏱️ परीक्षा की अवधि <strong>90 मिनट</strong> है।</li> 
+                    <li>🔖 आप प्रश्नों को <strong>Mark for Review</strong> कर सकते हैं।</li> 
+                    <li>📊 Question Palette से किसी भी प्रश्न पर जा सकते हैं।</li> 
+                    <li>⚠️ समय समाप्त होने पर परीक्षा स्वतः Submit हो जाएगी।</li> 
+                    <li>🚫 परीक्षा शुरू होने के बाद <strong>रिफ्रेश ना करें</strong>।</li> 
+                    <li>📱 Mobile और PC दोनों में काम करता है।</li> 
+                </ul> 
+            </div> 
+             
+            <button class="start-btn" onclick="startExam()">🚀 Start Exam</button> 
+        </div> 
+    </div> 
+ 
+    <!-- Main Exam Screen --> 
+    <div class="header" style="display: none;" id="examHeader"> 
+        <div> 
+            <h2>📝 Online Examination System</h2> 
+            <p>Total: 90 Questions | 90 Marks | 90 Minutes</p> 
+        </div> 
+        <div class="timer" id="timer">90:00</div> 
+    </div> 
+ 
+    <button class="toggle-sidebar-btn" onclick="toggleSidebar()" id="toggleBtn" style="display: none;">📋</button> 
+ 
+    <div class="container" id="examContainer" style="display: none;"> 
+        <div class="main-content"> 
+            <!-- Section Jump Buttons --> 
+            <div class="section-buttons"> 
+                <button class="section-btn active" onclick="jumpToSection(0)">🔬 Section 1 (1-35)</button> 
+                <button class="section-btn" onclick="jumpToSection(35)">🌍 Section 2 (36-70)</button> 
+                <button class="section-btn" onclick="jumpToSection(70)">🔢 Section 3 (71-90)</button> 
+            </div> 
+             
+            <div class="section-info" id="sectionInfo"> 
+                <h3>Section: 1</h3> 
+                <p>Questions 1-35</p> 
+            </div> 
+ 
+            <div class="question-box"> 
+                <div class="question" id="questionText"></div> 
+                <div class="options" id="optionsContainer"></div> 
+                 
+                <div class="navigation"> 
+                    <div class="nav-group"> 
+                        <button class="btn btn-secondary" onclick="previousQuestion()">⬅️ Previous</button> 
+                        <button class="btn btn-warning" onclick="markForReview()">🔖 Mark</button> 
+                    </div> 
+                    <div class="nav-group"> 
+                        <button class="btn btn-secondary" onclick="clearResponse()">❌ Clear</button> 
+                        <button class="btn btn-primary" onclick="saveAndNext()">Save & Next ➡️</button> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+ 
+        <div class="sidebar" id="sidebar"> 
+            <div class="legend"> 
+                <h3>Legend</h3> 
+                <div class="legend-item"><div class="legend-box" style="background: #48bb78;"></div>Answered</div> 
+                <div class="legend-item"><div class="legend-box" style="background: #f6ad55;"></div>Marked for Review</div> 
+                <div class="legend-item"><div class="legend-box" style="background: #9f7aea;"></div>Answered & Marked</div> 
+                <div class="legend-item"><div class="legend-box" style="background: white;"></div>Not Visited</div> 
+            </div> 
+ 
+            <div class="stats"> 
+                <div class="stat-item"><div class="stat-number" id="answeredCount">0</div><div class="stat-label">Answered</div></div> 
+                <div class="stat-item"><div class="stat-number" id="markedCount">0</div><div class="stat-label">Marked</div></div> 
+            </div> 
+ 
+            <div class="palette-section"> 
+                <h4 onclick="jumpToSection(0)">Section 1 (1-35)</h4> 
+                <div class="question-palette" id="palette1"></div> 
+            </div> 
+ 
+            <div class="palette-section"> 
+                <h4 onclick="jumpToSection(35)">Section 2 (36-70)</h4> 
+                <div class="question-palette" id="palette2"></div> 
+            </div> 
+ 
+            <div class="palette-section"> 
+                <h4 onclick="jumpToSection(70)">Section 3 (71-90)</h4> 
+                <div class="question-palette" id="palette3"></div> 
+            </div> 
+ 
+            <div class="submit-section"> 
+                <button class="btn btn-success" onclick="submitExam()" style="width: 100%; padding: 15px;">✅ Submit Exam</button> 
+            </div> 
+        </div> 
+    </div> 
+ 
+    <!-- Submit Modal --> 
+    <div class="modal" id="submitModal"> 
+        <div class="modal-content"> 
+            <h2>⚠️ Submit Exam?</h2> 
+            <p>क्या आप परीक्षा जमा करना चाहते हैं?</p> 
+            <div id="submitStats"></div> 
+            <div class="modal-buttons"> 
+                <button class="btn btn-secondary" onclick="closeModal()">Cancel</button> 
+                <button class="btn btn-success" onclick="confirmSubmit()">Confirm Submit</button> 
+            </div> 
+        </div> 
+    </div> 
+ 
+    <!-- Result Modal --> 
+    <div class="modal" id="resultModal"> 
+        <div class="modal-content"> 
+            <h2>🎉 Exam Completed!</h2> 
+            <div id="resultContent"></div> 
+            <button class="btn btn-primary" onclick="location.reload()" style="margin-top: 20px;">Start New Exam</button> 
+        </div> 
+    </div> 
+ 
+    <script> 
+        // ====== QUESTIONS ARRAY (90) - replaced with provided Science, Social Science and Mathematics questions ====== 
+        const questions = [ 
+
+            // ==================== SCIENCE 1-35 ====================
+
+            {q: "Q1. A plant is kept in complete darkness for two days. Which substance will be most affected in its leaves? / एक पौधे को दो दिनों तक पूर्ण अंधकार में रखा जाता है। उसकी पत्तियों में कौन-सा पदार्थ सबसे अधिक प्रभावित होगा?", opts: ["Protein / प्रोटीन","Starch / स्टार्च","Water / जल","Mineral salts / खनिज लवण"], ans: 1},
+
+            {q: "Q2. A student covers one part of a green leaf with black paper and keeps the plant in sunlight. After a few hours, iodine solution is added to the leaf. What will happen? / एक विद्यार्थी हरी पत्ती के एक भाग को काले कागज से ढककर पौधे को सूर्य के प्रकाश में रखता है। कुछ घंटों बाद पत्ती पर आयोडीन विलयन डाला जाता है। क्या होगा?", opts: ["The covered part turns blue-black / ढका हुआ भाग नीला-काला हो जाएगा","The uncovered part turns blue-black / खुला हुआ भाग नीला-काला हो जाएगा","The whole leaf turns blue-black / पूरी पत्ती नीला-काला हो जाएगी","No part changes colour / किसी भाग का रंग नहीं बदलेगा"], ans: 1},
+
+            {q: "Q3. Why does a person breathe faster after running? / दौड़ने के बाद व्यक्ति तेजी से साँस क्यों लेता है?", opts: ["More oxygen is required by muscles / मांसपेशियों को अधिक ऑक्सीजन की आवश्यकता होती है","The lungs become smaller / फेफड़े छोटे हो जाते हैं","The heart stops pumping / हृदय रक्त पंप करना बंद कर देता है","Less energy is needed / कम ऊर्जा की आवश्यकता होती है"], ans: 0},
+
+            {q: "Q4. Which component of blood helps in clotting when a cut occurs? / चोट लगने पर रक्त का थक्का बनाने में रक्त का कौन-सा घटक सहायता करता है?", opts: ["Red blood cells / लाल रक्त कोशिकाएँ","White blood cells / श्वेत रक्त कोशिकाएँ","Platelets / प्लेटलेट्स","Plasma / प्लाज्मा"], ans: 2},
+
+            {q: "Q5. A plant's stem is cut in a ring-like manner removing a layer of tissue. Which movement of food is mainly affected? / किसी पौधे के तने से ऊतक की एक परत को चारों ओर से हटा दिया जाता है। भोजन के परिवहन की कौन-सी प्रक्रिया मुख्य रूप से प्रभावित होगी?", opts: ["Movement of water through xylem / जाइलम द्वारा जल का परिवहन","Movement of food through phloem / फ्लोएम द्वारा भोजन का परिवहन","Absorption by roots / जड़ों द्वारा अवशोषण","Photosynthesis / प्रकाश संश्लेषण"], ans: 1},
+
+            {q: "Q6. Which of the following is NOT a physical change? / निम्नलिखित में से कौन-सा भौतिक परिवर्तन नहीं है?", opts: ["Melting of ice / बर्फ का पिघलना","Dissolving sugar in water / जल में चीनी का घुलना","Rusting of iron / लोहे में जंग लगना","Folding of paper / कागज को मोड़ना"], ans: 2},
+
+            {q: "Q7. A substance turns blue litmus red. Which conclusion is correct? / कोई पदार्थ नीले लिटमस को लाल कर देता है। इससे कौन-सा निष्कर्ष सही है?", opts: ["It is acidic / यह अम्लीय है","It is basic / यह क्षारीय है","It is neutral / यह उदासीन है","It must be a salt / यह निश्चित रूप से लवण है"], ans: 0},
+
+            {q: "Q8. A farmer adds lime to acidic soil. Why? / एक किसान अम्लीय मिट्टी में चूना मिलाता है। क्यों?", opts: ["To increase acidity / अम्लीयता बढ़ाने के लिए","To neutralise excess acidity / अधिक अम्लीयता को उदासीन करने के लिए","To increase water content / जल की मात्रा बढ़ाने के लिए","To kill all plants / सभी पौधों को नष्ट करने के लिए"], ans: 1},
+
+            {q: "Q9. Which property makes copper suitable for making electric wires? / कौन-सा गुण तांबे को विद्युत तार बनाने के लिए उपयुक्त बनाता है?", opts: ["It is a poor conductor / यह कुचालक है","It is a good conductor and ductile / यह सुचालक और तन्य है","It is very brittle / यह बहुत भंगुर है","It is a non-metal / यह अधातु है"], ans: 1},
+
+            {q: "Q10. Which gas is necessary for burning? / जलने की प्रक्रिया के लिए कौन-सी गैस आवश्यक है?", opts: ["Nitrogen / नाइट्रोजन","Oxygen / ऑक्सीजन","Carbon dioxide / कार्बन डाइऑक्साइड","Hydrogen / हाइड्रोजन"], ans: 1},
+
+            {q: "Q11. A candle flame goes out when covered with a glass jar because: / काँच के जार से मोमबत्ती की लौ को ढकने पर लौ बुझ जाती है क्योंकि:", opts: ["Carbon dioxide disappears / कार्बन डाइऑक्साइड गायब हो जाती है","Oxygen inside the jar gets used up / जार के अंदर की ऑक्सीजन समाप्त हो जाती है","Wax becomes colder only / केवल मोम ठंडा हो जाता है","Nitrogen starts burning / नाइट्रोजन जलने लगती है"], ans: 1},
+
+            {q: "Q12. Which situation produces the greatest friction? / निम्नलिखित में किस स्थिति में घर्षण सबसे अधिक होगा?", opts: ["A box sliding on a smooth floor / चिकने फर्श पर फिसलता डिब्बा","A box sliding on a rough floor / खुरदरे फर्श पर फिसलता डिब्बा","A ball rolling on a smooth surface / चिकनी सतह पर लुढ़कती गेंद","A wheel moving on a road / सड़क पर चलता पहिया"], ans: 1},
+
+            {q: "Q13. Why are the soles of shoes provided with grooves? / जूतों के तलवों में खांचे क्यों बनाए जाते हैं?", opts: ["To reduce friction / घर्षण कम करने के लिए","To increase friction / घर्षण बढ़ाने के लिए","To reduce weight / भार कम करने के लिए","To increase temperature / तापमान बढ़ाने के लिए"], ans: 1},
+
+            {q: "Q14. A force of 10 N acts on an object towards east and another force of 6 N acts towards west. What is the net force? / किसी वस्तु पर पूर्व दिशा में 10 N और पश्चिम दिशा में 6 N का बल लगता है। परिणामी बल कितना होगा?", opts: ["16 N east / 16 N पूर्व","4 N east / 4 N पूर्व","4 N west / 4 N पश्चिम","60 N east / 60 N पूर्व"], ans: 1},
+
+            {q: "Q15. Which force allows us to write with a pencil on paper? / कौन-सा बल हमें कागज पर पेंसिल से लिखने में सहायता करता है?", opts: ["Gravitational force / गुरुत्वाकर्षण बल","Magnetic force / चुंबकीय बल","Frictional force / घर्षण बल","Electrostatic force / स्थिर वैद्युत बल"], ans: 2},
+
+            {q: "Q16. Sound is produced when an object: / ध्वनि तब उत्पन्न होती है जब कोई वस्तु:", opts: ["Melts / पिघलती है","Vibrates / कंपन करती है","Becomes cold / ठंडी होती है","Stops moving / चलना बंद करती है"], ans: 1},
+
+            {q: "Q17. Two sounds have the same loudness but different pitch. Which property is different? / दो ध्वनियों की प्रबलता समान है लेकिन पिच अलग है। कौन-सा गुण अलग होगा?", opts: ["Frequency / आवृत्ति","Amplitude / आयाम","Speed only / केवल चाल","Medium / माध्यम"], ans: 0},
+
+            {q: "Q18. A student sees his face in a plane mirror. If he moves 2 m towards the mirror, how much does the distance between him and his image decrease? / एक विद्यार्थी समतल दर्पण में अपना प्रतिबिंब देखता है। यदि वह दर्पण की ओर 2 m बढ़ता है, तो विद्यार्थी और उसके प्रतिबिंब के बीच की दूरी कितनी कम होगी?", opts: ["1 m / 1 मीटर","2 m / 2 मीटर","4 m / 4 मीटर","6 m / 6 मीटर"], ans: 2},
+
+            {q: "Q19. Which mirror is used by dentists to see an enlarged image of teeth? / दाँतों का बड़ा प्रतिबिंब देखने के लिए दंत चिकित्सक किस दर्पण का उपयोग करते हैं?", opts: ["Plane mirror / समतल दर्पण","Convex mirror / उत्तल दर्पण","Concave mirror / अवतल दर्पण","None / कोई नहीं"], ans: 2},
+
+            {q: "Q20. Which part of a cell controls most of its activities? / कोशिका का कौन-सा भाग उसकी अधिकांश गतिविधियों को नियंत्रित करता है?", opts: ["Cell wall / कोशिका भित्ति","Nucleus / केंद्रक","Vacuole / रिक्तिका","Cytoplasm / कोशिकाद्रव्य"], ans: 1},
+
+            {q: "Q21. Which structure is present in a plant cell but absent in an animal cell? / कौन-सी संरचना पादप कोशिका में होती है लेकिन जंतु कोशिका में नहीं होती?", opts: ["Cell membrane / कोशिका झिल्ली","Cytoplasm / कोशिकाद्रव्य","Cell wall / कोशिका भित्ति","Nucleus / केंद्रक"], ans: 2},
+
+            {q: "Q22. A seed fails to germinate even though it gets water and suitable temperature. What may be missing? / एक बीज को जल और उपयुक्त तापमान दोनों मिल रहे हैं फिर भी वह अंकुरित नहीं होता। क्या कमी हो सकती है?", opts: ["Oxygen / ऑक्सीजन","Soil only / केवल मिट्टी","Sunlight is always necessary / सूर्य का प्रकाश हमेशा आवश्यक है","Carbon dioxide only / केवल कार्बन डाइऑक्साइड"], ans: 0},
+
+            {q: "Q23. Which method is most suitable for separating iron filings from sand? / रेत से लोहे के बुरादे को अलग करने के लिए कौन-सी विधि सबसे उपयुक्त है?", opts: ["Filtration / निस्यंदन","Evaporation / वाष्पीकरण","Magnetic separation / चुंबकीय पृथक्करण","Sedimentation / अवसादन"], ans: 2},
+
+            {q: "Q24. Which method can be used to obtain salt from salt solution? / नमक के विलयन से नमक प्राप्त करने के लिए कौन-सी विधि उपयोग की जा सकती है?", opts: ["Filtration / निस्यंदन","Evaporation / वाष्पीकरण","Magnetic separation / चुंबकीय पृथक्करण","Sieving / छनाई"], ans: 1},
+
+            {q: "Q25. Which of the following is a renewable source of energy? / निम्नलिखित में से कौन ऊर्जा का नवीकरणीय स्रोत है?", opts: ["Coal / कोयला","Petroleum / पेट्रोलियम","Natural gas / प्राकृतिक गैस","Solar energy / सौर ऊर्जा"], ans: 3},
+
+            {q: "Q26. Which microorganism is used in the preparation of bread? / ब्रेड बनाने में किस सूक्ष्मजीव का उपयोग किया जाता है?", opts: ["Yeast / यीस्ट","Lactobacillus / लैक्टोबैसिलस","Virus / वायरस","Algae / शैवाल"], ans: 0},
+
+            {q: "Q27. Why is pasteurisation used for milk? / दूध के लिए पाश्चुरीकरण का उपयोग क्यों किया जाता है?", opts: ["To remove all water / सारा जल हटाने के लिए","To kill harmful microorganisms / हानिकारक सूक्ष्मजीवों को नष्ट करने के लिए","To convert milk into curd / दूध को दही में बदलने के लिए","To increase fat only / केवल वसा बढ़ाने के लिए"], ans: 1},
+
+            {q: "Q28. Which disease is caused by a deficiency of iodine? / आयोडीन की कमी से कौन-सा रोग होता है?", opts: ["Scurvy / स्कर्वी","Goitre / घेंघा","Rickets / रिकेट्स","Beriberi / बेरी-बेरी"], ans: 1},
+
+            {q: "Q29. Which organ filters waste from the blood and forms urine? / कौन-सा अंग रक्त से अपशिष्ट पदार्थों को छानकर मूत्र बनाता है?", opts: ["Heart / हृदय","Kidney / गुर्दा","Liver / यकृत","Stomach / आमाशय"], ans: 1},
+
+            {q: "Q30. Which of the following is an example of asexual reproduction? / निम्नलिखित में से कौन अलैंगिक प्रजनन का उदाहरण है?", opts: ["Reproduction in humans / मनुष्यों में प्रजनन","Reproduction through seeds / बीजों द्वारा प्रजनन","Budding in yeast / यीस्ट में मुकुलन","Fertilisation / निषेचन"], ans: 2},
+
+            {q: "Q31. Which of the following is a characteristic of adolescence? / निम्नलिखित में से कौन किशोरावस्था की विशेषता है?", opts: ["No physical changes occur / कोई शारीरिक परिवर्तन नहीं होता","Rapid physical and hormonal changes occur / तीव्र शारीरिक और हार्मोनल परिवर्तन होते हैं","Growth completely stops / वृद्धि पूरी तरह रुक जाती है","Digestion stops / पाचन रुक जाता है"], ans: 1},
+
+            {q: "Q32. Which gland produces the hormone insulin? / कौन-सी ग्रंथि इंसुलिन हार्मोन का उत्पादन करती है?", opts: ["Thyroid / थायरॉयड","Pancreas / अग्न्याशय","Pituitary / पीयूष","Adrenal / अधिवृक्क"], ans: 1},
+
+            {q: "Q33. Which gas is mainly responsible for the depletion of the ozone layer? / ओजोन परत के क्षरण के लिए मुख्य रूप से कौन-से पदार्थ जिम्मेदार माने जाते हैं?", opts: ["CFCs / CFCs","Oxygen / ऑक्सीजन","Nitrogen / नाइट्रोजन","Water vapour / जलवाष्प"], ans: 0},
+
+            {q: "Q34. A metal reacts with oxygen to form a substance that turns red litmus blue. The substance is likely to be: / एक धातु ऑक्सीजन से अभिक्रिया करके ऐसा पदार्थ बनाती है जो लाल लिटमस को नीला कर देता है। वह पदार्थ संभवतः है:", opts: ["Acidic oxide / अम्लीय ऑक्साइड","Basic oxide / क्षारीय ऑक्साइड","Neutral gas / उदासीन गैस","Salt only / केवल लवण"], ans: 1},
+
+            {q: "Q35. Why do we see lightning before hearing thunder? / हमें बिजली की चमक पहले दिखाई देती है और गरज बाद में सुनाई देती है। क्यों?", opts: ["Light travels faster than sound / प्रकाश ध्वनि से अधिक तेज चलता है","Sound travels faster than light / ध्वनि प्रकाश से अधिक तेज चलती है","Lightning occurs after thunder / बिजली गरज के बाद होती है","Both travel at the same speed / दोनों समान गति से चलते हैं"], ans: 0},
+
+            // ==================== SOCIAL SCIENCE 36-70 ====================
+
+            {q: "Q36. Who founded the Mughal Empire in India? / भारत में मुगल साम्राज्य की स्थापना किसने की?", opts: ["Akbar / अकबर","Babur / बाबर","Humayun / हुमायूँ","Shah Jahan / शाहजहाँ"], ans: 1},
+
+            {q: "Q37. Why was the Battle of Plassey important for the British? / प्लासी का युद्ध अंग्रेजों के लिए महत्वपूर्ण क्यों था?", opts: ["It ended Mughal rule completely / इससे मुगल शासन पूरी तरह समाप्त हो गया","It helped the East India Company gain political influence in Bengal / इससे ईस्ट इंडिया कंपनी को बंगाल में राजनीतिक प्रभाव प्राप्त करने में सहायता मिली","It gave the British control over Punjab / इससे अंग्रेजों को पंजाब पर नियंत्रण मिला","It ended the Revolt of 1857 / इससे 1857 का विद्रोह समाप्त हुआ"], ans: 1},
+
+            {q: "Q38. The Permanent Settlement was introduced mainly in: / स्थायी बंदोबस्त मुख्य रूप से कहाँ लागू किया गया था?", opts: ["Bengal / बंगाल","Punjab / पंजाब","Bombay / बॉम्बे","Madras only / केवल मद्रास"], ans: 0},
+
+            {q: "Q39. Why did many Indian rulers lose their kingdoms under the Doctrine of Lapse? / हड़प नीति के अंतर्गत कई भारतीय शासकों ने अपने राज्य क्यों खो दिए?", opts: ["They refused to pay taxes / उन्होंने कर देने से इनकार किया","The British annexed states without a natural heir / अंग्रेजों ने प्राकृतिक उत्तराधिकारी न होने पर राज्यों को अपने अधीन कर लिया","They lost wars against France / वे फ्रांस से युद्ध हार गए","They joined the Revolt of 1857 / वे 1857 के विद्रोह में शामिल हो गए"], ans: 1},
+
+            {q: "Q40. What was one major cause of the Revolt of 1857? / 1857 के विद्रोह का एक प्रमुख कारण क्या था?", opts: ["Introduction of railways only / केवल रेलवे की शुरुआत","Discontent among soldiers and rulers along with political and social causes / सैनिकों और शासकों में असंतोष तथा राजनीतिक और सामाजिक कारण","Discovery of coal / कोयले की खोज","Formation of the Indian National Congress / भारतीय राष्ट्रीय कांग्रेस की स्थापना"], ans: 1},
+
+            {q: "Q41. Which reformer worked against the practice of Sati? / सती प्रथा के विरुद्ध किस समाज सुधारक ने कार्य किया?", opts: ["Raja Rammohun Roy / राजा राममोहन राय","Bal Gangadhar Tilak / बाल गंगाधर तिलक","Bhagat Singh / भगत सिंह","Dadabhai Naoroji / दादाभाई नौरोजी"], ans: 0},
+
+            {q: "Q42. Why did the British introduce English education in India? / अंग्रेजों ने भारत में अंग्रेजी शिक्षा को बढ़ावा क्यों दिया?", opts: ["Only to teach Indian languages / केवल भारतीय भाषाएँ सिखाने के लिए","To create a class of educated Indians useful to the colonial administration / औपनिवेशिक प्रशासन के लिए उपयोगी शिक्षित भारतीयों का वर्ग तैयार करने के लिए","To end all schools / सभी विद्यालय बंद करने के लिए","To promote village industries / ग्राम उद्योगों को बढ़ावा देने के लिए"], ans: 1},
+
+            {q: "Q43. The Indian National Congress was founded in: / भारतीय राष्ट्रीय कांग्रेस की स्थापना कब हुई?", opts: ["1857 / 1857","1885 / 1885","1905 / 1905","1942 / 1942"], ans: 1},
+
+            {q: "Q44. The Non-Cooperation Movement was launched under the leadership of: / असहयोग आंदोलन किसके नेतृत्व में शुरू किया गया था?", opts: ["Mahatma Gandhi / महात्मा गांधी","Subhas Chandra Bose / सुभाष चंद्र बोस","Sardar Patel / सरदार पटेल","Jawaharlal Nehru alone / केवल जवाहरलाल नेहरू"], ans: 0},
+
+            {q: "Q45. The Quit India Movement was launched in: / भारत छोड़ो आंदोलन कब शुरू किया गया था?", opts: ["1919 / 1919","1930 / 1930","1942 / 1942","1947 / 1947"], ans: 2},
+
+            {q: "Q46. Which fundamental principle means that all citizens are equal before law? / कौन-सा मौलिक सिद्धांत बताता है कि कानून की नजर में सभी नागरिक समान हैं?", opts: ["Equality / समानता","Monarchy / राजतंत्र","Colonialism / उपनिवेशवाद","Dictatorship / तानाशाही"], ans: 0},
+
+            {q: "Q47. Why is an independent judiciary important in a democracy? / लोकतंत्र में स्वतंत्र न्यायपालिका क्यों महत्वपूर्ण है?", opts: ["It makes all laws itself / यह स्वयं सभी कानून बनाती है","It can protect citizens' rights and interpret laws independently / यह नागरिकों के अधिकारों की रक्षा और कानूनों की स्वतंत्र व्याख्या कर सकती है","It conducts elections only / यह केवल चुनाव कराती है","It collects taxes / यह कर एकत्र करती है"], ans: 1},
+
+            {q: "Q48. Which institution is responsible for making laws at the Union level? / संघ स्तर पर कानून बनाने के लिए कौन-सी संस्था जिम्मेदार है?", opts: ["Parliament / संसद","Supreme Court / सर्वोच्च न्यायालय","Police / पुलिस","Election Commission / निर्वाचन आयोग"], ans: 0},
+
+            {q: "Q49. The Indian Parliament consists of: / भारतीय संसद में शामिल हैं:", opts: ["Lok Sabha only / केवल लोकसभा","Rajya Sabha only / केवल राज्यसभा","Lok Sabha and Rajya Sabha / लोकसभा और राज्यसभा","Supreme Court and High Courts / सर्वोच्च न्यायालय और उच्च न्यायालय"], ans: 2},
+
+            {q: "Q50. Which level of government mainly looks after matters such as sanitation and street lighting in a town? / नगर में स्वच्छता और सड़क प्रकाश जैसी स्थानीय सुविधाओं का मुख्य रूप से ध्यान कौन-सी सरकार रखती है?", opts: ["Central Government / केंद्र सरकार","State Government / राज्य सरकार","Local Government / स्थानीय सरकार","Supreme Court / सर्वोच्च न्यायालय"], ans: 2},
+
+            {q: "Q51. Universal adult franchise means: / सार्वभौमिक वयस्क मताधिकार का अर्थ है:", opts: ["Only educated people can vote / केवल शिक्षित लोग मतदान कर सकते हैं","All adult citizens meeting legal conditions can vote / कानूनी शर्तें पूरी करने वाले सभी वयस्क नागरिक मतदान कर सकते हैं","Only government employees can vote / केवल सरकारी कर्मचारी मतदान कर सकते हैं","Only men can vote / केवल पुरुष मतदान कर सकते हैं"], ans: 1},
+
+            {q: "Q52. Which imaginary line divides the Earth into Northern and Southern Hemispheres? / कौन-सी काल्पनिक रेखा पृथ्वी को उत्तरी और दक्षिणी गोलार्ध में बाँटती है?", opts: ["Prime Meridian / प्रधान मध्याह्न रेखा","Equator / भूमध्य रेखा","Tropic of Cancer / कर्क रेखा","Tropic of Capricorn / मकर रेखा"], ans: 1},
+
+            {q: "Q53. The Prime Meridian passes through: / प्रधान मध्याह्न रेखा किस स्थान से होकर गुजरती है?", opts: ["Greenwich / ग्रीनविच","Delhi / दिल्ली","Mumbai / मुंबई","New York / न्यूयॉर्क"], ans: 0},
+
+            {q: "Q54. If it is 12 noon at Greenwich, what is the approximate local time at a place 30° east longitude? / यदि ग्रीनविच पर दोपहर 12 बजे हैं, तो 30° पूर्वी देशांतर पर स्थित स्थान का लगभग स्थानीय समय क्या होगा?", opts: ["10 a.m. / सुबह 10 बजे","12 noon / दोपहर 12 बजे","2 p.m. / दोपहर 2 बजे","4 p.m. / शाम 4 बजे"], ans: 2},
+
+            {q: "Q55. Which layer of the atmosphere contains most of the weather phenomena? / वायुमंडल की किस परत में अधिकांश मौसम संबंधी घटनाएँ होती हैं?", opts: ["Troposphere / क्षोभमंडल","Stratosphere / समतापमंडल","Mesosphere / मध्यमंडल","Thermosphere / तापमंडल"], ans: 0},
+
+            {q: "Q56. Why are coastal areas generally cooler in summer than inland areas? / तटीय क्षेत्र सामान्यतः गर्मियों में आंतरिक क्षेत्रों की तुलना में ठंडे क्यों रहते हैं?", opts: ["Sea water heats and cools more slowly / समुद्री जल धीरे गर्म और धीरे ठंडा होता है","There is no sunlight near the coast / तट के पास सूर्य का प्रकाश नहीं होता","Mountains block all heat / पर्वत सारी गर्मी रोक देते हैं","Coastal areas receive no wind / तटीय क्षेत्रों में हवा नहीं चलती"], ans: 0},
+
+            {q: "Q57. Which type of soil is rich in humus and suitable for many crops? / कौन-सी मिट्टी ह्यूमस से समृद्ध होती है और अनेक फसलों के लिए उपयुक्त होती है?", opts: ["Loamy soil / दोमट मिट्टी","Rocky soil / पथरीली मिट्टी","Desert sand / मरुस्थलीय रेत","Gravel / बजरी"], ans: 0},
+
+            {q: "Q58. Black soil is especially suitable for: / काली मिट्टी विशेष रूप से किसके लिए उपयुक्त है?", opts: ["Cotton / कपास","Tea / चाय","Jute / जूट","Coconut / नारियल"], ans: 0},
+
+            {q: "Q59. Which human activity is most directly responsible for deforestation? / निम्नलिखित में से कौन-सी मानवीय गतिविधि वनों की कटाई के लिए सबसे सीधे जिम्मेदार है?", opts: ["Large-scale clearing of forests for agriculture / कृषि के लिए बड़े पैमाने पर वनों की सफाई","Rainfall / वर्षा","Natural soil formation / प्राकृतिक मृदा निर्माण","Ocean currents / महासागरीय धाराएँ"], ans: 0},
+
+            {q: "Q60. Which resource is non-renewable? / निम्नलिखित में से कौन-सा संसाधन अनवीकरणीय है?", opts: ["Solar energy / सौर ऊर्जा","Wind energy / पवन ऊर्जा","Coal / कोयला","Tidal energy / ज्वारीय ऊर्जा"], ans: 2},
+
+            {q: "Q61. Which sector converts raw materials into finished goods? / कौन-सा क्षेत्र कच्चे माल को तैयार वस्तुओं में बदलता है?", opts: ["Primary sector / प्राथमिक क्षेत्र","Secondary sector / द्वितीयक क्षेत्र","Tertiary sector / तृतीयक क्षेत्र","None / कोई नहीं"], ans: 1},
+
+            {q: "Q62. Agriculture, fishing and mining are generally classified as: / कृषि, मछली पालन और खनन सामान्यतः किस क्षेत्र में आते हैं?", opts: ["Primary activities / प्राथमिक गतिविधियाँ","Secondary activities / द्वितीयक गतिविधियाँ","Tertiary activities / तृतीयक गतिविधियाँ","Information activities / सूचना गतिविधियाँ"], ans: 0},
+
+            {q: "Q63. Banking, transport and communication belong mainly to: / बैंकिंग, परिवहन और संचार मुख्यतः किस क्षेत्र में आते हैं?", opts: ["Primary sector / प्राथमिक क्षेत्र","Secondary sector / द्वितीयक क्षेत्र","Tertiary sector / तृतीयक क्षेत्र","Agricultural sector / कृषि क्षेत्र"], ans: 2},
+
+            {q: "Q64. Why are public facilities important? / सार्वजनिक सुविधाएँ क्यों महत्वपूर्ण हैं?", opts: ["They benefit only rich people / वे केवल अमीर लोगों को लाभ पहुँचाती हैं","They provide essential services such as water, sanitation and healthcare / वे जल, स्वच्छता और स्वास्थ्य जैसी आवश्यक सेवाएँ उपलब्ध कराती हैं","They increase private profits only / वे केवल निजी लाभ बढ़ाती हैं","They are used only during elections / उनका उपयोग केवल चुनाव के समय होता है"], ans: 1},
+
+            {q: "Q65. What is the main purpose of the Public Distribution System? / सार्वजनिक वितरण प्रणाली का मुख्य उद्देश्य क्या है?", opts: ["To provide essential food items at affordable prices / आवश्यक खाद्य पदार्थों को उचित मूल्य पर उपलब्ध कराना","To export all food grains / सभी खाद्यान्नों का निर्यात करना","To increase luxury goods / विलासिता की वस्तुएँ बढ़ाना","To stop farming / खेती रोकना"], ans: 0},
+
+            {q: "Q66. Which movement was launched in response to the salt law? / नमक कानून के विरोध में कौन-सा आंदोलन प्रमुख रूप से जुड़ा था?", opts: ["Civil Disobedience Movement / सविनय अवज्ञा आंदोलन","Non-Cooperation Movement / असहयोग आंदोलन","Quit India Movement / भारत छोड़ो आंदोलन","Swadeshi Movement / स्वदेशी आंदोलन"], ans: 0},
+
+            {q: "Q67. The Dandi March was led by: / दांडी मार्च का नेतृत्व किसने किया था?", opts: ["Mahatma Gandhi / महात्मा गांधी","Jawaharlal Nehru / जवाहरलाल नेहरू","Sardar Patel / सरदार पटेल","Subhas Chandra Bose / सुभाष चंद्र बोस"], ans: 0},
+
+            {q: "Q68. Why did the British East India Company try to increase land revenue? / ब्रिटिश ईस्ट इंडिया कंपनी ने भू-राजस्व बढ़ाने का प्रयास क्यों किया?", opts: ["To increase its income / अपनी आय बढ़ाने के लिए","To help peasants / किसानों की सहायता के लिए","To reduce trade / व्यापार कम करने के लिए","To develop forests / वनों का विकास करने के लिए"], ans: 0},
+
+            {q: "Q69. Which institution settles disputes and protects the law and Constitution? / कौन-सी संस्था विवादों का निपटारा करती है और कानून तथा संविधान की रक्षा करती है?", opts: ["Judiciary / न्यायपालिका","Legislature / विधायिका","Executive / कार्यपालिका","Election Commission / निर्वाचन आयोग"], ans: 0},
+
+            {q: "Q70. What is the main feature of a democratic government? / लोकतांत्रिक सरकार की मुख्य विशेषता क्या है?", opts: ["Power is inherited / सत्ता विरासत में मिलती है","People choose their representatives / जनता अपने प्रतिनिधियों को चुनती है","One person rules permanently / एक व्यक्ति स्थायी रूप से शासन करता है","Military controls elections / सेना चुनाव नियंत्रित करती है"], ans: 1},
+
+            // ==================== MATHEMATICS 71-90 ====================
+
+            {q: "Q71. यदि किसी संख्या का 3/4 भाग 36 है, तो वह संख्या क्या है? / If 3/4 of a number is 36, what is the number?", opts: ["42","48","54","60"], ans: 1},
+
+            {q: "Q72. किसी संख्या में 20% की वृद्धि करने पर वह 240 हो जाती है। मूल संख्या क्या थी? / A number is increased by 20% and becomes 240. What was the original number?", opts: ["180","200","220","230"], ans: 1},
+
+            {q: "Q73. यदि x/3 + 5 = 11, तो x का मान है: / If x/3 + 5 = 11, then x is:", opts: ["12","15","18","21"], ans: 2},
+
+            {q: "Q74. एक कक्षा में लड़कों और लड़कियों का अनुपात 3:2 है। यदि कुल 25 विद्यार्थी हैं, तो लड़कों की संख्या कितनी है? / The ratio of boys to girls in a class is 3:2. If there are 25 students in total, how many boys are there?", opts: ["10","12","15","18"], ans: 2},
+
+            {q: "Q75. एक दुकानदार किसी वस्तु को ₹400 में खरीदकर ₹460 में बेचता है। उसका लाभ प्रतिशत कितना है? / A shopkeeper buys an article for ₹400 and sells it for ₹460. What is the profit percentage?", opts: ["10%","12%","15%","20%"], ans: 2},
+
+            {q: "Q76. पाँच संख्याओं का औसत 18 है। यदि चार संख्याएँ 12, 16, 20 और 24 हैं, तो पाँचवीं संख्या क्या है? / The average of five numbers is 18. If four of the numbers are 12, 16, 20 and 24, the fifth number is:", opts: ["16","18","20","22"], ans: 1},
+
+            {q: "Q77. निम्नलिखित में से 2³ × 2² के बराबर क्या है? / Which of the following is equal to 2³ × 2²?", opts: ["2⁵","2⁶","4⁵","2"], ans: 0},
+
+            {q: "Q78. एक वर्ग का क्षेत्रफल 196 cm² है। उसका परिमाप कितना होगा? / A square has area 196 cm². What is its perimeter?", opts: ["28 cm","42 cm","56 cm","64 cm"], ans: 2},
+
+            {q: "Q79. एक आयताकार मैदान की लंबाई 20 m और चौड़ाई 15 m है। चारों ओर अंदर की तरफ 1 m चौड़ा रास्ता बनाया जाता है। रास्ते का क्षेत्रफल कितना है? / A rectangular field is 20 m long and 15 m wide. A path of width 1 m is made inside along all four sides. What is the area of the path?", opts: ["60 m²","64 m²","66 m²","70 m²"], ans: 2},
+
+            {q: "Q80. एक त्रिभुज के कोणों का अनुपात 2:3:4 है। सबसे बड़ा कोण है: / The angles of a triangle are in the ratio 2:3:4. The largest angle is:", opts: ["60°","70°","80°","90°"], ans: 2},
+
+            {q: "Q81. यदि दो पूरक कोणों का अनुपात 2:3 है, तो बड़ा कोण है: / If two complementary angles are in the ratio 2:3, the larger angle is:", opts: ["36°","45°","54°","60°"], ans: 2},
+
+            {q: "Q82. 875 में सबसे छोटी कौन-सी संख्या जोड़ी जाए कि वह 9 से विभाज्य हो जाए? / What is the smallest number that must be added to 875 to make it divisible by 9?", opts: ["1","2","3","4"], ans: 2},
+
+            {q: "Q83. किसी संख्या को 5 से विभाजित करने पर शेषफल 3 आता है। निम्नलिखित में से कौन-सी वह संख्या हो सकती है? / A number leaves remainder 3 when divided by 5. Which of the following can be that number?", opts: ["42","43","45","48"], ans: 1},
+
+            {q: "Q84. यदि किसी वर्ग की भुजा दोगुनी कर दी जाए, तो उसका क्षेत्रफल हो जाएगा: / If the side of a square is doubled, its area becomes:", opts: ["2 times","3 times","4 times","8 times"], ans: 2},
+
+            {q: "Q85. 0.25 × 0.4 का मान है: / The value of 0.25 × 0.4 is:", opts: ["0.01","0.1","1","10"], ans: 1},
+
+            {q: "Q86. यदि a:b = 4:5 और b:c = 10:3, तो a:c है: / If a:b = 4:5 and b:c = 10:3, then a:c is:", opts: ["4:3","8:3","5:3","2:3"], ans: 1},
+
+            {q: "Q87. एक ट्रेन 3 घंटे में 180 km की दूरी तय करती है। उसी गति से 5 घंटे में कितनी दूरी तय करेगी? / A train travels 180 km in 3 hours. At the same speed, how far will it travel in 5 hours?", opts: ["240 km","270 km","300 km","360 km"], ans: 2},
+
+            {q: "Q88. यदि 5x - 7 = 28, तो x का मान है: / If 5x - 7 = 28, then x is:", opts: ["5","6","7","8"], ans: 2},
+
+            {q: "Q89. एक घन का आयतन 125 cm³ है। उसकी भुजा की लंबाई क्या है? / A cube has a volume of 125 cm³. What is the length of its side?", opts: ["4 cm","5 cm","6 cm","25 cm"], ans: 1},
+
+            {q: "Q90. एक निष्पक्ष पासे को एक बार फेंकने पर सम संख्या आने की प्रायिकता है: / The probability of getting an even number when a fair die is thrown once is:", opts: ["1/6","1/3","1/2","2/3"], ans: 2}
+        ]; 
+ 
+        // ====== STATE ====== 
+        let currentQuestion = 0; 
+        let answers = Array(90).fill(null); 
+        let marked = Array(90).fill(false); 
+        let timeLeft = 90 * 60; 
+        let timerInterval; 
+        let warningShown = false; 
+        let examStarted = false; 
+ 
+        // Start Exam Function 
+        function startExam() { 
+            document.getElementById('startScreen').style.display = 'none'; 
+            document.getElementById('examHeader').style.display = 'flex'; 
+            document.getElementById('examContainer').style.display = 'flex'; 
+            document.getElementById('toggleBtn').style.display = 'flex'; 
+            examStarted = true; 
+            init(); 
+        } 
+ 
+        function init() { 
+            createPalette(); 
+            loadQuestion(0); 
+            startTimer(); 
+        } 
+ 
+        function createPalette() { 
+            for (let i = 0; i < 35; i++) createPaletteItem(i, 'palette1'); 
+            for (let i = 35; i < 70; i++) createPaletteItem(i, 'palette2'); 
+            for (let i = 70; i < 90; i++) createPaletteItem(i, 'palette3'); 
+        } 
+ 
+        function createPaletteItem(index, paletteId) { 
+            const item = document.createElement('div'); 
+            item.className = 'palette-item'; 
+            item.textContent = index + 1; 
+            item.id = 'q' + index; 
+            item.onclick = () => { 
+                loadQuestion(index); 
+                if (window.innerWidth <= 768) toggleSidebar(); 
+            }; 
+            document.getElementById(paletteId).appendChild(item); 
+        } 
+ 
+        function loadQuestion(index) { 
+            currentQuestion = index; 
+            const q = questions[index]; 
+            document.getElementById('questionText').textContent = q.q; 
+             
+            const optionsContainer = document.getElementById('optionsContainer'); 
+            optionsContainer.innerHTML = ''; 
+             
+            q.opts.forEach((opt, i) => { 
+                const optDiv = document.createElement('div'); 
+                optDiv.className = 'option'; 
+                if (answers[index] === i) optDiv.classList.add('selected'); 
+                optDiv.textContent = opt; 
+                optDiv.onclick = () => selectOption(i); 
+                optionsContainer.appendChild(optDiv); 
+            }); 
+ 
+            updateSectionInfo(); 
+            updatePalette(); 
+            updateSectionButtons(); 
+        } 
+ 
+        function updateSectionInfo() { 
+            const sections = [ 
+                {name: 'Section 1', range: '1-35', start: 0, end: 34}, 
+                {name: 'Section 2', range: '36-70', start: 35, end: 69}, 
+                {name: 'Section 3', range: '71-90', start: 70, end: 89} 
+            ]; 
+             
+            const section = sections.find(s => currentQuestion >= s.start && currentQuestion <= s.end); 
+            document.getElementById('sectionInfo').innerHTML = ` 
+                <h3>Section: ${section.name}</h3> 
+                <p>Questions ${section.range}</p> 
+            `; 
+        } 
+ 
+        function updateSectionButtons() { 
+            const buttons = document.querySelectorAll('.section-btn'); 
+            buttons.forEach((btn, i) => { 
+                btn.classList.remove('active'); 
+                if ((i === 0 && currentQuestion < 35) ||  
+                    (i === 1 && currentQuestion >= 35 && currentQuestion < 70) ||  
+                    (i === 2 && currentQuestion >= 70)) { 
+                    btn.classList.add('active'); 
+                } 
+            }); 
+        } 
+ 
+        function jumpToSection(startIndex) { 
+            loadQuestion(startIndex); 
+            if (window.innerWidth <= 768) toggleSidebar(); 
+        } 
+ 
+        function selectOption(index) { 
+            answers[currentQuestion] = index; 
+            updatePalette(); 
+            loadQuestion(currentQuestion); 
+        } 
+ 
+        function updatePalette() { 
+            for (let i = 0; i < 90; i++) { 
+                const item = document.getElementById('q' + i); 
+                item.className = 'palette-item'; 
+                 
+                if (i === currentQuestion) item.classList.add('current'); 
+                if (answers[i] !== null) item.classList.add('answered'); 
+                if (marked[i]) item.classList.add('marked'); 
+            } 
+             
+            const answeredCount = answers.filter(a => a !== null).length; 
+            const markedCount = marked.filter(m => m).length; 
+            document.getElementById('answeredCount').textContent = answeredCount; 
+            document.getElementById('markedCount').textContent = markedCount; 
+        } 
+ 
+        function previousQuestion() { 
+            if (currentQuestion > 0) loadQuestion(currentQuestion - 1); 
+        } 
+ 
+        function saveAndNext() { 
+            if (currentQuestion < 89) loadQuestion(currentQuestion + 1); 
+        } 
+ 
+        function markForReview() { 
+            marked[currentQuestion] = !marked[currentQuestion]; 
+            updatePalette(); 
+        } 
+ 
+        function clearResponse() { 
+            answers[currentQuestion] = null; 
+            updatePalette(); 
+            loadQuestion(currentQuestion); 
+        } 
+ 
+        function toggleSidebar() { 
+            document.getElementById('sidebar').classList.toggle('active'); 
+        } 
+ 
+        function startTimer() { 
+            timerInterval = setInterval(() => { 
+                timeLeft--; 
+                const mins = Math.floor(timeLeft / 60); 
+                const secs = timeLeft % 60; 
+                const timerEl = document.getElementById('timer'); 
+                timerEl.textContent = `${mins}:${secs.toString().padStart(2, '0')}`; 
+                 
+                if (timeLeft === 300 && !warningShown) { 
+                    timerEl.classList.add('warning'); 
+                    alert('⚠️ केवल 5 मिनट शेष हैं! / Only 5 minutes left!'); 
+                    warningShown = true; 
+                } 
+                 
+                if (timeLeft <= 0) { 
+                    clearInterval(timerInterval); 
+                    confirmSubmit(); 
+                } 
+            }, 1000); 
+        } 
+ 
+        function submitExam() { 
+            const answeredCount = answers.filter(a => a !== null).length; 
+            const unansweredCount = 90 - answeredCount; 
+            const markedCount = marked.filter(m => m).length; 
+             
+            document.getElementById('submitStats').innerHTML = ` 
+                <div class="stats"> 
+                    <div class="stat-item"><div class="stat-number">${answeredCount}</div><div class="stat-label">Answered</div></div> 
+                    <div class="stat-item"><div class="stat-number">${unansweredCount}</div><div class="stat-label">Not Answered</div></div> 
+                    <div class="stat-item"><div class="stat-number">${markedCount}</div><div class="stat-label">Marked</div></div> 
+                    <div class="stat-item"><div class="stat-number">${90 - unansweredCount}</div><div class="stat-label">Visited</div></div> 
+                </div> 
+            `; 
+            document.getElementById('submitModal').style.display = 'flex'; 
+        } 
+ 
+        function closeModal() { 
+            document.getElementById('submitModal').style.display = 'none'; 
+        } 
+ 
+        function confirmSubmit() { 
+            clearInterval(timerInterval); 
+            closeModal(); 
+             
+            let score = 0; 
+            for (let i = 0; i < 90; i++) { 
+                if (answers[i] === questions[i].ans) score++; 
+            } 
+             
+            const percentage = ((score / 90) * 100).toFixed(2); 
+            const answeredCount = answers.filter(a => a !== null).length; 
+            const correctCount = score; 
+            const wrongCount = answeredCount - score; 
+            const unansweredCount = 90 - answeredCount; 
+             
+            let grade = ''; 
+            if (percentage >= 90) grade = 'A+'; 
+            else if (percentage >= 80) grade = 'A'; 
+            else if (percentage >= 70) grade = 'B+'; 
+            else if (percentage >= 60) grade = 'B'; 
+            else if (percentage >= 50) grade = 'C'; 
+            else if (percentage >= 40) grade = 'D'; 
+            else grade = 'F'; 
+             
+            document.getElementById('resultContent').innerHTML = ` 
+                <div style="font-size: 48px; margin: 20px 0;">${grade}</div> 
+                <h3 style="font-size: 28px; color: #667eea; margin: 15px 0;">Score: ${score} / 90</h3> 
+                <h4 style="font-size: 20px; color: #48bb78; margin: 10px 0;">Percentage: ${percentage}%</h4> 
+                <div class="stats" style="margin: 25px 0;"> 
+                    <div class="stat-item" style="background: #48bb78; color: white;"> 
+                        <div class="stat-number" style="color: white;">${correctCount}</div> 
+                        <div class="stat-label" style="color: white;">Correct</div> 
+                    </div> 
+                    <div class="stat-item" style="background: #f56565; color: white;"> 
+                        <div class="stat-number" style="color: white;">${wrongCount}</div> 
+                        <div class="stat-label" style="color: white;">Wrong</div> 
+                    </div> 
+                    <div class="stat-item" style="background: #a0aec0; color: white;"> 
+                        <div class="stat-number" style="color: white;">${unansweredCount}</div> 
+                        <div class="stat-label" style="color: white;">Unanswered</div> 
+                    </div> 
+                    <div class="stat-item" style="background: #667eea; color: white;"> 
+                        <div class="stat-number" style="color: white;">${answeredCount}</div> 
+                        <div class="stat-label" style="color: white;">Attempted</div> 
+                    </div> 
+                </div> 
+                <p style="margin: 20px 0; font-size: 16px; line-height: 1.8;"> 
+                    ${percentage >= 40 ? '🎉 बधाई हो! आप पास हो गए हैं! / Congratulations! You Passed!' : '😔 आप फेल हो गए हैं। फिर से कोशिश करें! / You Failed. Try Again!'} 
+                </p> 
+            `; 
+            document.getElementById('resultModal').style.display = 'flex'; 
+        } 
+    </script> 
+</body> 
+</html>
+```

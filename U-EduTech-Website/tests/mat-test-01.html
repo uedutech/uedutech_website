@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAT TEST – 01 | NMMS MAT Model Test 01 | U EduTech</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#172033}
+.header{background:linear-gradient(135deg,#243b8f,#673ab7);color:#fff;padding:18px 22px;position:sticky;top:0;z-index:20;box-shadow:0 3px 12px #0002}
+.brand{font-size:14px;font-weight:700;letter-spacing:.5px}.title{font-size:24px;font-weight:800;margin:4px 0}
+.topbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.timer{background:#fff;color:#222;padding:10px 18px;border-radius:12px;font-size:22px;font-weight:800;min-width:125px;text-align:center}
+.container{max-width:1150px;margin:20px auto;padding:0 14px}
+.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 5px 20px #20306012;margin-bottom:16px}
+.instructions{border-left:5px solid #673ab7}
+.instructions h2{margin-top:0}.instructions li{margin:8px 0}
+.legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.legend span{padding:7px 10px;border-radius:8px;font-size:12px;font-weight:700}
+.l1{background:#fff;border:1px solid #ddd}.l2{background:#43a047;color:#fff}.l3{background:#7e57c2;color:#fff}.l4{background:#fb8c00;color:#fff}
+.start{border:0;background:linear-gradient(135deg,#ff6b35,#ff3d68);color:white;padding:13px 24px;border-radius:10px;font-size:16px;font-weight:800;cursor:pointer}
+.hidden{display:none!important}
+.layout{display:grid;grid-template-columns:1fr 250px;gap:16px}
+.qcard{background:#fff;border-radius:16px;padding:22px;box-shadow:0 5px 20px #20306012}
+.qhead{display:flex;justify-content:space-between;gap:12px;margin-bottom:15px}
+.qnum{font-weight:800;color:#673ab7}.markbtn{border:1px solid #673ab7;background:#fff;color:#673ab7;padding:8px 12px;border-radius:8px;font-weight:700;cursor:pointer}
+.question{font-size:18px;line-height:1.55;font-weight:700}
+.options{display:grid;gap:11px;margin-top:20px}
+.option{border:1.5px solid #d9deea;border-radius:11px;padding:13px;cursor:pointer;transition:.15s;background:#fff}
+.option:hover{border-color:#673ab7;background:#faf8ff}.option.selected{border-color:#43a047;background:#edf8ee}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+.nav button,.submitbtn{border:0;padding:12px 20px;border-radius:10px;font-weight:800;cursor:pointer}
+.prev{background:#e9edf5}.next{background:#673ab7;color:#fff}.submitbtn{background:#e53935;color:#fff;width:100%;margin-top:16px}
+.sidebar{background:#fff;border-radius:16px;padding:16px;height:max-content;position:sticky;top:112px;box-shadow:0 5px 20px #20306012}
+.sidebar h3{margin-top:0}.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+.pal{height:38px;border-radius:8px;border:1px solid #ddd;background:#fff;cursor:pointer;font-weight:700}.pal.answered{background:#43a047;color:#fff}.pal.marked{background:#fb8c00;color:#fff}.pal.both{background:#7e57c2;color:#fff}
+.stats{font-size:13px;line-height:1.8;margin-top:14px}
+.result{text-align:center}.score{font-size:44px;font-weight:900;color:#673ab7}.resultgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.rbox{background:#f4f6fb;border-radius:12px;padding:14px;font-weight:700}
+.review{margin-top:20px;text-align:left}.review-item{padding:13px;border:1px solid #e1e5ef;border-radius:10px;margin:9px 0}.correct{border-left:5px solid #43a047}.wrong{border-left:5px solid #e53935}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.sidebar{position:static;order:-1}.question{font-size:16px}.title{font-size:20px}.timer{font-size:18px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="topbar">
+    <div><div class="brand">U EDUTECH • NMMS PREPARATION</div><div class="title">MAT TEST – 01 | Mental Ability & Reasoning</div></div>
+    <div class="timer" id="timer">90:00</div>
+  </div>
+</header>
+
+<div class="container" id="intro">
+  <div class="card instructions">
+    <h2>NMMS MAT Model Test 01</h2>
+    <p><b>Mental Ability & Reasoning • 90 Questions • 90 Minutes • Bilingual</b></p>
+    <ul>
+      <li>प्रत्येक प्रश्न 1 अंक का है। / Each question carries 1 mark.</li>
+      <li>कोई Negative Marking नहीं है। / There is no negative marking.</li>
+      <li>सभी 90 प्रश्न हल करने के लिए 90 मिनट मिलेंगे। / You get 90 minutes.</li>
+      <li>आप किसी भी प्रश्न को Mark for Review कर सकते हैं।</li>
+      <li>समय पूरा होने पर test automatically submit हो जाएगा।</li>
+    </ul>
+    <div class="legend">
+      <span class="l1">Not Attempted</span><span class="l2">Answered</span>
+      <span class="l3">Answered & Marked</span><span class="l4">Marked, Not Answered</span>
+    </div>
+    <br><button class="start" onclick="startTest()">Start Test →</button>
+  </div>
+</div>
+
+<div class="container hidden" id="test">
+  <div class="layout">
+    <main>
+      <div class="qcard">
+        <div class="qhead"><div class="qnum" id="qnum"></div><button class="markbtn" id="markBtn" onclick="toggleMark()">☆ Mark for Review</button></div>
+        <div class="question" id="question"></div>
+        <div class="options" id="options"></div>
+        <div class="nav"><button class="nav prev" onclick="prevQ()">← Previous</button><button class="nav next" onclick="nextQ()">Next →</button></div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <h3>Question Palette</h3>
+      <div class="palette" id="palette"></div>
+      <div class="stats">
+        <div>🟢 Answered: <b id="answeredCount">0</b></div>
+        <div>🟣 Answered & Marked: <b id="bothCount">0</b></div>
+        <div>🟠 Marked: <b id="markedCount">0</b></div>
+        <div>⚪ Not Attempted: <b id="unattemptedCount">90</b></div>
+      </div>
+      <button class="submitbtn" onclick="confirmSubmit()">Submit Test</button>
+    </aside>
+  </div>
+</div>
+
+<div class="container hidden" id="result"></div>
+
+<script>
+const questions = [
+["Find the next number: 2, 5, 10, 17, 26, ?","अगली संख्या ज्ञात कीजिए: 2, 5, 10, 17, 26, ?","29","35","37","39","C"],
+["Find the next number: 3, 6, 12, 24, ?","अगली संख्या ज्ञात कीजिए: 3, 6, 12, 24, ?","36","42","48","54","C"],
+["Find the missing number: 7, 14, 28, 56, ?","लुप्त संख्या ज्ञात कीजिए: 7, 14, 28, 56, ?","84","98","112","120","C"],
+["Find the next number: 81, 27, 9, 3, ?","अगली संख्या ज्ञात कीजिए: 81, 27, 9, 3, ?","0","1","2","6","B"],
+["Find the odd one out: 16, 25, 36, 49, 63","विषम संख्या चुनिए: 16, 25, 36, 49, 63","16","36","49","63","D"],
+["Find the next letter: A, C, F, J, O, ?","अगला अक्षर ज्ञात कीजिए: A, C, F, J, O, ?","T","U","V","W","B"],
+["Find the next letter: B, E, H, K, ?","अगला अक्षर ज्ञात कीजिए: B, E, H, K, ?","M","N","O","P","C"],
+["If CAT is coded as DBU, how is DOG coded?","यदि CAT को DBU लिखा जाता है, तो DOG को कैसे लिखेंगे?","EPH","EOH","FPH","EPI","A"],
+["If PEN is coded as QFO, how is BOOK coded?","यदि PEN को QFO लिखा जाता है, तो BOOK को कैसे लिखेंगे?","CPPL","CPPM","CQPL","BPPL","A"],
+["If SOUTH is written as HTUOS, how is NORTH written?","यदि SOUTH को HTUOS लिखा जाता है, तो NORTH को कैसे लिखेंगे?","HTRON","HTRON","HRTON","NROTH","A"],
+["Book : Read :: Food : ?","Book : Read :: Food : ?","Cook","Eat","Buy","Serve","B"],
+["Bird : Nest :: Bee : ?","Bird : Nest :: Bee : ?","Cage","Hive","Hole","Tree","B"],
+["Doctor : Hospital :: Teacher : ?","Doctor : Hospital :: Teacher : ?","School","Market","Office","Court","A"],
+["Find the odd one out: Apple, Mango, Carrot, Banana","विषम शब्द चुनिए: Apple, Mango, Carrot, Banana","Apple","Mango","Carrot","Banana","C"],
+["Find the odd one out: January, March, May, June","विषम शब्द चुनिए: January, March, May, June","January","March","May","June","D"],
+["If A=1, B=2, ..., Z=26, find the value of BAD.","यदि A=1, B=2, ..., Z=26, तो BAD का मान ज्ञात कीजिए।","6","7","8","9","B"],
+["If A=1, B=2, ..., Z=26, find the value of CAT.","यदि A=1, B=2, ..., Z=26, तो CAT का मान ज्ञात कीजिए।","22","23","24","25","C"],
+["Which number is different? 8, 27, 64, 100, 125","कौन-सी संख्या अलग है? 8, 27, 64, 100, 125","27","64","100","125","C"],
+["Complete: 4 : 16 :: 7 : ?","पूरा कीजिए: 4 : 16 :: 7 : ?","42","49","56","64","B"],
+["Complete: 5 : 25 :: 9 : ?","पूरा कीजिए: 5 : 25 :: 9 : ?","72","81","90","99","B"],
+["A is taller than B. B is taller than C. Who is shortest?","A, B से लंबा है। B, C से लंबा है। सबसे छोटा कौन है?","A","B","C","Cannot say / नहीं कह सकते","C"],
+["P is older than Q but younger than R. Who is oldest?","P, Q से बड़ा लेकिन R से छोटा है। सबसे बड़ा कौन है?","P","Q","R","Cannot say / नहीं कह सकते","C"],
+["Ravi walks 5 m north, then 5 m east. In which direction is he from the start?","रवि 5 मीटर उत्तर और फिर 5 मीटर पूर्व जाता है। वह प्रारंभिक स्थान से किस दिशा में है?","North / उत्तर","East / पूर्व","North-East / उत्तर-पूर्व","South-East / दक्षिण-पूर्व","C"],
+["A person faces east and turns right. Which direction does he face?","एक व्यक्ति पूर्व की ओर मुख करके दाएँ मुड़ता है। अब वह किस दिशा में है?","North / उत्तर","South / दक्षिण","West / पश्चिम","East / पूर्व","B"],
+["A person faces north and turns left twice. Which direction does he face?","एक व्यक्ति उत्तर की ओर मुख करके दो बार बाएँ मुड़ता है। अब वह किस दिशा में है?","East / पूर्व","West / पश्चिम","South / दक्षिण","North / उत्तर","C"],
+["If yesterday was Monday, what day is tomorrow?","यदि कल सोमवार था, तो कल कौन-सा दिन होगा?","Monday / सोमवार","Tuesday / मंगलवार","Wednesday / बुधवार","Thursday / गुरुवार","C"],
+["If 1 January is Monday, what day is 8 January?","यदि 1 जनवरी सोमवार है, तो 8 जनवरी कौन-सा दिन होगा?","Sunday / रविवार","Monday / सोमवार","Tuesday / मंगलवार","Wednesday / बुधवार","B"],
+["How many days are there in 3 weeks?","3 सप्ताह में कितने दिन होते हैं?","18","21","24","28","B"],
+["A clock shows 3:00. What is the angle between the hands?","घड़ी में 3:00 बजे हैं। दोनों सुइयों के बीच कोण कितना है?","60°","90°","120°","180°","B"],
+["A clock shows 6:00. What is the angle between the hands?","घड़ी में 6:00 बजे हैं। दोनों सुइयों के बीच कोण कितना है?","90°","120°","180°","360°","C"],
+["What is the mirror image of 2:00 on an analog clock?","2:00 बजे का दर्पण प्रतिबिंब क्या होगा?","8:00","9:00","10:00","11:00","C"],
+["If all roses are flowers and some flowers are red, which statement is definitely true?","यदि सभी गुलाब फूल हैं और कुछ फूल लाल हैं, तो निश्चित रूप से सही कथन कौन-सा है?","All roses are flowers / सभी गुलाब फूल हैं","All flowers are roses / सभी फूल गुलाब हैं","All roses are red / सभी गुलाब लाल हैं","No rose is red / कोई गुलाब लाल नहीं है","A"],
+["If some pens are blue and all blue things are bright, which follows?","यदि कुछ पेन नीले हैं और सभी नीली वस्तुएँ चमकीली हैं, तो क्या निष्कर्ष निकलेगा?","Some pens are bright / कुछ पेन चमकीले हैं","All pens are bright / सभी पेन चमकीले हैं","No pen is bright / कोई पेन चमकीला नहीं है","All bright things are pens / सभी चमकीली वस्तुएँ पेन हैं","A"],
+["Find the missing number: 2, 6, 12, 20, 30, ?","लुप्त संख्या ज्ञात कीजिए: 2, 6, 12, 20, 30, ?","36","40","42","44","C"],
+["Find the next number: 1, 4, 9, 16, 25, ?","अगली संख्या ज्ञात कीजिए: 1, 4, 9, 16, 25, ?","30","36","40","49","B"],
+["Find the next number: 100, 90, 81, 73, ?","अगली संख्या ज्ञात कीजिए: 100, 90, 81, 73, ?","64","66","67","68","C"],
+["Find the next number: 5, 10, 20, 40, ?","अगली संख्या ज्ञात कीजिए: 5, 10, 20, 40, ?","60","70","80","90","C"],
+["Find the odd pair: 2-4, 3-9, 4-16, 5-20","विषम युग्म चुनिए: 2-4, 3-9, 4-16, 5-20","2-4","3-9","4-16","5-20","D"],
+["If MOBILE is coded by shifting each letter one step forward, code TABLE.","यदि MOBILE में प्रत्येक अक्षर को एक स्थान आगे किया जाए, तो TABLE का कोड क्या होगा?","UBCMF","UACMF","TBCMF","UBDME","A"],
+["If DELHI is coded as EFMIJ, how is INDIA coded?","यदि DELHI को EFMIJ लिखा जाता है, तो INDIA को कैसे लिखेंगे?","JOEJB","JOEIB","JNDJB","JPEJB","A"],
+["Arrange in dictionary order: Ball, Bat, Banana, Bank. Which comes first?","शब्दकोश क्रम में Ball, Bat, Banana, Bank में सबसे पहले कौन आएगा?","Ball","Banana","Bank","Bat","A"],
+["Arrange in dictionary order: Cat, Car, Can, Cap. Which comes last?","शब्दकोश क्रम में Cat, Car, Can, Cap में सबसे अंत में कौन आएगा?","Can","Cap","Car","Cat","D"],
+["Which number replaces ?: 3, 9, 27, ?, 243","? के स्थान पर कौन-सी संख्या आएगी: 3, 9, 27, ?, 243","54","72","81","90","C"],
+["Which number replaces ?: 64, 32, 16, 8, ?","? के स्थान पर कौन-सी संख्या आएगी: 64, 32, 16, 8, ?","2","4","6","12","B"],
+["Find the missing term: AZ, BY, CX, DW, ?","लुप्त पद ज्ञात कीजिए: AZ, BY, CX, DW, ?","EV","FU","EX","EW","A"],
+["Find the missing term: AB, DE, GH, JK, ?","लुप्त पद ज्ञात कीजिए: AB, DE, GH, JK, ?","LM","MN","NO","OP","B"],
+["If 4 cats catch 4 mice in 4 minutes, how many mice can 8 cats catch in 4 minutes at the same rate?","यदि 4 बिल्लियाँ 4 मिनट में 4 चूहे पकड़ती हैं, तो समान दर पर 8 बिल्लियाँ 4 मिनट में कितने चूहे पकड़ेंगी?","4","8","12","16","B"],
+["A is the brother of B. B is the sister of C. How is A related to C?","A, B का भाई है। B, C की बहन है। A का C से क्या संबंध है?","Brother / भाई","Sister / बहन","Father / पिता","Uncle / चाचा","A"],
+["M is mother of N. N is father of P. How is M related to P?","M, N की माँ है। N, P का पिता है। M का P से क्या संबंध है?","Mother / माँ","Grandmother / दादी","Aunt / बुआ","Sister / बहन","B"],
+["X is son of Y. Y is daughter of Z. How is Z related to X?","X, Y का पुत्र है। Y, Z की पुत्री है। Z का X से क्या संबंध है?","Father / पिता","Mother / माँ","Grandparent / दादा/नाना","Brother / भाई","C"],
+["Pointing to a boy, Riya says, 'He is the son of my mother's only daughter.' Who is the boy?","एक लड़के की ओर इशारा करके रिया कहती है, 'वह मेरी माँ की इकलौती बेटी का पुत्र है।' वह लड़का कौन है?","Brother / भाई","Son / पुत्र","Father / पिता","Uncle / चाचा","B"],
+["If today is Wednesday, what day will it be after 10 days?","यदि आज बुधवार है, तो 10 दिन बाद कौन-सा दिन होगा?","Friday / शुक्रवार","Saturday / शनिवार","Sunday / रविवार","Monday / सोमवार","B"],
+["If 15th of a month is Friday, what day is 22nd?","यदि किसी महीने की 15 तारीख शुक्रवार है, तो 22 तारीख कौन-सा दिन होगी?","Thursday / गुरुवार","Friday / शुक्रवार","Saturday / शनिवार","Sunday / रविवार","B"],
+["A man is 7th from the left and 9th from the right in a row. How many people are there?","एक पंक्ति में एक व्यक्ति बाएँ से 7वाँ और दाएँ से 9वाँ है। कुल कितने व्यक्ति हैं?","15","16","17","18","B"],
+["Rina is 12th from top and 18th from bottom. Total students?","रीना ऊपर से 12वीं और नीचे से 18वीं है। कुल विद्यार्थी कितने हैं?","28","29","30","31","B"],
+["In a class of 40, Amit ranks 9th from top. What is his rank from bottom?","40 विद्यार्थियों की कक्षा में अमित ऊपर से 9वाँ है। नीचे से उसका स्थान क्या होगा?","30th","31st","32nd","33rd","C"],
+["Five people A, B, C, D, E stand in a line. A is before B, B before C, D before E. Which can be the order?","A, B, C, D, E एक पंक्ति में हैं। A, B से पहले; B, C से पहले; D, E से पहले है। कौन-सा क्रम संभव है?","A B C D E","B A C D E","A C B D E","D B A E C","A"],
+["If all squares are rectangles, which statement is correct?","यदि सभी वर्ग आयत हैं, तो सही कथन कौन-सा है?","Every rectangle is a square / हर आयत वर्ग है","Every square is a rectangle / हर वर्ग आयत है","No square is rectangle / कोई वर्ग आयत नहीं","Some squares are circles / कुछ वर्ग वृत्त हैं","B"],
+["Which figure has no corners?","किस आकृति का कोई कोना नहीं होता?","Triangle / त्रिभुज","Square / वर्ग","Circle / वृत्त","Rectangle / आयत","C"],
+["A cube has how many faces?","एक घन के कितने फलक होते हैं?","4","6","8","12","B"],
+["A triangle has how many sides?","एक त्रिभुज की कितनी भुजाएँ होती हैं?","2","3","4","5","B"],
+["Find the odd one out: Triangle, Square, Circle, Rectangle","विषम आकृति चुनिए: Triangle, Square, Circle, Rectangle","Triangle","Square","Circle","Rectangle","C"],
+["If 2 is related to 8 and 3 to 27, then 4 is related to ?","यदि 2 का संबंध 8 से और 3 का संबंध 27 से है, तो 4 का संबंध किससे होगा?","32","48","64","81","C"],
+["If 6 is related to 36, then 9 is related to ?","यदि 6 का संबंध 36 से है, तो 9 का संबंध किससे होगा?","54","72","81","90","C"],
+["Find the missing number: 11, 22, 44, 88, ?","लुप्त संख्या ज्ञात कीजिए: 11, 22, 44, 88, ?","132","154","176","188","C"],
+["Find the next number: 50, 45, 35, 20, ?","अगली संख्या ज्ञात कीजिए: 50, 45, 35, 20, ?","5","0","-5","10","C"],
+["Find the next number: 2, 3, 5, 8, 12, ?","अगली संख्या ज्ञात कीजिए: 2, 3, 5, 8, 12, ?","15","16","17","18","C"],
+["Find the next number: 1, 2, 6, 24, 120, ?","अगली संख्या ज्ञात कीजिए: 1, 2, 6, 24, 120, ?","240","360","600","720","D"],
+["If + means × and × means −, find 6 + 3 × 2.","यदि + का अर्थ × और × का अर्थ − है, तो 6 + 3 × 2 का मान ज्ञात कीजिए।","10","12","16","18","C"],
+["If − means + and + means ÷, find 12 − 4 + 2.","यदि − का अर्थ + और + का अर्थ ÷ है, तो 12 − 4 + 2 का मान ज्ञात कीजिए।","6","8","10","16","C"],
+["If P=16, Q=17, R=18, what is the value of P+R?","यदि P=16, Q=17, R=18, तो P+R का मान क्या है?","32","33","34","35","B"],
+["Which pair is different? (2,4), (3,9), (4,16), (5,30)","कौन-सा युग्म अलग है? (2,4), (3,9), (4,16), (5,30)","2,4","3,9","4,16","5,30","D"],
+["Complete the analogy: Hand : Glove :: Foot : ?","सादृश्य पूरा कीजिए: Hand : Glove :: Foot : ?","Sock","Cap","Belt","Shirt","A"],
+["Complete the analogy: Fish : Water :: Bird : ?","सादृश्य पूरा कीजिए: Fish : Water :: Bird : ?","Nest","Air","Tree","Cage","B"],
+["Complete the analogy: Eye : See :: Ear : ?","सादृश्य पूरा कीजिए: Eye : See :: Ear : ?","Speak","Hear","Touch","Smell","B"],
+["A word is arranged in reverse order. If 'MATH' becomes 'HTAM', how will 'REASON' be written?","यदि 'MATH' को उल्टा लिखने पर 'HTAM' होता है, तो 'REASON' कैसे लिखा जाएगा?","NOSAER","NOSEAR","NORAES","SAERON","A"],
+["How many letters are between A and H in the English alphabet?","अंग्रेजी वर्णमाला में A और H के बीच कितने अक्षर हैं?","5","6","7","8","B"],
+["How many letters are between D and M?","D और M के बीच कितने अक्षर हैं?","7","8","9","10","B"],
+["Which letter is 5th to the right of J?","J के दाईं ओर 5वाँ अक्षर कौन-सा है?","N","O","P","Q","B"],
+["Which letter is 4th to the left of R?","R के बाईं ओर 4था अक्षर कौन-सा है?","M","N","O","P","B"],
+["If the letters of SCHOOL are arranged alphabetically, which letter is first?","SCHOOL के अक्षरों को वर्णक्रम में रखने पर सबसे पहले कौन-सा अक्षर आएगा?","C","H","L","O","A"],
+["If the letters of REASON are arranged alphabetically, which letter is last?","REASON के अक्षरों को वर्णक्रम में रखने पर सबसे अंत में कौन-सा अक्षर आएगा?","R","S","N","O","B"],
+["A is 3 years older than B. If B is 12, how old is A?","A, B से 3 वर्ष बड़ा है। यदि B की आयु 12 वर्ष है, तो A की आयु कितनी है?","9","14","15","16","C"],
+["A number is doubled and then 5 is added. Result is 25. What is the number?","एक संख्या को दोगुना करके 5 जोड़ा जाता है। परिणाम 25 है। संख्या क्या है?","8","10","12","15","B"],
+["A number is divided by 4 and then 3 is added. Result is 8. What is the number?","एक संख्या को 4 से भाग देकर 3 जोड़ा जाता है। परिणाम 8 है। संख्या क्या है?","16","20","24","32","B"],
+["Find the missing number: 5, 8, 14, 26, ?","लुप्त संख्या ज्ञात कीजिए: 5, 8, 14, 26, ?","38","42","50","52","C"],
+["Find the missing number: 4, 7, 13, 25, ?","लुप्त संख्या ज्ञात कीजिए: 4, 7, 13, 25, ?","37","43","49","51","C"],
+["If 1=3, 2=6, 3=9, then 7=?","यदि 1=3, 2=6, 3=9, तो 7=?","18","21","24","27","B"],
+["Which number does not belong: 11, 13, 17, 21, 23","कौन-सी संख्या समूह से संबंधित नहीं है: 11, 13, 17, 21, 23","11","17","21","23","C"],
+["A man walks 10 m south, then turns left and walks 5 m. Which direction is he facing?","एक व्यक्ति 10 मीटर दक्षिण जाता है, फिर बाएँ मुड़कर 5 मीटर चलता है। अब वह किस दिशा की ओर है?","East / पूर्व","West / पश्चिम","North / उत्तर","South / दक्षिण","A"],
+["A person facing west turns left. Which direction is he facing now?","पश्चिम की ओर मुख किए व्यक्ति के बाएँ मुड़ने पर वह किस दिशा में होगा?","North / उत्तर","South / दक्षिण","East / पूर्व","West / पश्चिम","B"],
+["Which number should replace ?: 121, 144, 169, ?, 225","? के स्थान पर कौन-सी संख्या आएगी: 121, 144, 169, ?, 225","181","196","200","204","B"],
+["Find the next term: 10, 20, 35, 55, 80, ?","अगला पद ज्ञात कीजिए: 10, 20, 35, 55, 80, ?","100","105","110","115","C"],
+["A train has 8 compartments. Each compartment has 50 seats. Total seats?","एक ट्रेन में 8 डिब्बे हैं। प्रत्येक डिब्बे में 50 सीटें हैं। कुल सीटें कितनी हैं?","350","400","450","500","B"],
+["If 5 pencils cost ₹25, what is the cost of 8 pencils?","यदि 5 पेंसिल की कीमत ₹25 है, तो 8 पेंसिल की कीमत कितनी होगी?","₹35","₹40","₹45","₹50","B"],
+["There are 24 students. They are divided equally into 6 groups. Students in each group?","24 विद्यार्थियों को 6 समान समूहों में बाँटा गया। प्रत्येक समूह में कितने विद्यार्थी होंगे?","3","4","5","6","B"],
+["Find the missing number: 9, 18, 36, 72, ?","लुप्त संख्या ज्ञात कीजिए: 9, 18, 36, 72, ?","108","126","144","162","C"],
+["Find the next letter: Z, X, U, Q, ?","अगला अक्षर ज्ञात कीजिए: Z, X, U, Q, ?","M","L","K","N","B"],
+["If 12 workers complete a task in 5 days, which statement follows at the same rate?","यदि 12 श्रमिक एक कार्य को 5 दिनों में पूरा करते हैं, तो समान दर पर कौन-सा कथन सही है?","More workers generally need more days / अधिक श्रमिकों को अधिक दिन लगेंगे","Fewer workers generally need more days / कम श्रमिकों को अधिक दिन लगेंगे","Workers have no effect / श्रमिकों का कोई प्रभाव नहीं","Days always remain 5 / दिन हमेशा 5 रहेंगे","B"],
+["A box contains 5 red and 5 blue balls. How many balls are there in total?","एक डिब्बे में 5 लाल और 5 नीली गेंदें हैं। कुल कितनी गेंदें हैं?","5","8","10","15","C"],
+["If all mangoes are fruits and all fruits contain nutrients, mangoes contain what?","यदि सभी आम फल हैं और सभी फलों में पोषक तत्व होते हैं, तो आम में क्या होगा?","Only water / केवल पानी","Nutrients / पोषक तत्व","Only sugar / केवल चीनी","Nothing / कुछ नहीं","B"],
+["Find the next number: 7, 10, 16, 25, 37, ?","अगली संख्या ज्ञात कीजिए: 7, 10, 16, 25, 37, ?","49","50","52","54","C"]
+];
+
+let current=0, answers=Array(90).fill(null), marked=Array(90).fill(false), started=false, remaining=5400, interval;
+
+function startTest(){
+  started=true; document.getElementById('intro').classList.add('hidden'); document.getElementById('test').classList.remove('hidden');
+  renderPalette(); renderQuestion(); interval=setInterval(tick,1000);
+}
+function tick(){
+  remaining--;
+  const m=Math.floor(remaining/60), s=remaining%60;
+  document.getElementById('timer').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  if(remaining===600) alert("⚠️ Only 10 minutes left! / केवल 10 मिनट शेष!");
+  if(remaining<=0){clearInterval(interval); submitTest(true);}
+}
+function renderQuestion(){
+  const q=questions[current];
+  document.getElementById('qnum').textContent=`Question ${current+1} of 90`;
+  document.getElementById('question').innerHTML=`${q[0]}<br><span style="font-weight:600">${q[1]}</span>`;
+  const opts=[q[2],q[3],q[4],q[5]];
+  document.getElementById('options').innerHTML=opts.map((o,i)=>`<div class="option ${answers[current]===String.fromCharCode(65+i)?'selected':''}" onclick="choose('${String.fromCharCode(65+i)}')"><b>${String.fromCharCode(65+i)}.</b> ${o}</div>`).join('');
+  const mb=document.getElementById('markBtn');
+  mb.textContent=marked[current] ? (answers[current] ? "★ Marked" : "★ Marked (No Answer)") : "☆ Mark for Review";
+  renderPalette();
+}
+function choose(letter){answers[current]=letter; renderQuestion();}
+function toggleMark(){marked[current]=!marked[current]; renderQuestion();}
+function nextQ(){if(current<89){current++;renderQuestion();window.scrollTo({top:0,behavior:'smooth'});}}
+function prevQ(){if(current>0){current--;renderQuestion();window.scrollTo({top:0,behavior:'smooth'});}}
+function jump(i){current=i;renderQuestion();window.scrollTo({top:0,behavior:'smooth'});}
+function renderPalette(){
+  const p=document.getElementById('palette');
+  p.innerHTML=questions.map((_,i)=>{
+    let cls=''; if(answers[i]&&marked[i])cls='both'; else if(answers[i])cls='answered'; else if(marked[i])cls='marked';
+    return `<button class="pal ${cls}" onclick="jump(${i})">${i+1}</button>`;
+  }).join('');
+  let a=answers.filter(Boolean).length,b=marked.filter((x,i)=>x&&answers[i]).length,m=marked.filter(Boolean).length;
+  document.getElementById('answeredCount').textContent=a;
+  document.getElementById('bothCount').textContent=b;
+  document.getElementById('markedCount').textContent=m;
+  document.getElementById('unattemptedCount').textContent=90-a;
+}
+function confirmSubmit(){
+  const a=answers.filter(Boolean).length;
+  if(confirm(`Submit your test? You have attempted ${a}/90 questions.\\nक्या आप test submit करना चाहते हैं?`)) submitTest(false);
+}
+function submitTest(auto){
+  clearInterval(interval);
+  let correct=0;
+  questions.forEach((q,i)=>{if(answers[i]===q[6])correct++;});
+  const wrong=answers.filter((x,i)=>x&&x!==questions[i][6]).length;
+  const un=90-answers.filter(Boolean).length;
+  const timeUsed=5400-remaining;
+  const mm=Math.floor(timeUsed/60), ss=timeUsed%60;
+  document.getElementById('test').classList.add('hidden');
+  const r=document.getElementById('result'); r.classList.remove('hidden');
+  let review=questions.map((q,i)=>{
+    if(!answers[i] || answers[i]!==q[6]) return `<div class="review-item ${answers[i]?'wrong':''}"><b>Q${i+1}.</b> ${q[0]}<br><span>${q[1]}</span><br>Your answer: <b>${answers[i]||'Not Attempted'}</b> &nbsp; | &nbsp; Correct: <b>${q[6]}</b></div>`;
+    return '';
+  }).join('');
+  r.innerHTML=`<div class="card result"><h1>${auto?'Time Up! / समय समाप्त':'Test Submitted / टेस्ट जमा हो गया'}</h1><div class="score">${correct} / 90</div><p><b>NMMS MAT Model Test 01</b> • U EduTech</p>
+  <div class="resultgrid"><div class="rbox">Correct<br><strong>${correct}</strong></div><div class="rbox">Wrong<br><strong>${wrong}</strong></div><div class="rbox">Unattempted<br><strong>${un}</strong></div></div>
+  <p>Time Used / समय: <b>${mm}m ${String(ss).padStart(2,'0')}s</b></p>
+  <p style="color:#666">Detailed solutions can be provided separately for the full practice paper.</p>
+  </div>
+  <div class="card review"><h2>Review / समीक्षा</h2>${review||'<p>Excellent! All attempted answers are correct.</p>'}</div>`;
+  document.getElementById('timer').textContent='00:00';
+}
+</script>
+</body>
+</html>

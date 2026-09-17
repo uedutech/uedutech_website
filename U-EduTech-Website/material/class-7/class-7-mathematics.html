@@ -1,0 +1,1024 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Class 7 Mathematics | UEduTech</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+    color:#1f2937;
+    line-height:1.6;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#123c69,#1e88e5);
+    color:white;
+    padding:18px 5%;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#ffd54f;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#ffd54f;
+}
+
+/* LANGUAGE */
+.language-box{
+    display:flex;
+    gap:8px;
+}
+
+.lang-btn{
+    border:2px solid white;
+    background:transparent;
+    color:white;
+    padding:7px 14px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.lang-btn.active{
+    background:white;
+    color:#123c69;
+}
+
+/* HERO */
+.hero{
+    max-width:1200px;
+    margin:30px auto;
+    padding:45px 25px;
+    text-align:center;
+    background:linear-gradient(135deg,#ffffff,#eaf3ff);
+    border-radius:24px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.badge{
+    display:inline-block;
+    background:#e3f2fd;
+    color:#1565c0;
+    padding:7px 16px;
+    border-radius:20px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:40px;
+    color:#123c69;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:18px;
+    color:#4b5563;
+    max-width:800px;
+    margin:auto;
+}
+
+/* CONTAINER */
+.container{
+    max-width:1150px;
+    margin:auto;
+    padding:0 18px;
+}
+
+/* INFO */
+.info-card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+    margin-bottom:25px;
+}
+
+.info-card h2{
+    color:#1565c0;
+    margin-bottom:12px;
+    border-left:5px solid #1565c0;
+    padding-left:12px;
+}
+
+/* CHAPTER GRID */
+.chapter-heading{
+    text-align:center;
+    margin:35px 0 20px;
+}
+
+.chapter-heading h2{
+    color:#123c69;
+    font-size:30px;
+}
+
+.chapter-heading p{
+    color:#6b7280;
+    margin-top:5px;
+}
+
+.chapter-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+/* CHAPTER CARD */
+.chapter-card{
+    background:white;
+    border-radius:18px;
+    padding:24px;
+    box-shadow:0 6px 20px rgba(0,0,0,.07);
+    border:1px solid #e5e7eb;
+    transition:.25s;
+    position:relative;
+    overflow:hidden;
+}
+
+.chapter-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+}
+
+.chapter-number{
+    position:absolute;
+    top:0;
+    right:0;
+    background:#1565c0;
+    color:white;
+    padding:8px 14px;
+    border-radius:0 0 0 15px;
+    font-weight:bold;
+}
+
+.chapter-icon{
+    font-size:38px;
+    margin-bottom:8px;
+}
+
+.chapter-card h3{
+    color:#123c69;
+    font-size:21px;
+    margin-bottom:5px;
+    padding-right:50px;
+}
+
+.chapter-card .english-title{
+    color:#1565c0;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.chapter-card p{
+    color:#5b6470;
+    margin-bottom:15px;
+}
+
+.chapter-btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#1565c0;
+    color:white;
+    padding:10px 18px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+.chapter-btn:hover{
+    background:#0d47a1;
+}
+
+/* FEATURES */
+.features{
+    margin:35px 0;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.feature{
+    background:white;
+    padding:20px 15px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
+}
+
+.feature-icon{
+    font-size:30px;
+    margin-bottom:7px;
+}
+
+.feature strong{
+    color:#123c69;
+}
+
+/* CTA */
+.cta{
+    margin:35px 0;
+    background:linear-gradient(135deg,#123c69,#1565c0);
+    color:white;
+    padding:35px 25px;
+    border-radius:22px;
+    text-align:center;
+}
+
+.cta h2{
+    margin-bottom:10px;
+}
+
+.cta p{
+    max-width:750px;
+    margin:auto auto 20px;
+}
+
+.cta a{
+    display:inline-block;
+    background:white;
+    color:#123c69;
+    padding:11px 22px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+    background:#123c69;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:40px;
+}
+
+footer strong{
+    color:#ffd54f;
+}
+
+/* LANGUAGE SYSTEM */
+.lang-en{
+    display:none;
+}
+
+body.english .lang-hi{
+    display:none;
+}
+
+body.english .lang-en{
+    display:inline;
+}
+
+.block-en{
+    display:none;
+}
+
+.block-hi{
+    display:block;
+}
+
+body.english .block-hi{
+    display:none;
+}
+
+body.english .block-en{
+    display:block;
+}
+
+/* MOBILE */
+@media(max-width:850px){
+
+    .chapter-grid{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+}
+
+@media(max-width:600px){
+
+    header{
+        padding:15px 4%;
+    }
+
+    .nav{
+        justify-content:center;
+    }
+
+    .logo{
+        width:100%;
+        text-align:center;
+    }
+
+    nav{
+        justify-content:center;
+        gap:12px;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .language-box{
+        width:100%;
+        justify-content:center;
+    }
+
+    .hero{
+        margin:20px 12px;
+        padding:30px 18px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .chapter-card{
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+<div class="nav">
+
+    <div class="logo">
+        U<span>EduTech</span>
+    </div>
+
+    <nav>
+
+        <a href="../../index.html">
+            <span class="lang-hi">होम</span>
+            <span class="lang-en">Home</span>
+        </a>
+
+        <a href="../../subjects.html">
+            <span class="lang-hi">विषय</span>
+            <span class="lang-en">Subjects</span>
+        </a>
+
+        <a href="../../tests.html">
+            <span class="lang-hi">मॉडल टेस्ट</span>
+            <span class="lang-en">Model Tests</span>
+        </a>
+
+        <a href="../../study-material.html">
+            <span class="lang-hi">स्टडी मटेरियल</span>
+            <span class="lang-en">Study Material</span>
+        </a>
+
+    </nav>
+
+    <div class="language-box">
+
+        <button
+            id="hiBtn"
+            class="lang-btn active"
+            onclick="setLanguage('hi')">
+            🇮🇳 हिंदी
+        </button>
+
+        <button
+            id="enBtn"
+            class="lang-btn"
+            onclick="setLanguage('en')">
+            🇬🇧 English
+        </button>
+
+    </div>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="badge">
+        <span class="lang-hi">कक्षा 7 • गणित</span>
+        <span class="lang-en">Class 7 • Mathematics</span>
+    </div>
+
+    <h1>
+        <span class="lang-hi">📐 कक्षा 7 गणित</span>
+        <span class="lang-en">📐 Class 7 Mathematics</span>
+    </h1>
+
+    <p>
+        <span class="lang-hi">
+            अध्यायवार गणित अध्ययन सामग्री, उदाहरण, अभ्यास प्रश्न,
+            MCQs और मॉडल टेस्ट।
+        </span>
+
+        <span class="lang-en">
+            Chapter-wise Mathematics study material, examples,
+            practice questions, MCQs and model tests.
+        </span>
+    </p>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- INTRODUCTION -->
+<section class="info-card">
+
+    <h2>
+        <span class="lang-hi">📚 कक्षा 7 गणित अध्ययन सामग्री</span>
+        <span class="lang-en">📚 Class 7 Mathematics Study Material</span>
+    </h2>
+
+    <div class="block-hi">
+
+        <p>
+            UEduTech पर कक्षा 7 गणित के सभी अध्यायों को
+            सरल और व्यवस्थित तरीके से पढ़ाया गया है।
+            प्रत्येक अध्याय में महत्वपूर्ण अवधारणाएँ,
+            उदाहरण, अभ्यास प्रश्न और बहुविकल्पीय प्रश्न
+            शामिल किए जाएंगे।
+        </p>
+
+        <p style="margin-top:10px;">
+            विद्यार्थी नीचे दिए गए किसी भी अध्याय पर क्लिक करके
+            उस अध्याय की पूरी अध्ययन सामग्री खोल सकते हैं।
+        </p>
+
+    </div>
+
+    <div class="block-en">
+
+        <p>
+            UEduTech provides Class 7 Mathematics study material
+            in a simple and organised way. Each chapter will include
+            important concepts, examples, practice questions and
+            multiple-choice questions.
+        </p>
+
+        <p style="margin-top:10px;">
+            Students can click on any chapter below to open its
+            complete study material.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CHAPTER HEADING -->
+<div class="chapter-heading">
+
+    <h2>
+        <span class="lang-hi">📖 अध्याय सूची</span>
+        <span class="lang-en">📖 Chapter List</span>
+    </h2>
+
+    <p>
+        <span class="lang-hi">
+            अध्याय चुनें और पढ़ना शुरू करें
+        </span>
+
+        <span class="lang-en">
+            Choose a chapter and start learning
+        </span>
+    </p>
+
+</div>
+
+
+<!-- CHAPTER GRID -->
+<div class="chapter-grid">
+
+
+<!-- CHAPTER 1 -->
+<div class="chapter-card">
+
+    <div class="chapter-number">01</div>
+
+    <div class="chapter-icon">🔢</div>
+
+    <h3>
+        <span class="lang-hi">हमारे आस-पास बड़ी संख्याएँ</span>
+        <span class="lang-en">Large Numbers Around Us</span>
+    </h3>
+
+    <div class="english-title">
+        <span class="lang-hi">Large Numbers Around Us</span>
+        <span class="lang-en">हमारे आस-पास बड़ी संख्याएँ</span>
+    </div>
+
+    <p>
+        <span class="lang-hi">
+            बड़ी संख्याओं को पढ़ना, लिखना, तुलना करना और
+            दैनिक जीवन में उनका उपयोग।
+        </span>
+
+        <span class="lang-en">
+            Reading, writing and comparing large numbers
+            and their use in daily life.
+        </span>
+    </p>
+
+    <a href="maths/class-7-maths-chapter-1.html"
+       class="chapter-btn">
+
+        <span class="lang-hi">अध्याय पढ़ें →</span>
+        <span class="lang-en">Read Chapter →</span>
+
+    </a>
+
+</div>
+
+
+<!-- CHAPTER 2 -->
+<div class="chapter-card">
+
+    <div class="chapter-number">02</div>
+
+    <div class="chapter-icon">➗</div>
+
+    <h3>
+        <span class="lang-hi">अंकगणितीय व्यंजक</span>
+        <span class="lang-en">Arithmetic Expressions</span>
+    </h3>
+
+    <div class="english-title">
+        <span class="lang-hi">Arithmetic Expressions</span>
+        <span class="lang-en">अंकगणितीय व्यंजक</span>
+    </div>
+
+    <p>
+        <span class="lang-hi">
+            संख्यात्मक व्यंजक, संक्रियाएँ और गणना के नियम।
+        </span>
+
+        <span class="lang-en">
+            Numerical expressions, operations and rules
+            of calculation.
+        </span>
+    </p>
+
+    <a href="maths/class-7-maths-chapter-2.html"
+       class="chapter-btn">
+
+        <span class="lang-hi">अध्याय पढ़ें →</span>
+        <span class="lang-en">Read Chapter →</span>
+
+    </a>
+
+</div>
+
+
+<!-- CHAPTER 3 -->
+<div class="chapter-card">
+
+    <div class="chapter-number">03</div>
+
+    <div class="chapter-icon">🔹</div>
+
+    <h3>
+        <span class="lang-hi">दशमलव के आगे</span>
+        <span class="lang-en">A Peek Beyond the Point</span>
+    </h3>
+
+    <div class="english-title">
+        <span class="lang-hi">A Peek Beyond the Point</span>
+        <span class="lang-en">दशमलव के आगे</span>
+    </div>
+
+    <p>
+        <span class="lang-hi">
+            दशमलव संख्याओं को समझना, तुलना करना और
+            गणना करना।
+        </span>
+
+        <span class="lang-en">
+            Understanding, comparing and calculating
+            with decimal numbers.
+        </span>
+    </p>
+
+    <a href="maths/class-7-maths-chapter-3.html"
+       class="chapter-btn">
+
+        <span class="lang-hi">अध्याय पढ़ें →</span>
+        <span class="lang-en">Read Chapter →</span>
+
+    </a>
+
+</div>
+
+
+<!-- CHAPTER 4 -->
+<div class="chapter-card">
+
+    <div class="chapter-number">04</div>
+
+    <div class="chapter-icon">🔤</div>
+
+    <h3>
+        <span class="lang-hi">अक्षर-संख्याओं वाले व्यंजक</span>
+        <span class="lang-en">Expressions using Letter-Numbers</span>
+    </h3>
+
+    <div class="english-title">
+        <span class="lang-hi">Expressions using Letter-Numbers</span>
+        <span class="lang-en">अक्षर-संख्याओं वाले व्यंजक</span>
+    </div>
+
+    <p>
+        <span class="lang-hi">
+            चर, बीजीय व्यंजक और अक्षरों की सहायता से
+            गणितीय कथनों को समझना।
+        </span>
+
+        <span class="lang-en">
+            Variables, algebraic expressions and
+            mathematical statements using letters.
+        </span>
+    </p>
+
+    <a href="maths/class-7-maths-chapter-4.html"
+       class="chapter-btn">
+
+        <span class="lang-hi">अध्याय पढ़ें →</span>
+        <span class="lang-en">Read Chapter →</span>
+
+    </a>
+
+</div>
+
+
+<!-- CHAPTER 5 -->
+<div class="chapter-card">
+
+    <div class="chapter-number">05</div>
+
+    <div class="chapter-icon">📏</div>
+
+    <h3>
+        <span class="lang-hi">समांतर और प्रतिच्छेदी रेखाएँ</span>
+        <span class="lang-en">Parallel and Intersecting Lines</span>
+    </h3>
+
+    <div class="english-title">
+        <span class="lang-hi">Parallel and Intersecting Lines</span>
+        <span class="lang-en">समांतर और प्रतिच्छेदी रेखाएँ</span>
+    </div>
+
+    <p>
+        <span class="lang-hi">
+            रेखाएँ, कोण, समांतर रेखाएँ और प्रतिच्छेदी
+            रेखाओं की ज्यामितीय समझ।
+        </span>
+
+        <span class="lang-en">
+            Lines, angles, parallel lines and
+            intersecting lines.
+        </span>
+    </p>
+
+    <a href="maths/class-7-maths-chapter-5.html"
+       class="chapter-btn">
+
+        <span class="lang-hi">अध्याय पढ़ें →</span>
+        <span class="lang-en">Read Chapter →</span>
+
+    </a>
+
+</div>
+
+
+<!-- CHAPTER 6 -->
+<div class="chapter-card">
+
+    <div class="chapter-number">06</div>
+
+    <div class="chapter-icon">🎯</div>
+
+    <h3>
+        <span class="lang-hi">संख्या खेल</span>
+        <span class="lang-en">Number Play</span>
+    </h3>
+
+    <div class="english-title">
+        <span class="lang-hi">Number Play</span>
+        <span class="lang-en">संख्या खेल</span>
+    </div>
+
+    <p>
+        <span class="lang-hi">
+            संख्याओं में पैटर्न, नियम, विभाज्यता और
+            संख्या संबंधी रोचक गतिविधियाँ।
+        </span>
+
+        <span class="lang-en">
+            Patterns, rules, divisibility and interesting
+            activities with numbers.
+        </span>
+    </p>
+
+    <a href="maths/class-7-maths-chapter-6.html"
+       class="chapter-btn">
+
+        <span class="lang-hi">अध्याय पढ़ें →</span>
+        <span class="lang-en">Read Chapter →</span>
+
+    </a>
+
+</div>
+
+
+<!-- CHAPTER 7 -->
+<div class="chapter-card">
+
+    <div class="chapter-number">07</div>
+
+    <div class="chapter-icon">🔺</div>
+
+    <h3>
+        <span class="lang-hi">तीन त्रिभुजों की कहानी</span>
+        <span class="lang-en">A Tale of Three Triangles</span>
+    </h3>
+
+    <div class="english-title">
+        <span class="lang-hi">A Tale of Three Triangles</span>
+        <span class="lang-en">तीन त्रिभुजों की कहानी</span>
+    </div>
+
+    <p>
+        <span class="lang-hi">
+            त्रिभुजों के प्रकार, उनके गुण और कोणों से
+            संबंधित ज्यामितीय अवधारणाएँ।
+        </span>
+
+        <span class="lang-en">
+            Types of triangles, their properties and
+            geometric concepts involving angles.
+        </span>
+    </p>
+
+    <a href="maths/class-7-maths-chapter-7.html"
+       class="chapter-btn">
+
+        <span class="lang-hi">अध्याय पढ़ें →</span>
+        <span class="lang-en">Read Chapter →</span>
+
+    </a>
+
+</div>
+
+
+<!-- CHAPTER 8 -->
+<div class="chapter-card">
+
+    <div class="chapter-number">08</div>
+
+    <div class="chapter-icon">🍕</div>
+
+    <h3>
+        <span class="lang-hi">भिन्नों के साथ कार्य</span>
+        <span class="lang-en">Working with Fractions</span>
+    </h3>
+
+    <div class="english-title">
+        <span class="lang-hi">Working with Fractions</span>
+        <span class="lang-en">भिन्नों के साथ कार्य</span>
+    </div>
+
+    <p>
+        <span class="lang-hi">
+            भिन्नों की तुलना, जोड़, घटाव, गुणा, भाग और
+            दैनिक जीवन में उनका उपयोग।
+        </span>
+
+        <span class="lang-en">
+            Comparing, adding, subtracting, multiplying
+            and dividing fractions.
+        </span>
+    </p>
+
+    <a href="maths/class-7-maths-chapter-8.html"
+       class="chapter-btn">
+
+        <span class="lang-hi">अध्याय पढ़ें →</span>
+        <span class="lang-en">Read Chapter →</span>
+
+    </a>
+
+</div>
+
+</div>
+
+
+<!-- FEATURES -->
+<div class="chapter-heading">
+
+    <h2>
+        <span class="lang-hi">✨ प्रत्येक अध्याय में</span>
+        <span class="lang-en">✨ What Each Chapter Includes</span>
+    </h2>
+
+</div>
+
+
+<section class="features">
+
+    <div class="feature">
+        <div class="feature-icon">📖</div>
+        <strong>
+            <span class="lang-hi">सरल व्याख्या</span>
+            <span class="lang-en">Simple Explanation</span>
+        </strong>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">✏️</div>
+        <strong>
+            <span class="lang-hi">अभ्यास प्रश्न</span>
+            <span class="lang-en">Practice Questions</span>
+        </strong>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">🎯</div>
+        <strong>
+            <span class="lang-hi">MCQ टेस्ट</span>
+            <span class="lang-en">MCQ Tests</span>
+        </strong>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <strong>
+            <span class="lang-hi">त्वरित पुनरावृत्ति</span>
+            <span class="lang-en">Quick Revision</span>
+        </strong>
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+
+    <h2>
+        <span class="lang-hi">🧠 गणित सीखें, अभ्यास करें और आगे बढ़ें!</span>
+        <span class="lang-en">🧠 Learn Mathematics, Practise and Improve!</span>
+    </h2>
+
+    <p>
+        <span class="lang-hi">
+            अध्यायवार सामग्री के साथ अपनी गणित की तैयारी को
+            और मजबूत बनाइए।
+        </span>
+
+        <span class="lang-en">
+            Strengthen your Mathematics preparation with
+            chapter-wise learning material.
+        </span>
+    </p>
+
+    <a href="../../tests.html">
+
+        <span class="lang-hi">🎯 मॉडल टेस्ट देखें</span>
+        <span class="lang-en">🎯 View Model Tests</span>
+
+    </a>
+
+</section>
+
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        <strong>UEduTech</strong> —
+        <span class="lang-hi">
+            कक्षा 7 गणित की डिजिटल अध्ययन सामग्री
+        </span>
+
+        <span class="lang-en">
+            Digital study material for Class 7 Mathematics
+        </span>
+    </p>
+
+    <p style="margin-top:8px;">
+        © 2026 UEduTech
+    </p>
+
+</footer>
+
+
+<script>
+
+function setLanguage(lang){
+
+    if(lang === "en"){
+
+        document.body.classList.add("english");
+
+        document.getElementById("enBtn")
+            .classList.add("active");
+
+        document.getElementById("hiBtn")
+            .classList.remove("active");
+
+        document.documentElement.lang = "en";
+
+    }else{
+
+        document.body.classList.remove("english");
+
+        document.getElementById("hiBtn")
+            .classList.add("active");
+
+        document.getElementById("enBtn")
+            .classList.remove("active");
+
+        document.documentElement.lang = "hi";
+    }
+
+    localStorage.setItem("uedutech-language",lang);
+}
+
+
+window.onload = function(){
+
+    const savedLanguage =
+        localStorage.getItem("uedutech-language") || "hi";
+
+    setLanguage(savedLanguage);
+
+};
+
+</script>
+
+</body>
+</html>
+

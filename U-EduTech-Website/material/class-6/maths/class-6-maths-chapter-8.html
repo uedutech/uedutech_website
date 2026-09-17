@@ -1,0 +1,1599 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 8: Playing with Constructions | UEduTech</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+    background:#f5f7fb;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    color:white;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#facc15;
+}
+
+nav{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:8px 13px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.15);
+}
+
+.language-box{
+    text-align:center;
+    padding:12px;
+    background:#111827;
+}
+
+.lang-btn{
+    border:none;
+    padding:9px 18px;
+    margin:3px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+    background:white;
+    color:#374151;
+}
+
+.lang-btn.active{
+    background:#facc15;
+    color:#111827;
+}
+
+.hero{
+    background:linear-gradient(135deg,#1d4ed8,#7c3aed);
+    color:white;
+    padding:55px 20px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:19px;
+    max-width:900px;
+    margin:auto;
+}
+
+.container{
+    max-width:1100px;
+    margin:35px auto;
+    padding:0 18px;
+}
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:18px;
+    margin-bottom:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+    border:1px solid #e5e7eb;
+}
+
+.card h2{
+    color:#2563eb;
+    margin-bottom:15px;
+    font-size:27px;
+}
+
+.card h3{
+    color:#4338ca;
+    margin:18px 0 8px;
+}
+
+.definition{
+    background:#eff6ff;
+    border-left:5px solid #2563eb;
+    padding:18px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.example{
+    background:#f0fdf4;
+    border-left:5px solid #16a34a;
+    padding:18px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.formula{
+    background:#fff7ed;
+    border:2px dashed #f97316;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+}
+
+.question{
+    background:#fafafa;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:17px;
+}
+
+.question strong{
+    color:#1d4ed8;
+}
+
+.mcq{
+    background:#f8fafc;
+    border:1px solid #dbeafe;
+    border-radius:12px;
+    padding:18px;
+    margin:14px 0;
+}
+
+.option{
+    padding:4px 0;
+}
+
+.answer{
+    background:#ecfdf5;
+    border-left:4px solid #10b981;
+    padding:18px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+.construction-box{
+    background:#fefce8;
+    border:2px solid #facc15;
+    padding:20px;
+    border-radius:15px;
+    margin:18px 0;
+}
+
+.step{
+    background:#f8fafc;
+    border-left:4px solid #6366f1;
+    padding:15px;
+    margin:10px 0;
+    border-radius:8px;
+}
+
+.resource-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.resource{
+    padding:22px;
+    border-radius:15px;
+    background:#eef2ff;
+    text-align:center;
+}
+
+.cta{
+    text-align:center;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    padding:35px 20px;
+    border-radius:20px;
+    margin-bottom:30px;
+}
+
+.cta h2{
+    color:white;
+    margin-bottom:10px;
+}
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:30px 0;
+}
+
+.navigation a{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.navigation a:hover{
+    background:#1d4ed8;
+}
+
+footer{
+    background:#111827;
+    color:#d1d5db;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer strong{
+    color:white;
+}
+
+.lang-en{
+    display:none;
+}
+
+body.english .lang-hi{
+    display:none;
+}
+
+body.english .lang-en{
+    display:inline;
+}
+
+body.english .block-hi{
+    display:none;
+}
+
+body.english .block-en{
+    display:block;
+}
+
+@media(max-width:750px){
+
+    .navbar{
+        flex-direction:column;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .grid,
+    .resource-grid{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+    .navigation a{
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+U<span>EduTech</span>
+</div>
+
+<nav>
+<a href="../../../index.html">Home</a>
+<a href="../../../subjects.html">Subjects</a>
+<a href="../../../tests.html">Model Tests</a>
+<a href="../../../study-material.html">Study Material</a>
+</nav>
+
+</div>
+
+<div class="language-box">
+
+<button id="hiBtn" class="lang-btn active" onclick="setLanguage('hi')">
+🇮🇳 हिंदी
+</button>
+
+<button id="enBtn" class="lang-btn" onclick="setLanguage('en')">
+🇬🇧 English
+</button>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>
+
+<span class="lang-hi">अध्याय 8: रचनाओं के साथ खेलना</span>
+<span class="lang-en">Chapter 8: Playing with Constructions</span>
+
+</h1>
+
+<p>
+
+<span class="lang-hi">
+Class 6 Mathematics – ज्यामितीय रचनाएँ, रेखाखंड, कोण और वृत्त
+</span>
+
+<span class="lang-en">
+Class 6 Mathematics – Geometrical Constructions, Line Segments, Angles and Circles
+</span>
+
+</p>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- INTRODUCTION -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">📘 अध्याय का परिचय</span>
+<span class="lang-en">📘 Chapter Introduction</span>
+
+</h2>
+
+<p class="block-hi">
+
+ज्यामिति में हम विभिन्न आकृतियों और रचनाओं को बनाने के लिए
+स्केल, कम्पास और प्रोटेक्टर जैसे उपकरणों का प्रयोग करते हैं।
+इस अध्याय में हम रेखाखंड, कोण, वृत्त और विभिन्न ज्यामितीय रचनाओं
+को समझेंगे।
+
+</p>
+
+<p class="block-en">
+
+In geometry, we use tools such as a ruler, compass and protractor
+to construct different shapes and figures. In this chapter,
+we will learn about line segments, angles, circles and basic
+geometrical constructions.
+
+</p>
+
+</div>
+
+
+<!-- TOOLS -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">🧰 ज्यामितीय उपकरण</span>
+<span class="lang-en">🧰 Geometrical Tools</span>
+
+</h2>
+
+<div class="grid">
+
+<div class="question">
+
+<strong>
+<span class="lang-hi">1. स्केल / Ruler</span>
+<span class="lang-en">1. Ruler</span>
+</strong>
+
+<p class="block-hi">
+रेखाखंडों की लंबाई मापने और सीधी रेखा खींचने के लिए।
+</p>
+
+<p class="block-en">
+Used to draw straight lines and measure the length of line segments.
+</p>
+
+</div>
+
+
+<div class="question">
+
+<strong>
+<span class="lang-hi">2. कम्पास / Compass</span>
+<span class="lang-en">2. Compass</span>
+</strong>
+
+<p class="block-hi">
+वृत्त और चाप बनाने तथा समान दूरी निर्धारित करने के लिए।
+</p>
+
+<p class="block-en">
+Used to draw circles and arcs and to transfer equal distances.
+</p>
+
+</div>
+
+
+<div class="question">
+
+<strong>
+<span class="lang-hi">3. प्रोटेक्टर</span>
+<span class="lang-en">3. Protractor</span>
+</strong>
+
+<p class="block-hi">
+कोण को मापने के लिए।
+</p>
+
+<p class="block-en">
+Used to measure angles.
+</p>
+
+</div>
+
+
+<div class="question">
+
+<strong>
+<span class="lang-hi">4. पेंसिल</span>
+<span class="lang-en">4. Pencil</span>
+</strong>
+
+<p class="block-hi">
+साफ और सटीक ज्यामितीय आकृतियाँ बनाने के लिए।
+</p>
+
+<p class="block-en">
+Used to draw neat and accurate geometrical figures.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- LINE SEGMENT -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">📏 रेखाखंड</span>
+<span class="lang-en">📏 Line Segment</span>
+
+</h2>
+
+<p class="block-hi">
+
+दो निश्चित बिंदुओं के बीच स्थित सीधी रेखा के भाग को रेखाखंड कहते हैं।
+</p>
+
+<p class="block-en">
+
+A straight part of a line between two fixed points is called a line segment.
+</p>
+
+<div class="formula">
+A ───────── B
+<br><br>
+AB = रेखाखंड की लंबाई / Length of line segment
+</div>
+
+<div class="example">
+
+<p class="block-hi">
+
+<strong>उदाहरण:</strong>
+यदि A और B दो बिंदु हैं तथा उनके बीच की दूरी 6 cm है,
+तो AB = 6 cm।
+
+</p>
+
+<p class="block-en">
+
+<strong>Example:</strong>
+If A and B are two points and the distance between them is 6 cm,
+then AB = 6 cm.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CONSTRUCTION LINE SEGMENT -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">✏️ रेखाखंड बनाना</span>
+<span class="lang-en">✏️ Constructing a Line Segment</span>
+
+</h2>
+
+<div class="construction-box">
+
+<h3>
+
+<span class="lang-hi">5 cm का रेखाखंड बनाना</span>
+<span class="lang-en">Constructing a 5 cm Line Segment</span>
+
+</h3>
+
+<div class="step">
+<strong>Step 1:</strong>
+<span class="lang-hi">एक बिंदु A चिन्हित करें।</span>
+<span class="lang-en">Mark a point A.</span>
+</div>
+
+<div class="step">
+<strong>Step 2:</strong>
+<span class="lang-hi">स्केल को A पर रखें।</span>
+<span class="lang-en">Place the ruler at A.</span>
+</div>
+
+<div class="step">
+<strong>Step 3:</strong>
+<span class="lang-hi">A से 5 cm दूरी पर B बिंदु चिन्हित करें।</span>
+<span class="lang-en">Mark point B at a distance of 5 cm from A.</span>
+</div>
+
+<div class="step">
+<strong>Step 4:</strong>
+<span class="lang-hi">A और B को मिलाएँ।</span>
+<span class="lang-en">Join A and B.</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ANGLES -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">📐 कोण</span>
+<span class="lang-en">📐 Angles</span>
+
+</h2>
+
+<p class="block-hi">
+
+दो किरणों के बीच बनने वाली आकृति को कोण कहते हैं।
+</p>
+
+<p class="block-en">
+
+The figure formed by two rays having a common endpoint is called an angle.
+</p>
+
+<div class="formula">
+∠ABC
+<br><br>
+B = शीर्ष / Vertex
+</div>
+
+<h3>
+
+<span class="lang-hi">कोणों के प्रकार</span>
+<span class="lang-en">Types of Angles</span>
+
+</h3>
+
+<ul class="block-hi">
+<li>न्यून कोण – 90° से कम</li>
+<li>समकोण – 90°</li>
+<li>अधिक कोण – 90° से अधिक और 180° से कम</li>
+<li>सरल कोण – 180°</li>
+<li>पूर्ण कोण – 360°</li>
+</ul>
+
+<ul class="block-en">
+<li>Acute Angle – less than 90°</li>
+<li>Right Angle – 90°</li>
+<li>Obtuse Angle – more than 90° and less than 180°</li>
+<li>Straight Angle – 180°</li>
+<li>Complete Angle – 360°</li>
+</ul>
+
+</div>
+
+
+<!-- PROTRACTOR -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">📐 कोण मापना</span>
+<span class="lang-en">📐 Measuring an Angle</span>
+
+</h2>
+
+<div class="construction-box">
+
+<div class="step">
+<strong>1.</strong>
+<span class="lang-hi">
+प्रोटेक्टर का केंद्र कोण के शीर्ष पर रखें।
+</span>
+<span class="lang-en">
+Place the centre of the protractor on the vertex of the angle.
+</span>
+</div>
+
+<div class="step">
+<strong>2.</strong>
+<span class="lang-hi">
+प्रोटेक्टर की आधार रेखा को एक भुजा के साथ मिलाएँ।
+</span>
+<span class="lang-en">
+Align the baseline of the protractor with one arm of the angle.
+</span>
+</div>
+
+<div class="step">
+<strong>3.</strong>
+<span class="lang-hi">
+दूसरी भुजा जिस संख्या पर जाती है, वही कोण का माप है।
+</span>
+<span class="lang-en">
+The number where the other arm meets the scale gives the angle measure.
+</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CIRCLE -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">⭕ वृत्त</span>
+<span class="lang-en">⭕ Circle</span>
+
+</h2>
+
+<p class="block-hi">
+एक निश्चित बिंदु से समान दूरी पर स्थित सभी बिंदुओं से बनी बंद आकृति को वृत्त कहते हैं।
+</p>
+
+<p class="block-en">
+A closed figure consisting of all points at the same distance from a fixed point
+is called a circle.
+</p>
+
+<div class="formula">
+
+केंद्र = Centre
+<br>
+त्रिज्या = Radius
+<br>
+व्यास = Diameter
+<br><br>
+Diameter = 2 × Radius
+
+</div>
+
+<div class="example">
+
+<p class="block-hi">
+यदि त्रिज्या 5 cm है, तो व्यास = 2 × 5 = 10 cm।
+</p>
+
+<p class="block-en">
+If the radius is 5 cm, then diameter = 2 × 5 = 10 cm.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CIRCLE CONSTRUCTION -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">⭕ कम्पास से वृत्त बनाना</span>
+<span class="lang-en">⭕ Constructing a Circle Using Compass</span>
+
+</h2>
+
+<div class="construction-box">
+
+<div class="step">
+<strong>Step 1:</strong>
+<span class="lang-hi">
+कागज पर एक बिंदु O लें।
+</span>
+<span class="lang-en">
+Mark a point O on the paper.
+</span>
+</div>
+
+<div class="step">
+<strong>Step 2:</strong>
+<span class="lang-hi">
+कम्पास में आवश्यक त्रिज्या निर्धारित करें।
+</span>
+<span class="lang-en">
+Set the required radius in the compass.
+</span>
+</div>
+
+<div class="step">
+<strong>Step 3:</strong>
+<span class="lang-hi">
+कम्पास की नोक O पर रखें।
+</span>
+<span class="lang-en">
+Place the pointed end of the compass at O.
+</span>
+</div>
+
+<div class="step">
+<strong>Step 4:</strong>
+<span class="lang-hi">
+कम्पास को घुमाकर पूरा वृत्त बनाएँ।
+</span>
+<span class="lang-en">
+Rotate the compass to complete the circle.
+</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- EQUAL LINE SEGMENTS -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">📏 समान रेखाखंड</span>
+<span class="lang-en">📏 Equal Line Segments</span>
+
+</h2>
+
+<p class="block-hi">
+कम्पास की सहायता से किसी रेखाखंड की लंबाई को दूसरी जगह पर बिना मापे स्थानांतरित किया जा सकता है।
+</p>
+
+<p class="block-en">
+A compass can be used to transfer the length of a line segment to another place
+without measuring it again.
+
+</p>
+
+</div>
+
+
+<!-- PRACTICE QUESTIONS -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">📝 अभ्यास प्रश्न – 45 Questions</span>
+<span class="lang-en">📝 Practice Questions – 45 Questions</span>
+
+</h2>
+
+<div class="grid">
+
+<div class="question">
+<strong>1.</strong>
+<span class="lang-hi">ज्यामिति क्या है?</span>
+<span class="lang-en">What is geometry?</span>
+</div>
+
+<div class="question">
+<strong>2.</strong>
+<span class="lang-hi">रेखाखंड किसे कहते हैं?</span>
+<span class="lang-en">What is a line segment?</span>
+</div>
+
+<div class="question">
+<strong>3.</strong>
+<span class="lang-hi">रेखाखंड की लंबाई कैसे मापते हैं?</span>
+<span class="lang-en">How do we measure the length of a line segment?</span>
+</div>
+
+<div class="question">
+<strong>4.</strong>
+<span class="lang-hi">स्केल का उपयोग किसलिए किया जाता है?</span>
+<span class="lang-en">What is a ruler used for?</span>
+</div>
+
+<div class="question">
+<strong>5.</strong>
+<span class="lang-hi">कम्पास का उपयोग किसलिए किया जाता है?</span>
+<span class="lang-en">What is a compass used for?</span>
+</div>
+
+<div class="question">
+<strong>6.</strong>
+<span class="lang-hi">प्रोटेक्टर का उपयोग किसलिए होता है?</span>
+<span class="lang-en">What is a protractor used for?</span>
+</div>
+
+<div class="question">
+<strong>7.</strong>
+<span class="lang-hi">कोण किसे कहते हैं?</span>
+<span class="lang-en">What is an angle?</span>
+</div>
+
+<div class="question">
+<strong>8.</strong>
+<span class="lang-hi">कोण का शीर्ष क्या होता है?</span>
+<span class="lang-en">What is the vertex of an angle?</span>
+</div>
+
+<div class="question">
+<strong>9.</strong>
+<span class="lang-hi">न्यून कोण किसे कहते हैं?</span>
+<span class="lang-en">What is an acute angle?</span>
+</div>
+
+<div class="question">
+<strong>10.</strong>
+<span class="lang-hi">समकोण कितने डिग्री का होता है?</span>
+<span class="lang-en">How many degrees is a right angle?</span>
+</div>
+
+<div class="question">
+<strong>11.</strong>
+<span class="lang-hi">अधिक कोण किसे कहते हैं?</span>
+<span class="lang-en">What is an obtuse angle?</span>
+</div>
+
+<div class="question">
+<strong>12.</strong>
+<span class="lang-hi">सरल कोण कितने डिग्री का होता है?</span>
+<span class="lang-en">How many degrees is a straight angle?</span>
+</div>
+
+<div class="question">
+<strong>13.</strong>
+<span class="lang-hi">पूर्ण कोण कितने डिग्री का होता है?</span>
+<span class="lang-en">How many degrees is a complete angle?</span>
+</div>
+
+<div class="question">
+<strong>14.</strong>
+<span class="lang-hi">वृत्त किसे कहते हैं?</span>
+<span class="lang-en">What is a circle?</span>
+</div>
+
+<div class="question">
+<strong>15.</strong>
+<span class="lang-hi">वृत्त के केंद्र को क्या कहते हैं?</span>
+<span class="lang-en">What is the centre of a circle?</span>
+</div>
+
+<div class="question">
+<strong>16.</strong>
+<span class="lang-hi">त्रिज्या किसे कहते हैं?</span>
+<span class="lang-en">What is radius?</span>
+</div>
+
+<div class="question">
+<strong>17.</strong>
+<span class="lang-hi">व्यास किसे कहते हैं?</span>
+<span class="lang-en">What is diameter?</span>
+</div>
+
+<div class="question">
+<strong>18.</strong>
+<span class="lang-hi">व्यास और त्रिज्या में क्या संबंध है?</span>
+<span class="lang-en">What is the relation between diameter and radius?</span>
+</div>
+
+<div class="question">
+<strong>19.</strong>
+<span class="lang-hi">यदि त्रिज्या 4 cm है तो व्यास ज्ञात करें।</span>
+<span class="lang-en">If radius is 4 cm, find the diameter.</span>
+</div>
+
+<div class="question">
+<strong>20.</strong>
+<span class="lang-hi">यदि व्यास 12 cm है तो त्रिज्या ज्ञात करें।</span>
+<span class="lang-en">If diameter is 12 cm, find the radius.</span>
+</div>
+
+<div class="question">
+<strong>21.</strong>
+<span class="lang-hi">5 cm का रेखाखंड बनाइए।</span>
+<span class="lang-en">Construct a line segment of 5 cm.</span>
+</div>
+
+<div class="question">
+<strong>22.</strong>
+<span class="lang-hi">7 cm का रेखाखंड बनाइए।</span>
+<span class="lang-en">Construct a line segment of 7 cm.</span>
+</div>
+
+<div class="question">
+<strong>23.</strong>
+<span class="lang-hi">3 cm त्रिज्या का वृत्त बनाइए।</span>
+<span class="lang-en">Construct a circle of radius 3 cm.</span>
+</div>
+
+<div class="question">
+<strong>24.</strong>
+<span class="lang-hi">5 cm त्रिज्या का वृत्त बनाइए।</span>
+<span class="lang-en">Construct a circle of radius 5 cm.</span>
+</div>
+
+<div class="question">
+<strong>25.</strong>
+<span class="lang-hi">60° का कोण बनाइए।</span>
+<span class="lang-en">Construct an angle of 60°.</span>
+</div>
+
+<div class="question">
+<strong>26.</strong>
+<span class="lang-hi">90° का कोण बनाइए।</span>
+<span class="lang-en">Construct an angle of 90°.</span>
+</div>
+
+<div class="question">
+<strong>27.</strong>
+<span class="lang-hi">120° का कोण बनाइए।</span>
+<span class="lang-en">Construct an angle of 120°.</span>
+</div>
+
+<div class="question">
+<strong>28.</strong>
+<span class="lang-hi">45° का कोण मापिए।</span>
+<span class="lang-en">Measure an angle of 45°.</span>
+</div>
+
+<div class="question">
+<strong>29.</strong>
+<span class="lang-hi">एक न्यून कोण का उदाहरण दीजिए।</span>
+<span class="lang-en">Give an example of an acute angle.</span>
+</div>
+
+<div class="question">
+<strong>30.</strong>
+<span class="lang-hi">एक अधिक कोण का उदाहरण दीजिए।</span>
+<span class="lang-en">Give an example of an obtuse angle.</span>
+</div>
+
+<div class="question">
+<strong>31.</strong>
+<span class="lang-hi">90° कोण किस प्रकार का कोण है?</span>
+<span class="lang-en">What type of angle is 90°?</span>
+</div>
+
+<div class="question">
+<strong>32.</strong>
+<span class="lang-hi">180° कोण किस प्रकार का कोण है?</span>
+<span class="lang-en">What type of angle is 180°?</span>
+</div>
+
+<div class="question">
+<strong>33.</strong>
+<span class="lang-hi">360° कोण किस प्रकार का कोण है?</span>
+<span class="lang-en">What type of angle is 360°?</span>
+</div>
+
+<div class="question">
+<strong>34.</strong>
+<span class="lang-hi">कम्पास से समान लंबाई कैसे स्थानांतरित करते हैं?</span>
+<span class="lang-en">How can we transfer equal lengths using a compass?</span>
+</div>
+
+<div class="question">
+<strong>35.</strong>
+<span class="lang-hi">वृत्त बनाने में किस उपकरण का उपयोग होता है?</span>
+<span class="lang-en">Which instrument is used to draw a circle?</span>
+</div>
+
+<div class="question">
+<strong>36.</strong>
+<span class="lang-hi">कोण मापने के लिए कौन-सा उपकरण चाहिए?</span>
+<span class="lang-en">Which instrument is needed to measure an angle?</span>
+</div>
+
+<div class="question">
+<strong>37.</strong>
+<span class="lang-hi">रेखाखंड AB = 8 cm है। इसकी लंबाई क्या है?</span>
+<span class="lang-en">If AB = 8 cm, what is its length?</span>
+</div>
+
+<div class="question">
+<strong>38.</strong>
+<span class="lang-hi">त्रिज्या 6 cm वाले वृत्त का व्यास ज्ञात करें।</span>
+<span class="lang-en">Find the diameter of a circle with radius 6 cm.</span>
+</div>
+
+<div class="question">
+<strong>39.</strong>
+<span class="lang-hi">व्यास 20 cm वाले वृत्त की त्रिज्या ज्ञात करें।</span>
+<span class="lang-en">Find the radius of a circle with diameter 20 cm.</span>
+</div>
+
+<div class="question">
+<strong>40.</strong>
+<span class="lang-hi">एक कोण 75° है। यह किस प्रकार का कोण है?</span>
+<span class="lang-en">An angle is 75°. What type of angle is it?</span>
+</div>
+
+<div class="question">
+<strong>41.</strong>
+<span class="lang-hi">एक कोण 135° है। यह किस प्रकार का कोण है?</span>
+<span class="lang-en">An angle is 135°. What type of angle is it?</span>
+</div>
+
+<div class="question">
+<strong>42.</strong>
+<span class="lang-hi">एक कोण 180° है। इसका नाम बताइए।</span>
+<span class="lang-en">An angle is 180°. Name the angle.</span>
+</div>
+
+<div class="question">
+<strong>43.</strong>
+<span class="lang-hi">क्या हर व्यास एक जीवा होता है?</span>
+<span class="lang-en">Is every diameter a chord?</span>
+</div>
+
+<div class="question">
+<strong>44.</strong>
+<span class="lang-hi">कम्पास का उपयोग करके 4 cm की दूरी कैसे निर्धारित करेंगे?</span>
+<span class="lang-en">How would you set a distance of 4 cm using a compass?</span>
+</div>
+
+<div class="question">
+<strong>45.</strong>
+<span class="lang-hi">ज्यामितीय रचनाओं में सटीकता क्यों आवश्यक है?</span>
+<span class="lang-en">Why is accuracy important in geometrical constructions?</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MCQ -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">🎯 बहुविकल्पीय प्रश्न – 15 MCQs</span>
+<span class="lang-en">🎯 Multiple Choice Questions – 15 MCQs</span>
+
+</h2>
+
+
+<div class="mcq">
+
+<strong>1. <span class="lang-hi">रेखाखंड की लंबाई मापने के लिए किसका प्रयोग होता है?</span>
+<span class="lang-en">Which instrument is used to measure a line segment?</span></strong>
+
+<div class="option">A) <span class="lang-hi">कम्पास</span><span class="lang-en">Compass</span></div>
+<div class="option">B) <span class="lang-hi">स्केल</span><span class="lang-en">Ruler</span></div>
+<div class="option">C) <span class="lang-hi">प्रोटेक्टर</span><span class="lang-en">Protractor</span></div>
+<div class="option">D) <span class="lang-hi">डिवाइडर</span><span class="lang-en">Divider</span></div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>2. <span class="lang-hi">वृत्त बनाने के लिए किस उपकरण का प्रयोग होता है?</span>
+<span class="lang-en">Which instrument is used to draw a circle?</span></strong>
+
+<div class="option">A) <span class="lang-hi">कम्पास</span><span class="lang-en">Compass</span></div>
+<div class="option">B) <span class="lang-hi">स्केल</span><span class="lang-en">Ruler</span></div>
+<div class="option">C) <span class="lang-hi">प्रोटेक्टर</span><span class="lang-en">Protractor</span></div>
+<div class="option">D) <span class="lang-hi">पेंसिल</span><span class="lang-en">Pencil</span></div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>3. <span class="lang-hi">समकोण कितने डिग्री का होता है?</span>
+<span class="lang-en">How many degrees is a right angle?</span></strong>
+
+<div class="option">A) 45°</div>
+<div class="option">B) 60°</div>
+<div class="option">C) 90°</div>
+<div class="option">D) 180°</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>4. <span class="lang-hi">सरल कोण कितने डिग्री का होता है?</span>
+<span class="lang-en">How many degrees is a straight angle?</span></strong>
+
+<div class="option">A) 90°</div>
+<div class="option">B) 120°</div>
+<div class="option">C) 180°</div>
+<div class="option">D) 360°</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>5. <span class="lang-hi">यदि त्रिज्या 5 cm है, तो व्यास होगा:</span>
+<span class="lang-en">If radius is 5 cm, the diameter is:</span></strong>
+
+<div class="option">A) 5 cm</div>
+<div class="option">B) 10 cm</div>
+<div class="option">C) 15 cm</div>
+<div class="option">D) 20 cm</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>6. <span class="lang-hi">75° किस प्रकार का कोण है?</span>
+<span class="lang-en">What type of angle is 75°?</span></strong>
+
+<div class="option">A) <span class="lang-hi">न्यून कोण</span><span class="lang-en">Acute angle</span></div>
+<div class="option">B) <span class="lang-hi">समकोण</span><span class="lang-en">Right angle</span></div>
+<div class="option">C) <span class="lang-hi">अधिक कोण</span><span class="lang-en">Obtuse angle</span></div>
+<div class="option">D) <span class="lang-hi">सरल कोण</span><span class="lang-en">Straight angle</span></div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>7. <span class="lang-hi">135° किस प्रकार का कोण है?</span>
+<span class="lang-en">What type of angle is 135°?</span></strong>
+
+<div class="option">A) <span class="lang-hi">न्यून कोण</span><span class="lang-en">Acute</span></div>
+<div class="option">B) <span class="lang-hi">अधिक कोण</span><span class="lang-en">Obtuse</span></div>
+<div class="option">C) <span class="lang-hi">समकोण</span><span class="lang-en">Right</span></div>
+<div class="option">D) <span class="lang-hi">पूर्ण कोण</span><span class="lang-en">Complete</span></div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>8. <span class="lang-hi">360° का कोण कहलाता है:</span>
+<span class="lang-en">An angle of 360° is called:</span></strong>
+
+<div class="option">A) <span class="lang-hi">न्यून कोण</span><span class="lang-en">Acute angle</span></div>
+<div class="option">B) <span class="lang-hi">समकोण</span><span class="lang-en">Right angle</span></div>
+<div class="option">C) <span class="lang-hi">पूर्ण कोण</span><span class="lang-en">Complete angle</span></div>
+<div class="option">D) <span class="lang-hi">सरल कोण</span><span class="lang-en">Straight angle</span></div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>9. <span class="lang-hi">कोण मापने के लिए किसका प्रयोग होता है?</span>
+<span class="lang-en">Which instrument is used to measure an angle?</span></strong>
+
+<div class="option">A) <span class="lang-hi">कम्पास</span><span class="lang-en">Compass</span></div>
+<div class="option">B) <span class="lang-hi">प्रोटेक्टर</span><span class="lang-en">Protractor</span></div>
+<div class="option">C) <span class="lang-hi">स्केल</span><span class="lang-en">Ruler</span></div>
+<div class="option">D) <span class="lang-hi">डिवाइडर</span><span class="lang-en">Divider</span></div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>10. <span class="lang-hi">यदि व्यास 14 cm है, तो त्रिज्या होगी:</span>
+<span class="lang-en">If diameter is 14 cm, the radius is:</span></strong>
+
+<div class="option">A) 5 cm</div>
+<div class="option">B) 6 cm</div>
+<div class="option">C) 7 cm</div>
+<div class="option">D) 8 cm</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>11. <span class="lang-hi">45° कौन-सा कोण है?</span>
+<span class="lang-en">What type of angle is 45°?</span></strong>
+
+<div class="option">A) <span class="lang-hi">न्यून कोण</span><span class="lang-en">Acute</span></div>
+<div class="option">B) <span class="lang-hi">अधिक कोण</span><span class="lang-en">Obtuse</span></div>
+<div class="option">C) <span class="lang-hi">समकोण</span><span class="lang-en">Right</span></div>
+<div class="option">D) <span class="lang-hi">सरल कोण</span><span class="lang-en">Straight</span></div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>12. <span class="lang-hi">दो निश्चित बिंदुओं के बीच की सीधी दूरी कहलाती है:</span>
+<span class="lang-en">The straight part between two fixed points is called:</span></strong>
+
+<div class="option">A) <span class="lang-hi">किरण</span><span class="lang-en">Ray</span></div>
+<div class="option">B) <span class="lang-hi">रेखाखंड</span><span class="lang-en">Line segment</span></div>
+<div class="option">C) <span class="lang-hi">वृत्त</span><span class="lang-en">Circle</span></div>
+<div class="option">D) <span class="lang-hi">कोण</span><span class="lang-en">Angle</span></div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>13. <span class="lang-hi">वृत्त के केंद्र से वृत्त की सीमा तक की दूरी कहलाती है:</span>
+<span class="lang-en">The distance from the centre to the circle is called:</span></strong>
+
+<div class="option">A) <span class="lang-hi">व्यास</span><span class="lang-en">Diameter</span></div>
+<div class="option">B) <span class="lang-hi">त्रिज्या</span><span class="lang-en">Radius</span></div>
+<div class="option">C) <span class="lang-hi">जीवा</span><span class="lang-en">Chord</span></div>
+<div class="option">D) <span class="lang-hi">चाप</span><span class="lang-en">Arc</span></div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>14. <span class="lang-hi">यदि त्रिज्या 8 cm है तो व्यास होगा:</span>
+<span class="lang-en">If radius is 8 cm, the diameter is:</span></strong>
+
+<div class="option">A) 8 cm</div>
+<div class="option">B) 12 cm</div>
+<div class="option">C) 16 cm</div>
+<div class="option">D) 20 cm</div>
+
+</div>
+
+
+<div class="mcq">
+
+<strong>15. <span class="lang-hi">कम्पास का मुख्य उपयोग है:</span>
+<span class="lang-en">The main use of a compass is:</span></strong>
+
+<div class="option">
+A) <span class="lang-hi">कोण मापना</span>
+<span class="lang-en">Measuring angles</span>
+</div>
+
+<div class="option">
+B) <span class="lang-hi">वृत्त बनाना</span>
+<span class="lang-en">Drawing circles</span>
+</div>
+
+<div class="option">
+C) <span class="lang-hi">लंबाई पढ़ना</span>
+<span class="lang-en">Reading length</span>
+</div>
+
+<div class="option">
+D) <span class="lang-hi">चित्र रंगना</span>
+<span class="lang-en">Colouring</span>
+</div>
+
+</div>
+
+
+<div class="answer">
+
+<h3>
+<span class="lang-hi">✅ उत्तरमाला</span>
+<span class="lang-en">✅ Answer Key</span>
+</h3>
+
+<p>
+1-B, 2-A, 3-C, 4-C, 5-B,
+6-A, 7-B, 8-C, 9-B, 10-C,
+11-A, 12-B, 13-B, 14-C, 15-B
+</p>
+
+</div>
+
+</div>
+
+
+<!-- QUICK REVISION -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">⚡ त्वरित पुनरावृत्ति</span>
+<span class="lang-en">⚡ Quick Revision</span>
+
+</h2>
+
+<ul class="block-hi">
+
+<li>रेखाखंड के दो निश्चित अंतिम बिंदु होते हैं।</li>
+<li>स्केल से रेखाखंड की लंबाई मापते हैं।</li>
+<li>कम्पास से वृत्त और चाप बनाए जाते हैं।</li>
+<li>प्रोटेक्टर से कोण मापा जाता है।</li>
+<li>समकोण = 90°</li>
+<li>सरल कोण = 180°</li>
+<li>पूर्ण कोण = 360°</li>
+<li>व्यास = 2 × त्रिज्या</li>
+<li>त्रिज्या = व्यास ÷ 2</li>
+
+</ul>
+
+
+<ul class="block-en">
+
+<li>A line segment has two fixed endpoints.</li>
+<li>A ruler is used to measure a line segment.</li>
+<li>A compass is used to draw circles and arcs.</li>
+<li>A protractor is used to measure angles.</li>
+<li>Right angle = 90°</li>
+<li>Straight angle = 180°</li>
+<li>Complete angle = 360°</li>
+<li>Diameter = 2 × Radius</li>
+<li>Radius = Diameter ÷ 2</li>
+
+</ul>
+
+</div>
+
+
+<!-- RESOURCES -->
+
+<div class="card">
+
+<h2>
+
+<span class="lang-hi">📚 Learning Resources</span>
+<span class="lang-en">📚 Learning Resources</span>
+
+</h2>
+
+<div class="resource-grid">
+
+<div class="resource">
+
+<h3>
+<span class="lang-hi">📖 Notes</span>
+<span class="lang-en">📖 Notes</span>
+</h3>
+
+<p>
+<span class="lang-hi">महत्वपूर्ण परिभाषाएँ और नियम दोहराएँ।</span>
+<span class="lang-en">Revise important definitions and rules.</span>
+</p>
+
+</div>
+
+
+<div class="resource">
+
+<h3>
+<span class="lang-hi">✏️ Practice</span>
+<span class="lang-en">✏️ Practice</span>
+</h3>
+
+<p>
+<span class="lang-hi">45 अभ्यास प्रश्न हल करें।</span>
+<span class="lang-en">Solve all 45 practice questions.</span>
+</p>
+
+</div>
+
+
+<div class="resource">
+
+<h3>
+<span class="lang-hi">🎯 MCQ Test</span>
+<span class="lang-en">🎯 MCQ Test</span>
+</h3>
+
+<p>
+<span class="lang-hi">15 MCQs से अपनी तैयारी जाँचें।</span>
+<span class="lang-en">Test your preparation with 15 MCQs.</span>
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CTA -->
+
+<div class="cta">
+
+<h2>
+
+<span class="lang-hi">🚀 अपनी तैयारी जारी रखें!</span>
+<span class="lang-en">🚀 Keep Learning!</span>
+
+</h2>
+
+<p>
+
+<span class="lang-hi">
+अगले अध्याय में हम Symmetry यानी सममिति के बारे में सीखेंगे।
+</span>
+
+<span class="lang-en">
+In the next chapter, we will learn about Symmetry.
+</span>
+
+</p>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+<a href="class-6-maths-chapter-7.html">
+
+<span class="lang-hi">⬅️ अध्याय 7</span>
+<span class="lang-en">⬅️ Chapter 7</span>
+
+</a>
+
+
+<a href="../class-6-mathematics.html">
+
+<span class="lang-hi">📚 सभी अध्याय</span>
+<span class="lang-en">📚 All Chapters</span>
+
+</a>
+
+
+<a href="class-6-maths-chapter-9.html">
+
+<span class="lang-hi">अध्याय 9 ➡️</span>
+<span class="lang-en">Chapter 9 ➡️</span>
+
+</a>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<p>
+<strong>UEduTech</strong> – Smart Learning Platform
+</p>
+
+<p>
+
+<span class="lang-hi">
+कक्षा 6 गणित | अध्याय 8: रचनाओं के साथ खेलना
+</span>
+
+<span class="lang-en">
+Class 6 Mathematics | Chapter 8: Playing with Constructions
+</span>
+
+</p>
+
+<p>© 2026 UEduTech. All Rights Reserved.</p>
+
+</footer>
+
+
+<script>
+
+function setLanguage(lang){
+
+    if(lang === "en"){
+
+        document.body.classList.add("english");
+
+        document.getElementById("enBtn").classList.add("active");
+        document.getElementById("hiBtn").classList.remove("active");
+
+        document.documentElement.lang = "en";
+
+    }else{
+
+        document.body.classList.remove("english");
+
+        document.getElementById("hiBtn").classList.add("active");
+        document.getElementById("enBtn").classList.remove("active");
+
+        document.documentElement.lang = "hi";
+
+    }
+
+    localStorage.setItem("uedutech-language",lang);
+}
+
+
+window.onload = function(){
+
+    const savedLanguage =
+        localStorage.getItem("uedutech-language") || "hi";
+
+    setLanguage(savedLanguage);
+
+};
+
+</script>
+
+</body>
+</html>
+

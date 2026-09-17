@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Class 7 Maths Chapter 3 – A Peek Beyond the Point | UEduTech</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+    background:#f4f7fb;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+header{
+    background:linear-gradient(135deg,#173b72,#2563eb);
+    color:white;
+    padding:18px 6%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#ffd43b;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:8px 13px;
+    border-radius:8px;
+    font-size:14px;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.16);
+}
+
+.language-box{
+    text-align:center;
+    padding:16px 10px;
+    background:white;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.lang-btn{
+    border:1px solid #2563eb;
+    background:white;
+    color:#2563eb;
+    padding:8px 18px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:700;
+    margin:3px;
+}
+
+.lang-btn.active{
+    background:#2563eb;
+    color:white;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+}
+
+.hero{
+    margin:30px auto;
+    padding:45px 25px;
+    text-align:center;
+    background:linear-gradient(135deg,#e8f1ff,#ffffff);
+    border-radius:20px;
+    border:1px solid #dbeafe;
+    box-shadow:0 8px 25px rgba(37,99,235,.08);
+}
+
+.badge{
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    padding:6px 15px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    color:#173b72;
+    font-size:36px;
+    margin-bottom:8px;
+}
+
+.hero p{
+    color:#64748b;
+    font-size:18px;
+}
+
+.card{
+    background:white;
+    margin:22px 0;
+    padding:28px;
+    border-radius:16px;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+    border-left:5px solid #2563eb;
+}
+
+.card h2{
+    color:#173b72;
+    margin-bottom:15px;
+    font-size:25px;
+}
+
+.card h3{
+    color:#2563eb;
+    margin:18px 0 8px;
+}
+
+.example{
+    background:#eff6ff;
+    border:1px solid #bfdbfe;
+    border-radius:12px;
+    padding:15px 18px;
+    margin:15px 0;
+}
+
+.formula{
+    background:#f0fdf4;
+    border-left:4px solid #16a34a;
+    padding:14px 18px;
+    border-radius:8px;
+    margin:12px 0;
+    font-weight:600;
+}
+
+.warning{
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+    padding:14px 18px;
+    border-radius:8px;
+    margin:12px 0;
+}
+
+.question-list{
+    padding-left:25px;
+}
+
+.question-list li{
+    margin:9px 0;
+}
+
+.mcq{
+    background:#fafafa;
+    border:1px solid #e5e7eb;
+    padding:15px;
+    border-radius:10px;
+    margin:12px 0;
+}
+
+.answer{
+    background:#ecfdf5;
+    padding:18px;
+    border-radius:12px;
+    border:1px solid #bbf7d0;
+}
+
+.revision-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.revision-box{
+    padding:18px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:12px;
+}
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin:30px 0;
+}
+
+.navigation a{
+    flex:1;
+    text-align:center;
+    text-decoration:none;
+    padding:13px;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-weight:bold;
+}
+
+.navigation a:hover{
+    background:#173b72;
+}
+
+footer{
+    background:#173b72;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+.lang-en{
+    display:none;
+}
+
+body.english .lang-hi{
+    display:none;
+}
+
+body.english .lang-en{
+    display:inline;
+}
+
+.block-en{
+    display:none;
+}
+
+.block-hi{
+    display:block;
+}
+
+body.english .block-hi{
+    display:none;
+}
+
+body.english .block-en{
+    display:block;
+}
+
+@media(max-width:700px){
+
+    .navbar{
+        flex-direction:column;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+```
+<div class="logo">
+    U<span>Edu</span>Tech
+</div>
+
+<nav>
+    <a href="../../../index.html">Home</a>
+    <a href="../../../subjects.html">Subjects</a>
+    <a href="../../../tests.html">Model Tests</a>
+    <a href="../../../study-material.html">Study Material</a>
+</nav>
+```
+
+</div>
+
+</header>
+
+<div class="language-box">
+
+<button id="hiBtn"
+     class="lang-btn active"
+     onclick="setLanguage('hi')">
+🇮🇳 हिंदी </button>
+
+<button id="enBtn"
+     class="lang-btn"
+     onclick="setLanguage('en')">
+🇬🇧 English </button>
+
+</div>
+
+<main class="container">
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="badge">
+
+<span class="lang-hi">
+कक्षा 7 गणित • अध्याय 3
+</span>
+
+<span class="lang-en">
+Class 7 Mathematics • Chapter 3
+</span>
+
+</div>
+
+<h1>
+<span class="lang-hi">
+A Peek Beyond the Point
+</span>
+
+<span class="lang-en">
+A Peek Beyond the Point
+</span>
+</h1>
+
+<p>
+
+<span class="lang-hi">
+बिंदु से आगे की झलक
+</span>
+
+<span class="lang-en">
+Exploring decimals, place value and numbers beyond the point
+</span>
+
+</p>
+
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+📘 अध्याय परिचय
+</span>
+
+<span class="lang-en">
+📘 Chapter Introduction
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+हम अपने दैनिक जीवन में कई ऐसी संख्याओं का उपयोग करते हैं जिनमें
+दशमलव बिंदु होता है।
+</p>
+
+<p>
+जैसे:
+<b>₹25.50</b>, <b>3.5 kg</b>, <b>2.75 m</b> और
+<b>36.5°C</b>।
+</p>
+
+<p>
+ऐसी संख्याओं को <b>दशमलव संख्याएँ (Decimal Numbers)</b> कहा जाता है।
+इस अध्याय में हम दशमलव बिंदु के बाद आने वाले अंकों के स्थान-मूल्य,
+दशमलव संख्याओं की तुलना, जोड़, घटाव तथा उनके उपयोग को समझेंगे।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+In our daily life, we often use numbers containing a decimal point.
+</p>
+
+<p>
+For example:
+<b>₹25.50</b>, <b>3.5 kg</b>, <b>2.75 m</b> and
+<b>36.5°C</b>.
+</p>
+
+<p>
+Such numbers are called <b>decimal numbers</b>.
+In this chapter, we explore place value after the decimal point,
+comparison of decimals, addition, subtraction and their applications.
+</p>
+
+</div>
+
+</section>
+
+<!-- DECIMAL POINT -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+1️⃣ दशमलव बिंदु
+</span>
+
+<span class="lang-en">
+1️⃣ Decimal Point
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+दशमलव बिंदु किसी संख्या के पूर्णांक भाग और दशमलव भाग को अलग करता है।
+</p>
+
+<div class="example">
+
+<b>25.73</b>
+
+<br><br>
+
+25 → पूर्णांक भाग
+
+<br>
+
+73 → दशमलव भाग
+
+</div>
+
+<p>
+दशमलव बिंदु के बाईं ओर के अंक पूर्णांक भाग में तथा दाईं ओर के अंक
+दशमलव भाग में होते हैं।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+The decimal point separates the whole-number part from the decimal part.
+</p>
+
+<div class="example">
+
+<b>25.73</b>
+
+<br><br>
+
+25 → Whole-number part
+
+<br>
+
+73 → Decimal part
+
+</div>
+
+<p>
+Digits to the left of the decimal point form the whole-number part,
+while digits to the right form the decimal part.
+</p>
+
+</div>
+
+</section>
+
+<!-- PLACE VALUE -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+2️⃣ दशमलव स्थान-मूल्य
+</span>
+
+<span class="lang-en">
+2️⃣ Decimal Place Value
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+दशमलव बिंदु के बाद प्रत्येक स्थान का एक निश्चित स्थान-मूल्य होता है।
+</p>
+
+<div class="formula">
+
+दशमलव के बाद:
+
+<br><br>
+
+पहला स्थान → <b>Tenths (दसवाँ)</b>
+
+<br>
+
+दूसरा स्थान → <b>Hundredths (सौवाँ)</b>
+
+<br>
+
+तीसरा स्थान → <b>Thousandths (हज़ारवाँ)</b>
+
+</div>
+
+<div class="example">
+
+<b>4.582</b>
+
+<br><br>
+
+5 → Tenths
+
+<br>
+
+8 → Hundredths
+
+<br>
+
+2 → Thousandths
+
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>
+Each position after the decimal point has a specific place value.
+</p>
+
+<div class="formula">
+
+First place → <b>Tenths</b>
+
+<br>
+
+Second place → <b>Hundredths</b>
+
+<br>
+
+Third place → <b>Thousandths</b>
+
+</div>
+
+<div class="example">
+
+<b>4.582</b>
+
+<br><br>
+
+5 → Tenths
+
+<br>
+
+8 → Hundredths
+
+<br>
+
+2 → Thousandths
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FRACTION CONNECTION -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+3️⃣ दशमलव और भिन्न का संबंध
+</span>
+
+<span class="lang-en">
+3️⃣ Connection Between Decimals and Fractions
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+दशमलव संख्याओं को भिन्न के रूप में भी लिखा जा सकता है।
+</p>
+
+<div class="example">
+
+<b>0.5 = 5/10 = 1/2</b>
+
+<br><br>
+
+<b>0.25 = 25/100 = 1/4</b>
+
+<br><br>
+
+<b>0.125 = 125/1000 = 1/8</b>
+
+</div>
+
+<p>
+दशमलव बिंदु के बाद जितने अंक होते हैं, हर में उतनी ही शून्य वाली
+10 की घात आती है।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+Decimal numbers can also be represented as fractions.
+</p>
+
+<div class="example">
+
+<b>0.5 = 5/10 = 1/2</b>
+
+<br><br>
+
+<b>0.25 = 25/100 = 1/4</b>
+
+<br><br>
+
+<b>0.125 = 125/1000 = 1/8</b>
+
+</div>
+
+<p>
+The number of digits after the decimal point determines the power of 10
+in the denominator.
+</p>
+
+</div>
+
+</section>
+
+<!-- COMPARISON -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+4️⃣ दशमलव संख्याओं की तुलना
+</span>
+
+<span class="lang-en">
+4️⃣ Comparing Decimal Numbers
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+दशमलव संख्याओं की तुलना करने के लिए पहले पूर्णांक भाग की तुलना करें।
+यदि वे समान हों तो दशमलव भाग की तुलना करें।
+</p>
+
+<div class="example">
+
+<b>4.75 और 4.57</b>
+
+<br><br>
+
+पूर्णांक भाग समान है।
+
+<br>
+
+75 hundredths > 57 hundredths
+
+<br><br>
+
+इसलिए:
+
+<b>4.75 > 4.57</b>
+
+</div>
+
+<h3>Trailing Zero</h3>
+
+<p>
+दशमलव के अंत में शून्य लगाने से संख्या का मान नहीं बदलता।
+</p>
+
+<div class="example">
+
+<b>4.5 = 4.50 = 4.500</b>
+
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>
+To compare decimal numbers, first compare the whole-number parts.
+If they are equal, compare the decimal parts.
+</p>
+
+<div class="example">
+
+<b>4.75 and 4.57</b>
+
+<br><br>
+
+The whole-number parts are equal.
+
+<br>
+
+75 hundredths > 57 hundredths
+
+<br><br>
+
+Therefore:
+
+<b>4.75 > 4.57</b>
+
+</div>
+
+<h3>Trailing Zero</h3>
+
+<p>
+Adding zeros at the end of a decimal does not change its value.
+</p>
+
+<div class="example">
+
+<b>4.5 = 4.50 = 4.500</b>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ADDITION -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+5️⃣ दशमलव संख्याओं का जोड़
+</span>
+
+<span class="lang-en">
+5️⃣ Addition of Decimals
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+दशमलव संख्याओं को जोड़ते समय decimal points को एक ही vertical line
+में रखना चाहिए।
+</p>
+
+<div class="example">
+
+  12.35
+
+<br>
+\+ 4.27
+
+<hr>
+
+  16.62
+
+</div>
+
+<p>
+अतः <b>12.35 + 4.27 = 16.62</b>
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+When adding decimals, align the decimal points vertically.
+</p>
+
+<div class="example">
+
+  12.35
+
+<br>
+\+ 4.27
+
+<hr>
+
+  16.62
+
+</div>
+
+<p>
+Therefore, <b>12.35 + 4.27 = 16.62</b>.
+</p>
+
+</div>
+
+</section>
+
+<!-- SUBTRACTION -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+6️⃣ दशमलव संख्याओं का घटाव
+</span>
+
+<span class="lang-en">
+6️⃣ Subtraction of Decimals
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+घटाव करते समय भी decimal points को एक सीध में रखना चाहिए।
+</p>
+
+<div class="example">
+
+  15.80
+
+<br>
+− 7.35
+
+<hr>
+
+  8.45
+
+</div>
+
+<p>
+इसलिए <b>15.80 − 7.35 = 8.45</b>
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+The decimal points should also be aligned when subtracting decimals.
+</p>
+
+<div class="example">
+
+  15.80
+
+<br>
+− 7.35
+
+<hr>
+
+  8.45
+
+</div>
+
+<p>
+Therefore, <b>15.80 − 7.35 = 8.45</b>.
+</p>
+
+</div>
+
+</section>
+
+<!-- NUMBER LINE -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+7️⃣ Number Line पर दशमलव
+</span>
+
+<span class="lang-en">
+7️⃣ Decimals on a Number Line
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+दशमलव संख्याओं को number line पर भी दर्शाया जा सकता है।
+</p>
+
+<div class="example">
+
+0 ─── 0.1 ─── 0.2 ─── 0.3 ─── 0.4 ─── 0.5 ─── 1
+
+</div>
+
+<p>
+यदि 0 और 1 के बीच की दूरी को 10 बराबर भागों में बाँटें,
+तो प्रत्येक भाग 0.1 के बराबर होगा।
+</p>
+
+<p>
+इस प्रकार 0.5, 0 और 1 के ठीक बीच में स्थित होगा।
+</p>
+
+</div>
+
+<div class="block-en">
+
+<p>
+Decimal numbers can also be represented on a number line.
+</p>
+
+<div class="example">
+
+0 ─── 0.1 ─── 0.2 ─── 0.3 ─── 0.4 ─── 0.5 ─── 1
+
+</div>
+
+<p>
+If the distance between 0 and 1 is divided into ten equal parts,
+each part represents 0.1.
+</p>
+
+<p>
+Thus, 0.5 lies exactly halfway between 0 and 1.
+</p>
+
+</div>
+
+</section>
+
+<!-- MONEY MEASUREMENT -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+8️⃣ दैनिक जीवन में दशमलव
+</span>
+
+<span class="lang-en">
+8️⃣ Decimals in Daily Life
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<p>
+दशमलव का प्रयोग हमारे दैनिक जीवन में अनेक स्थानों पर होता है।
+</p>
+
+<div class="revision-grid">
+
+<div class="revision-box">
+<b>💰 Money</b>
+<br>
+₹25.50
+</div>
+
+<div class="revision-box">
+<b>⚖️ Weight</b>
+<br>
+2.5 kg
+</div>
+
+<div class="revision-box">
+<b>📏 Length</b>
+<br>
+3.75 m
+</div>
+
+<div class="revision-box">
+<b>🌡️ Temperature</b>
+<br>
+36.5°C
+</div>
+
+</div>
+
+</div>
+
+<div class="block-en">
+
+<p>
+Decimals are widely used in everyday life.</p>
+
+<div class="revision-grid">
+
+<div class="revision-box">
+<b>💰 Money</b>
+<br>
+₹25.50
+</div>
+
+<div class="revision-box">
+<b>⚖️ Weight</b>
+<br>
+2.5 kg
+</div>
+
+<div class="revision-box">
+<b>📏 Length</b>
+<br>
+3.75 m
+</div>
+
+<div class="revision-box">
+<b>🌡️ Temperature</b>
+<br>
+36.5°C
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRACTICE -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+✍️ अभ्यास प्रश्न – 50 Questions
+</span>
+
+<span class="lang-en">
+✍️ Practice Questions – 50 Questions
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<ol class="question-list">
+
+<li>25.73 में पूर्णांक भाग और दशमलव भाग लिखिए।</li>
+
+<li>4.582 में 5 का स्थान-मूल्य लिखिए।</li>
+
+<li>4.582 में 8 का स्थान-मूल्य लिखिए।</li>
+
+<li>4.582 में 2 का स्थान-मूल्य लिखिए।</li>
+
+<li>0.5 को भिन्न में लिखिए।</li>
+
+<li>0.25 को भिन्न में लिखिए।</li>
+
+<li>0.75 को भिन्न में लिखिए।</li>
+
+<li>0.125 को भिन्न में लिखिए।</li>
+
+<li>3.5 को दसवें के रूप में लिखिए।</li>
+
+<li>2.35 में 3 का स्थान-मूल्य क्या है?</li>
+
+<li>4.75 और 4.57 की तुलना कीजिए।</li>
+
+<li>5.25 और 5.52 की तुलना कीजिए।</li>
+
+<li>3.40 और 3.4 में संबंध लिखिए।</li>
+
+<li>7.50 और 7.5 की तुलना कीजिए।</li>
+
+<li>8.09 और 8.90 में कौन बड़ी है?</li>
+
+<li>12.35 + 4.27 ज्ञात कीजिए।</li>
+
+<li>15.80 − 7.35 ज्ञात कीजिए।</li>
+
+<li>5.25 + 2.50 ज्ञात कीजिए।</li>
+
+<li>10.75 − 3.25 ज्ञात कीजिए।</li>
+
+<li>6.40 + 3.60 ज्ञात कीजिए।</li>
+
+<li>2.5 + 3.75 ज्ञात कीजिए।</li>
+
+<li>9.80 − 4.25 ज्ञात कीजिए।</li>
+
+<li>12.50 + 7.25 ज्ञात कीजिए।</li>
+
+<li>20.00 − 8.75 ज्ञात कीजिए।</li>
+
+<li>4.25 + 5.75 ज्ञात कीजिए।</li>
+
+<li>0.5, 0.05 और 0.55 को बढ़ते क्रम में लिखिए।</li>
+
+<li>2.5, 2.05 और 2.55 को बढ़ते क्रम में लिखिए।</li>
+
+<li>4.7, 4.07 और 4.70 को घटते क्रम में लिखिए।</li>
+
+<li>1.25, 1.5 और 1.05 को बढ़ते क्रम में लिखिए।</li>
+
+<li>6.75, 6.57 और 6.05 को घटते क्रम में लिखिए।</li>
+
+<li>₹25.50 + ₹14.25 ज्ञात कीजिए।</li>
+
+<li>₹100 में से ₹37.50 घटाइए।</li>
+
+<li>2.5 kg और 1.75 kg का कुल भार ज्ञात कीजिए।</li>
+
+<li>5.5 m में से 2.25 m घटाइए।</li>
+
+<li>एक वस्तु की कीमत ₹45.75 है और दूसरी की ₹24.25 है। कुल कीमत ज्ञात कीजिए।</li>
+
+<li>एक रस्सी की लंबाई 10.5 m है। उसमें से 3.75 m काट दिया गया। शेष लंबाई ज्ञात कीजिए।</li>
+
+<li>3.5 L और 2.75 L को जोड़िए।</li>
+
+<li>8.5 L में से 3.25 L घटाइए।</li>
+
+<li>एक छात्र ने 2.5 km और फिर 1.75 km यात्रा की। कुल दूरी ज्ञात कीजिए।</li>
+
+<li>एक टंकी में 15.5 L पानी था। 6.75 L निकाल दिया गया। कितना पानी बचा?</li>
+
+<li>0.5 को number line पर दर्शाने की व्याख्या कीजिए।</li>
+
+<li>0.7 और 0.8 के बीच एक decimal संख्या लिखिए।</li>
+
+<li>2.3 और 2.4 के बीच तीन decimal संख्याएँ लिखिए।</li>
+
+<li>5.25 और 5.26 के बीच एक decimal संख्या लिखना संभव है? समझाइए।</li>
+
+<li>3.40 को तीन decimal places तक लिखिए।</li>
+
+<li>7.5 को hundredths में लिखिए।</li>
+
+<li>9.25 में 2 किस place पर है?</li>
+
+<li>0.375 को fraction में बदलकर सरल कीजिए।</li>
+
+<li>ऐसी दो दशमलव संख्याएँ लिखिए जिनका मान 5 हो।</li>
+
+</ol>
+
+</div>
+
+<div class="block-en">
+
+<ol class="question-list">
+
+<li>Write the whole-number and decimal parts of 25.73.</li>
+<li>What is the place value of 5 in 4.582?</li>
+<li>What is the place value of 8 in 4.582?</li>
+<li>What is the place value of 2 in 4.582?</li>
+<li>Convert 0.5 into a fraction.</li>
+<li>Convert 0.25 into a fraction.</li>
+<li>Convert 0.75 into a fraction.</li>
+<li>Convert 0.125 into a fraction.</li>
+<li>Write 3.5 in tenths.</li>
+<li>What is the place value of 3 in 2.35?</li>
+<li>Compare 4.75 and 4.57.</li>
+<li>Compare 5.25 and 5.52.</li>
+<li>Write the relation between 3.40 and 3.4.</li>
+<li>Compare 7.50 and 7.5.</li>
+<li>Which is greater: 8.09 or 8.90?</li>
+<li>Find 12.35 + 4.27.</li>
+<li>Find 15.80 − 7.35.</li>
+<li>Find 5.25 + 2.50.</li>
+<li>Find 10.75 − 3.25.</li>
+<li>Find 6.40 + 3.60.</li>
+<li>Find 2.5 + 3.75.</li>
+<li>Find 9.80 − 4.25.</li>
+<li>Find 12.50 + 7.25.</li>
+<li>Find 20.00 − 8.75.</li>
+<li>Find 4.25 + 5.75.</li>
+<li>Arrange 0.5, 0.05 and 0.55 in ascending order.</li>
+<li>Arrange 2.5, 2.05 and 2.55 in ascending order.</li>
+<li>Arrange 4.7, 4.07 and 4.70 in descending order.</li>
+<li>Arrange 1.25, 1.5 and 1.05 in ascending order.</li>
+<li>Arrange 6.75, 6.57 and 6.05 in descending order.</li>
+<li>Find ₹25.50 + ₹14.25.</li>
+<li>Subtract ₹37.50 from ₹100.</li>
+<li>Find the total weight of 2.5 kg and 1.75 kg.</li>
+<li>Subtract 2.25 m from 5.5 m.</li>
+<li>An item costs ₹45.75 and another costs ₹24.25. Find the total cost.</li>
+<li>A rope is 10.5 m long. 3.75 m is cut off. Find the remaining length.</li>
+<li>Add 3.5 L and 2.75 L.</li>
+<li>Subtract 3.25 L from 8.5 L.</li>
+<li>A student travels 2.5 km and then 1.75 km. Find the total distance.</li>
+<li>A tank contains 15.5 L of water. 6.75 L is removed. How much remains?</li>
+<li>Explain how to represent 0.5 on a number line.</li>
+<li>Write a decimal number between 0.7 and 0.8.</li>
+<li>Write three decimal numbers between 2.3 and 2.4.</li>
+<li>Can you write a decimal number between 5.25 and 5.26? Explain.</li>
+<li>Write 3.40 to three decimal places.</li>
+<li>Write 7.5 in hundredths.</li>
+<li>What is the place of 2 in 9.25?</li>
+<li>Convert 0.375 into a simplified fraction.</li>
+<li>Write two decimal numbers whose value is 5.</li>
+
+</ol>
+
+</div>
+
+</section>
+
+<!-- MCQ -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+🧠 MCQ Practice – 20 Questions
+</span>
+
+<span class="lang-en">
+🧠 MCQ Practice – 20 Questions
+</span>
+
+</h2>
+
+<div class="block-hi">
+
+<div class="mcq">
+<b>1. 25.73 में decimal point के बाद कितने अंक हैं?</b><br>
+A) 1 &nbsp; B) 2 &nbsp; C) 3 &nbsp; D) 4
+</div>
+
+<div class="mcq">
+<b>2. 0.5 का fraction रूप है:</b><br>
+A) 1/2 &nbsp; B) 1/5 &nbsp; C) 5/100 &nbsp; D) 5/1000
+</div>
+
+<div class="mcq">
+<b>3. 4.582 में 8 किस स्थान पर है?</b><br>
+A) Tenths &nbsp; B) Hundredths &nbsp; C) Thousandths &nbsp; D) Ones
+</div>
+
+<div class="mcq">
+<b>4. इनमें बड़ी संख्या कौन-सी है?</b><br>
+A) 4.57 &nbsp; B) 4.75 &nbsp; C) 4.07 &nbsp; D) 4.05
+</div>
+
+<div class="mcq">
+<b>5. 4.5 किसके बराबर है?</b><br>
+A) 4.05 &nbsp; B) 4.50 &nbsp; C) 45 &nbsp; D) 0.45
+</div>
+
+<div class="mcq">
+<b>6. 12.35 + 4.27 = ?</b><br>
+A) 16.52 &nbsp; B) 16.62 &nbsp; C) 17.62 &nbsp; D) 15.62
+</div>
+
+<div class="mcq">
+<b>7. 15.80 − 7.35 = ?</b><br>
+A) 8.45 &nbsp; B) 8.55 &nbsp; C) 7.45 &nbsp; D) 9.45
+</div>
+
+<div class="mcq">
+<b>8. 0.25 किसके बराबर है?</b><br>
+A) 1/2 &nbsp; B) 1/3 &nbsp; C) 1/4 &nbsp; D) 3/4
+</div>
+
+<div class="mcq">
+<b>9. 0.75 का fraction रूप है:</b><br>
+A) 1/4 &nbsp; B) 1/2 &nbsp; C) 3/4 &nbsp; D) 2/3
+</div>
+
+<div class="mcq">
+<b>10. 3.40 और 3.4 के बीच संबंध है:</b><br>
+A) 3.40 &gt; 3.4<br>
+B) 3.40 &lt; 3.4<br>
+C) 3.40 = 3.4<br>
+D) कोई नहीं
+</div>
+
+<div class="mcq">
+<b>11. 2.5 + 3.75 = ?</b><br>
+A) 5.25 &nbsp; B) 6.25 &nbsp; C) 6.15 &nbsp; D) 5.75
+</div>
+
+<div class="mcq">
+<b>12. 20 − 8.75 = ?</b><br>
+A) 11.25 &nbsp; B) 12.25 &nbsp; C) 11.75 &nbsp; D) 12.75
+</div>
+
+<div class="mcq">
+<b>13. 0.125 किसके बराबर है?</b><br>
+A) 1/4 &nbsp; B) 1/8 &nbsp; C) 1/5 &nbsp; D) 1/10
+</div>
+
+<div class="mcq">
+<b>14. 5.25 और 5.52 में बड़ी संख्या है:</b><br>
+A) 5.25 &nbsp; B) 5.52 &nbsp; C) दोनों समान &nbsp; D) 5.05
+</div>
+
+<div class="mcq">
+<b>15. Decimal point के बाद पहला स्थान कहलाता है:</b><br>
+A) Ones &nbsp; B) Tenths &nbsp; C) Hundredths &nbsp; D) Thousands
+</div>
+
+<div class="mcq">
+<b>16. 6.40 + 3.60 = ?</b><br>
+A) 9 &nbsp; B) 10 &nbsp; C) 10.5 &nbsp; D) 9.5
+</div>
+
+<div class="mcq">
+<b>17. 8.09 और 8.90 में बड़ी संख्या है:</b><br>
+A) 8.09 &nbsp; B) 8.90 &nbsp; C) दोनों &nbsp; D) कोई नहीं
+</div>
+
+<div class="mcq">
+<b>18. 7.5 को hundredths में लिखने पर:</b><br>
+A) 7.05 &nbsp; B) 7.50 &nbsp; C) 75 &nbsp; D) 0.75
+</div>
+
+<div class="mcq">
+<b>19. 0.5 number line पर कहाँ स्थित है?</b><br>
+A) 0 और 1 के बीच<br>
+B) 1 और 2 के बीच<br>
+C) 2 और 3 के बीच<br>
+D) 3 और 4 के बीच
+</div>
+
+<div class="mcq">
+<b>20. 3.75 + 2.25 = ?</b><br>
+A) 5 &nbsp; B) 6 &nbsp; C) 6.25 &nbsp; D) 5.50
+</div>
+
+</div>
+
+<div class="block-en">
+
+<div class="mcq">
+<b>1. How many digits are there after the decimal point in 25.73?</b><br>
+A) 1 &nbsp; B) 2 &nbsp; C) 3 &nbsp; D) 4
+</div>
+
+<div class="mcq">
+<b>2. The fraction form of 0.5 is:</b><br>
+A) 1/2 &nbsp; B) 1/5 &nbsp; C) 5/100 &nbsp; D) 5/1000
+</div>
+
+<div class="mcq">
+<b>3. In 4.582, 8 is in the:</b><br>
+A) Tenths &nbsp; B) Hundredths &nbsp; C) Thousandths &nbsp; D) Ones
+</div>
+
+<div class="mcq">
+<b>4. Which is greater?</b><br>
+A) 4.57 &nbsp; B) 4.75 &nbsp; C) 4.07 &nbsp; D) 4.05
+</div>
+
+<div class="mcq">
+<b>5. 4.5 is equal to:</b><br>
+A) 4.05 &nbsp; B) 4.50 &nbsp; C) 45 &nbsp; D) 0.45
+</div>
+
+<div class="mcq">
+<b>6. 12.35 + 4.27 = ?</b><br>
+A) 16.52 &nbsp; B) 16.62 &nbsp; C) 17.62 &nbsp; D) 15.62
+</div>
+
+<div class="mcq">
+<b>7. 15.80 − 7.35 = ?</b><br>
+A) 8.45 &nbsp; B) 8.55 &nbsp; C) 7.45 &nbsp; D) 9.45
+</div>
+
+<div class="mcq">
+<b>8. 0.25 is equal to:</b><br>
+A) 1/2 &nbsp; B) 1/3 &nbsp; C) 1/4 &nbsp; D) 3/4
+</div>
+
+<div class="mcq">
+<b>9. The fraction form of 0.75 is:</b><br>
+A) 1/4 &nbsp; B) 1/2 &nbsp; C) 3/4 &nbsp; D) 2/3
+</div>
+
+<div class="mcq">
+<b>10. The relation between 3.40 and 3.4 is:</b><br>
+A) 3.40 &gt; 3.4<br>
+B) 3.40 &lt; 3.4<br>
+C) 3.40 = 3.4<br>
+D) None
+</div>
+
+<div class="mcq">
+<b>11. 2.5 + 3.75 = ?</b><br>
+A) 5.25 &nbsp; B) 6.25 &nbsp; C) 6.15 &nbsp; D) 5.75
+</div>
+
+<div class="mcq">
+<b>12. 20 − 8.75 = ?</b><br>
+A) 11.25 &nbsp; B) 12.25 &nbsp; C) 11.75 &nbsp; D) 12.75
+</div>
+
+<div class="mcq">
+<b>13. 0.125 is equal to:</b><br>
+A) 1/4 &nbsp; B) 1/8 &nbsp; C) 1/5 &nbsp; D) 1/10
+</div>
+
+<div class="mcq">
+<b>14. Which is greater: 5.25 or 5.52?</b><br>
+A) 5.25 &nbsp; B) 5.52 &nbsp; C) Both &nbsp; D) 5.05
+</div>
+
+<div class="mcq">
+<b>15. The first place after the decimal point is:</b><br>
+A) Ones &nbsp; B) Tenths &nbsp; C) Hundredths &nbsp; D) Thousands
+</div>
+
+<div class="mcq">
+<b>16. 6.40 + 3.60 = ?</b><br>
+A) 9 &nbsp; B) 10 &nbsp; C) 10.5 &nbsp; D) 9.5
+</div>
+
+<div class="mcq">
+<b>17. Which is greater: 8.09 or 8.90?</b><br>
+A) 8.09 &nbsp; B) 8.90 &nbsp; C) Both &nbsp; D) None
+</div>
+
+<div class="mcq">
+<b>18. 7.5 written in hundredths is:</b><br>
+A) 7.05 &nbsp; B) 7.50 &nbsp; C) 75 &nbsp; D) 0.75
+</div>
+
+<div class="mcq">
+<b>19. Where is 0.5 located on the number line?</b><br>
+A) Between 0 and 1<br>
+B) Between 1 and 2<br>
+C) Between 2 and 3<br>
+D) Between 3 and 4
+</div>
+
+<div class="mcq">
+<b>20. 3.75 + 2.25 = ?</b><br>
+A) 5 &nbsp; B) 6 &nbsp; C) 6.25 &nbsp; D) 5.50
+</div>
+
+</div>
+
+</section>
+
+<!-- ANSWER KEY -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+✅ MCQ उत्तरमाला
+</span>
+
+<span class="lang-en">
+✅ MCQ Answer Key
+</span>
+
+</h2>
+
+<div class="answer">
+
+<b>
+1-B,
+2-A,
+3-B,
+4-B,
+5-B,
+6-B,
+7-A,
+8-C,
+9-C,
+10-C,
+11-B,
+12-A,
+13-B,
+14-B,
+15-B,
+16-B,
+17-B,
+18-B,
+19-A,
+20-B
+</b>
+
+</div>
+
+</section>
+
+<!-- QUICK REVISION -->
+
+<section class="card">
+
+<h2>
+
+<span class="lang-hi">
+⚡ Quick Revision
+</span>
+
+<span class="lang-en">
+⚡ Quick Revision
+</span>
+
+</h2>
+
+<div class="revision-grid">
+
+<div class="revision-box">
+
+<b>Decimal Point</b>
+
+<br>
+
+<span class="lang-hi">
+पूर्णांक और दशमलव भाग को अलग करता है।
+</span>
+
+<span class="lang-en">
+Separates the whole-number and decimal parts.
+</span>
+
+</div>
+
+<div class="revision-box">
+
+<b>Tenths</b>
+
+<br>
+
+<span class="lang-hi">
+दशमलव के बाद पहला स्थान।
+</span>
+
+<span class="lang-en">
+First place after the decimal point.
+</span>
+
+</div>
+
+<div class="revision-box">
+
+<b>Hundredths</b>
+
+<br>
+
+<span class="lang-hi">
+दशमलव के बाद दूसरा स्थान।
+</span>
+
+<span class="lang-en">
+Second place after the decimal point.
+</span>
+
+</div>
+
+<div class="revision-box">
+
+<b>Thousandths</b>
+
+<br>
+
+<span class="lang-hi">
+दशमलव के बाद तीसरा स्थान।
+</span>
+
+<span class="lang-en">
+Third place after the decimal point.
+</span>
+
+</div>
+
+<div class="revision-box">
+
+<b>Comparison</b>
+
+<br>
+
+4.75 > 4.57
+
+</div>
+
+<div class="revision-box">
+
+<b>Equivalent Decimals</b>
+
+<br>
+
+4.5 = 4.50 = 4.500
+
+</div>
+
+<div class="revision-box">
+
+<b>Fraction</b>
+
+<br>
+
+0.5 = 1/2
+
+</div>
+
+<div class="revision-box">
+
+<b>Addition</b>
+
+<br>
+
+12.35 + 4.27 = 16.62
+
+</div>
+
+</div>
+
+</section>
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+<a href="class-7-maths-chapter-2.html">
+← Chapter 2
+</a>
+
+<a href="../class-7-mathematics.html">
+📚 All Chapters
+</a>
+
+<a href="class-7-maths-chapter-4.html">
+Chapter 4 →
+</a>
+
+</div>
+
+</main>
+
+<footer>
+
+<b>UEduTech</b>
+
+<br>
+
+<span class="lang-hi">
+Class 7 Mathematics • Chapter 3 • A Peek Beyond the Point
+</span>
+
+<span class="lang-en">
+Class 7 Mathematics • Chapter 3 • A Peek Beyond the Point
+</span>
+
+<br><br>
+
+© 2026 UEduTech • Learn • Practice • Succeed
+
+</footer>
+
+<script>
+
+function setLanguage(lang){
+
+    if(lang === "en"){
+
+        document.body.classList.add("english");
+
+        document.getElementById("enBtn").classList.add("active");
+
+        document.getElementById("hiBtn").classList.remove("active");
+
+        document.documentElement.lang = "en";
+
+    }else{
+
+        document.body.classList.remove("english");
+
+        document.getElementById("hiBtn").classList.add("active");
+
+        document.getElementById("enBtn").classList.remove("active");
+
+        document.documentElement.lang = "hi";
+
+    }
+
+    localStorage.setItem("uedutech-language",lang);
+}
+
+
+window.onload = function(){
+
+    const savedLanguage =
+        localStorage.getItem("uedutech-language") || "hi";
+
+    setLanguage(savedLanguage);
+
+};
+
+</script>
+
+</body>
+</html>

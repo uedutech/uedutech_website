@@ -1,0 +1,1304 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>अध्याय 6: परिमाप और क्षेत्रफल | कक्षा 6 गणित | UEduTech</title>
+
+    <meta name="description"
+          content="कक्षा 6 गणित अध्याय 6 परिमाप और क्षेत्रफल के नोट्स, सूत्र, उदाहरण, अभ्यास प्रश्न और MCQ।">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* HEADER */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #4f46e5;
+        }
+
+        .logo span {
+            color: #7c3aed;
+        }
+
+        nav {
+            display: flex;
+            gap: 8px;
+        }
+
+        nav a {
+            color: #333;
+            font-weight: 600;
+            padding: 9px 14px;
+            border-radius: 8px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            background: #eef2ff;
+            color: #4f46e5;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 27px;
+            cursor: pointer;
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 20px auto 0;
+            padding: 0 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #4f46e5;
+            font-weight: 600;
+        }
+
+        /* HERO */
+        .hero {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 55px 25px;
+            border-radius: 22px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed, #9333ea);
+            box-shadow: 0 12px 35px rgba(79,70,229,.25);
+        }
+
+        .hero-icon {
+            font-size: 55px;
+            margin-bottom: 5px;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            opacity: .95;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 18px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.06);
+        }
+
+        .section h2 {
+            color: #4338ca;
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .section h3 {
+            color: #3730a3;
+            margin: 20px 0 8px;
+        }
+
+        /* DEFINITION */
+        .definition {
+            background: #eef2ff;
+            border-left: 5px solid #4f46e5;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 18px 0;
+        }
+
+        /* FORMULA */
+        .formula {
+            background: #f5f3ff;
+            border: 1px solid #ddd6fe;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        .formula strong {
+            color: #5b21b6;
+            font-size: 18px;
+        }
+
+        .formula p {
+            font-size: 17px;
+            margin-top: 7px;
+        }
+
+        /* EXAMPLE */
+        .example {
+            background: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 18px 0;
+        }
+
+        .example strong {
+            color: #047857;
+        }
+
+        /* TIP */
+        .tip {
+            background: #fff7ed;
+            border-left: 5px solid #f97316;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 18px 0;
+        }
+
+        .tip strong {
+            color: #c2410c;
+        }
+
+        /* UNIT TABLE */
+        .unit-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .unit-table th,
+        .unit-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .unit-table th {
+            background: #eef2ff;
+            color: #3730a3;
+        }
+
+        /* QUESTION */
+        .question {
+            background: #fafafa;
+            border: 1px solid #e5e7eb;
+            padding: 15px 18px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .question strong {
+            color: #4338ca;
+        }
+
+        /* MCQ */
+        .mcq {
+            background: #fafafa;
+            border: 1px solid #e5e7eb;
+            padding: 18px;
+            border-radius: 12px;
+            margin: 13px 0;
+        }
+
+        .mcq p {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 7px;
+            color: #444;
+        }
+
+        .answer {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+            padding: 14px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        /* RESOURCE */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .resource-card {
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 13px;
+            background: #f8faff;
+            text-align: center;
+        }
+
+        .resource-card .icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .resource-card h3 {
+            margin: 5px 0;
+        }
+
+        .resource-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+            padding: 35px 20px;
+            border-radius: 18px;
+        }
+
+        .cta h2 {
+            margin-bottom: 8px;
+        }
+
+        .cta p {
+            color: #666;
+            margin-bottom: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #3730a3;
+        }
+
+        /* NAVIGATION */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .nav-btn {
+            flex: 1;
+            background: white;
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            color: #4338ca;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .nav-btn:hover {
+            background: #eef2ff;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111827;
+            color: #d1d5db;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 30px;
+        }
+
+        footer strong {
+            color: #fff;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 67px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                flex-direction: column;
+                padding: 15px 20px;
+                box-shadow: 0 8px 20px rgba(0,0,0,.08);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .hero {
+                margin: 15px;
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 29px;
+            }
+
+            .section {
+                padding: 22px;
+            }
+
+            .options {
+                grid-template-columns: 1fr;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="navbar">
+
+        <a href="../../../index.html" class="logo">
+            U<span>EduTech</span>
+        </a>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <nav id="navMenu">
+            <a href="../../../index.html">होम</a>
+            <a href="../../../subjects.html">विषय</a>
+            <a href="../../../tests.html">मॉडल टेस्ट</a>
+            <a href="../../../study-material.html">अध्ययन सामग्री</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+
+    <a href="../../../index.html">होम</a>
+    &nbsp;›&nbsp;
+
+    <a href="../../../study-material.html">अध्ययन सामग्री</a>
+    &nbsp;›&nbsp;
+
+    <a href="../class-6.html">कक्षा 6</a>
+    &nbsp;›&nbsp;
+
+    <a href="class-6-mathematics.html">गणित</a>
+    &nbsp;›&nbsp;
+
+    <strong>अध्याय 6</strong>
+
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-icon">📐</div>
+
+    <h1>अध्याय 6: परिमाप और क्षेत्रफल</h1>
+
+    <p>
+        Perimeter and Area • कक्षा 6 गणित • गणित प्रकाश
+    </p>
+
+</section>
+
+
+<div class="container">
+
+    <!-- INTRODUCTION -->
+    <section class="section">
+
+        <h2>📖 अध्याय का परिचय</h2>
+
+        <div class="definition">
+
+            <strong>परिमाप क्या है?</strong>
+
+            <p>
+                किसी बंद आकृति की चारों ओर की कुल लंबाई को
+                <strong>परिमाप (Perimeter)</strong> कहते हैं।
+            </p>
+
+        </div>
+
+        <div class="definition">
+
+            <strong>क्षेत्रफल क्या है?</strong>
+
+            <p>
+                किसी समतल आकृति द्वारा घेरे गए स्थान की मात्रा को
+                <strong>क्षेत्रफल (Area)</strong> कहते हैं।
+            </p>
+
+        </div>
+
+        <p>
+            इस अध्याय में हम मुख्य रूप से आयत और वर्ग के
+            परिमाप तथा क्षेत्रफल की गणना करना सीखेंगे।
+        </p>
+
+    </section>
+
+
+    <!-- PERIMETER -->
+    <section class="section">
+
+        <h2>📏 1. परिमाप</h2>
+
+        <p>
+            किसी आकृति की सभी भुजाओं की लंबाइयों का योग उसका परिमाप कहलाता है।
+        </p>
+
+        <div class="formula">
+
+            <strong>आयत का परिमाप</strong>
+
+            <p>
+                परिमाप = 2 × (लंबाई + चौड़ाई)
+            </p>
+
+        </div>
+
+        <div class="formula">
+
+            <strong>वर्ग का परिमाप</strong>
+
+            <p>
+                परिमाप = 4 × भुजा
+            </p>
+
+        </div>
+
+
+        <div class="example">
+
+            <strong>उदाहरण 1:</strong>
+
+            <p>
+                एक आयत की लंबाई 12 cm और चौड़ाई 8 cm है।
+                उसका परिमाप ज्ञात कीजिए।
+            </p>
+
+            <p>
+                परिमाप = 2 × (12 + 8)
+            </p>
+
+            <p>
+                = 2 × 20
+            </p>
+
+            <p>
+                = <strong>40 cm</strong>
+            </p>
+
+        </div>
+
+
+        <div class="example">
+
+            <strong>उदाहरण 2:</strong>
+
+            <p>
+                एक वर्ग की भुजा 7 cm है। उसका परिमाप ज्ञात कीजिए।
+            </p>
+
+            <p>
+                परिमाप = 4 × 7 = <strong>28 cm</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- AREA -->
+    <section class="section">
+
+        <h2>📐 2. क्षेत्रफल</h2>
+
+        <p>
+            किसी आकृति के अंदर के स्थान को मापने के लिए
+            क्षेत्रफल का उपयोग किया जाता है।
+        </p>
+
+        <div class="formula">
+
+            <strong>आयत का क्षेत्रफल</strong>
+
+            <p>
+                क्षेत्रफल = लंबाई × चौड़ाई
+            </p>
+
+        </div>
+
+        <div class="formula">
+
+            <strong>वर्ग का क्षेत्रफल</strong>
+
+            <p>
+                क्षेत्रफल = भुजा × भुजा
+            </p>
+
+        </div>
+
+
+        <div class="example">
+
+            <strong>उदाहरण 3:</strong>
+
+            <p>
+                एक आयत की लंबाई 15 m और चौड़ाई 6 m है।
+                उसका क्षेत्रफल ज्ञात कीजिए।
+            </p>
+
+            <p>
+                क्षेत्रफल = 15 × 6
+            </p>
+
+            <p>
+                = <strong>90 m²</strong>
+            </p>
+
+        </div>
+
+
+        <div class="example">
+
+            <strong>उदाहरण 4:</strong>
+
+            <p>
+                एक वर्ग की भुजा 9 m है। उसका क्षेत्रफल ज्ञात कीजिए।
+            </p>
+
+            <p>
+                क्षेत्रफल = 9 × 9
+            </p>
+
+            <p>
+                = <strong>81 m²</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- UNITS -->
+    <section class="section">
+
+        <h2>📏 3. मापन की इकाइयाँ</h2>
+
+        <p>
+            परिमाप एक लंबाई है, इसलिए इसे लंबाई की इकाइयों में मापा जाता है।
+            क्षेत्रफल को वर्ग इकाइयों में मापा जाता है।
+        </p>
+
+        <table class="unit-table">
+
+            <tr>
+                <th>माप</th>
+                <th>इकाइयाँ</th>
+                <th>उदाहरण</th>
+            </tr>
+
+            <tr>
+                <td>लंबाई</td>
+                <td>cm, m, km</td>
+                <td>5 m</td>
+            </tr>
+
+            <tr>
+                <td>परिमाप</td>
+                <td>cm, m, km</td>
+                <td>30 cm</td>
+            </tr>
+
+            <tr>
+                <td>क्षेत्रफल</td>
+                <td>cm², m², km²</td>
+                <td>50 m²</td>
+            </tr>
+
+        </table>
+
+
+        <div class="tip">
+
+            <strong>💡 याद रखें:</strong>
+
+            <p>
+                परिमाप की इकाई सामान्य लंबाई की इकाई होती है,
+                जबकि क्षेत्रफल की इकाई वर्ग इकाई होती है।
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- IMPORTANT RELATION -->
+    <section class="section">
+
+        <h2>⭐ 4. महत्वपूर्ण सूत्र</h2>
+
+        <div class="formula">
+
+            <p><strong>आयत:</strong></p>
+
+            <p>
+                परिमाप = 2 × (लंबाई + चौड़ाई)
+            </p>
+
+            <p>
+                क्षेत्रफल = लंबाई × चौड़ाई
+            </p>
+
+        </div>
+
+        <div class="formula">
+
+            <p><strong>वर्ग:</strong></p>
+
+            <p>
+                परिमाप = 4 × भुजा
+            </p>
+
+            <p>
+                क्षेत्रफल = भुजा × भुजा
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRACTICE QUESTIONS -->
+    <section class="section">
+
+        <h2>✏️ 5. अभ्यास प्रश्न</h2>
+
+        <p>
+            नीचे दिए गए प्रश्नों को स्वयं हल कीजिए।
+        </p>
+
+
+        <div class="question">
+            <strong>प्रश्न 1.</strong>
+            10 cm लंबाई और 5 cm चौड़ाई वाले आयत का परिमाप ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 2.</strong>
+            12 cm लंबाई और 7 cm चौड़ाई वाले आयत का क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 3.</strong>
+            8 cm भुजा वाले वर्ग का परिमाप ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 4.</strong>
+            11 cm भुजा वाले वर्ग का क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 5.</strong>
+            20 m लंबाई और 10 m चौड़ाई वाले आयत का परिमाप ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 6.</strong>
+            20 m लंबाई और 10 m चौड़ाई वाले आयत का क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 7.</strong>
+            15 cm भुजा वाले वर्ग का परिमाप ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 8.</strong>
+            15 cm भुजा वाले वर्ग का क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 9.</strong>
+            एक आयत की लंबाई 18 cm और चौड़ाई 9 cm है। उसका परिमाप ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 10.</strong>
+            एक आयत की लंबाई 18 cm और चौड़ाई 9 cm है। उसका क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 11.</strong>
+            25 m भुजा वाले वर्ग का परिमाप ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 12.</strong>
+            25 m भुजा वाले वर्ग का क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 13.</strong>
+            एक आयत का परिमाप 50 cm है। यदि उसकी लंबाई 15 cm है, तो चौड़ाई ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 14.</strong>
+            एक वर्ग का परिमाप 36 cm है। उसकी भुजा ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 15.</strong>
+            एक आयत की लंबाई 30 m और चौड़ाई 12 m है। क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 16.</strong>
+            एक वर्ग की भुजा 14 cm है। उसका परिमाप और क्षेत्रफल दोनों ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 17.</strong>
+            एक आयत की लंबाई 25 cm और चौड़ाई 15 cm है। परिमाप ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 18.</strong>
+            एक आयत की लंबाई 25 cm और चौड़ाई 15 cm है। क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 19.</strong>
+            6 m भुजा वाले वर्ग का क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 20.</strong>
+            6 m भुजा वाले वर्ग का परिमाप ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 21.</strong>
+            32 cm लंबाई और 8 cm चौड़ाई वाले आयत का क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 22.</strong>
+            32 cm लंबाई और 8 cm चौड़ाई वाले आयत का परिमाप ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 23.</strong>
+            एक वर्ग का क्षेत्रफल 49 cm² है। उसकी भुजा ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 24.</strong>
+            एक वर्ग का क्षेत्रफल 100 m² है। उसकी भुजा ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 25.</strong>
+            एक आयत की लंबाई 16 m और चौड़ाई 4 m है। उसका क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 26.</strong>
+            एक आयत की लंबाई 16 m और चौड़ाई 4 m है। उसका परिमाप ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 27.</strong>
+            13 cm भुजा वाले वर्ग का क्षेत्रफल और परिमाप ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 28.</strong>
+            एक आयत का क्षेत्रफल 72 cm² है और उसकी लंबाई 12 cm है। चौड़ाई ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 29.</strong>
+            एक आयत का क्षेत्रफल 120 m² है और उसकी लंबाई 15 m है। चौड़ाई ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 30.</strong>
+            एक आयत की लंबाई 40 cm और चौड़ाई 20 cm है। उसका परिमाप और क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 31.</strong>
+            एक वर्ग की भुजा 18 cm है। उसका परिमाप ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 32.</strong>
+            एक वर्ग की भुजा 18 cm है। उसका क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 33.</strong>
+            एक आयत का परिमाप 60 cm है। यदि लंबाई 20 cm है, तो चौड़ाई ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 34.</strong>
+            एक वर्ग का परिमाप 64 cm है। उसकी भुजा ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 35.</strong>
+            एक आयत की लंबाई 50 m और चौड़ाई 25 m है। क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 36.</strong>
+            एक आयताकार मैदान की लंबाई 60 m और चौड़ाई 40 m है। मैदान का परिमाप ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 37.</strong>
+            एक आयताकार कमरे की लंबाई 8 m और चौड़ाई 5 m है। फर्श का क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 38.</strong>
+            एक वर्गाकार बगीचे की भुजा 20 m है। उसका क्षेत्रफल ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 39.</strong>
+            एक वर्गाकार बगीचे की भुजा 20 m है। उसके चारों ओर बाड़ लगाने के लिए कितनी लंबाई की बाड़ चाहिए?
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 40.</strong>
+            एक आयताकार खेत की लंबाई 100 m और चौड़ाई 50 m है। खेत का क्षेत्रफल और परिमाप ज्ञात कीजिए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 41.</strong>
+            क्या 1 m² और 1 m एक ही प्रकार की इकाइयाँ हैं? कारण सहित बताइए।
+        </div>
+
+        <div class="question">
+            <strong>प्रश्न 42.</strong>
+            परिमाप और क्षेत्रफल में अंतर स्पष्ट कीजिए।
+        </div>
+
+    </section>
+
+
+    <!-- MCQ -->
+    <section class="section">
+
+        <h2>📝 6. बहुविकल्पीय प्रश्न (MCQ)</h2>
+
+
+        <div class="mcq">
+            <p>1. आयत का परिमाप क्या होता है?</p>
+            <div class="options">
+                <span>A. लंबाई × चौड़ाई</span>
+                <span>B. 2 × (लंबाई + चौड़ाई)</span>
+                <span>C. 4 × भुजा</span>
+                <span>D. भुजा × भुजा</span>
+            </div>
+        </div>
+
+
+        <div class="mcq">
+            <p>2. वर्ग का परिमाप है—</p>
+            <div class="options">
+                <span>A. भुजा × भुजा</span>
+                <span>B. 2 × भुजा</span>
+                <span>C. 4 × भुजा</span>
+                <span>D. लंबाई × चौड़ाई</span>
+            </div>
+        </div>
+
+
+        <div class="mcq">
+            <p>3. आयत का क्षेत्रफल होता है—</p>
+            <div class="options">
+                <span>A. लंबाई + चौड़ाई</span>
+                <span>B. 2 × लंबाई</span>
+                <span>C. लंबाई × चौड़ाई</span>
+                <span>D. 4 × भुजा</span>
+            </div>
+        </div>
+
+
+        <div class="mcq">
+            <p>4. वर्ग का क्षेत्रफल होता है—</p>
+            <div class="options">
+                <span>A. 4 × भुजा</span>
+                <span>B. भुजा × भुजा</span>
+                <span>C. 2 × भुजा</span>
+                <span>D. लंबाई × चौड़ाई</span>
+            </div>
+        </div>
+
+
+        <div class="mcq">
+            <p>5. 5 cm भुजा वाले वर्ग का परिमाप कितना होगा?</p>
+            <div class="options">
+                <span>A. 10 cm</span>
+                <span>B. 15 cm</span>
+                <span>C. 20 cm</span>
+                <span>D. 25 cm</span>
+            </div>
+        </div>
+
+
+        <div class="mcq">
+            <p>6. 5 cm भुजा वाले वर्ग का क्षेत्रफल कितना होगा?</p>
+            <div class="options">
+                <span>A. 10 cm²</span>
+                <span>B. 20 cm²</span>
+                <span>C. 25 cm²</span>
+                <span>D. 30 cm²</span>
+            </div>
+        </div>
+
+
+        <div class="mcq">
+            <p>7. 10 cm × 4 cm आयत का क्षेत्रफल कितना है?</p>
+            <div class="options">
+                <span>A. 14 cm²</span>
+                <span>B. 20 cm²</span>
+                <span>C. 40 cm²</span>
+                <span>D. 80 cm²</span>
+            </div>
+        </div>
+
+
+        <div class="mcq">
+            <p>8. 10 cm × 4 cm आयत का परिमाप कितना है?</p>
+            <div class="options">
+                <span>A. 20 cm</span>
+                <span>B. 28 cm</span>
+                <span>C. 40 cm</span>
+                <span>D. 14 cm</span>
+            </div>
+        </div>
+
+
+        <div class="mcq">
+            <p>9. क्षेत्रफल की इकाई सामान्यतः कैसी होती है?</p>
+            <div class="options">
+                <span>A. cm</span>
+                <span>B. m</span>
+                <span>C. cm²</span>
+                <span>D. km</span>
+            </div>
+        </div>
+
+
+        <div class="mcq">
+            <p>10. परिमाप किसका माप है?</p>
+            <div class="options">
+                <span>A. अंदर के स्थान का</span>
+                <span>B. चारों ओर की लंबाई का</span>
+                <span>C. केवल लंबाई का</span>
+                <span>D. केवल चौड़ाई का</span>
+            </div>
+        </div>
+
+
+        <div class="mcq">
+            <p>11. 7 m भुजा वाले वर्ग का परिमाप है—</p>
+            <div class="options">
+                <span>A. 14 m</span>
+                <span>B. 21 m</span>
+                <span>C. 28 m</span>
+                <span>D. 49 m</span>
+            </div>
+        </div>
+
+
+        <div class="mcq">
+            <p>12. 7 m भुजा वाले वर्ग का क्षेत्रफल है—</p>
+            <div class="options">
+                <span>A. 14 m²</span>
+                <span>B. 28 m²</span>
+                <span>C. 42 m²</span>
+                <span>D. 49 m²</span>
+            </div>
+        </div>
+
+
+        <div class="mcq">
+            <p>13. 12 m × 5 m आयत का क्षेत्रफल है—</p>
+            <div class="options">
+                <span>A. 17 m²</span>
+                <span>B. 34 m²</span>
+                <span>C. 60 m²</span>
+                <span>D. 120 m²</span>
+            </div>
+        </div>
+
+
+        <div class="mcq">
+            <p>14. 12 m × 5 m आयत का परिमाप है—</p>
+            <div class="options">
+                <span>A. 17 m</span>
+                <span>B. 24 m</span>
+                <span>C. 34 m</span>
+                <span>D. 60 m</span>
+            </div>
+        </div>
+
+
+        <div class="mcq">
+            <p>15. 1 m² किसका उदाहरण है?</p>
+            <div class="options">
+                <span>A. लंबाई की इकाई</span>
+                <span>B. क्षेत्रफल की इकाई</span>
+                <span>C. परिमाप की इकाई</span>
+                <span>D. भार की इकाई</span>
+            </div>
+        </div>
+
+
+        <div class="answer">
+
+            <strong>✅ उत्तरमाला:</strong>
+
+            <p>
+                1-B, 2-C, 3-C, 4-B, 5-C,
+                6-C, 7-C, 8-B, 9-C, 10-B,
+                11-C, 12-D, 13-C, 14-C, 15-B
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUICK REVISION -->
+    <section class="section">
+
+        <h2>⚡ त्वरित पुनरावृत्ति</h2>
+
+        <div class="definition">
+
+            <p>
+                <strong>परिमाप</strong> = आकृति की चारों ओर की कुल लंबाई
+            </p>
+
+            <p>
+                <strong>आयत का परिमाप</strong> = 2 × (लंबाई + चौड़ाई)
+            </p>
+
+            <p>
+                <strong>वर्ग का परिमाप</strong> = 4 × भुजा
+            </p>
+
+            <p>
+                <strong>आयत का क्षेत्रफल</strong> = लंबाई × चौड़ाई
+            </p>
+
+            <p>
+                <strong>वर्ग का क्षेत्रफल</strong> = भुजा × भुजा
+            </p>
+
+            <p>
+                <strong>परिमाप की इकाई</strong> = cm, m, km आदि
+            </p>
+
+            <p>
+                <strong>क्षेत्रफल की इकाई</strong> = cm², m², km² आदि
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESOURCES -->
+    <section class="section">
+
+        <h2>📚 अध्ययन संसाधन</h2>
+
+        <div class="resource-grid">
+
+            <a href="#" class="resource-card">
+
+                <div class="icon">📖</div>
+
+                <h3>अध्याय नोट्स</h3>
+
+                <p>
+                    विस्तृत नोट्स जल्द उपलब्ध होंगे।
+                </p>
+
+            </a>
+
+
+            <a href="#" class="resource-card">
+
+                <div class="icon">📝</div>
+
+                <h3>वर्कशीट</h3>
+
+                <p>
+                    अभ्यास वर्कशीट जल्द उपलब्ध होगी।
+                </p>
+
+            </a>
+
+
+            <a href="../../../tests.html" class="resource-card">
+
+                <div class="icon">🎯</div>
+
+                <h3>मॉडल टेस्ट</h3>
+
+                <p>
+                    ऑनलाइन टेस्ट देकर अपनी तैयारी जाँचें।
+                </p>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="section">
+
+        <div class="cta">
+
+            <h2>🎯 अब अपनी तैयारी जाँचें</h2>
+
+            <p>
+                कक्षा 6 गणित के मॉडल टेस्ट देकर अपने ज्ञान का परीक्षण करें।
+            </p>
+
+            <a href="../../../tests.html" class="btn">
+                मॉडल टेस्ट शुरू करें →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHAPTER NAVIGATION -->
+    <div class="navigation">
+
+        <a href="class-6-maths-chapter-5.html" class="nav-btn">
+            ← अध्याय 5
+        </a>
+
+        <a href="../class-6-mathematics.html" class="nav-btn">
+            📚 सभी अध्याय
+        </a>
+
+        <a href="class-6-maths-chapter-7.html" class="nav-btn">
+            अध्याय 7 →
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 <strong>UEduTech</strong> | Educational Learning Platform
+    </p>
+
+    <p>
+        कक्षा 6 गणित • परिमाप और क्षेत्रफल • अभ्यास • MCQ
+    </p>
+
+</footer>
+
+
+<script>
+
+    function toggleMenu() {
+        document.getElementById("navMenu").classList.toggle("active");
+    }
+
+</script>
+
+</body>
+</html>
+```
